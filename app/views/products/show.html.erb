@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @product.title %>
+</p>
+
+<p>
+  <b>Thumnail pic:</b>
+  <%= @product.thumnail_pic %>
+</p>
+
+<p>
+  <b>Content pic:</b>
+  <%= @product.content_pic %>
+</p>
+
+<p>
+  <b>Content:</b>
+  <%= @product.content %>
+</p>
+
+<p>
+  <b>Price:</b>
+  <%= @product.price %>
+</p>
+
+<p>
+  <b>Delivery state:</b>
+  <%= @product.delivery_state %>
+</p>
+
+<p>
+  <b>Stock:</b>
+  <%= @product.stock %>
+</p>
+
+<p>
+  <b>State:</b>
+  <%= @product.state %>
+</p>
+
+
+<%= link_to 'Edit', edit_product_path(@product) %> |
+<%= link_to 'Back', products_path %>

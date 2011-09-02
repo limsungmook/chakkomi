@@ -1,0 +1,21 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  title: MyString
+  thumnail_pic: MyString
+  content_pic: MyString
+  content: MyText
+  price: 1
+  delivery_state: 1
+  stock: 1
+  state: 1
+
+two:
+  title: MyString
+  thumnail_pic: MyString
+  content_pic: MyString
+  content: MyText
+  price: 1
+  delivery_state: 1
+  stock: 1
+  state: 1

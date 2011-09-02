@@ -1,6 +1,14 @@
 Chakkomi::Application.routes.draw do
-  resources :posts
+  resources :products
 
+  devise_for :users
+
+  resources :posts 
+
+  match 'intro' => 'posts#intro'
+  match 'history' => 'posts#history'
+  match 'product' => 'posts#product'
+  match 'store' => 'store#index'
   resources :categories
 
   # The priority is based upon order of creation:
@@ -52,7 +60,7 @@ Chakkomi::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => "welcome#index"
+  root :to => "posts#index"
 
   # See how all your routes lay out with "rake routes"
 

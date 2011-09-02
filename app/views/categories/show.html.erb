@@ -9,6 +9,33 @@
   <b>Detail:</b>
   <%= @category.detail %>
 </p>
+<br />
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Body pic</th>
+    <th>Body txt</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @posts.each do |post| %>
+  <tr>
+    <td><%= post.title %></td>
+    <td><%= post.body_pic %></td>
+    <td><%= post.body_txt %></td>
+    <td><%= link_to 'Show', post %></td>
+    <td><%= link_to 'Edit', edit_post_path(post) %></td>
+    <td><%= link_to 'Destroy', post, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Post', url_for(:controller=>'posts', :action=>'new', :id => @category.id)  %>
 
 
 <%= link_to 'Edit', edit_category_path(@category) %> |
