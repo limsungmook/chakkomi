@@ -1,4 +1,7 @@
 Chakkomi::Application.routes.draw do
+  root :to => "posts#intro"
+  devise_for :users
+
   resources :line_items
 
   resources :carts
@@ -7,13 +10,12 @@ Chakkomi::Application.routes.draw do
 
   resources :products
 
-  devise_for :users
 
   resources :posts 
 
   match 'intro' => 'posts#intro'
   match 'history' => 'posts#history'
-  match 'product' => 'posts#product'
+  match 'artmull' => 'posts#artmull'
   match 'store' => 'store#index'
   resources :categories
 
@@ -66,7 +68,7 @@ Chakkomi::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => "posts#intro"
+
 
   # See how all your routes lay out with "rake routes"
 
