@@ -13,6 +13,8 @@
 	<% if user_signed_in? %>
 	<li><span id="currentuser"><%= current_user.email %></span></li>
 	<li><%= link_to "프로필", edit_user_registration_path %></li>
+	<li><%= link_to "setting", services_path %></li>
+	<li><%= link_to "로그아웃", signout_services_path %></li>
 	<% else %>
 	<li><%= link_to "Facebook", "/auth/facebook" %></li>
         <li><%= link_to "Google", "/auth/google" %></li>
