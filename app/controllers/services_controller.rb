@@ -32,11 +32,13 @@ class ServicesController < ApplicationController
       @newuser = User.new
       @newuser.name = session[:authhash][:name]
       @newuser.email = session[:authhash][:email]
+      @newuser.password = SecureRandom.hex(10)
       @newuser.services.build(:provider => session[:authhash][:provider], :uid => session[:authhash][:uid], :uname => session[:authhash][:name], :uemail => session[:authhash][:email])
       
       if @newuser.save!
         # signin existing user
         # in the session his user id and the service id used for signing in is stored
+        @newuser.confirm!
         session[:user_id] = @newuser.id
         session[:service_id] = @newuser.services.first.id
         
