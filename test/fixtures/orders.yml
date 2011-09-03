@@ -1,0 +1,25 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  user_id: 1
+  name: MyString
+  account_owner: MyString
+  address: MyText
+  email: MyString
+  pay_type: MyString
+  delivery_type: MyString
+  arrival_payment: 1
+  total_price: 1
+  deposit_check: 1
+
+two:
+  user_id: 1
+  name: MyString
+  account_owner: MyString
+  address: MyText
+  email: MyString
+  pay_type: MyString
+  delivery_type: MyString
+  arrival_payment: 1
+  total_price: 1
+  deposit_check: 1

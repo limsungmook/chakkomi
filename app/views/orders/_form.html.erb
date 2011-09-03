@@ -1,0 +1,57 @@
+<%= form_for(@order) do |f| %>
+  <% if @order.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@order.errors.count, "error") %> prohibited this order from being saved:</h2>
+
+      <ul>
+      <% @order.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :user_id %><br />
+    <%= f.text_field :user_id %>
+  </div>
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :account_owner %><br />
+    <%= f.text_field :account_owner %>
+  </div>
+  <div class="field">
+    <%= f.label :address %><br />
+    <%= f.text_area :address, :rows => 3, :cols => 40 %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, :size => 40 %>
+  </div>
+  <div class="field">
+    <%= f.label :pay_type %><br />
+    <%= f.select :pay_type, Order::PAYMENT_TYPES, :prompt => '지불 형태를 고르세요' %>
+  </div>
+  <div class="field">
+    <%= f.label :delivery_type %><br />
+    <%= f.select :delivery_type , Order::DELIVERY_TYPES, :prompt => '배송 형태를 고르세요'%>
+  </div>
+  <div class="field">
+    <%= f.label :arrival_payment %><br />
+    <%= f.select :arrival_payment, Order::ARRIVAL_PAYMENT, :prompt => '선불? 착불?'  %>
+  </div>
+  <div class="field">
+    <%= f.label :total_price %><br />
+    <%= f.text_field :total_price %>
+  </div>
+  <div class="field">
+    <%= f.label :deposit_check %><br />
+    <%= f.text_field :deposit_check %>
+  </div>
+  <div class="actions">
+    <%= f.submit '주문하기'%>
+  </div>
+<% end %>

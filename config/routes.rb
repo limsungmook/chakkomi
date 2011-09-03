@@ -1,4 +1,6 @@
 Chakkomi::Application.routes.draw do
+  resources :orders
+
   root :to => "posts#intro"
   devise_for :users
 

@@ -1,0 +1,55 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>User:</b>
+  <%= @order.user_id %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%= @order.name %>
+</p>
+
+<p>
+  <b>Account owner:</b>
+  <%= @order.account_owner %>
+</p>
+
+<p>
+  <b>Address:</b>
+  <%= @order.address %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%= @order.email %>
+</p>
+
+<p>
+  <b>Pay type:</b>
+  <%= @order.pay_type %>
+</p>
+
+<p>
+  <b>Delivery type:</b>
+  <%= @order.delivery_type %>
+</p>
+
+<p>
+  <b>Arrival payment:</b>
+  <%= @order.arrival_payment %>
+</p>
+
+<p>
+  <b>Total price:</b>
+  <%= @order.total_price %>
+</p>
+
+<p>
+  <b>Deposit check:</b>
+  <%= @order.deposit_check %>
+</p>
+
+
+<%= link_to 'Edit', edit_order_path(@order) %> |
+<%= link_to 'Back', orders_path %>
