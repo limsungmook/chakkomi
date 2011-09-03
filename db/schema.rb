@@ -10,13 +10,26 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110902090426) do
+ActiveRecord::Schema.define(:version => 20110902185734) do
+
+  create_table "carts", :force => true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "categories", :force => true do |t|
     t.string   "name"
     t.text     "detail"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "line_items", :force => true do |t|
+    t.integer  "product_id"
+    t.integer  "cart_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "quantity",   :default => 1
   end
 
   create_table "posts", :force => true do |t|
@@ -29,6 +42,29 @@ ActiveRecord::Schema.define(:version => 20110902090426) do
   end
 
   add_index "posts", ["category_id"], :name => "index_posts_on_category_id"
+
+  create_table "products", :force => true do |t|
+    t.string   "title"
+    t.string   "thumnail_pic"
+    t.string   "content_pic"
+    t.text     "content"
+    t.integer  "price"
+    t.integer  "delivery_state"
+    t.integer  "stock"
+    t.integer  "state"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "sessions", :force => true do |t|
+    t.string   "session_id", :null => false
+    t.text     "data"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "sessions", ["session_id"], :name => "index_sessions_on_session_id"
+  add_index "sessions", ["updated_at"], :name => "index_sessions_on_updated_at"
 
   create_table "users", :force => true do |t|
     t.string   "email",                                 :default => "", :null => false

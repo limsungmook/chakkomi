@@ -1,0 +1,11 @@
+<div class="cart_title">장바구니</div>
+<table>
+  <%= render(@cart.line_items) %>
+  <tr class="total_line" >
+    <td colspan="2" >Total</td>
+    <td class="total_cell" ><%= number_with_delimiter(@cart.total_price) %>원</td>
+  </tr>
+</table>
+
+
+<%= button_to '비우기', @cart, :method => :delete, :confirm => '장바구니를 삭제하시겠습니까?' %>
