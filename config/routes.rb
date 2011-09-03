@@ -9,15 +9,7 @@ Chakkomi::Application.routes.draw do
 #  match "/signout" => "services#signout"
   match '/auth/failure' => 'services#failure'
   
-  resources :services, :only => [:index, :create, :destroy] do
-    collection do
-      get 'signout'
-      get 'signup'
-      post 'newaccount'
-      get 'failure'
-    end
-  end
-
+  resources :services, :only => [:index, :create, :destroy]
 
   resources :line_items
 
