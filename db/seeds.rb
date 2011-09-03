@@ -12,10 +12,10 @@ User.delete_all
 Post.delete_all
 Category.delete_all
 
-@chakkomi = User.create! :email => 'chakkomi@google.com', :password => '123456', :fullname => '착곰이', :weburl => 'http://www.chakkomi.com', :shortbio => '착곰이 시드'
+@chakkomi = User.create! :email => 'chakkomi@google.com', :password => '123456', :name => '착곰이', :weburl => 'http://www.chakkomi.com', :shortbio => '착곰이 시드'
 @chakkomi.confirm!
 
-@mook = User.create! :email => 'ipes4579@google.com', :password => '123456', :fullname => '임성묵', :shortbio => '임성묵'
+@mook = User.create! :email => 'ipes4579@google.com', :password => '123456', :name => '임성묵', :shortbio => '임성묵'
 @mook.confirm!
 
  @category = Category.create! :name => 'intro', :detail => '착곰이 소개 페이지입니다.'

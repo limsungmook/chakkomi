@@ -2,7 +2,7 @@
 ;; --------------------------------------------------------------------------
 ;; Desktop File for Emacs
 ;; --------------------------------------------------------------------------
-;; Created Sun Sep  4 01:11:22 2011
+;; Created Sun Sep  4 01:43:17 2011
 ;; Desktop file format version 206
 ;; Emacs version 23.3.1
 
@@ -10,161 +10,40 @@
 (setq desktop-missing-file-warning nil)
 (setq tags-file-name nil)
 (setq tags-table-list nil)
-(setq search-ring '("signup" "signin" "google" "signin" "form" "create" "index" "signin" "newaccou" "devise" "failed_attem" "email" "password_length" "acc" "remember" "“Âø“°õ“ÀÌ"))
+(setq search-ring '("fullname" "full" "name" ":name" "name" "config" "signup" "signin" "google" "signin" "form" "create" "index" "signin" "newaccou" "devise"))
 (setq regexp-search-ring nil)
 (setq register-alist nil)
-(setq file-name-history '("~/work/limsungmook_ror/chakkomi/config/environments/development.rb" "~/work/limsungmook_ror/chakkomi/config/routes.rb~" "~/work/limsungmook_ror/chakkomi/config/environments/production.rb" "~/work/limsungmook_ror/chakkomi_previous_version_20110903/config/routes.rb" "~/work/limsungmook_ror/chakkomi_previous_version_20110903/app/controllers/services_controller.rb" "~/work/limsungmook_ror/chakkomi/app/controllers/services_controller.rb" "~/work/limsungmook_ror/chakkomi_previous_version_20110903/config/routes.rb" "~/work/limsungmook_ror/chakkomi/app/views/layouts/application.html.erb" "~/work/limsungmook_ror/chakkomi/config/routes.rb" "~/work/limsungmook_ror/chakkomi/app/views/services/index.html.erb" "~/work/limsungmook_ror/chakkomi/app/views/devise/registrations/new.html.erb" "~/work/limsungmook_ror/chakkomi/app/views/devise/sessions/_services_list.html.erb" "~/work/limsungmook_ror/chakkomi/app/views/sign/_services_list.html.erb" "~/work/limsungmook_ror/chakkomi/app/views/sign/signin.html.erb" "~/work/limsungmook_ror/chakkomi/app/views/devise/sessions/new.html.erb" "~/work/limsungmook_ror/chakkomi/config/routes.rb" "~/work/limsungmook_ror/chakkomi/app/controllers/services_controller.rb" "~/work/limsungmook_ror/chakkomi/app/models/service.rb" "~/work/limsungmook_ror/chakkomi/app/models/user.rb" "~/work/limsungmook_ror/chakkomi/config/routes.rb" "~/work/limsungmook_ror/chakkomi/app/controllers/services_controller.rb" "~/work/limsungmook_ror/chakkomi/app/controllers/application_controller.rb" "~/work/limsungmook_ror/chakkomi/app/controllers/services_controller.rb" "~/work/limsungmook_ror/chakkomi/config/environments/development.rb" "~/work/limsungmook_ror/chakkomi/app/controllers/" "~/work/limsungmook_ror/chakkomi/app/views/sign/index.html.erb" "~/work/limsungmook_ror/chakkomi/app/views/sign/signin.html.erb" "~/work/limsungmook_ror/chakkomi/app/views/signin.html.erb" "~/work/limsungmook_ror/chakkomi/app/views/_services_list.html.erb" "~/work/limsungmook_ror/chakkomi/app/views/layouts/application.html.erb"))
+(setq file-name-history '("~/work/limsungmook_ror/chakkomi/app/views/devise/registrations/edit.html.erb" "~/work/limsungmook_ror/chakkomi/db/migrate/20110902090426_devise_create_users.rb" "~/work/limsungmook_ror/chakkomi/app/models/user.rb" "~/work/limsungmook_ror/chakkomi/config/database.yml" "~/work/limsungmook_ror/chakkomi_previous_version_20110903/config/environment.rb" "~/work/limsungmook_ror/chakkomi/config/environments/development.rb" "~/work/limsungmook_ror/chakkomi/config/routes.rb~" "~/work/limsungmook_ror/chakkomi/config/environments/production.rb" "~/work/limsungmook_ror/chakkomi_previous_version_20110903/config/routes.rb" "~/work/limsungmook_ror/chakkomi_previous_version_20110903/app/controllers/services_controller.rb" "~/work/limsungmook_ror/chakkomi/app/controllers/services_controller.rb" "~/work/limsungmook_ror/chakkomi_previous_version_20110903/config/routes.rb" "~/work/limsungmook_ror/chakkomi/app/views/layouts/application.html.erb" "~/work/limsungmook_ror/chakkomi/config/routes.rb" "~/work/limsungmook_ror/chakkomi/app/views/services/index.html.erb" "~/work/limsungmook_ror/chakkomi/app/views/devise/registrations/new.html.erb" "~/work/limsungmook_ror/chakkomi/app/views/devise/sessions/_services_list.html.erb" "~/work/limsungmook_ror/chakkomi/app/views/sign/_services_list.html.erb" "~/work/limsungmook_ror/chakkomi/app/views/sign/signin.html.erb" "~/work/limsungmook_ror/chakkomi/app/views/devise/sessions/new.html.erb" "~/work/limsungmook_ror/chakkomi/config/routes.rb" "~/work/limsungmook_ror/chakkomi/app/controllers/services_controller.rb" "~/work/limsungmook_ror/chakkomi/app/models/service.rb" "~/work/limsungmook_ror/chakkomi/app/models/user.rb" "~/work/limsungmook_ror/chakkomi/config/routes.rb" "~/work/limsungmook_ror/chakkomi/app/controllers/services_controller.rb" "~/work/limsungmook_ror/chakkomi/app/controllers/application_controller.rb" "~/work/limsungmook_ror/chakkomi/app/controllers/services_controller.rb" "~/work/limsungmook_ror/chakkomi/config/environments/development.rb" "~/work/limsungmook_ror/chakkomi/app/controllers/"))
 
 ;; Buffer section -- buffers listed in same order as in buffer list:
 (desktop-create-buffer 206
-  "/root/work/limsungmook_ror/chakkomi/app/controllers/services_controller.rb"
-  "services_controller.rb"
+  "/root/work/limsungmook_ror/chakkomi/app/views/devise/registrations/edit.html.erb"
+  "edit.html.erb"
+  'html-mode
+  nil
+  637
+  '(267 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix)))
+
+(desktop-create-buffer 206
+  "/root/work/limsungmook_ror/chakkomi/db/seeds.rb"
+  "seeds.rb"
   'ruby-mode
   nil
-  1
-  '(74 nil)
+  689
+  '(25 nil)
   nil
   nil
   '((indent-tabs-mode) (buffer-file-coding-system . utf-8-unix)))
 
 (desktop-create-buffer 206
-  "/root/work/limsungmook_ror/chakkomi/app/views/services/signin.html.erb"
-  "signin.html.erb"
-  'html-mode
-  nil
-  678
-  '(nil nil)
-  nil
-  nil
-  '((buffer-file-coding-system . utf-8-unix)))
-
-(desktop-create-buffer 206
-  "/root/work/limsungmook_ror/chakkomi/config/environments/production.rb"
-  "production.rb"
+  "/root/work/limsungmook_ror/chakkomi/db/migrate/20110902090426_devise_create_users.rb"
+  "20110902090426_devise_create_users.rb"
   'ruby-mode
   nil
-  1836
-  '(1466 nil)
-  nil
-  nil
-  '((indent-tabs-mode) (buffer-file-coding-system . undecided-unix)))
-
-(desktop-create-buffer 206
-  "/root/work/limsungmook_ror/chakkomi/config/environments/development.rb"
-  "development.rb"
-  'ruby-mode
-  nil
-  1461
-  '(1041 nil)
-  nil
-  nil
-  '((indent-tabs-mode) (buffer-file-coding-system . undecided-unix)))
-
-(desktop-create-buffer 206
-  "/root/work/limsungmook_ror/chakkomi/config/routes.rb"
-  "routes.rb"
-  'ruby-mode
-  nil
-  59
-  '(120 nil)
-  nil
-  nil
-  '((indent-tabs-mode) (buffer-file-coding-system . undecided-unix)))
-
-(desktop-create-buffer 206
-  "/root/work/limsungmook_ror/chakkomi_previous_version_20110903/config/routes.rb"
-  "routes.rb<2>"
-  'ruby-mode
-  nil
-  328
-  '(nil nil)
-  nil
-  nil
-  '((indent-tabs-mode) (buffer-file-coding-system . undecided-unix)))
-
-(desktop-create-buffer 206
-  "/root/work/limsungmook_ror/chakkomi_previous_version_20110903/app/controllers/services_controller.rb"
-  "services_controller.rb<2>"
-  'ruby-mode
-  nil
-  2353
-  '(1545 nil)
-  nil
-  nil
-  '((indent-tabs-mode) (buffer-file-coding-system . utf-8-unix)))
-
-(desktop-create-buffer 206
-  "/root/work/limsungmook_ror/chakkomi_previous_version_20110903/config/initializers/session_store.rb"
-  "session_store.rb<2>"
-  'ruby-mode
-  nil
-  420
-  '(nil nil)
-  nil
-  nil
-  '((indent-tabs-mode) (buffer-file-coding-system . undecided-unix)))
-
-(desktop-create-buffer 206
-  "/root/work/limsungmook_ror/chakkomi/app/views/devise/sessions/_services_list.html.erb"
-  "_services_list.html.erb<2>"
-  'html-mode
-  nil
-  1072
-  '(1 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . undecided-unix)))
-
-(desktop-create-buffer 206
-  "/root/work/limsungmook_ror/chakkomi/app/views/layouts/application.html.erb"
-  "application.html.erb"
-  'html-mode
-  nil
-  626
-  '(627 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . utf-8-unix)))
-
-(desktop-create-buffer 206
-  "/root/work/limsungmook_ror/chakkomi/app/views/services/index.html.erb"
-  "index.html.erb<2>"
-  'html-mode
-  nil
-  2109
-  '(nil nil)
-  nil
-  nil
-  '((buffer-file-coding-system . utf-8-unix)))
-
-(desktop-create-buffer 206
-  "/root/work/limsungmook_ror/chakkomi/app/views/devise/registrations/new.html.erb"
-  "new.html.erb<2>"
-  'html-mode
-  nil
-  1150
-  '(nil nil)
-  nil
-  nil
-  '((buffer-file-coding-system . undecided-unix)))
-
-(desktop-create-buffer 206
-  "/root/work/limsungmook_ror/chakkomi/app/views/devise/sessions/new.html.erb"
-  "new.html.erb"
-  'html-mode
-  nil
-  1172
-  '(417 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . undecided-unix)))
-
-(desktop-create-buffer 206
-  "/root/work/limsungmook_ror/chakkomi/app/models/service.rb"
-  "service.rb"
-  'ruby-mode
-  nil
-  108
+  375
   '(nil nil)
   nil
   nil
@@ -175,140 +54,63 @@
   "user.rb"
   'ruby-mode
   nil
-  374
-  '(329 nil)
+  677
+  '(594 nil)
   nil
   nil
   '((indent-tabs-mode) (buffer-file-coding-system . undecided-unix)))
 
 (desktop-create-buffer 206
-  "/root/work/limsungmook_ror/chakkomi/app/controllers/application_controller.rb"
-  "application_controller.rb"
+  "/root/work/limsungmook_ror/chakkomi/app/controllers/services_controller.rb"
+  "services_controller.rb"
   'ruby-mode
   nil
-  596
-  '(596 nil)
-  nil
-  nil
-  '((indent-tabs-mode) (buffer-file-coding-system . undecided-unix)))
-
-(desktop-create-buffer 206
-  nil
-  "controllers"
-  'dired-mode
-  nil
-  237
-  '(nil nil)
-  t
-  '("/root/work/limsungmook_ror/chakkomi/app/controllers/")
-  nil)
-
-(desktop-create-buffer 206
-  "/root/work/limsungmook_ror/chakkomi/app/views/sign/index.html.erb"
-  "index.html.erb"
-  'html-mode
-  nil
-  1659
-  '(nil nil)
-  nil
-  nil
-  '((buffer-file-coding-system . utf-8-unix)))
-
-(desktop-create-buffer 206
-  "/root/work/limsungmook_ror/chakkomi/config/initializers/session_store.rb"
-  "session_store.rb"
-  'ruby-mode
-  nil
-  427
-  '(489 nil)
-  nil
-  nil
-  '((indent-tabs-mode) (buffer-file-coding-system . undecided-unix)))
-
-(desktop-create-buffer 206
-  "/root/work/limsungmook_ror/chakkomi_previous_version_20110903/config/initializers/omniauth.rb"
-  "omniauth.rb"
-  'ruby-mode
-  nil
-  238
-  '(195 nil)
-  nil
-  nil
-  '((indent-tabs-mode) (buffer-file-coding-system . undecided-unix)))
-
-(desktop-create-buffer 206
-  "/root/work/limsungmook_ror/chakkomi/Gemfile"
-  "Gemfile"
-  'fundamental-mode
-  nil
-  214
-  '(308 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . undecided-unix)))
-
-(desktop-create-buffer 206
-  "/root/work/limsungmook_ror/chakkomi/app/views/devise/registrations/edit.html.erb"
-  "edit.html.erb"
-  'html-mode
-  nil
-  839
-  '(736 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . utf-8-unix)))
-
-(desktop-create-buffer 206
-  "/root/work/limsungmook_ror/chakkomi/db/seeds.rb"
-  "seeds.rb"
-  'ruby-mode
-  nil
-  553
-  '(432 nil)
+  3
+  '(1014 nil)
   nil
   nil
   '((indent-tabs-mode) (buffer-file-coding-system . utf-8-unix)))
 
 (desktop-create-buffer 206
-  "/root/work/limsungmook_ror/chakkomi/app/models/post.rb"
-  "post.rb"
+  "/root/work/limsungmook_ror/chakkomi/config/database.yml"
+  "database.yml"
+  'fundamental-mode
+  nil
+  790
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/root/work/limsungmook_ror/chakkomi/config/application.rb"
+  "application.rb"
   'ruby-mode
   nil
-  1
+  1628
+  '(69 nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/root/work/limsungmook_ror/chakkomi/config/environment.rb"
+  "environment.rb"
+  'ruby-mode
+  nil
+  153
   '(nil nil)
   nil
   nil
   '((indent-tabs-mode) (buffer-file-coding-system . undecided-unix)))
 
 (desktop-create-buffer 206
-  "/root/work/limsungmook_ror/chakkomi/app/models/category.rb"
-  "category.rb"
+  "/root/work/limsungmook_ror/chakkomi_previous_version_20110903/config/environment.rb"
+  "environment.rb<2>"
   'ruby-mode
   nil
-  1
+  153
   '(nil nil)
-  nil
-  nil
-  '((indent-tabs-mode) (buffer-file-coding-system . undecided-unix)))
-
-(desktop-create-buffer 206
-  "/root/work/limsungmook_ror/chakkomi/db/migrate/20110902090426_devise_create_users.rb"
-  "20110902090426_devise_create_users.rb"
-  'ruby-mode
-  nil
-  493
-  '(nil nil)
-  nil
-  nil
-  '((indent-tabs-mode) (buffer-file-coding-system . undecided-unix)))
-
-(desktop-create-buffer 206
-  "/root/work/limsungmook_ror/chakkomi/config/initializers/devise.rb"
-  "devise.rb"
-  'ruby-mode
-  nil
-  6637
-  '(4954 nil)
   nil
   nil
   '((indent-tabs-mode) (buffer-file-coding-system . undecided-unix)))

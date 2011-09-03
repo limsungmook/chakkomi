@@ -11,7 +11,7 @@ class DeviseCreateUsers < ActiveRecord::Migration
       t.lockable :lock_strategy => :failed_attempts, :unlock_strategy => :both
       # t.token_authenticatable
 
-      t.string :fullname
+      t.string :name
       t.text :shortbio
       t.string :weburl
 
@@ -21,7 +21,7 @@ class DeviseCreateUsers < ActiveRecord::Migration
     end
 
 
-    add_index :users, :fullname
+    add_index :users, :name
     add_index :users, :email,                :unique => true
     add_index :users, :reset_password_token, :unique => true
     add_index :users, :confirmation_token,   :unique => true
