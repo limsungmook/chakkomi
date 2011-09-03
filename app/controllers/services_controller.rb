@@ -1,146 +1,122 @@
 # -*- coding: utf-8 -*-
 class ServicesController < ApplicationController
-  before_filter :authenticate_user!, :except => [:create, :signin, :signup, :newaccount, :failure]
-  protect_from_forgery :except => :create     
-  
-  # GET all authentication services assigned to the current user
+  before_filter :authenticate_user!, :except => [:create]
+
   def index
-    @services = current_user.services.order('provider asc')
+    # get all authentication services assigned to the current user
+    @services = current_user.services.all
   end
-  
-  # POST to remove an authentication service
+
   def destroy
     # remove an authentication service linked to the current user
     @service = current_user.services.find(params[:id])
-    
-    if session[:service_id] == @service.id
-      flash[:error] = 'You are currently signed in with this account!'
-    else
-      @service.destroy
-    end
+    @service.destroy
     
     redirect_to services_path
   end
   
-  # POST from signup view
-  def newaccount
-    if params[:commit] == "Cancel"
-      session[:authhash] = nil
-      session.delete :authhash
-      redirect_to root_url
-    else  # create account
-      @newuser = User.new
-      @newuser.name = session[:authhash][:name]
-      @newuser.email = session[:authhash][:email]
-      @newuser.password = SecureRandom.hex(10)
-      @newuser.services.build(:provider => session[:authhash][:provider], :uid => session[:authhash][:uid], :uname => session[:authhash][:name], :uemail => session[:authhash][:email])
-      
-      if @newuser.save!
-        # signin existing user
-        # in the session his user id and the service id used for signing in is stored
-        @newuser.confirm!
-        session[:user_id] = @newuser.id
-        session[:service_id] = @newuser.services.first.id
-        
-        flash[:notice] = 'Your account has been created and you have been signed in!'
-        redirect_to root_url
-      else
-        flash[:error] = 'This is embarrassing! There was an error while creating your account from which we were not able to recover.'
-        redirect_to root_url
-      end  
-    end
-  end  
-  
-  # Sign out current user
-#  def signout 
-#    if current_user
-#      session[:user_id] = nil
-#      session[:service_id] = nil
-#      session.delete :user_id
-#      session.delete :service_id
-#      flash[:notice] = 'You have been signed out!'
-#    end  
-#    redirect_to root_url
-#  end
-  
-  # callback: success
-  # This handles signing in and adding an authentication service to existing accounts itself
-  # It renders a separate view if there is a new user to create
   def create
     # get the service parameter from the Rails router
-    params[:service] ? service_route = params[:service] : service_route = 'No service recognized (invalid callback)'
+    params[:service] ? service_route = params[:service] : service_route = 'no service (invalid callback)'
 
     # get the full hash from omniauth
     omniauth = request.env['omniauth.auth']
-    
+
     # continue only if hash and parameter exist
     if omniauth and params[:service]
-
-      # map the returned hashes to our variables first - the hashes differs for every service
       
-      # create a new hash
-      @authhash = Hash.new
-      
+      # map the returned hashes to our variables first - the hashes differ for every service
       if service_route == 'facebook'
-        omniauth['extra']['user_hash']['email'] ? @authhash[:email] =  omniauth['extra']['user_hash']['email'] : @authhash[:email] = ''
-        omniauth['extra']['user_hash']['name'] ? @authhash[:name] =  omniauth['extra']['user_hash']['name'] : @authhash[:name] = ''
-        omniauth['extra']['user_hash']['id'] ?  @authhash[:uid] =  omniauth['extra']['user_hash']['id'].to_s : @authhash[:uid] = ''
-        omniauth['provider'] ? @authhash[:provider] = omniauth['provider'] : @authhash[:provider] = ''
+        omniauth['extra']['user_hash']['email'] ? email =  omniauth['extra']['user_hash']['email'] : email = ''
+        omniauth['extra']['user_hash']['name'] ? name =  omniauth['extra']['user_hash']['name'] : name = ''
+        omniauth['extra']['user_hash']['id'] ?  uid =  omniauth['extra']['user_hash']['id'] : uid = ''
+        omniauth['provider'] ? provider =  omniauth['provider'] : provider = ''
       elsif service_route == 'github'
-        omniauth['user_info']['email'] ? @authhash[:email] =  omniauth['user_info']['email'] : @authhash[:email] = ''
-        omniauth['user_info']['name'] ? @authhash[:name] =  omniauth['user_info']['name'] : @authhash[:name] = ''
-        omniauth['extra']['user_hash']['id'] ? @authhash[:uid] =  omniauth['extra']['user_hash']['id'].to_s : @authhash[:uid] = ''
-        omniauth['provider'] ? @authhash[:provider] =  omniauth['provider'] : @authhash[:provider] = ''  
-      elsif ['google', 'yahoo', 'twitter', 'myopenid', 'open_id'].index(service_route) != nil
-        omniauth['user_info']['email'] ? @authhash[:email] =  omniauth['user_info']['email'] : @authhash[:email] = ''
-        omniauth['user_info']['name'] ? @authhash[:name] =  omniauth['user_info']['name'] : @authhash[:name] = ''
-        omniauth['uid'] ? @authhash[:uid] = omniauth['uid'].to_s : @authhash[:uid] = ''
-        omniauth['provider'] ? @authhash[:provider] = omniauth['provider'] : @authhash[:provider] = ''
-      else        
-        # debug to output the hash that has been returned when adding new services
+        omniauth['user_info']['email'] ? email =  omniauth['user_info']['email'] : email = ''
+        omniauth['user_info']['name'] ? name =  omniauth['user_info']['name'] : name = ''
+        omniauth['extra']['user_hash']['id'] ?  uid =  omniauth['extra']['user_hash']['id'] : uid = ''
+        omniauth['provider'] ? provider =  omniauth['provider'] : provider = ''
+      elsif service_route == 'twitter'
+        email = ''    # Twitter API never returns the email address
+        omniauth['user_info']['name'] ? name =  omniauth['user_info']['name'] : name = ''
+        omniauth['uid'] ?  uid =  omniauth['uid'] : uid = ''
+        omniauth['provider'] ? provider =  omniauth['provider'] : provider = ''
+      else
+        # we have an unrecognized service, just output the hash that has been returned
         render :text => omniauth.to_yaml
+        #render :text => uid.to_s + " - " + name + " - " + email + " - " + provider
         return
-      end 
+      end
       
-      if @authhash[:uid] != '' and @authhash[:provider] != ''
+      # continue only if provider and uid exist
+      if uid != '' and provider != ''
         
-        auth = Service.find_by_provider_and_uid(@authhash[:provider], @authhash[:uid])
-
-        # if the user is currently signed in, he/she might want to add another account to signin
-        if user_signed_in?
+        # nobody can sign in twice, nobody can sign up while being signed in (this saves a lot of trouble)
+        if !user_signed_in?
+          
+          # check if user has already signed in using this service provider and continue with sign in process if yes
+          auth = Service.find_by_provider_and_uid(provider, uid)
           if auth
-            flash[:notice] = 'Your account at ' + @authhash[:provider].capitalize + ' is already connected with this site.'
-            redirect_to services_path
+            flash[:notice] = 'Signed in successfully via ' + provider.capitalize + '.'
+            sign_in_and_redirect(:user, auth.user)
           else
-            current_user.services.create!(:provider => @authhash[:provider], :uid => @authhash[:uid], :uname => @authhash[:name], :uemail => @authhash[:email])
-            flash[:notice] = 'Your ' + @authhash[:provider].capitalize + ' account has been added for signing in at this site.'
-            redirect_to services_path
+            # check if this user is already registered with this email address; get out if no email has been provided
+            if email != ''
+              # search for a user with this email address
+              existinguser = User.find_by_email(email)
+              if existinguser
+                # map this new login method via a service provider to an existing account if the email address is the same
+                existinguser.services.create(:provider => provider, :uid => uid, :uname => name, :uemail => email)
+                flash[:notice] = 'Sign in via ' + provider.capitalize + ' has been added to your account ' + existinguser.email + '. Signed in successfully!'
+                sign_in_and_redirect(:user, existinguser)
+              else
+                # let's create a new user: register this user and add this authentication method for this user
+                name = name[0, 39] if name.length > 39             # otherwise our user validation will hit us
+                
+                # new user, set email, a random password and take the name from the authentication service
+                user = User.new :email => email, :password => SecureRandom.hex(10), :fullname => name
+
+                # add this authentication service to our new user
+                user.services.build(:provider => provider, :uid => uid, :uname => name, :uemail => email)
+
+                # do not send confirmation email, we directly save and confirm the new record
+                user.skip_confirmation!
+                user.save!
+                user.confirm!
+
+                # flash and sign in
+                flash[:myinfo] = 'Your account on CommunityGuides has been created via ' + provider.capitalize + '. In your profile you can change your personal information and add a local password.'
+                sign_in_and_redirect(:user, user)
+              end
+            else
+              flash[:error] =  service_route.capitalize + ' can not be used to sign-up on CommunityGuides as no valid email address has been provided. Please use another authentication provider or use local sign-up. If you already have an account, please sign-in and add ' + service_route.capitalize + ' from your profile.'
+              redirect_to new_user_session_path
+            end
           end
         else
-          if auth
-            # signin existing user
-            # in the session his user id and the service id used for signing in is stored
-            session[:user_id] = auth.user.id
-            session[:service_id] = auth.id
+          # the user is currently signed in
           
-            flash[:notice] = 'Signed in successfully via ' + @authhash[:provider].capitalize + '.'
-            redirect_to root_url
+          # check if this service is already linked to his/her account, if not, add it
+          auth = Service.find_by_provider_and_uid(provider, uid)
+          if !auth
+            current_user.services.create(:provider => provider, :uid => uid, :uname => name, :uemail => email)
+            flash[:notice] = 'Sign in via ' + provider.capitalize + ' has been added to your account.'
+            redirect_to services_path
           else
-            # this is a new user; show signup; @authhash is available to the view and stored in the sesssion for creation of a new user
-            session[:authhash] = @authhash
-            render signup_services_path
-          end
-        end
+            flash[:notice] = service_route.capitalize + ' is already linked to your account.'
+            redirect_to services_path
+          end  
+        end  
       else
-        flash[:error] =  'Error while authenticating via ' + service_route + '/' + @authhash[:provider].capitalize + '. The service returned invalid data for the user id.'
-        redirect_to signin_path
+        flash[:error] =  service_route.capitalize + ' returned invalid data for the user id.'
+        redirect_to new_user_session_path
       end
     else
-      flash[:error] = 'Error while authenticating via ' + service_route.capitalize + '. The service did not return valid data.'
-      redirect_to signin_path
+      flash[:error] = 'Error while authenticating via ' + service_route.capitalize + '.'
+      redirect_to new_user_session_path
     end
   end
-  
+
   # callback: failure
   def failure
     flash[:error] = 'There was an error at the remote authentication service. You have not been signed in.'
