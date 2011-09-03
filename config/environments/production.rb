@@ -45,7 +45,7 @@ Chakkomi::Application.configure do
 
     # load certificates
     require "openid/fetchers"
-    3OpenID.fetcher.ca_file = "#{Rails.root}/config/ca-bundle.crt"
+    OpenID.fetcher.ca_file = "#{Rails.root}/config/ca-bundle.crt"
     
     # providers with id/secret, you need to sign up for their services (see below) and enter the parameters here
     provider :facebook, 'APP_ID', 'APP_SECRET'

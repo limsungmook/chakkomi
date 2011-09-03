@@ -25,7 +25,7 @@ Chakkomi::Application.configure do
     :port                 => 587,
     :domain               => 'gmail.com',
     :user_name            => 'ipes4579@gmail.com',
-    :password             => '26465135',
+    :password             => '',
     :authentication       => 'plain',
     :enable_starttls_auto => true  }
 
@@ -45,7 +45,7 @@ Chakkomi::Application.configure do
 
     # load certificates
     require "openid/fetchers"
-    3OpenID.fetcher.ca_file = "#{Rails.root}/config/ca-bundle.crt"
+    OpenID.fetcher.ca_file = "#{Rails.root}/config/ca-bundle.crt"
     
     # providers with id/secret, you need to sign up for their services (see below) and enter the parameters here
     provider :facebook, 'APP_ID', 'APP_SECRET'
@@ -69,7 +69,5 @@ Chakkomi::Application.configure do
     # https://github.com/account/applications/new
     # https://developer.twitter.com/apps/new
   end
-
-
 end
 
