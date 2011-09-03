@@ -4,6 +4,22 @@ Chakkomi::Application.routes.draw do
   root :to => "posts#intro"
   devise_for :users
 
+  #omniauth 
+  match "/signout" => "services#signout"
+  
+  match '/auth/:service/callback' => 'services#create' 
+  match '/auth/failure' => 'services#failure'
+  
+  resources :services, :only => [:index, :create, :destroy] do
+    collection do
+      get 'signout'
+      get 'signup'
+      post 'newaccount'
+      get 'failure'
+    end
+  end
+
+
   resources :line_items
 
   resources :carts
