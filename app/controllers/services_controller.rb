@@ -52,16 +52,16 @@ class ServicesController < ApplicationController
   end  
   
   # Sign out current user
-  def signout 
-    if current_user
-      session[:user_id] = nil
-      session[:service_id] = nil
-      session.delete :user_id
-      session.delete :service_id
-      flash[:notice] = 'You have been signed out!'
-    end  
-    redirect_to root_url
-  end
+#  def signout 
+#    if current_user
+#      session[:user_id] = nil
+#      session[:service_id] = nil
+#      session.delete :user_id
+#      session.delete :service_id
+#      flash[:notice] = 'You have been signed out!'
+#    end  
+#    redirect_to root_url
+#  end
   
   # callback: success
   # This handles signing in and adding an authentication service to existing accounts itself

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110903094049) do
+ActiveRecord::Schema.define(:version => 20110903134940) do
 
   create_table "carts", :force => true do |t|
     t.datetime "created_at"
@@ -72,6 +72,16 @@ ActiveRecord::Schema.define(:version => 20110903094049) do
     t.datetime "updated_at"
   end
 
+  create_table "services", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "provider"
+    t.string   "uid"
+    t.string   "uname"
+    t.string   "uemail"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "sessions", :force => true do |t|
     t.string   "session_id", :null => false
     t.text     "data"
@@ -99,7 +109,7 @@ ActiveRecord::Schema.define(:version => 20110903094049) do
     t.integer  "failed_attempts",                       :default => 0
     t.string   "unlock_token"
     t.datetime "locked_at"
-    t.string   "fullname"
+    t.string   "name"
     t.text     "shortbio"
     t.string   "weburl"
     t.datetime "created_at"
@@ -108,7 +118,7 @@ ActiveRecord::Schema.define(:version => 20110903094049) do
 
   add_index "users", ["confirmation_token"], :name => "index_users_on_confirmation_token", :unique => true
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
-  add_index "users", ["fullname"], :name => "index_users_on_fullname"
+  add_index "users", ["name"], :name => "index_users_on_name"
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
 
 end

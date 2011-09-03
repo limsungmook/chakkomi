@@ -6,7 +6,7 @@ Chakkomi::Application.routes.draw do
 
   #omniauth
   match '/auth/:service/callback' => 'services#create' 
-  match "/signout" => "services#signout"
+#  match "/signout" => "services#signout"
   match '/auth/failure' => 'services#failure'
   
   resources :services, :only => [:index, :create, :destroy] do
