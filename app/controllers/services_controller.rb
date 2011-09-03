@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 class ServicesController < ApplicationController
   before_filter :authenticate_user!, :except => [:create, :signin, :signup, :newaccount, :failure]
   protect_from_forgery :except => :create     
