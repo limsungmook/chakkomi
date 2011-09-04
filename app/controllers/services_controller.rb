@@ -1,14 +1,13 @@
 # -*- coding: utf-8 -*-
+
 class ServicesController < ApplicationController
   before_filter :authenticate_user!, :except => [:create]
 
   def index
-    # get all authentication services assigned to the current user
     @services = current_user.services.all
   end
-
+  
   def destroy
-    # remove an authentication service linked to the current user
     @service = current_user.services.find(params[:id])
     @service.destroy
     
@@ -16,13 +15,13 @@ class ServicesController < ApplicationController
   end
   
   def create
-    # get the service parameter from the Rails router
+    # 라우터에서 인자 받아옴
     params[:service] ? service_route = params[:service] : service_route = 'no service (invalid callback)'
-
-    # get the full hash from omniauth
-    omniauth = request.env['omniauth.auth']
-
-    # continue only if hash and parameter exist
+    
+    # omniauth 로부터 해시 받아옴
+    omniauth = request.env["omniauth.auth"]
+    
+    #  해시와 인자가 있을 경우에만 
     if omniauth and params[:service]
       
       # map the returned hashes to our variables first - the hashes differ for every service
@@ -31,15 +30,15 @@ class ServicesController < ApplicationController
         omniauth['extra']['user_hash']['name'] ? name =  omniauth['extra']['user_hash']['name'] : name = ''
         omniauth['extra']['user_hash']['id'] ?  uid =  omniauth['extra']['user_hash']['id'] : uid = ''
         omniauth['provider'] ? provider =  omniauth['provider'] : provider = ''
-      elsif service_route == 'github'
-        omniauth['user_info']['email'] ? email =  omniauth['user_info']['email'] : email = ''
-        omniauth['user_info']['name'] ? name =  omniauth['user_info']['name'] : name = ''
-        omniauth['extra']['user_hash']['id'] ?  uid =  omniauth['extra']['user_hash']['id'] : uid = ''
-        omniauth['provider'] ? provider =  omniauth['provider'] : provider = ''
       elsif service_route == 'twitter'
         email = ''    # Twitter API never returns the email address
         omniauth['user_info']['name'] ? name =  omniauth['user_info']['name'] : name = ''
         omniauth['uid'] ?  uid =  omniauth['uid'] : uid = ''
+        omniauth['provider'] ? provider =  omniauth['provider'] : provider = ''
+      elsif service_route == 'google'
+        omniauth['user_info']['email'] ? email =  omniauth['user_info']['email'] : email = ''
+        omniauth['user_info']['name'] ? name =  omniauth['user_info']['name'] : name = ''
+        omniauth['uid'] ? uid =  omniauth['uid'] : uid = ''
         omniauth['provider'] ? provider =  omniauth['provider'] : provider = ''
       else
         # we have an unrecognized service, just output the hash that has been returned
@@ -47,6 +46,7 @@ class ServicesController < ApplicationController
         #render :text => uid.to_s + " - " + name + " - " + email + " - " + provider
         return
       end
+      
       
       # continue only if provider and uid exist
       if uid != '' and provider != ''
@@ -57,7 +57,7 @@ class ServicesController < ApplicationController
           # check if user has already signed in using this service provider and continue with sign in process if yes
           auth = Service.find_by_provider_and_uid(provider, uid)
           if auth
-            flash[:notice] = 'Signed in successfully via ' + provider.capitalize + '.'
+            flash[:notice] =  provider.capitalize + ' 을 통해 로그인 되었습니다.'
             sign_in_and_redirect(:user, auth.user)
           else
             # check if this user is already registered with this email address; get out if no email has been provided
@@ -67,7 +67,7 @@ class ServicesController < ApplicationController
               if existinguser
                 # map this new login method via a service provider to an existing account if the email address is the same
                 existinguser.services.create(:provider => provider, :uid => uid, :uname => name, :uemail => email)
-                flash[:notice] = 'Sign in via ' + provider.capitalize + ' has been added to your account ' + existinguser.email + '. Signed in successfully!'
+                flash[:notice] = provider.capitalize + '를 통한 로그인이 ' + existinguser.email + ' 에 추가되었습니다.'
                 sign_in_and_redirect(:user, existinguser)
               else
                 # let's create a new user: register this user and add this authentication method for this user
@@ -75,21 +75,21 @@ class ServicesController < ApplicationController
                 
                 # new user, set email, a random password and take the name from the authentication service
                 user = User.new :email => email, :password => SecureRandom.hex(10), :fullname => name
-
+                
                 # add this authentication service to our new user
                 user.services.build(:provider => provider, :uid => uid, :uname => name, :uemail => email)
-
+                
                 # do not send confirmation email, we directly save and confirm the new record
                 user.skip_confirmation!
                 user.save!
                 user.confirm!
-
+                
                 # flash and sign in
-                flash[:myinfo] = 'Your account on CommunityGuides has been created via ' + provider.capitalize + '. In your profile you can change your personal information and add a local password.'
+                flash[:myinfo] = provider.capitalize + ' 를 통해 계정이 생성되었습니다. 프로필에 가서 상세정보를 추가해주세요.'
                 sign_in_and_redirect(:user, user)
               end
             else
-              flash[:error] =  service_route.capitalize + ' can not be used to sign-up on CommunityGuides as no valid email address has been provided. Please use another authentication provider or use local sign-up. If you already have an account, please sign-in and add ' + service_route.capitalize + ' from your profile.'
+              flash[:error] =  service_route.capitalize + '유효하지 않은 이메일주소를 썼거나 공급자가 잘못되었습니다. 다른 공급자를 사용하거나 직접 가입해주세요. 이미 계정이 있다면 로그인해서' + service_route.capitalize + ' 에 추가해주세요'
               redirect_to new_user_session_path
             end
           end
@@ -100,26 +100,20 @@ class ServicesController < ApplicationController
           auth = Service.find_by_provider_and_uid(provider, uid)
           if !auth
             current_user.services.create(:provider => provider, :uid => uid, :uname => name, :uemail => email)
-            flash[:notice] = 'Sign in via ' + provider.capitalize + ' has been added to your account.'
+            flash[:notice] =  provider.capitalize + ' 공급자가 계정에 추가 되었습니다.'
             redirect_to services_path
           else
-            flash[:notice] = service_route.capitalize + ' is already linked to your account.'
+            flash[:notice] = service_route.capitalize + ' 공급자가 이미 계정에 추가되어 있습니다.'
             redirect_to services_path
           end  
         end  
       else
-        flash[:error] =  service_route.capitalize + ' returned invalid data for the user id.'
+        flash[:error] =  service_route.capitalize + ' 오류.'
         redirect_to new_user_session_path
       end
     else
-      flash[:error] = 'Error while authenticating via ' + service_route.capitalize + '.'
+      flash[:error] = service_route.capitalize + '계정으로 로그인 하는 데 오류가 났습니다. 관리자에게 문의해주세요.'
       redirect_to new_user_session_path
     end
-  end
-
-  # callback: failure
-  def failure
-    flash[:error] = 'There was an error at the remote authentication service. You have not been signed in.'
-    redirect_to root_url
   end
 end
