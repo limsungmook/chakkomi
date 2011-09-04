@@ -30,16 +30,11 @@ class ServicesController < ApplicationController
         omniauth['extra']['user_hash']['name'] ? name =  omniauth['extra']['user_hash']['name'] : name = ''
         omniauth['extra']['user_hash']['id'] ?  uid =  omniauth['extra']['user_hash']['id'] : uid = ''
         omniauth['provider'] ? provider =  omniauth['provider'] : provider = ''
-      elsif service_route == 'twitter'
-        email = ''    # Twitter API never returns the email address
-        omniauth['user_info']['name'] ? name =  omniauth['user_info']['name'] : name = ''
-        omniauth['uid'] ?  uid =  omniauth['uid'] : uid = ''
-        omniauth['provider'] ? provider =  omniauth['provider'] : provider = ''
-      elsif service_route == 'google'
-        omniauth['user_info']['email'] ? email =  omniauth['user_info']['email'] : email = ''
-        omniauth['user_info']['name'] ? name =  omniauth['user_info']['name'] : name = ''
-        omniauth['uid'] ? uid =  omniauth['uid'] : uid = ''
-        omniauth['provider'] ? provider =  omniauth['provider'] : provider = ''
+      elsif ['google', 'yahoo', 'twitter', 'myopenid', 'open_id'].index(service_route) != nil
+        omniauth['user_info']['email'] ? @authhash[:email] =  omniauth['user_info']['email'] : @authhash[:email] = ''
+        omniauth['user_info']['name'] ? @authhash[:name] =  omniauth['user_info']['name'] : @authhash[:name] = ''
+        omniauth['uid'] ? @authhash[:uid] = omniauth['uid'].to_s : @authhash[:uid] = ''
+        omniauth['provider'] ? @authhash[:provider] = omniauth['provider'] : @authhash[:provider] = ''
       else
         # we have an unrecognized service, just output the hash that has been returned
         render :text => omniauth.to_yaml
@@ -116,4 +111,11 @@ class ServicesController < ApplicationController
       redirect_to new_user_session_path
     end
   end
+
+  # callback: failure
+  def failure
+    flash[:error] = 'There was an error at the remote authentication service. You have not been signed in.'
+    redirect_to root_url
+  end
+
 end
