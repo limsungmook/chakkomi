@@ -12,16 +12,12 @@
       <ul>
 	<% if user_signed_in? %>
 	<li><span id="currentuser"><%= current_user.email %></span></li>
-	<li><%= link_to "프로필", profile_path(current_user) %></li>
-	<li><%= link_to "setting", edit_user_registration_path(current_user) %></li>
-	<li><%= link_to "로그아웃", destroy_user_session_path %></li>
+	<li><%= link_to "Profile", profile_path(current_user) %></li>
+	<li><%= link_to "Setting", edit_user_registration_path(current_user) %></li>
+	<li><%= link_to "Log out", destroy_user_session_path %></li>
 	<% else %>
-	<li><%= link_to "Facebook", "/auth/facebook" %></li>
-        <li><%= link_to "Google", "/auth/google" %></li>
-        <li><%= link_to "Yahoo", "/auth/yahoo" %>
-        <li><%= link_to "MyOpenID", "/auth/myopenid" %>
-	<li><%= link_to "회원가입", new_user_registration_path %></li>
-	<li><%= link_to "로그인", new_user_session_path %></li>
+	<li><%= link_to "Create Account", new_user_registration_path %></li>
+	<li><%= link_to "Login", new_user_session_path %></li>
 	<% end %>
       </ul>
     </div>
