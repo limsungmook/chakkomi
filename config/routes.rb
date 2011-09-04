@@ -1,16 +1,12 @@
 Chakkomi::Application.routes.draw do
-  devise_for :users, :controllers => { :registrations => "users/registrations" }
+  resources :sharings
+  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks", :registrations => 'registrations' }
 
   root :to => "posts#intro"
   resources :orders
 
-  #omniauth
 
-#  match "/signout" => "services#signout"
-  match '/auth/failure' => 'services#failure'
 
-  match '/auth/:service/callback' => 'services#create'   
-  resources :services, :only => [:index, :create, :destroy]
   resources :line_items
 
   resources :carts
@@ -27,6 +23,9 @@ Chakkomi::Application.routes.draw do
   match 'artmull' => 'posts#artmull'
   match 'store' => 'store#index'
   resources :categories
+
+
+  match '/:id', :controller => 'profiles', :action => 'show', :as => 'profile', :via => :get
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

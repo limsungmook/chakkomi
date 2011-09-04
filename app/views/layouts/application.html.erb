@@ -12,9 +12,9 @@
       <ul>
 	<% if user_signed_in? %>
 	<li><span id="currentuser"><%= current_user.email %></span></li>
-	<li><%= link_to "프로필", edit_user_registration_path %></li>
-	<li><%= link_to "setting", services_path %></li>
-	<li><%= link_to "로그아웃", destroy_user_session_path, :method => :delete %></li>
+	<li><%= link_to "프로필", profile_path(current_user) %></li>
+	<li><%= link_to "setting", edit_user_registration_path(current_user) %></li>
+	<li><%= link_to "로그아웃", destroy_user_session_path %></li>
 	<% else %>
 	<li><%= link_to "Facebook", "/auth/facebook" %></li>
         <li><%= link_to "Google", "/auth/google" %></li>
@@ -74,5 +74,7 @@
     <hr />
     <h6>Copyright</h6>
   </footer>
+ <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+ <script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script>
 </body>
 </html>
