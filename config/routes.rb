@@ -1,16 +1,16 @@
 Chakkomi::Application.routes.draw do
-  devise_for :users
+  devise_for :users, :controllers => { :registrations => "users/registrations" }
 
   root :to => "posts#intro"
   resources :orders
 
   #omniauth
-  match '/auth/:service/callback' => 'services#create' 
+
 #  match "/signout" => "services#signout"
   match '/auth/failure' => 'services#failure'
-  
-  resources :services, :only => [:index, :create, :destroy]
 
+  match '/auth/:service/callback' => 'services#create'   
+  resources :services, :only => [:index, :create, :destroy]
   resources :line_items
 
   resources :carts

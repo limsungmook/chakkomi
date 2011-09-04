@@ -5,7 +5,7 @@ Chakkomi::Application.config.session_store :cookie_store, :key => '_chakkomi_ses
 # Use the database for sessions instead of the cookie-based default,
 # which shouldn't be used to store highly confidential information
 # (create the session table with "rails generate session_migration")
-Chakkomi::Application.config.session_store :active_record_store
+#Chakkomi::Application.config.session_store :active_record_store
 
 #Chakkomi::Application.config.session = {
 #  :key          => '_chakkomi_session',     # name of cookie that stores the data

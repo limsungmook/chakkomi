@@ -6,8 +6,8 @@
     
 
     # load certificates
-    require "openid/fetchers"
-    OpenID.fetcher.ca_file = "#{Rails.root}/config/ca-bundle.crt"
+#    require "openid/fetchers"
+#    OpenID.fetcher.ca_file = "#{Rails.root}/config/ca-bundle.crt"
     
     # providers with id/secret, you need to sign up for their services (see below) and enter the parameters here
     provider :facebook, 'APP_ID', 'APP_SECRET'
