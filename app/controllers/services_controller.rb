@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 class ServicesController < ApplicationController
   before_filter :authenticate_user!, :except => [:create]
 
@@ -119,5 +121,10 @@ class ServicesController < ApplicationController
       flash[:error] = 'Error while authenticating via ' + service_route.capitalize + '.'
       redirect_to new_user_session_path
     end
+  end
+  
+  def failure
+    flash[:error] = 'There was an error at the remote authentication service. You have not been signed in.'
+    redirect_to new_user_session_path
   end
 end

@@ -25,6 +25,7 @@ Chakkomi::Application.routes.draw do
   resources :categories
 
   match '/auth/:service/callback' => 'services#create' 
+  match '/auth/failure' => 'services#failure'
   resources :services, :only => [:index, :create, :destroy]
 
 
