@@ -43,6 +43,7 @@ class TalksController < ApplicationController
   # POST /talks.xml
   def create
     @talk = Talk.new(params[:talk])
+    @talk.user = current_user
 
     respond_to do |format|
       if @talk.save
