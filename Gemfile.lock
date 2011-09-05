@@ -148,4 +148,5 @@ DEPENDENCIES
   omniauth (= 0.2.0)
   paperclip
   rails (= 3.0.5)
+  rake
   validate_url
