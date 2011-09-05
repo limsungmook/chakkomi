@@ -5,7 +5,7 @@
 <% @products.each do |product| %>
   <div class="entry" >
     <h3><%= product.title %></h3>
-    <%= image_tag(product.thumnail_pic) %>
+    <%= image_tag(product.thumnail_pic.url) %>
     <%= sanitize(product.content) %>
     <div class="price_line" >
       <span class="price" ><%= number_with_delimiter(product.price) %></span>

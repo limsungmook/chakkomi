@@ -6,4 +6,6 @@ class Post < ActiveRecord::Base
   validates :body_pic, :presence => true
 
   default_scope :order => 'posts.created_at DESC'
+
+  has_attached_file :body_pic
 end

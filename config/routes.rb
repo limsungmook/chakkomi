@@ -19,11 +19,15 @@ Chakkomi::Application.routes.draw do
   resources :posts 
 
   match 'intro' => 'posts#intro'
-  match 'history' => 'posts#history'
   match 'artmull' => 'posts#artmull'
   match 'store' => 'store#index'
+
   resources :categories
 
+  resources :talks do
+    resources :relays
+  end
+  
   match '/auth/:service/callback' => 'services#create' 
   match '/auth/failure' => 'services#failure'
   resources :services, :only => [:index, :create, :destroy]

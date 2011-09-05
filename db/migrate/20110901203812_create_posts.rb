@@ -3,7 +3,6 @@ class CreatePosts < ActiveRecord::Migration
     create_table :posts do |t|
       t.integer :category_id  # foreign key
       t.string :title
-      t.string :body_pic
       t.text :body_txt
 
       t.timestamps

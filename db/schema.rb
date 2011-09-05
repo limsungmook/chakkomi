@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110905073723) do
+ActiveRecord::Schema.define(:version => 20110905190203) do
 
   create_table "carts", :force => true do |t|
     t.datetime "created_at"
@@ -52,26 +52,45 @@ ActiveRecord::Schema.define(:version => 20110905073723) do
   create_table "posts", :force => true do |t|
     t.integer  "category_id"
     t.string   "title"
-    t.string   "body_pic"
     t.text     "body_txt"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "body_pic_file_name"
+    t.string   "body_pic_content_type"
+    t.integer  "body_pic_file_size"
+    t.datetime "body_pic_updated_at"
   end
 
   add_index "posts", ["category_id"], :name => "index_posts_on_category_id"
 
   create_table "products", :force => true do |t|
     t.string   "title"
-    t.string   "thumnail_pic"
-    t.string   "content_pic"
     t.text     "content"
     t.integer  "price"
-    t.integer  "delivery_state"
+    t.string   "delivery_state"
     t.integer  "stock"
-    t.integer  "state"
+    t.string   "state"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "content_pic_file_name"
+    t.string   "content_pic_content_type"
+    t.integer  "content_pic_file_size"
+    t.datetime "content_pic_updated_at"
+    t.string   "thumnail_pic_file_name"
+    t.string   "thumnail_pic_content_type"
+    t.integer  "thumnail_pic_file_size"
+    t.datetime "thumnail_pic_updated_at"
+  end
+
+  create_table "relays", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "talk_id"
+    t.text     "content",    :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "relays", ["talk_id", "user_id"], :name => "index_relays_on_talk_id_and_user_id"
 
   create_table "services", :force => true do |t|
     t.integer  "user_id"
@@ -92,6 +111,16 @@ ActiveRecord::Schema.define(:version => 20110905073723) do
 
   add_index "sessions", ["session_id"], :name => "index_sessions_on_session_id"
   add_index "sessions", ["updated_at"], :name => "index_sessions_on_updated_at"
+
+  create_table "talks", :force => true do |t|
+    t.integer  "user_id"
+    t.text     "content",                   :null => false
+    t.integer  "secret",     :default => 0
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "talks", ["user_id"], :name => "index_talks_on_user_id"
 
   create_table "users", :force => true do |t|
     t.string   "email",                               :default => "", :null => false

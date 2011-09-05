@@ -6,6 +6,8 @@ class User < ActiveRecord::Base
   :confirmable, :lockable
 
   has_many :services, :dependent => :destroy
+  has_many :talks
+  has_many :relays 
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me, :name, :shortbio, :weburl
