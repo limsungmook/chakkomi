@@ -1,18 +1,37 @@
-<h2>Sign up</h2>
+<section id="deviseauth">
+  <h2>회원가입</h2>
+  <h3>직접 입력해서 가입하시거나 존재하는 계정들을 사용해 가입할 수 있습니다</h3>
 
-<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
+  <div id="local2" class="box">
+    <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+    <%= devise_error_messages! %>
 
-  <p><%= f.label :email %><br />
-  <%= f.email_field :email %></p>
+    <p><%= f.label :email %><br />
+      <%= f.email_field :email %></p>
+    
+    <p><%= f.label :password %><br />
+      <%= f.password_field :password %></p>
+    
+    <p><%= f.label :password_confirmation %><br />
+      <%= f.password_field :password_confirmation %></p>
 
-  <p><%= f.label :password %><br />
-  <%= f.password_field :password %></p>
 
-  <p><%= f.label :password_confirmation %><br />
-  <%= f.password_field :password_confirmation %></p>
+    <p><%= f.submit "Sign up" %></p>
+    <% end %>
+  </div>
 
-  <p><%= f.submit "Sign up" %></p>
-<% end %>
+  <div id="remote2">
+    <div id="terms" class="box">
+      <%= link_to "Terms of Service", "#" %>
+    </div>
+    <div id="services" class="box">
+      <a href="/auth/facebook" class="services2"><%= image_tag "facebook_64.png", :size => "64x64",  :alt => "Facebook" %>Facebook</a>
+      <a href="/auth/google" class="services2"><%= image_tag "google_64.png", :size => "64x64",  :alt => "Google" %>Google</a>
+    </div>  
+  </div>
 
-<%= render :partial => "devise/shared/links" %>
+  <div id="devise_links">
+    <%= render :partial => "devise/shared/links" %>
+  </div>
+</section>
+    
