@@ -84,3 +84,5 @@ class TalksController < ApplicationController
     end
   end
 end
+
+
