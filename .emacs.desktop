@@ -2,7 +2,7 @@
 ;; --------------------------------------------------------------------------
 ;; Desktop File for Emacs
 ;; --------------------------------------------------------------------------
-;; Created Mon Sep  5 17:50:31 2011
+;; Created Mon Sep  5 17:53:20 2011
 ;; Desktop file format version 206
 ;; Emacs version 23.3.1
 
@@ -10,12 +10,34 @@
 (setq desktop-missing-file-warning nil)
 (setq tags-file-name nil)
 (setq tags-table-list nil)
-(setq search-ring nil)
+(setq search-ring '("fullname" "fullnam"))
 (setq regexp-search-ring nil)
 (setq register-alist nil)
 (setq file-name-history '("~/work/limsungmook_ror/chakkomi_previous_version_20110903/app/views/layouts/application.html.erb" "~/work/limsungmook_ror/chakkomi_previous_version_20110903/app/views/devise/shared/_links.erb" "~/work/limsungmook_ror/chakkomi/app/views/devise/shared/_links.erb" "~/work/limsungmook_ror/chakkomi_previous_version_20110903/app/views/devise/mailer/confirmation_instructions.html.erb" "~/work/limsungmook_ror/chakkomi_previous_version_20110903/app/views/devise/confirmations/new.html.erb" "~/work/limsungmook_ror/chakkomi/app/views/devise/mailer/confirmation_instructions.html.erb" "~/work/limsungmook_ror/chakkomi_previous_version_20110903/app/views/devise/confirmations/new.html.erb" "~/work/limsungmook_ror/chakkomi/app/views/devise/confirmations/new.html.erb" "~/work/limsungmook_ror/chakkomi_previous_version_20110903/app/views/devise/passwords/edit.html.erb" "~/work/limsungmook_ror/chakkomi/app/views/devise/passwords/edit.html.erb" "~/work/limsungmook_ror/chakkomi_previous_version_20110903/app/views/devise/passwords/new.html.erb" "~/work/limsungmook_ror/chakkomi/app/views/devise/passwords/new.html.erb" "~/work/limsungmook_ror/chakkomi/app/views/devise/registrations/edit.html.erb" "~/work/limsungmook_ror/chakkomi_previous_version_20110903/app/views/devise/registrations/edit.html.erb" "~/work/limsungmook_ror/chakkomi_previous_version_20110903/app/views/devise/registrations/new.html.erb" "~/work/limsungmook_ror/chakkomi/app/views/devise/registrations/new.html.erb" "~/work/limsungmook_ror/chakkomi/app/views/devise/sessions/new.html.erb" "~/work/limsungmook_ror/chakkomi_previous_version_20110903/app/views/devise/sessions/new.html.erb" "~/work/limsungmook_ror/chakkomi/app/views/sessions/new.html.erb" "~/work/limsungmook_ror/chakkomi/" "~/work/limsungmook_ror/chakkomi/config/routes.rb" "~/work/limsungmook_ror/chakkomi/app/models/user.rb" "~/work/limsungmook_ror/chakkomi/app/controllers/registrations_controller.rb" "~/work/limsungmook_ror/chakkomi/Gemfile" "~/work/limsungmook_ror/chakkomi/app/controllers/application_controller.rb" "~/work/limsungmook_ror/chakkomi/app/models/user_token.rb" "~/work/limsungmook_ror/chakkomi/db/migrate/20110904162300_create_user_tokens.rb" "~/work/limsungmook_ror/chakkomi/config/initializers/devise.rb" "~/work/limsungmook_ror/chakkomi/config/environment.rb" "~/work/limsungmook_ror/chakkomi/app/views/devise/passwords/edit.html.erb"))
 
 ;; Buffer section -- buffers listed in same order as in buffer list:
+(desktop-create-buffer 206
+  "/root/work/limsungmook_ror/chakkomi/app/views/devise/registrations/new.html.erb"
+  "new.html.erb<4>"
+  'html-mode
+  nil
+  136
+  '(1 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix)))
+
+(desktop-create-buffer 206
+  "/root/work/limsungmook_ror/chakkomi/app/views/devise/registrations/edit.html.erb"
+  "edit.html.erb<2>"
+  'html-mode
+  nil
+  334
+  '(873 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix)))
+
 (desktop-create-buffer 206
   "/root/work/limsungmook_ror/chakkomi_previous_version_20110903/app/views/layouts/application.html.erb"
   "application.html.erb<2>"
@@ -155,28 +177,6 @@
   nil
   1073
   '(1 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . utf-8-unix)))
-
-(desktop-create-buffer 206
-  "/root/work/limsungmook_ror/chakkomi/app/views/devise/registrations/edit.html.erb"
-  "edit.html.erb<2>"
-  'html-mode
-  nil
-  1073
-  '(1 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . utf-8-unix)))
-
-(desktop-create-buffer 206
-  "/root/work/limsungmook_ror/chakkomi/app/views/devise/registrations/new.html.erb"
-  "new.html.erb<4>"
-  'html-mode
-  nil
-  1
-  '(1133 nil)
   nil
   nil
   '((buffer-file-coding-system . utf-8-unix)))
