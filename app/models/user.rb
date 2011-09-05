@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
   has_many :relays 
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :name, :shortbio, :weburl
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :name, :shortbio, :weburl, :haslocalpw
 
 
   validates :weburl, :url => {:allow_blank => true}, :length => { :maximum => 50 }

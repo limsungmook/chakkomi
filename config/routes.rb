@@ -1,6 +1,6 @@
 Chakkomi::Application.routes.draw do
   resources :monkeys
-  devise_for :users
+  devise_for :users, :controllers => { :registrations => "users/registrations" }
 
   root :to => "posts#intro"
   resources :orders

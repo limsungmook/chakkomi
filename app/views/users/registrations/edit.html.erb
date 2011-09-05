@@ -20,7 +20,7 @@
 
   <p><%= f.label :password_confirmation %><br />
   <%= f.password_field :password_confirmation %></p>
-  <% if current_user.haslocalpw %>
+  <% if current_user.haslocalpw == true %>
   <p><%= f.label :current_password %> <i>(설정을 변경하기 위해선 비밀번호 입력이 필요합니다.)</i><br />
   <%= f.password_field :current_password %></p>
   <% end %>
