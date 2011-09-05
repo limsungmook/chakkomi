@@ -1,10 +1,11 @@
 class User < ActiveRecord::Base
-  has_many :user_tokens
-
   # Include default devise modules. Others available are:
   # :token_authenticatable, :encryptable, :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable,  :registerable,
-         :recoverable, :rememberable, :trackable, :validatable , :omniauthable
+         :recoverable, :rememberable, :trackable, :validatable,
+  :confirmable, :lockable
+
+  has_many :services, :dependent => :destroy
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me, :name, :shortbio, :weburl
@@ -13,36 +14,4 @@ class User < ActiveRecord::Base
   validates :weburl, :url => {:allow_blank => true}, :length => { :maximum => 50 }
   validates :name, :length => { :maximum => 40 }
   validates :shortbio, :length => { :maximum => 500 }
-
-
-
-
-  def self.new_with_session(params, session)
-    super.tap do |user|
-      if data = session[:omniauth]
-        user.user_tokens.build(:provider => data['provider'], :uid => data['uid'])
-      end
-    end
-  end
-  
-  def apply_omniauth(omniauth)
-    #add some info about the user
-    #self.name = omniauth['user_info']['name'] if name.blank?
-    #self.nickname = omniauth['user_info']['nickname'] if nickname.blank?
-    
-    unless omniauth['credentials'].blank?
-      user_tokens.build(:provider => omniauth['provider'], :uid => omniauth['uid'])
-      #user_tokens.build(:provider => omniauth['provider'], 
-      #                  :uid => omniauth['uid'],
-      #                  :token => omniauth['credentials']['token'], 
-      #                  :secret => omniauth['credentials']['secret'])
-    else
-      user_tokens.build(:provider => omniauth['provider'], :uid => omniauth['uid'])
-    end
-    #self.confirm!# unless user.email.blank?
-  end
-  
-  def password_required?
-    (user_tokens.empty? || !password.blank?) && super  
-  end
 end

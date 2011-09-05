@@ -1,6 +1,6 @@
 Chakkomi::Application.routes.draw do
   resources :monkeys
-  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
+  devise_for :users
 
   root :to => "posts#intro"
   resources :orders
@@ -24,6 +24,8 @@ Chakkomi::Application.routes.draw do
   match 'store' => 'store#index'
   resources :categories
 
+  match '/auth/:service/callback' => 'services#create' 
+  resources :services, :only => [:index, :create, :destroy]
 
 
   # The priority is based upon order of creation:

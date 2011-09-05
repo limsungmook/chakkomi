@@ -1,14 +1,13 @@
 source 'http://rubygems.org'
-gem 'rake'
-gem 'rails', '3.0.5'
+gem 'rails', '3.0.10'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'mysql2', '~> 0.2.11'
 
-gem 'devise', '~> 1.2.1'
-gem 'omniauth', '0.2.0'
+gem 'devise'
+gem 'omniauth', '0.1.6'
 gem 'paperclip'
 gem 'validate_url'
 
