@@ -10,7 +10,7 @@
   <tr>
 <!--    <td><%= talk.content %></td>  -->
     <td><%= link_to talk.content, talk %></td> 
-    <td><%= talk.user %></td>
+    <td><%= talk.user.name %></td>
 <!--    <td><%= link_to 'Show', talk %></td> -->
 <!--    <td><%= link_to 'Edit', edit_talk_path(talk) %></td> -->
     <td><%= link_to 'Destroy', talk, :confirm => 'Are you sure?', :method => :delete %></td> 
