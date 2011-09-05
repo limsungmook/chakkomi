@@ -17,8 +17,10 @@
 
     <%= f.input :password_confirmation, :label => "Password Confirmation" %>
 
+    <% if @user.haslocalpw %>
     <%= f.input :current_password, :label => "Current Password",
                 :hint => "we need your current password to confirm a password change" %>
+    <% end %>
 
     <%= f.input :photo %>
 
