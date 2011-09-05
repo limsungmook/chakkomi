@@ -13,6 +13,7 @@
 	<% if user_signed_in? %>
 	<li><span id="currentuser"><%= current_user.email %></span></li>
 	<li><%= link_to "Profile", edit_user_registration_path %></li>
+	<li><%= link_to "Setting", "/services" %></li>
 	<li><%= link_to "Log out", destroy_user_session_path, :method => :delete %></li>
 	<% else %>
 	<li><%= link_to "Create Account", new_user_registration_path %></li>
