@@ -1,4 +1,3 @@
-# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -11,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110904163150) do
+ActiveRecord::Schema.define(:version => 20110905063418) do
 
   create_table "carts", :force => true do |t|
     t.datetime "created_at"
@@ -32,6 +31,11 @@ ActiveRecord::Schema.define(:version => 20110904163150) do
     t.datetime "updated_at"
     t.integer  "quantity",   :default => 1
     t.integer  "order_id"
+  end
+
+  create_table "monkeys", :force => true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "orders", :force => true do |t|
@@ -93,13 +97,6 @@ ActiveRecord::Schema.define(:version => 20110904163150) do
   add_index "sessions", ["session_id"], :name => "index_sessions_on_session_id"
   add_index "sessions", ["updated_at"], :name => "index_sessions_on_updated_at"
 
-  create_table "sharings", :force => true do |t|
-    t.string   "content"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "user_id"
-  end
-
   create_table "user_tokens", :force => true do |t|
     t.integer  "user_id"
     t.string   "provider"
@@ -108,7 +105,6 @@ ActiveRecord::Schema.define(:version => 20110904163150) do
     t.string   "secret"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "nickname"
   end
 
   create_table "users", :force => true do |t|
@@ -130,10 +126,6 @@ ActiveRecord::Schema.define(:version => 20110904163150) do
     t.string   "weburl"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "photo_file_name"
-    t.string   "photo_content_type"
-    t.integer  "photo_file_size"
-    t.string   "slug"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

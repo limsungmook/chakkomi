@@ -1,6 +1,6 @@
 Chakkomi::Application.routes.draw do
-  resources :sharings
-  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks", :registrations => 'registrations' }
+  resources :monkeys
+  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
 
   root :to => "posts#intro"
   resources :orders
@@ -25,7 +25,6 @@ Chakkomi::Application.routes.draw do
   resources :categories
 
 
-  match '/:id', :controller => 'profiles', :action => 'show', :as => 'profile', :via => :get
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

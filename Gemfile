@@ -1,20 +1,15 @@
 source 'http://rubygems.org'
 
-gem 'rake'
-gem 'rails', '3.0.10'
+gem 'rails', '3.0.5'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'mysql2', '~> 0.2.11'
 
-gem 'devise', :git => 'git://github.com/plataformatec/devise', :branch => 'master'
+gem 'devise', '~> 1.2.1'
 gem 'omniauth', '0.2.0'
 gem 'paperclip'
-gem "simple_form", "~> 1.2.2"
-gem 'twitter_oauth', '0.4.3'
-gem "rest-client", "1.6.1", :require => "restclient"
-gem "sluggable"
 gem 'validate_url'
 
 # Use unicorn as the web server
@@ -39,8 +34,3 @@ gem 'validate_url'
 # group :development, :test do
 #   gem 'webrat'
 # end
-
-group :development, :test do
- gem 'rspec-rails'
- gem 'fixjour'
-end

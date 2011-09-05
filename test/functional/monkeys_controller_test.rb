@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class ServiceTest < ActiveSupport::TestCase
+class MonkeysControllerTest < ActionController::TestCase
   # Replace this with your real tests.
   test "the truth" do
     assert true

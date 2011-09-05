@@ -12,8 +12,6 @@
       <ul>
 	<% if user_signed_in? %>
 	<li><span id="currentuser"><%= current_user.email %></span></li>
-	<li><%= link_to "Profile", profile_path(current_user) %></li>
-	<li><%= link_to "Setting", edit_user_registration_path(current_user) %></li>
 	<li><%= link_to "Log out", destroy_user_session_path %></li>
 	<% else %>
 	<li><%= link_to "Create Account", new_user_registration_path %></li>

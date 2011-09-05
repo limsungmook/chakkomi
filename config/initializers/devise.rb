@@ -6,7 +6,7 @@ require 'openid/store/filesystem'
 Devise.setup do |config|
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in DeviseMailer.
-  config.mailer_sender = DEVISE_MAILER_FROM
+  config.mailer_sender = 'ipes4579@gmail.com'
 
   # Configure the class responsible to send e-mails.
   # config.mailer = "Devise::Mailer"
@@ -46,7 +46,7 @@ Devise.setup do |config|
   # from others authentication tools as :clearance_sha1, :authlogic_sha512 (then
   # you should set stretches above to 20 for default behavior) and :restful_authentication_sha1
   # (then you should set stretches to 10, and copy REST_AUTH_SITE_KEY to pepper)
-  #config.encryptor = :bcrypt
+#  config.encryptor = :bcrypt
 
   # Setup a pepper to generate the encrypted password.
   config.pepper = "439ecfc4b47fe22c733da4ac682d1a315d78f3f8a69307e61bad501978e8d5f1db516f1cc96f3a2fcf8f87f63e1860eb27be5208894bf2b5e9b91481febe52ab"
@@ -135,9 +135,9 @@ Devise.setup do |config|
   # allows you to setup OAuth, using http://github.com/roman/warden_oauth
   
   #config.omniauth :facebook, "APP_ID", "APP_SECRET"
-  config.omniauth :facebook, FACEBOOK_APP_ID, FACEBOOK_APP_SECRET, :scope => FACEBOOK_APP_PERMISSIONS 
+  config.omniauth :facebook, "147749211905466", "b682557c3bc08512d09ebc4b848d8d93"
 #  config.omniauth :twitter, TWITTER_SECRET_KEY, TWITTER_CONSUMER_KEY
-  config.omniauth :twitter, TWITTER_CONSUMER_KEY, TWITTER_SECRET_KEY
+  config.omniauth :twitter, 'MihJNbixbwbJoMZTsu2w','WqPTsJJklVOTjBkSes1Eovu4muDnLjNG8p3QMbvQq3Q'
   config.omniauth :google_apps, OpenID::Store::Filesystem.new('/tmp'), :domain => 'gmail.com'
   #
   # config.warden do |manager|
