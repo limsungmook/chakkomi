@@ -1,16 +1,50 @@
-#maincontent {
-    margin-left: 17em;
-    padding-top: 4ex;
-    padding-left:2em;
-    background:white;
+#layres
+{
+    float: left;
+    background: #e3e4e8;
+}
+#layres .layreshdr
+{
+    float: left;
+    width: 950px;
+    overflow: hidden;
+    border-left: 1px solid #d1d6dc;
+    border-right: 1px solid #d1d6dc;
+    border-top: 1px solid #fff;
+    padding: 10px 9px 0;
+}
+#layres .layresmaj
+{
+    float: left;
+    width: 968px;
+    border-left: 1px solid #d1d6dc;
+    border-right: 1px solid #d1d6dc;
+    background: #e3e4e6;
 
 }
+#layres .layrespri
+{
+    float: left;
+    display: inline;
+    width: 750px;
+    overflow: hidden;
+    margin: 10px 10px 0 9px;
+}
+#layres .layresside
+{
+    float: left;
+    display: inline;
+    width: 190px;
+    overflow: hidden;
+    margin: 10px 9px 0 0;
+}
 
-#sidebar {
-  float: left;
-  padding-top: 1em;
-  padding-left: 1em;
-  padding-bottom: 1em;
-  width: 16em;
-  background: #141;
+#layres .layresftr1
+{
+    clear: both;
+    float: left;
+    width: 968px;
+    overflow: hidden;
+    border-left: 1px solid #d1d6dc;
+    border-right: 1px solid #d1d6dc;
 }

@@ -2,7 +2,7 @@
 ;; --------------------------------------------------------------------------
 ;; Desktop File for Emacs
 ;; --------------------------------------------------------------------------
-;; Created Mon Sep  5 18:31:03 2011
+;; Created Mon Sep  5 19:52:41 2011
 ;; Desktop file format version 206
 ;; Emacs version 23.3.1
 
@@ -10,9 +10,130 @@
 (setq desktop-missing-file-warning nil)
 (setq tags-file-name nil)
 (setq tags-table-list nil)
-(setq search-ring '("you need to" "fullname" "fullnam"))
+(setq search-ring '("img" ";" "td" "layreshdr" "you need to" "fullname" "fullnam"))
 (setq regexp-search-ring nil)
 (setq register-alist nil)
-(setq file-name-history '("~/work/limsungmook_ror/chakkomi_previous_version_20110903/app/controllers/services_controller.rb" "~/work/limsungmook_ror/chakkomi/config/routes.rb" "~/work/limsungmook_ror/chakkomi/app/controllers/services_controller.rb" "~/work/limsungmook_ror/chakkomi/config/routes.rb" "~/work/limsungmook_ror/chakkomi/config/initializers/devise.rb" "~/work/limsungmook_ror/chakkomi/config/environments/production.rb" "~/work/limsungmook_ror/chakkomi/config/environments/development.rb" "~/work/limsungmook_ror/chakkomi/app/views/layouts/application.html.erb" "~/work/limsungmook_ror/chakkomi/app/views/devise/shared/_links.erb" "~/work/limsungmook_ror/chakkomi_previous_version_20110903/app/views/devise/shared/_links.erb" "~/work/limsungmook_ror/chakkomi/app/views/devise/registrations/new.html.erb" "~/work/limsungmook_ror/chakkomi/app/views/users/registrations/new.html.erb" "~/work/limsungmook_ror/chakkomi_previous_version_20110903/app/views/layouts/application.html.erb" "~/work/limsungmook_ror/chakkomi/app/views/layouts/application.html.erb" "~/work/limsungmook_ror/chakkomi_previous_version_20110903/app/views/layouts/application.html.erb" "~/work/limsungmook_ror/chakkomi_previous_version_20110903/app/views/devise/shared/_links.erb" "~/work/limsungmook_ror/chakkomi/app/views/devise/shared/_links.erb" "~/work/limsungmook_ror/chakkomi_previous_version_20110903/app/views/devise/mailer/confirmation_instructions.html.erb" "~/work/limsungmook_ror/chakkomi_previous_version_20110903/app/views/devise/confirmations/new.html.erb" "~/work/limsungmook_ror/chakkomi/app/views/devise/mailer/confirmation_instructions.html.erb" "~/work/limsungmook_ror/chakkomi_previous_version_20110903/app/views/devise/confirmations/new.html.erb" "~/work/limsungmook_ror/chakkomi/app/views/devise/confirmations/new.html.erb" "~/work/limsungmook_ror/chakkomi_previous_version_20110903/app/views/devise/passwords/edit.html.erb" "~/work/limsungmook_ror/chakkomi/app/views/devise/passwords/edit.html.erb" "~/work/limsungmook_ror/chakkomi_previous_version_20110903/app/views/devise/passwords/new.html.erb" "~/work/limsungmook_ror/chakkomi/app/views/devise/passwords/new.html.erb" "~/work/limsungmook_ror/chakkomi/app/views/devise/registrations/edit.html.erb" "~/work/limsungmook_ror/chakkomi_previous_version_20110903/app/views/devise/registrations/edit.html.erb" "~/work/limsungmook_ror/chakkomi_previous_version_20110903/app/views/devise/registrations/new.html.erb" "~/work/limsungmook_ror/chakkomi/app/views/devise/registrations/new.html.erb"))
+(setq file-name-history '("~/work/limsungmook_ror/chakkomi/app/views/posts/artmull.html.erb" "~/work/limsungmook_ror/chakkomi/app/views/posts/history.html.erb" "~/work/limsungmook_ror/chakkomi/app/views/devise/registrations/new.html.erb" "~/work/limsungmook_ror/chakkomi/app/views/posts/intro.html.erb" "~/work/limsungmook_ror/chakkomi/app/views/intro.html.erb" "~/work/limsungmook_ror/chakkomi/public/stylesheets/chakkomi.css" "~/work/limsungmook_ror/chakkomi/public/stylesheets/reset-min.css" "~/work/limsungmook_ror/chakkomi/public/stylesheets/fonts-min.css" "~/work/limsungmook_ror/chakkomi/public/stylesheets/reset-min.css" "~/work/limsungmook_ror/chakkomi/public/stylesheets/chakkomi.css" "~/work/limsungmook_ror/chakkomi/app/views/store/_cart.html.erb" "~/work/limsungmook_ror/chakkomi/app/views/store/index.html.erb" "~/work/limsungmook_ror/chakkomi_previous_version_20110903/app/controllers/services_controller.rb" "~/work/limsungmook_ror/chakkomi/config/routes.rb" "~/work/limsungmook_ror/chakkomi/app/controllers/services_controller.rb" "~/work/limsungmook_ror/chakkomi/config/routes.rb" "~/work/limsungmook_ror/chakkomi/config/initializers/devise.rb" "~/work/limsungmook_ror/chakkomi/config/environments/production.rb" "~/work/limsungmook_ror/chakkomi/config/environments/development.rb" "~/work/limsungmook_ror/chakkomi/app/views/layouts/application.html.erb" "~/work/limsungmook_ror/chakkomi/app/views/devise/shared/_links.erb" "~/work/limsungmook_ror/chakkomi_previous_version_20110903/app/views/devise/shared/_links.erb" "~/work/limsungmook_ror/chakkomi/app/views/devise/registrations/new.html.erb" "~/work/limsungmook_ror/chakkomi/app/views/users/registrations/new.html.erb" "~/work/limsungmook_ror/chakkomi_previous_version_20110903/app/views/layouts/application.html.erb" "~/work/limsungmook_ror/chakkomi/app/views/layouts/application.html.erb" "~/work/limsungmook_ror/chakkomi_previous_version_20110903/app/views/layouts/application.html.erb" "~/work/limsungmook_ror/chakkomi_previous_version_20110903/app/views/devise/shared/_links.erb" "~/work/limsungmook_ror/chakkomi/app/views/devise/shared/_links.erb" "~/work/limsungmook_ror/chakkomi_previous_version_20110903/app/views/devise/mailer/confirmation_instructions.html.erb"))
 
 ;; Buffer section -- buffers listed in same order as in buffer list:
+(desktop-create-buffer 206
+  "/root/work/limsungmook_ror/chakkomi/app/views/posts/artmull.html.erb"
+  "artmull.html.erb"
+  'html-mode
+  nil
+  43
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/root/work/limsungmook_ror/chakkomi/app/views/posts/history.html.erb"
+  "history.html.erb"
+  'html-mode
+  nil
+  15
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/root/work/limsungmook_ror/chakkomi/app/views/posts/intro.html.erb"
+  "intro.html.erb<2>"
+  'html-mode
+  nil
+  15
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/root/work/limsungmook_ror/chakkomi/app/views/devise/registrations/new.html.erb"
+  "new.html.erb"
+  'html-mode
+  nil
+  800
+  '(1 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix)))
+
+(desktop-create-buffer 206
+  "/root/work/limsungmook_ror/chakkomi/app/views/intro.html.erb"
+  "intro.html.erb"
+  'html-mode
+  nil
+  5
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/root/work/limsungmook_ror/chakkomi/app/views/layouts/application.html.erb"
+  "application.html.erb"
+  'html-mode
+  nil
+  203
+  '(167 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix)))
+
+(desktop-create-buffer 206
+  "/root/work/limsungmook_ror/chakkomi/public/stylesheets/chakkomi.css"
+  "chakkomi.css"
+  'css-mode
+  nil
+  39
+  '(814 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/root/work/limsungmook_ror/chakkomi/public/stylesheets/reset-min.css"
+  "reset-min.css"
+  'css-mode
+  nil
+  277
+  '(970 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix)))
+
+(desktop-create-buffer 206
+  "/root/work/limsungmook_ror/chakkomi/public/stylesheets/fonts-min.css"
+  "fonts-min.css"
+  'css-mode
+  nil
+  498
+  '(475 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix)))
+
+(desktop-create-buffer 206
+  "/root/work/limsungmook_ror/chakkomi/app/views/store/_cart.html.erb"
+  "_cart.html.erb"
+  'html-mode
+  nil
+  130
+  '(1 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix)))
+
+(desktop-create-buffer 206
+  "/root/work/limsungmook_ror/chakkomi/app/views/store/index.html.erb"
+  "index.html.erb"
+  'html-mode
+  nil
+  459
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix)))
+
