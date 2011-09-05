@@ -14,7 +14,7 @@ DEFAULT_FB_POST_NAME     = "Chakkomi"
 DEFAULT_PAGE_TITLE       = "Chakkomi"
 DEFAULT_PAGE_DESCRIPTION = "Description for Chakkomi"
 
-TWITTER_SECRET_KEY       = "WqPTsJJklVOTjBkSes1Eovu4muDnLjNG8p3QMbvQq3Q"
+TWITTER_SECRET_KEY      = "WqPTsJJklVOTjBkSes1Eovu4muDnLjNG8p3QMbvQq3Q"
 TWITTER_CONSUMER_KEY     = "MihJNbixbwbJoMZTsu2w"
 
 DEFAULT_SHARE_URL        = "http://chakkomi.heroku.com/"
