@@ -10,7 +10,7 @@
 #    OpenID.fetcher.ca_file = "#{Rails.root}/config/ca-bundle.crt"
     
     # providers with id/secret, you need to sign up for their services (see below) and enter the parameters here
-    provider :facebook, 'APP_ID', 'APP_SECRET'
+    provider :facebook, '213249652066160', '5ac93b75c718c81b814321131629f67a'
     provider :twitter, 'MihJNbixbwbJoMZTsu2w', 'WqPTsJJklVOTjBkSes1Eovu4muDnLjNG8p3QMbvQq3Q'
     provider :github, 'CLIENT ID', 'SECRET'
     
