@@ -10,6 +10,7 @@ gem 'devise'
 gem 'omniauth', '0.1.6'
 gem 'paperclip'
 gem 'validate_url'
+gem 'cancan'
 
 # Use unicorn as the web server
 # gem 'unicorn'

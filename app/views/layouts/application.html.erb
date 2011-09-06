@@ -14,6 +14,7 @@
       <div class="layresuser">
 	<ul>
 	  <% if user_signed_in? %>
+	  <li><%= link_to "관리자 페이지", :admins %></li>
 	  <li><span id="currentuser"><%= current_user.email %></span></li>
 	  <li><%= link_to "Profile", edit_user_registration_path %></li>
 	  <li><%= link_to "Setting", "/services" %></li>
@@ -50,7 +51,7 @@
       <div class="layressidelinks" class="box">
 	<h5>Links</h5>
 	<ul>
-	  <li><%= link_to "blog", "http://blog.chakkomi.com" %></li>
+	  <li><%= link_to "blog", "http://www.chakkomi.com" %></li>
 	  <li><%= link_to "artmull", "http://artmull.tistory.com" %></li>
 	</ul>
       </div>

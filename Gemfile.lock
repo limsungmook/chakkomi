@@ -32,6 +32,7 @@ GEM
     arel (2.0.10)
     bcrypt-ruby (3.0.0)
     builder (2.1.2)
+    cancan (1.6.5)
     cocaine (0.2.0)
     devise (1.4.4)
       bcrypt-ruby (~> 3.0)
@@ -140,6 +141,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  cancan
   devise
   mysql2 (~> 0.2.11)
   omniauth (= 0.1.6)
