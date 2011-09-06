@@ -82,7 +82,7 @@ class PostsController < ApplicationController
   # DELETE /posts/1
   # DELETE /posts/1.xml
   def destroy
-    @category = Category.find(params[:category_id])
+    @category = Category.new(:category_id => params[:category_id])
     @post = Post.find(params[:id])
     @post.destroy
 

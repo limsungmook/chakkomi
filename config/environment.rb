@@ -2,7 +2,7 @@
 DEFAULT_PAPERCLIP_OPTIONS = {}
 
 DEVISE_MAILER_FROM       = "ipes4579@gmail.com"
-LIVE_PERSONS_EMAIL       = 'ipes4579@gmail.com'
+LIVE_PERSONS_EMAIL       = "ipes4579@gmail.com"
 
 FACEBOOK_APP_ID          = "213491825331116"
 FACEBOOK_APP_SECRET      = "3bc4798fec78dc85235d543aa96e5f98"

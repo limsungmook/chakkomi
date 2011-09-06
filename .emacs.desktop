@@ -2,7 +2,7 @@
 ;; --------------------------------------------------------------------------
 ;; Desktop File for Emacs
 ;; --------------------------------------------------------------------------
-;; Created Tue Sep  6 06:57:04 2011
+;; Created Tue Sep  6 08:40:00 2011
 ;; Desktop file format version 206
 ;; Emacs version 23.3.1
 
@@ -16,6 +16,17 @@
 (setq file-name-history '("~/work/limsungmook_ror/chakkomi/db/migrate/20110902090426_devise_create_users.rb" "~/work/limsungmook_ror/chakkomi/app/models/user.rb" "~/work/limsungmook_ror/chakkomi/app/views/talks/show.html.erb" "~/work/limsungmook_ror/chakkomi/app/views/layouts/application.html.erb" "~/work/limsungmook_ror/chakkomi/app/controllers/users/registrations_controller.rb" "~/work/limsungmook_ror/chakkomi/app/views/devise/registrations/edit.html.erb" "~/work/limsungmook_ror/chakkomi/app/views/users/registrations/edit.html.erb" "~/work/limsungmook_ror/chakkomi/app/views/users/registrations/new.html.erb" "~/work/limsungmook_ror/chakkomi/app/views/users/registrations/edit.html.erb" "~/work/limsungmook_ror/chakkomi/app/views/devise/registrations/new.html.erb" "~/work/limsungmook_ror/chakkomi/app/views/users/registrations/new.html.erb" "~/work/limsungmook_ror/chakkomi/app/views/users/registrations/edit.html.erb" "~/work/limsungmook_ror/chakkomi/app/views/devise/registrations/edit.html.erb" "~/work/limsungmook_ror/chakkomi/app/views/devise/registrations/new.html.erb" "~/work/limsungmook_ror/chakkomi/app/views/users/registrations/edit.html.erb" "~/work/limsungmook_ror/chakkomi/app/controllers/services_controller.rb" "~/work/limsungmook_ror/chakkomi/" "~/work/limsungmook_ror/chakkomi/app/views/talks/show.html.erb" "~/work/limsungmook_ror/chakkomi/app/controllers/relays_controller.rb" "~/work/limsungmook_ror/chakkomi/app/views/posts/show.html.erb" "~/work/limsungmook_ror/chakkomi/app/controllers/talks_controller.rb" "~/work/limsungmook_ror/chakkomi/app/views/posts/artmull.html.erb" "~/work/limsungmook_ror/chakkomi/app/controllers/talks_controller.rb" "~/work/limsungmook_ror/chakkomi/app/controllers/posts_controller.rb" "~/work/limsungmook_ror/chakkomi/app/controllers/talks_controller.rb" "~/work/limsungmook_ror/chakkomi/app/views/talks/show.html.erb" "~/work/limsungmook_ror/chakkomi/app/views/talks/index.html.erb" "~/work/limsungmook_ror/chakkomi/app/controllers/relays_controller.rb" "~/work/limsungmook_ror/chakkomi/app/controllers/talks_controller.rb" "~/work/limsungmook_ror/chakkomi/config/environments/development.rb"))
 
 ;; Buffer section -- buffers listed in same order as in buffer list:
+(desktop-create-buffer 206
+  "/root/work/limsungmook_ror/chakkomi/db/seeds.rb"
+  "seeds.rb"
+  'ruby-mode
+  nil
+  1246
+  '(417 nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-file-coding-system . utf-8-unix)))
+
 (desktop-create-buffer 206
   "/root/work/limsungmook_ror/chakkomi/app/controllers/users/registrations_controller.rb"
   "registrations_controller.rb"
