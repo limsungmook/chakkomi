@@ -56,6 +56,7 @@ class LineItemsController < ApplicationController
     end
   end
 
+
   # PUT /line_items/1
   # PUT /line_items/1.xml
   def update
@@ -75,12 +76,27 @@ class LineItemsController < ApplicationController
   # DELETE /line_items/1
   # DELETE /line_items/1.xml
   def destroy
-    @line_item = LineItem.find(params[:id])
-    @line_item.destroy
+    @cart = current_cart
+#    @line_item = LineItem.find(params[:id])
+#    @line_item.destroy
+    @line_item = @cart.sub_line_item(params[:id])
 
     respond_to do |format|
-      format.html { redirect_to(line_items_url) }
-      format.xml  { head :ok }
+      if @line_item.quantity < 1 
+        @line_item.destroy
+        format.html { redirect_to(store_url) }
+        format.js   { @current_item = @line_item }
+        format.xml  { render :xml => @line_item, :status => :deleted, :location => @line_item }
+      else 
+        if @line_item.save
+          format.html { redirect_to(store_url) }
+          format.js   { @current_item = @line_item }
+          format.xml  { render :xml => @line_item, :status => :deleted, :location => @line_item }
+        else
+          format.html { render :action => "delete" }
+          format.xml  { render :xml => @line_item.errors, :status => :unprocessable_entity }
+        end
+      end
     end
   end
 end

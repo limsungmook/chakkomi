@@ -5,10 +5,14 @@ class Product < ActiveRecord::Base
   has_many :line_items
   before_destroy :ensure_not_referenced_by_any_line_item
 
-  validates :thumnail_pic, :content_pic, :format => {
-    :with => %r{\.(gif|jpg|png)$}i,
-    :message => 'JPG, GIF, PNG 중 하나만 올릴 수 있습니다.'
-  }
+#  validates :thumnail_pic, :content_pic, :format => {
+#    :with => %r{\.(gif|jpg|png)$}i,
+#    :message => 'JPG, GIF, PNG 중 하나만 올릴 수 있습니다.'
+#  }
+  has_attached_file :thumnail_pic
+  has_attached_file :content_pic
+  
+
 
   private
   # ensure that there are no line items referencing this product

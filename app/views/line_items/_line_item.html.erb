@@ -3,7 +3,10 @@
   <% else %>
 <tr>
   <% end %>
-  <td><%= line_item.quantity %>&times;</td>
   <td><%= line_item.product.title %></td>
+  <td><%= line_item.quantity %>&times;</td>
   <td class="item_price" ><%= number_with_delimiter(line_item.total_price) %></td>
+  <td><%= link_to '빼기', line_item_path(line_item),:method=>:delete, :remote => true  %></td>
+<!--  <%= button_to '빼기', line_item, :id => line_item.id ,:method=>:delete, :remote => true  %> -->
+<!--  (:product_id => line_item.product) -->
 </tr>
