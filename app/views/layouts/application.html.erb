@@ -17,7 +17,9 @@
       <div class="layresuser">
 	<ul>
 	  <% if user_signed_in? %>
-	  <li><%= link_to "관리자 페이지", :admins %></li>
+	    <% if can? :magage, :all%>
+  	    <li><%= link_to "관리자 페이지", :admins %></li>
+	    <% end %>
 	  <li><span id="currentuser"><%= current_user.email %></span></li>
 	  <li><%= link_to "Profile", edit_user_registration_path %></li>
 	  <li><%= link_to "Setting", "/services" %></li>

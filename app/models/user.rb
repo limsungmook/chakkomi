@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  ROLES = %w[admin moderator member banned]
+  ROLES = %w[admin moderator member anyone banned]
   # Include default devise modules. Others available are:
   # :token_authenticatable, :encryptable, :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable,  :registerable,

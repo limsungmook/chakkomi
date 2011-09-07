@@ -8,7 +8,7 @@ class Ability
     if user.role == "admin"
       can :manage, :all
     elsif user.role == "anyone"
-      can :read, [Product, Category, Posts]
+      can :read, [Product, Category, Post]
       can :manage, Talk do |talk|
         talk.try(:owner) == user
       end

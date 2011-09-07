@@ -5,5 +5,5 @@ class Relay < ActiveRecord::Base
   validates :content, :presence => true
   attr_accessible :content
 
-  default_scope :order => 'relays.created_at asc'
+  default_scope :order => 'relays.created_at DESC'
 end
