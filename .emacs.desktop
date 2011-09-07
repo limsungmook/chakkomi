@@ -2,7 +2,7 @@
 ;; --------------------------------------------------------------------------
 ;; Desktop File for Emacs
 ;; --------------------------------------------------------------------------
-;; Created Wed Sep  7 16:45:44 2011
+;; Created Wed Sep  7 17:08:23 2011
 ;; Desktop file format version 206
 ;; Emacs version 23.3.1
 
@@ -13,7 +13,7 @@
 (setq search-ring nil)
 (setq regexp-search-ring nil)
 (setq register-alist nil)
-(setq file-name-history '("~/work/limsungmook_ror/chakkomi/" "~/work/limsungmook_ror/chakkomi/app/controllers/posts_controller.rb" "~/work/limsungmook_ror/chakkomi/app/views/layouts/application.html.erb" "~/work/limsungmook_ror/chakkomi/app/views/posts/_form.html.erb" "~/work/limsungmook_ror/chakkomi/app/models/user.rb" "~/work/limsungmook_ror/chakkomi/config/environment.rb" "/usr/local/rvm/gems/ruby-1.9.3-preview1/gems/activemodel-3.0.10/lib/active_model/validations/validates.rb" "~/work/limsungmook_ror/chakkomi/app/models/tiny_print.rb" "~/work/limsungmook_ror/chakkomi/app/models/tiny_video.rb" "~/work/limsungmook_ror/chakkomi/app/models/tiny_print.rb" "~/work/limsungmook_ror/chakkomi/" "~/work/limsungmook_ror/chakkomi/app/controllers/posts_controller.rb" "~/work/limsungmook_ror/chakkomi/app/views/layouts/application.html.erb" "~/work/limsungmook_ror/chakkomi/app/views/posts/_form.html.erb" "~/work/limsungmook_ror/chakkomi/Gemfile" "~/work/limsungmook_ror/chakkomi/app/views/posts/_form.html.erb" "~/work/limsungmook_ror/chakkomi/app/views/posts/new.html.erb" "~/work/limsungmook_ror/chakkomi/app/controllers/posts_controller.rb" "~/work/limsungmook_ror/chakkomi/app/views/talks/show.html.erb" "~/work/limsungmook_ror/chakkomi/app/views/talks/_form.html.erb" "~/work/limsungmook_ror/chakkomi/app/views/talks/index.html.erb" "~/work/limsungmook_ror/chakkomi/app/controllers/talks_controller.rb" "~/work/limsungmook_ror/chakkomi/app/models/ability.rb" "~/work/limsungmook_ror/chakkomi/app/models/user.rb" "~/work/limsungmook_ror/chakkomi/app/views/orders/_form.html.erb" "~/work/limsungmook_ror/chakkomi/app/views/admins/show.html.erb" "~/work/limsungmook_ror/chakkomi/app/views/admins/index.html.erb" "~/work/limsungmook_ror/chakkomi/app/controllers/posts_controller.rb" "~/work/limsungmook_ror/chakkomi/app/views/accounts/index.html.erb" "~/work/limsungmook_ror/chakkomi/app/views/posts/_form.html.erb"))
+(setq file-name-history '("~/work/limsungmook_ror/chakkomi/app/views/layouts/application.html.erb" "~/work/limsungmook_ror/chakkomi/app/views/store/index.html.erb" "~/work/limsungmook_ror/chakkomi/app/views/carts/_cart.html.erb" "~/work/limsungmook_ror/chakkomi/app/views/posts/artmull.html.erb" "~/work/limsungmook_ror/chakkomi/" "~/work/limsungmook_ror/chakkomi/app/controllers/posts_controller.rb" "~/work/limsungmook_ror/chakkomi/app/views/layouts/application.html.erb" "~/work/limsungmook_ror/chakkomi/app/views/posts/_form.html.erb" "~/work/limsungmook_ror/chakkomi/app/models/user.rb" "~/work/limsungmook_ror/chakkomi/config/environment.rb" "/usr/local/rvm/gems/ruby-1.9.3-preview1/gems/activemodel-3.0.10/lib/active_model/validations/validates.rb" "~/work/limsungmook_ror/chakkomi/app/models/tiny_print.rb" "~/work/limsungmook_ror/chakkomi/app/models/tiny_video.rb" "~/work/limsungmook_ror/chakkomi/app/models/tiny_print.rb" "~/work/limsungmook_ror/chakkomi/" "~/work/limsungmook_ror/chakkomi/app/controllers/posts_controller.rb" "~/work/limsungmook_ror/chakkomi/app/views/layouts/application.html.erb" "~/work/limsungmook_ror/chakkomi/app/views/posts/_form.html.erb" "~/work/limsungmook_ror/chakkomi/Gemfile" "~/work/limsungmook_ror/chakkomi/app/views/posts/_form.html.erb" "~/work/limsungmook_ror/chakkomi/app/views/posts/new.html.erb" "~/work/limsungmook_ror/chakkomi/app/controllers/posts_controller.rb" "~/work/limsungmook_ror/chakkomi/app/views/talks/show.html.erb" "~/work/limsungmook_ror/chakkomi/app/views/talks/_form.html.erb" "~/work/limsungmook_ror/chakkomi/app/views/talks/index.html.erb" "~/work/limsungmook_ror/chakkomi/app/controllers/talks_controller.rb" "~/work/limsungmook_ror/chakkomi/app/models/ability.rb" "~/work/limsungmook_ror/chakkomi/app/models/user.rb" "~/work/limsungmook_ror/chakkomi/app/views/orders/_form.html.erb" "~/work/limsungmook_ror/chakkomi/app/views/admins/show.html.erb"))
 
 ;; Buffer section -- buffers listed in same order as in buffer list:
 (desktop-create-buffer 206
@@ -21,8 +21,63 @@
   "application.html.erb"
   'html-mode
   nil
-  167
+  369
   '(225 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix)))
+
+(desktop-create-buffer 206
+  "/root/work/limsungmook_ror/chakkomi/app/views/posts/artmull.html.erb"
+  "artmull.html.erb"
+  'html-mode
+  nil
+  150
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix) (overwrite-mode)))
+
+(desktop-create-buffer 206
+  "/root/work/limsungmook_ror/chakkomi/app/views/store/index.html.erb"
+  "index.html.erb"
+  'html-mode
+  nil
+  268
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix)))
+
+(desktop-create-buffer 206
+  "/root/work/limsungmook_ror/chakkomi/app/views/carts/_cart.html.erb"
+  "_cart.html.erb"
+  'html-mode
+  nil
+  1
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix)))
+
+(desktop-create-buffer 206
+  "/root/work/limsungmook_ror/chakkomi/app/views/posts/intro.html.erb"
+  "intro.html.erb"
+  'html-mode
+  nil
+  29
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/root/work/limsungmook_ror/chakkomi/install_guides.txt"
+  "install_guides.txt"
+  'text-mode
+  nil
+  210
+  '(nil nil)
   nil
   nil
   '((buffer-file-coding-system . utf-8-unix)))
