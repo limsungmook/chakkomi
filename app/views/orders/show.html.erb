@@ -51,5 +51,11 @@
 </p>
 
 
+<% @order.line_items.each do |item| %>
+
+  주문 상품 이름 :   <%= item.product.title %> <br />
+  주문 개수 : <%= item.quantity %> <br />
+<% end %>
+
 <%= link_to 'Edit', edit_order_path(@order) %> |
 <%= link_to 'Back', orders_path %>

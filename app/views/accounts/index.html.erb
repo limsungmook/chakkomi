@@ -3,6 +3,7 @@
 <% @users.each do |user| %>
   <tr>
     <td><%= link_to user.email, :controller=>"accounts", :action=>"show", :id => user.id %></td>
+    <td><%= link_to '수정', :controller=>"accounts", :action=>"edit", :id => user.id %></td>
   </tr>
 <% end %>
 </table>

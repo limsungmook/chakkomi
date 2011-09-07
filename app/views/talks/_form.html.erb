@@ -15,6 +15,6 @@
     </div>
   <% end %>
 
-  <div class="field"><%= f.label :content %><%= f.text_field :content %></div>
+  <div class="field"><%= f.label :content %><%= f.text_field :content %><%= f.check_box :secret %><%= f.label :secret %>
   <div class="actions"><%= f.submit %></div>
 <% end %>

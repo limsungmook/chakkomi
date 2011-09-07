@@ -1,4 +1,5 @@
 source 'http://rubygems.org'
+gem 'rake', '0.9.2'
 gem 'rails', '3.0.10'
 
 # Bundle edge Rails instead:
@@ -11,7 +12,8 @@ gem 'omniauth', '0.1.6'
 gem 'paperclip'
 gem 'validate_url'
 gem 'cancan'
-
+gem 'will_paginate'
+# gem 'responds_to_parent'
 # Use unicorn as the web server
 # gem 'unicorn'
 

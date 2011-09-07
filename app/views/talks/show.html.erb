@@ -13,6 +13,10 @@
   <b>Time ago:</b>
   <%= time_ago_in_words(@talk.created_at) %>
 </p>
+<p>
+  <b>Secret:</b>
+  <%= @talk.secret %>
+</p>
 
 
 <% @talk.relays.each do |relay| %> 

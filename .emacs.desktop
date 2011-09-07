@@ -2,7 +2,7 @@
 ;; --------------------------------------------------------------------------
 ;; Desktop File for Emacs
 ;; --------------------------------------------------------------------------
-;; Created Wed Sep  7 07:38:40 2011
+;; Created Wed Sep  7 16:45:44 2011
 ;; Desktop file format version 206
 ;; Emacs version 23.3.1
 
@@ -10,272 +10,41 @@
 (setq desktop-missing-file-warning nil)
 (setq tags-file-name nil)
 (setq tags-table-list nil)
-(setq search-ring '("admin" "scaffold" "can"))
+(setq search-ring nil)
 (setq regexp-search-ring nil)
 (setq register-alist nil)
-(setq file-name-history '("~/work/limsungmook_ror/chakkomi/app/views/accounts/show.html.erb" "~/work/limsungmook_ror/chakkomi/app/controllers/accounts_controller.rb" "~/work/limsungmook_ror/chakkomi/app/views/categories/index.html.erb" "~/work/limsungmook_ror/chakkomi/app/views/relays/_form_html.erb" "~/work/limsungmook_ror/chakkomi/app/views/relays/_relay.html.erb" "~/work/limsungmook_ror/chakkomi/app/views/relays/_form_html.erb" "~/work/limsungmook_ror/chakkomi/app/views/profiles/show.html.erb" "~/work/limsungmook_ror/chakkomi/app/controllers/products_controller.rb" "~/work/limsungmook_ror/chakkomi/app/models/product.rb" "~/work/limsungmook_ror/chakkomi/app/views/products/index.html.erb" "~/work/limsungmook_ror/chakkomi/app/views/line_items/_line_item.html.erb" "~/work/limsungmook_ror/chakkomi/app/views/store/_cart.html.erb" "~/work/limsungmook_ror/chakkomi/app/views/accounts/show.html.erb" "~/work/limsungmook_ror/chakkomi/app/controllers/accounts_controller.rb" "~/work/limsungmook_ror/chakkomi/app/controllers/talks_controller.rb" "~/work/limsungmook_ror/chakkomi/app/views/talks/index.html.erb" "~/work/limsungmook_ror/chakkomi/app/views/accounts/index.html.erb" "~/work/limsungmook_ror/chakkomi/config/routes.rb" "~/work/limsungmook_ror/chakkomi/app/controllers/accounts_controller.rb" "~/work/limsungmook_ror/chakkomi/config/routes.rb" "~/work/limsungmook_ror/chakkomi/app/controllers/users_controller.rb" "~/work/limsungmook_ror/chakkomi/app/controllers/users" "~/work/limsungmook_ror/chakkomi/app/views/admins/index.html.erb" "~/work/limsungmook_ror/chakkomi/app/controllers/orders_controller.rb" "~/work/limsungmook_ror/chakkomi/app/controllers/admins_controller.rb" "~/work/limsungmook_ror/chakkomi/app/views/admins/index.html.erb" "~/work/limsungmook_ror/chakkomi/app/views/admin/show.html.erb" "~/work/limsungmook_ror/chakkomi/app/views/admin/index.html.erb" "~/work/limsungmook_ror/chakkomi/config/routes.rb" "~/work/limsungmook_ror/chakkomi/app/controllers/talks_controller.rb"))
+(setq file-name-history '("~/work/limsungmook_ror/chakkomi/" "~/work/limsungmook_ror/chakkomi/app/controllers/posts_controller.rb" "~/work/limsungmook_ror/chakkomi/app/views/layouts/application.html.erb" "~/work/limsungmook_ror/chakkomi/app/views/posts/_form.html.erb" "~/work/limsungmook_ror/chakkomi/app/models/user.rb" "~/work/limsungmook_ror/chakkomi/config/environment.rb" "/usr/local/rvm/gems/ruby-1.9.3-preview1/gems/activemodel-3.0.10/lib/active_model/validations/validates.rb" "~/work/limsungmook_ror/chakkomi/app/models/tiny_print.rb" "~/work/limsungmook_ror/chakkomi/app/models/tiny_video.rb" "~/work/limsungmook_ror/chakkomi/app/models/tiny_print.rb" "~/work/limsungmook_ror/chakkomi/" "~/work/limsungmook_ror/chakkomi/app/controllers/posts_controller.rb" "~/work/limsungmook_ror/chakkomi/app/views/layouts/application.html.erb" "~/work/limsungmook_ror/chakkomi/app/views/posts/_form.html.erb" "~/work/limsungmook_ror/chakkomi/Gemfile" "~/work/limsungmook_ror/chakkomi/app/views/posts/_form.html.erb" "~/work/limsungmook_ror/chakkomi/app/views/posts/new.html.erb" "~/work/limsungmook_ror/chakkomi/app/controllers/posts_controller.rb" "~/work/limsungmook_ror/chakkomi/app/views/talks/show.html.erb" "~/work/limsungmook_ror/chakkomi/app/views/talks/_form.html.erb" "~/work/limsungmook_ror/chakkomi/app/views/talks/index.html.erb" "~/work/limsungmook_ror/chakkomi/app/controllers/talks_controller.rb" "~/work/limsungmook_ror/chakkomi/app/models/ability.rb" "~/work/limsungmook_ror/chakkomi/app/models/user.rb" "~/work/limsungmook_ror/chakkomi/app/views/orders/_form.html.erb" "~/work/limsungmook_ror/chakkomi/app/views/admins/show.html.erb" "~/work/limsungmook_ror/chakkomi/app/views/admins/index.html.erb" "~/work/limsungmook_ror/chakkomi/app/controllers/posts_controller.rb" "~/work/limsungmook_ror/chakkomi/app/views/accounts/index.html.erb" "~/work/limsungmook_ror/chakkomi/app/views/posts/_form.html.erb"))
 
 ;; Buffer section -- buffers listed in same order as in buffer list:
-(desktop-create-buffer 206
-  "/root/work/limsungmook_ror/chakkomi/app/views/accounts/show.html.erb"
-  "show.html.erb<2>"
-  'html-mode
-  nil
-  62
-  '(37 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . utf-8-unix)))
-
-(desktop-create-buffer 206
-  "/root/work/limsungmook_ror/chakkomi/app/controllers/accounts_controller.rb"
-  "accounts_controller.rb"
-  'ruby-mode
-  nil
-  67
-  '(50 nil)
-  nil
-  nil
-  '((indent-tabs-mode) (buffer-file-coding-system . undecided-unix)))
-
-(desktop-create-buffer 206
-  "/root/work/limsungmook_ror/chakkomi/app/views/accounts/index.html.erb"
-  "index.html.erb<3>"
-  'html-mode
-  nil
-  133
-  '(nil nil)
-  nil
-  nil
-  '((buffer-file-coding-system . utf-8-unix)))
-
-(desktop-create-buffer 206
-  "/root/work/limsungmook_ror/chakkomi/app/views/categories/index.html.erb"
-  "index.html.erb<5>"
-  'html-mode
-  nil
-  358
-  '(nil nil)
-  nil
-  nil
-  '((buffer-file-coding-system . undecided-unix)))
-
-(desktop-create-buffer 206
-  "/root/work/limsungmook_ror/chakkomi/app/views/relays/_form_html.erb"
-  "_form_html.erb"
-  'fundamental-mode
-  nil
-  266
-  '(nil nil)
-  nil
-  nil
-  '((buffer-file-coding-system . undecided-unix)))
-
-(desktop-create-buffer 206
-  "/root/work/limsungmook_ror/chakkomi/app/views/relays/_relay.html.erb"
-  "_relay.html.erb"
-  'html-mode
-  nil
-  1
-  '(nil nil)
-  nil
-  nil
-  '((buffer-file-coding-system . undecided-unix)))
-
-(desktop-create-buffer 206
-  "/root/work/limsungmook_ror/chakkomi/app/views/profiles/show.html.erb"
-  "show.html.erb<3>"
-  'html-mode
-  nil
-  342
-  '(nil nil)
-  nil
-  nil
-  '((buffer-file-coding-system . undecided-unix)))
-
-(desktop-create-buffer 206
-  "/root/work/limsungmook_ror/chakkomi/app/views/products/index.html.erb"
-  "index.html.erb<4>"
-  'html-mode
-  nil
-  714
-  '(nil nil)
-  nil
-  nil
-  '((buffer-file-coding-system . undecided-unix)))
-
-(desktop-create-buffer 206
-  "/root/work/limsungmook_ror/chakkomi/app/models/product.rb"
-  "product.rb"
-  'ruby-mode
-  nil
-  333
-  '(nil nil)
-  nil
-  nil
-  '((indent-tabs-mode) (buffer-file-coding-system . utf-8-unix)))
-
-(desktop-create-buffer 206
-  "/root/work/limsungmook_ror/chakkomi/app/controllers/products_controller.rb"
-  "products_controller.rb"
-  'ruby-mode
-  nil
-  299
-  '(nil nil)
-  nil
-  nil
-  '((indent-tabs-mode) (buffer-file-coding-system . undecided-unix)))
-
-(desktop-create-buffer 206
-  "/root/work/limsungmook_ror/chakkomi/app/views/line_items/_line_item.html.erb"
-  "_line_item.html.erb"
-  'html-mode
-  nil
-  411
-  '(nil nil)
-  nil
-  nil
-  '((buffer-file-coding-system . utf-8-unix)))
-
-(desktop-create-buffer 206
-  "/root/work/limsungmook_ror/chakkomi/app/views/store/_cart.html.erb"
-  "_cart.html.erb"
-  'html-mode
-  nil
-  100
-  '(nil nil)
-  nil
-  nil
-  '((buffer-file-coding-system . undecided-unix)))
-
-(desktop-create-buffer 206
-  "/root/work/limsungmook_ror/chakkomi/app/controllers/talks_controller.rb"
-  "talks_controller.rb"
-  'ruby-mode
-  nil
-  389
-  '(112 nil)
-  nil
-  nil
-  '((indent-tabs-mode) (buffer-file-coding-system . undecided-unix)))
-
-(desktop-create-buffer 206
-  "/root/work/limsungmook_ror/chakkomi/app/views/talks/index.html.erb"
-  "index.html.erb<2>"
-  'html-mode
-  nil
-  356
-  '(1 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . utf-8-unix)))
-
-(desktop-create-buffer 206
-  "/root/work/limsungmook_ror/chakkomi/app/views/admins/index.html.erb"
-  "index.html.erb"
-  'html-mode
-  nil
-  203
-  '(30 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . utf-8-unix)))
-
 (desktop-create-buffer 206
   "/root/work/limsungmook_ror/chakkomi/app/views/layouts/application.html.erb"
   "application.html.erb"
   'html-mode
   nil
-  1378
-  '(418 nil)
+  167
+  '(225 nil)
   nil
   nil
   '((buffer-file-coding-system . utf-8-unix)))
 
 (desktop-create-buffer 206
-  "/root/work/limsungmook_ror/chakkomi/config/routes.rb"
-  "routes.rb"
-  'ruby-mode
   nil
-  209
-  '(168 nil)
-  nil
-  nil
-  '((indent-tabs-mode) (buffer-file-coding-system . undecided-unix)))
-
-(desktop-create-buffer 206
-  "/root/work/limsungmook_ror/chakkomi/app/controllers/users_controller.rb"
-  "users_controller.rb"
-  'ruby-mode
-  nil
-  1
-  '(1 nil)
-  nil
-  nil
-  '((indent-tabs-mode) (buffer-file-coding-system . undecided-unix)))
-
-(desktop-create-buffer 206
-  nil
-  "users"
+  "layouts"
   'dired-mode
   nil
-  243
+  242
   '(nil nil)
   t
-  '("/root/work/limsungmook_ror/chakkomi/app/controllers/users/")
+  '("/root/work/limsungmook_ror/chakkomi/app/views/layouts/")
   nil)
-
-(desktop-create-buffer 206
-  "/root/work/limsungmook_ror/chakkomi/app/views/admin/show.html.erb"
-  "show.html.erb"
-  'html-mode
-  nil
-  257
-  '(257 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . utf-8-unix)))
-
-(desktop-create-buffer 206
-  "/root/work/limsungmook_ror/chakkomi/app/controllers/orders_controller.rb"
-  "orders_controller.rb"
-  'ruby-mode
-  nil
-  120
-  '(72 nil)
-  nil
-  nil
-  '((indent-tabs-mode) (buffer-file-coding-system . utf-8-unix)))
-
-(desktop-create-buffer 206
-  "/root/work/limsungmook_ror/chakkomi/app/controllers/admins_controller.rb"
-  "admins_controller.rb"
-  'ruby-mode
-  nil
-  102
-  '(103 nil)
-  nil
-  nil
-  '((indent-tabs-mode) (buffer-file-coding-system . undecided-unix)))
-
-(desktop-create-buffer 206
-  "/root/work/limsungmook_ror/chakkomi/app/controllers/admin_controller.rb"
-  "admin_controller.rb"
-  'ruby-mode
-  nil
-  99
-  '(100 nil)
-  nil
-  nil
-  '((indent-tabs-mode) (buffer-file-coding-system . undecided-unix)))
 
 (desktop-create-buffer 206
   "/root/work/limsungmook_ror/chakkomi/Gemfile"
   "Gemfile"
   'fundamental-mode
   nil
-  252
-  '(243 nil)
+  295
+  '(nil nil)
   nil
   nil
   '((buffer-file-coding-system . undecided-unix)))

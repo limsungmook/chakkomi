@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110905190203) do
+ActiveRecord::Schema.define(:version => 20110907054733) do
 
   create_table "carts", :force => true do |t|
     t.datetime "created_at"
@@ -122,6 +122,22 @@ ActiveRecord::Schema.define(:version => 20110905190203) do
 
   add_index "talks", ["user_id"], :name => "index_talks_on_user_id"
 
+  create_table "tiny_prints", :force => true do |t|
+    t.string   "image_file_name"
+    t.string   "image_file_size"
+    t.string   "image_content_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "tiny_videos", :force => true do |t|
+    t.string   "original_file_name"
+    t.string   "original_file_size"
+    t.string   "original_content_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "users", :force => true do |t|
     t.string   "email",                               :default => "",   :null => false
     t.string   "encrypted_password",   :limit => 128, :default => "",   :null => false
@@ -143,6 +159,7 @@ ActiveRecord::Schema.define(:version => 20110905190203) do
     t.boolean  "haslocalpw",                          :default => true, :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "role"
   end
 
   add_index "users", ["confirmation_token"], :name => "index_users_on_confirmation_token", :unique => true

@@ -1,0 +1,5 @@
+rails_tiny_mce 를 위한 설치
+# rails plugin install git://github.com/sandipransing/rails_tiny_mce.git
+# rails plugin install git://github.com/aaronchi/jrails.git
+rake rails_tiny_mce:plugins
+
