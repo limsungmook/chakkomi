@@ -2,7 +2,7 @@
 ;; --------------------------------------------------------------------------
 ;; Desktop File for Emacs
 ;; --------------------------------------------------------------------------
-;; Created Wed Sep  7 22:20:56 2011
+;; Created Wed Sep  7 22:21:54 2011
 ;; Desktop file format version 206
 ;; Emacs version 23.3.1
 
@@ -10,33 +10,33 @@
 (setq desktop-missing-file-warning nil)
 (setq tags-file-name nil)
 (setq tags-table-list nil)
-(setq search-ring '("config.ser"))
+(setq search-ring '("pg" "config.ser"))
 (setq regexp-search-ring nil)
 (setq register-alist nil)
 (setq file-name-history '("~/work/limsungmook_ror/chakkomi/config/environments/production.rb" "~/work/limsungmook_ror/chakkomi/config/initializers/ckeditor.rb" "~/work/limsungmook_ror/chakkomi/config/environments/development.rb" "~/work/limsungmook_ror/chakkomi/" "~/work/limsungmook_ror/chakkomi/app/assets/application.js" "~/work/limsungmook_ror/chakkomi/app/assets/application.css" "~/work/limsungmook_ror/chakkomi/app/assets/application.js" "~/work/limsungmook_ror/chakkomi_rails_3_0/config/initializers/devise.rb" "~/work/limsungmook_ror/chakkomi/config/initializers/devise.rb" "~/work/limsungmook_ror/chakkomi/config/environment.rb" "~/work/limsungmook_ror/chakkomi_rails_3_0/config/environment.rb" "~/work/limsungmook_ror/chakkomi_rails_3_0/config/application.rb" "~/work/limsungmook_ror/chakkomi/config/application.rb" "~/work/limsungmook_ror/chakkomi_rails_3_0/config/environments/production.rb" "~/work/limsungmook_ror/chakkomi/config/environments/development.rb" "~/work/limsungmook_ror/chakkomi/config/environments/production.rb" "~/work/limsungmook_ror/chakkomi/app/views/layouts/application.html.erb" "~/work/limsungmook_ror/chakkomi/app/views/store/_cart.html.erb" "~/work/limsungmook_ror/chakkomi/app/views/store/index.html.erb" "~/work/limsungmook_ror/chakkomi/config/environments/production.rb" "~/work/limsungmook_ror/chakkomi/app/views/layouts/application.html.erb" "~/work/limsungmook_ror/chakkomi/app/views/posts/_form.html.erb" "/usr/local/rvm/rubies/ruby-1.9.3-preview1/lib/ruby/1.9.1/open-uri.rb" "~/work/limsungmook_ror/chakkomi/Gemfile" "~/work/limsungmook_ror/chakkomi/README" "~/work/limsungmook_ror/chakkomi/config/environments/development.rb" "~/work/limsungmook_ror/chakkomi/Gemfile" "~/work/limsungmook_ror/chakkomi/app/views/posts/_form.html.erb" "~/work/limsungmook_ror/chakkomi/app/controllers/posts_controller.rb" "~/work/limsungmook_ror/chakkomi/app/views/layouts/application.html.erb"))
 
 ;; Buffer section -- buffers listed in same order as in buffer list:
 (desktop-create-buffer 206
-  "/root/work/limsungmook_ror/chakkomi/Gemfile"
-  "Gemfile"
-  'fundamental-mode
-  nil
-  487
-  '(nil nil)
-  nil
-  nil
-  '((buffer-file-coding-system . undecided-unix)))
-
-(desktop-create-buffer 206
   "/root/work/limsungmook_ror/chakkomi/config/environments/production.rb"
   "production.rb"
   'ruby-mode
   nil
-  554
-  '(1008 nil)
+  591
+  '(556 nil)
   nil
   nil
   '((indent-tabs-mode) (buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/root/work/limsungmook_ror/chakkomi/Gemfile"
+  "Gemfile"
+  'fundamental-mode
+  nil
+  450
+  '(450 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
 
 (desktop-create-buffer 206
   "/root/work/limsungmook_ror/chakkomi/config/initializers/ckeditor.rb"

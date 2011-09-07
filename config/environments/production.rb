@@ -11,7 +11,8 @@ Chakkomi::Application.configure do
   # Disable Rails's static asset server (Apache or nginx will already do this)
 
   config.action_mailer.default_url_options = { :host => 'chakkomi.heroku.com' }
-  config.serve_static_assets = false
+#  config.serve_static_assets = false
+  config.serve_static_assets = true
 
   # Compress JavaScripts and CSS
   config.assets.compress = true
