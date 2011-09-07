@@ -30,10 +30,24 @@ class OrdersController < ApplicationController
       redirect_to store_url, :notice => "장바구니가 비어 주문을 할 수 없습니다"
       return
     end
-
     
-    @order = Order.new
 
+    @cart.line_items.each do |line_item|
+      @retval = Product.where("id = ? AND delivery_state = ?", line_item.product_id, '직접수령')
+      if @retval.count > 0
+        @delivery_region = 1
+      elsif @delivery_region != 1
+        @retval = Product.where("id = ? AND delivery_state = ?", line_item.product_id, '택배')
+        if @retval.count > 0
+          @delivery_region = 2
+        elsif @delivery_region != 2
+          @delivery_region = 3
+        end
+      end
+    end
+
+
+    @order = Order.new
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @order }

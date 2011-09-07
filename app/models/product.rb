@@ -4,6 +4,8 @@ class Product < ActiveRecord::Base
   default_scope :order => 'created_at DESC'
   has_many :line_items
   before_destroy :ensure_not_referenced_by_any_line_item
+  
+  STATE = [ "판매중", "판매중지" , "품절", "문의요망" ]
 
 #  validates :thumnail_pic, :content_pic, :format => {
 #    :with => %r{\.(gif|jpg|png)$}i,

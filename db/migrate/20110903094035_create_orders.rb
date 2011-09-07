@@ -5,12 +5,13 @@ class CreateOrders < ActiveRecord::Migration
       t.string :name
       t.string :account_owner
       t.text :address
+      t.string :phone
       t.string :email
       t.string :pay_type
       t.string :delivery_type
-      t.integer :arrival_payment
+      t.string :arrival_payment
       t.integer :total_price
-      t.integer :deposit_check
+      t.string :deposit_check
 
       t.timestamps
     end

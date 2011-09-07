@@ -12,16 +12,16 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :user_id %><br />
-    <%= f.text_field :user_id %>
-  </div>
-  <div class="field">
     <%= f.label :name %><br />
     <%= f.text_field :name %>
   </div>
   <div class="field">
     <%= f.label :account_owner %><br />
     <%= f.text_field :account_owner %>
+  </div>
+  <div class="field">
+    <%= f.label :phone %><br />
+    <%= f.text_field :phone %>
   </div>
   <div class="field">
     <%= f.label :address %><br />
@@ -37,7 +37,13 @@
   </div>
   <div class="field">
     <%= f.label :delivery_type %><br />
-    <%= f.select :delivery_type , Order::DELIVERY_TYPES, :prompt => '배송 형태를 고르세요'%>
+    <% if @delivery_region == 1 %>
+    <%= f.select :delivery_type , Order::DELIVERY_TYPES_1, :prompt => '배송 형태를 고르세요'%>
+    <% elsif @delivery_region == 2 %>
+    <%= f.select :delivery_type , Order::DELIVERY_TYPES_2, :prompt => '배송 형태를 고르세요'%>
+    <% elsif @delivery_region == 3 %>
+    <%= f.select :delivery_type , Order::DELIVERY_TYPES_3, :prompt => '배송 형태를 고르세요'%>
+    <% end %>
   </div>
   <div class="field">
     <%= f.label :arrival_payment %><br />
@@ -46,10 +52,6 @@
   <div class="field">
     <%= f.label :total_price %><br />
     <%= f.text_field :total_price %>
-  </div>
-  <div class="field">
-    <%= f.label :deposit_check %><br />
-    <%= f.text_field :deposit_check %>
   </div>
   <div class="actions">
     <%= f.submit '주문하기'%>

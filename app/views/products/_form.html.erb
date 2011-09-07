@@ -1,3 +1,4 @@
+<%= javascript_include_tag "/javascripts/ckeditor/ckeditor.js" %>
 <%= form_for @product, :html => { :multipart => true } do |f| %>
   <% if @product.errors.any? %>
     <div id="error_explanation">
@@ -20,28 +21,24 @@
     <%= f.file_field :thumnail_pic %>
   </div>
   <div class="field">
-    <%= f.label :content_pic %><br />
-    <%= f.file_field :content_pic %>
-  </div>
-  <div class="field">
     <%= f.label :content %><br />
-    <%= f.text_area :content, :rows => 6 %>
+    <%= f.cktext_area :content %>
   </div>
   <div class="field">
     <%= f.label :price %><br />
-    <%= f.text_field :price %>
-  </div>
-  <div class="field">
-    <%= f.label :delivery_state %><br />
-    <%= f.text_field :delivery_state %>
+    <%= f.number_field :price %>
   </div>
   <div class="field">
     <%= f.label :stock %><br />
-    <%= f.text_field :stock %>
+    <%= f.number_field :stock %>
+  </div>
+  <div class="field">
+    <%= f.label :delivery_state %><br />
+    <%= f.select :delivery_state, Order::DELIVERY_TYPES, :prompt => '가능한 배송 형태를 고르세요' %>
   </div>
   <div class="field">
     <%= f.label :state %><br />
-    <%= f.text_field :state %>
+    <%= f.select :state, Product::STATE, :prompt => '현재 판매 여부' %>
   </div>
   <div class="actions">
     <%= f.submit %>
