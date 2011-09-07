@@ -5,9 +5,11 @@
   <%= stylesheet_link_tag "chakkomi", :media => "all" %>
   <%= stylesheet_link_tag "reset-min", :media => "all" %>
   <%= stylesheet_link_tag "fonts-min", :media => "all" %>
-
-  <%= javascript_include_tiny_mce_if_used %> <%= tiny_mce if using_tiny_mce? %>
+  <%= javascript_include_tag :application %>
+  <%= javascript_include_tag "ckeditor/ckeditor.js" %>
   <%= csrf_meta_tag %>
+
+
 </head>
 <body>
   <div id="layres">

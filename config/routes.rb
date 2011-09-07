@@ -30,7 +30,6 @@ Chakkomi::Application.routes.draw do
   match '/auth/failure' => 'services#failure'
   resources :services, :only => [:index, :create, :destroy]
 
-
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -80,7 +79,7 @@ Chakkomi::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-
+  # root :to => 'welcome#index'
 
   # See how all your routes lay out with "rake routes"
 

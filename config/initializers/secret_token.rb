@@ -4,4 +4,4 @@
 # If you change this key, all old signed cookies will become invalid!
 # Make sure the secret is at least 30 characters and all random,
 # no regular words or you'll be exposed to dictionary attacks.
-Chakkomi::Application.config.secret_token = 'afd352c72b05a59ae05fd9e1e13628149b8e9923351e4b656c241e36bcb1e618cbcae68167915bdf246cb178a15e83210de4e0bb9cf71560f638f385aded2fdb'
+Chakkomi::Application.config.secret_token = '3c63e746c8978cdbf067052e435ff305ae469eccb5269d26a127fd928e0375a0c7fb1111beee1e57cd15b679badc5701a4932f21525d69208fd5a0a9f53c8924'
