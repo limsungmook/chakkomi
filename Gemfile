@@ -21,7 +21,7 @@ gem 'therubyracer'
 # gem 'responds_to_parent'
 # Use unicorn as the web server
 # gem 'unicorn'
-
+gem 'activerecord-postgresql-adapter'
 # Deploy with Capistrano
 # gem 'capistrano'
 
