@@ -1,6 +1,9 @@
-<% @posts.each do |post| %>
-<!-- <%= image_tag post.body_pic.url %> -->
-<%= image_tag "/images/artmull20110903.png" %>
-<%= post.body_txt.html_safe %>
-<br />
-<% end %>
+<div class="artmull">
+  <% if @posts.count > 0 %>
+    <% @posts.each do |post| %>
+      <%= image_tag "/images/artmull20110903.png" %>
+      <%= post.body_txt.html_safe %>
+      <hr>
+    <% end %>
+  <% end %>
+</div>

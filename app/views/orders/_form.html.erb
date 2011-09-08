@@ -50,8 +50,7 @@
     <%= f.select :arrival_payment, Order::ARRIVAL_PAYMENT, :prompt => '선불? 착불?'  %>
   </div>
   <div class="field">
-    <%= f.label :total_price %><br />
-    <%= f.text_field :total_price %>
+    총액: <%= number_with_delimiter(@cart.total_price) %>원
   </div>
   <div class="actions">
     <%= f.submit '주문하기'%>

@@ -1,25 +1,15 @@
-<h1>Listing talks</h1>
-
-<table>
-  <tr>
-    <th>토크</th>
-    <th>토크자</th>
-  </tr>
-
-<% @talks.each do |talk| %>
-  <tr>
-<!--    <td><%= talk.content %></td>  -->
-    <td><%= link_to talk.content, talk %></td> 
-    <td><%= talk.user.name %></td>
-<!--    <td><%= link_to 'Show', talk %></td> -->
-<!--    <td><%= link_to 'Edit', edit_talk_path(talk) %></td> -->
-    <td><%= link_to 'Destroy', talk, :confirm => 'Are you sure?', :method => :delete %></td> 
-  </tr>
-<% end %>
-</table>
-
-<br />
 <% if user_signed_in? %>
 <%= render 'form' %>
 <% end %>
+<div id="talk">
+<table>
+<% @talks.each do |talk| %>
+  <tr>
+    <td><span class="talk_content"><%= link_to talk.content, talk %></span></td> 
+    <td><span class="talk_username"><%= talk.user.name %></span></td>
+    <td><span class="talk_delete"><%= link_to '삭제하기', talk, :confirm => '삭제하시겠습니까?', :method => :delete %></span></td> 
+  </tr>
+<% end %>
+</table>
+</div>
 <!-- <%= link_to 'New Talk', new_talk_path %> -->

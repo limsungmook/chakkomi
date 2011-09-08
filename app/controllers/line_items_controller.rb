@@ -43,10 +43,10 @@ class LineItemsController < ApplicationController
     @cart = current_cart
     product = Product.find(params[:product_id])
     @line_item = @cart.add_product(product.id)
-
+    
     respond_to do |format|
       if @line_item.save
-        format.html { redirect_to(store_url) }
+        format.html { redirect_to(:action => 'index', :controller => 'store') }
         format.js   { @current_item = @line_item }
         format.xml  { render :xml => @line_item, :status => :created, :location => @line_item }
       else
@@ -79,17 +79,20 @@ class LineItemsController < ApplicationController
     @cart = current_cart
 #    @line_item = LineItem.find(params[:id])
 #    @line_item.destroy
-    @line_item = @cart.sub_line_item(params[:id])
+
+#    @line_item = @cart.sub_line_item(params[:id])
+    @line_item = LineItem.find(params[:id])
+    @line_item.sub_line_item
 
     respond_to do |format|
       if @line_item.quantity < 1 
         @line_item.destroy
-        format.html { redirect_to(store_url) }
+        format.html { redirect_to(:action => 'index', :controller => 'store') }
         format.js   { @current_item = @line_item }
         format.xml  { render :xml => @line_item, :status => :deleted, :location => @line_item }
       else 
         if @line_item.save
-          format.html { redirect_to(store_url) }
+          format.html { redirect_to(:action => 'index', :controller => 'store') }
           format.js   { @current_item = @line_item }
           format.xml  { render :xml => @line_item, :status => :deleted, :location => @line_item }
         else

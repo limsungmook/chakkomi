@@ -2,13 +2,11 @@
 <html>
 <head>
   <title>타이틀</title>
-  <%= stylesheet_link_tag "chakkomi", :media => "all" %>
   <%= stylesheet_link_tag "reset-min", :media => "all" %>
   <%= stylesheet_link_tag "fonts-min", :media => "all" %>
+  <%= stylesheet_link_tag "chakkomi", :media => "all" %>
   <%= javascript_include_tag :application %>
-
   <%= csrf_meta_tag %>
-
 
 </head>
 <body>
@@ -40,12 +38,10 @@
     <div class="flash <%= key %>"><%= value %></div>
     <% end %>
   </section>
+
   <div class="layresmaj">
-
-    <div class="layresside">
-
-      <div class="layressidemenu" class="box">
-	<h5>id=layressidemenu</h5>
+    <div class="layresbar">
+      <div class="layresbarmenu" >
 	<ul>
 	  <li><%= link_to "소개", "/intro" %></li>
 	  <li><%= link_to "아트물", "/artmull" %></li>
@@ -53,7 +49,7 @@
 	  <li><%= link_to "착곰이톡", :talks %></li>
 	</ul>
       </div>
-      <div class="layressidelinks" class="box">
+      <div class="layresbarlinks" class="box">
 	<h5>Links</h5>
 	<ul>
 	  <li><%= link_to "blog", "http://www.chakkomi.com" %></li>
@@ -61,12 +57,10 @@
 	</ul>
       </div>
     </div>    
-
     
-    <div class="layrespri">
+    <div class="layresbody">
       <%= yield %>
     </div>
-    
   </div>
 
   <footer class="layresftr1">

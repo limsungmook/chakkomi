@@ -83,7 +83,7 @@ class CartsController < ApplicationController
     session[:cart_id] = nil
 
     respond_to do |format|
-      format.html { redirect_to(store_url) }
+      format.html { redirect_to(:action => 'index', :controller => 'store') }
       format.xml  { head :ok }
     end
   end

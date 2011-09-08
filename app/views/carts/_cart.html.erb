@@ -1,11 +1,20 @@
-<div class="cart_title">장바구니</div>
-<table>
-  <%= render(@cart.line_items) %>
-  <tr class="total_line" >
-    <td colspan="2" >Total</td>
-    <td class="total_cell" ><%= number_with_delimiter(@cart.total_price) %>원</td>
-  </tr>
+  <div class="line_item">
+    <table>
+      <tr>
+	<%= render(@cart.line_items) %>
+      </tr>
+    </table>
+  </div>
+  <hr>
+<div class="cart_total_line">
+  <table>
+    <tr >
+      <td>총액 :&nbsp;</td>
+      <td class="cart_total_cell" ><%= number_with_delimiter(@cart.total_price) %>원</td>
+      <td><%= button_to '주문하기', new_order_path, :method => :get, :class => "cart_btn_order" %></td>
+      <td><%= button_to '비우기', @cart, :method => :delete, :confirm => '장바구니를 삭제하시겠습니까?', :class => "cart_btn_empty" %></td>
+    </tr>    
 </table>
 
-<%= button_to '주문하기', new_order_path, :method => :get %>
-<%= button_to '비우기', @cart, :method => :delete, :confirm => '장바구니를 삭제하시겠습니까?' %>
+</div>
+

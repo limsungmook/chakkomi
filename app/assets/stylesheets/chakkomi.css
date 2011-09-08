@@ -1,3 +1,47 @@
+#flash
+{
+    float: right;
+}
+#cart
+{
+    width: 746px;
+    border-left: 1px solid #00ffff;
+    border-right: 1px solid #00ffff;
+    border-top: 1px solid #00ffff;
+    border-bottom: 1px solid #00ffff;
+}
+#cart .cart_total_line
+{
+    text-align: right;
+}
+#cart .line_item IMG
+{
+    width:80px;
+    height:80px;    
+}
+#cart .line_item table
+{
+    text-align: center; 
+    margin: 5px 5px 1px 5px; 
+}
+#cart .line_item .line_item_td
+{
+    padding:5px;
+    width:85px;
+    border-left: 1px solid #d1d6dc;
+    border-right: 1px solid #d1d6dc;
+    border-top: 1px solid #fff;
+}
+
+#relay_relay .relay_relay_admin
+{
+    text-align: right;
+}
+
+#relay_relay .relay_relay_nobody
+{
+    text-align: left;
+}
 #layres
 {
     float: left;
@@ -41,6 +85,12 @@
     color: #c81419;
 }
 
+#layres .layreshdr .layrestitle IMG
+{
+    width:950px;
+    height:140px;    
+}
+
 
 #layres .layresmaj
 {
@@ -51,7 +101,23 @@
     background: #e3e4e6;
 
 }
-#layres .layrespri
+
+#layres .layresbar
+{
+    float: left;
+    display: inline;
+    width: 190px;
+    overflow: hidden;
+    margin: 10px 9px 0 0; 
+    text-align: center;
+}
+
+#layres .layresbar .layresbarmenu
+{
+    
+}
+
+#layres .layresbody
 {
     float: left;
     display: inline;
@@ -59,14 +125,46 @@
     overflow: hidden;
     margin: 10px 10px 0 9px;
 }
-#layres .layresside
+#layres .layresbody .intro
 {
-    float: left;
-    display: inline;
-    width: 190px;
-    overflow: hidden;
-    margin: 10px 9px 0 0;
+
+
 }
+#layres .layresbody .artmull hr
+{
+    border: 1px dashed #e0ffff;
+}
+
+#layres .layresbody .product_list
+{
+    border: 2px dashed #00ffff;
+    width: 745px;
+}
+
+#layres .layresbody .product_list table
+{
+    text-align: center;
+}
+#layres .layresbody .product_list .entry IMG
+{
+    width:80px;
+    height:90px;    
+   
+}
+#layres .layresbody .product_list .entry
+{
+
+    padding:20px;
+    width:85px;
+    height:140px;
+}
+
+#layres .layresbody .product_detail
+{
+
+}
+
+
 
 #layres .layresftr1
 {
@@ -75,5 +173,5 @@
     width: 968px;
     overflow: hidden;
     border-left: 1px solid #d1d6dc;
-    border-right: 1px solid #d1d6dc;
+    border-right: 1px solid #c1d6dc;
 }

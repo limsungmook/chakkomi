@@ -6,21 +6,18 @@ Chakkomi::Application.routes.draw do
   resources :admins
   resources :accounts
   resources :line_items
-
+  resources :store
   resources :carts
-
-  get "store/index"
-
   resources :products
-
-
   resources :posts 
+  resources :categories
+
+
 
   match 'intro' => 'posts#intro'
   match 'artmull' => 'posts#artmull'
-  match 'store' => 'store#index'
 
-  resources :categories
+
 
   resources :talks do
     resources :relays

@@ -1,32 +1,43 @@
 <p id="notice"><%= notice %></p>
-
 <% if @talk.secret == 1 %>
-비밀글입니다. <br />
+<div class="relay_secret">쉿! 이 토크는 비밀입니다.</div>
 <% end %>
 
-<p><%= @talk.user.name %><%= @talk.content %><%= time_ago_in_words(@talk.created_at) %> ago</p>
-<% @talk.relays.each do |relay| %> 
-<p><%= relay.user.name %> - <%= relay.content %> - <%= time_ago_in_words(relay.created_at) %> ago<p>
-<!-- <% if user_signed_in? and relay.user_id == current_user.id %>
-<%= link_to 'delete', talk_relay_path(@talk, relay), :confirm => '삭제하시겠습니까?', :method => :delete %>
-<% end  %>  -->
-
-<% end  %> 
-
+<div class="relay_form">
 <% if user_signed_in? %>
   <% if current_user.name == nil or current_user.name == '' %>
     <%= link_to "프로필", edit_user_registration_path %> 에서 이름을 적어주세요.
   <% else %>
-  <%= current_user.name %>
+    <%= current_user.name %>
     <%= form_for [@talk, current_user.relays.new] do |f| %>
-      <%= f.text_area :content, :rows => 3 %>
-      <%= f.submit "릴레이 추가" %>
-      <% end %>
+      <%= f.text_field :content %>
     <% end %>
   <% end %>
-
-<% if user_signed_in? and @talk.user_id == current_user.id %>
-  <%= link_to 'Edit Talk', edit_talk_path(@talk) %> |
 <% end %>
 
-<%= link_to 'Back to Talks', talks_path %>
+
+<div id="relay_relay">
+  <% @talk.relays.each do |relay| %> 
+    <% if relay.user.role == "admin" %>
+      <div class="relay_relay_admin">
+    <% else %>
+      <div class="relay_relay_nobody">
+    <% end %>
+      <span class="relay_content"><%= relay.content %></span>
+      <span class="relay_username"><%= relay.user.name %></span>
+      <span class="relay_timeago"><%= time_ago_in_words(relay.created_at) %> ago</span>
+      <br />
+    </div>
+  <% end  %>
+  <% if @talk.user.role == "admin" %>
+    <div class="relay_relay_admin">
+  <% else %>
+    <div class="relay_relay_nobody">
+  <% end %>
+  <span class="relay_content"><%= @talk.content %></span>
+  <span class="relay_username"><%= @talk.user.name %></span>
+  <span class="relay_timeago"><%= time_ago_in_words(@talk.created_at) %> ago</span>
+  <br />
+    </div>
+
+</div>
