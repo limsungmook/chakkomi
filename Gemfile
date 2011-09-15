@@ -23,7 +23,7 @@ gem 'therubyracer'
 
 # gem 'responds_to_parent'
 # Use unicorn as the web server
-# gem 'unicorn'
+gem 'unicorn'
 # Deploy with Capistrano
 # gem 'capistrano'
 
