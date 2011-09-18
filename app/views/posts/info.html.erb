@@ -1,8 +1,7 @@
-<div class="artmull">
+<div class="chakkomi_notice">
   <% if @posts.count > 0 %>
     <% @posts.each do |post| %>
-      <%= post.body_txt.html_safe %>
-      <hr>
+    <%= post.body_txt.html_safe %>
     <% end %>
   <% end %>
 </div>

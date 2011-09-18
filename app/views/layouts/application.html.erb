@@ -10,9 +10,35 @@
 
 </head>
 <body>
-  <div id="layres">
-    <div class="layreshdr">
-      <div class="layresuser">
+<div id = "laydesk_outer">
+  <div id="laydesk">
+    <div class="laydesk_sidebar">
+      <div class="laydesk_sidebar_menu" >
+	<ul>
+	  <li><%= link_to "NOTICE", "/info" %></li>
+	  <li>&nbsp;</li>
+	  <li><%= link_to "CHAKKOMI", "/chakkomi" %></li>
+	  <li><%= link_to "PROJECT", "/project" %></li>
+	  <li><%= link_to "COMICS", "/comics" %></li>
+	  <li>&nbsp;</li>
+	  <li><%= link_to "PRODUCT", "/artmull" %></li>
+	  <li><%= link_to "STORE", "/store" %></li>
+	  <li>&nbsp;</li>
+	  <li><%= link_to "TALK", :talks %></li>
+	</ul>
+      </div>
+      <div class="laydesk_sidebar_links" class="box">
+      </div>
+      <footer class="laydesk_ftr1">
+	<hr />
+	<h6>Copyright</h6>
+      </footer>
+
+    </div>    
+
+  <div class="laydesk_maj">
+    <div class="laydesk_hdr">
+      <div class="laydesk_user">
 	<ul>
 	  <% if user_signed_in? %>
 	    <% if can? :magage, :all%>
@@ -28,8 +54,7 @@
 	  <% end %>
 	</ul>
       </div>
-      <div class="layrestitle">
-	<%= image_tag "/assets/chakkomi_title.png" %>
+      <div class="laydesk_title">
       </div>
     </div>
 
@@ -39,35 +64,14 @@
     <% end %>
   </section>
 
-  <div class="layresmaj">
-    <div class="layresbar">
-      <div class="layresbarmenu" >
-	<ul>
-	  <li><%= link_to "소개", "/intro" %></li>
-	  <li><%= link_to "아트물", "/artmull" %></li>
-	  <li><%= link_to "착곰이샵", "/store" %></li>
-	  <li><%= link_to "착곰이톡", :talks %></li>
-	</ul>
-      </div>
-      <div class="layresbarlinks" class="box">
-	<h5>Links</h5>
-	<ul>
-	  <li><%= link_to "blog", "http://www.chakkomi.com" %></li>
-	  <li><%= link_to "artmull", "http://artmull.tistory.com" %></li>
-	</ul>
-      </div>
-    </div>    
-    
-    <div class="layresbody">
+
+    <div class="laydesk_body">
       <%= yield %>
     </div>
+
+
   </div>
-
-  <footer class="layresftr1">
-    <hr />
-    <h6>Copyright</h6>
-  </footer>
-
+</div>
   <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
   <script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script>
 </body>

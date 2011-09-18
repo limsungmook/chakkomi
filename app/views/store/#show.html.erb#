@@ -1,0 +1,7 @@
+<div class="product_detail">
+<%= @product.title %><br />
+<%= @product.delivery_state %><br />
+<%= @product.state %><br />
+<%= number_with_delimiter(@product.price) %><br />
+<%= @product.content.html_safe %><br />
+</div>

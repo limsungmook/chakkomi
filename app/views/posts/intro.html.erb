@@ -1,8 +1,3 @@
 <div class="intro">
-  <% if @posts.count > 0 %>
-    <% @posts.each do |post| %>
-      <%= image_tag '/images/intro20110903.png' %>
-      <br />
-    <% end %>
-  <% end %>
+    <%= @post.body_txt.html_safe %>
 </div>

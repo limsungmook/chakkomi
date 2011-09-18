@@ -9,12 +9,15 @@ Chakkomi::Application.routes.draw do
   resources :store
   resources :carts
   resources :products
-  resources :posts 
   resources :categories
-
+  resources :posts 
 
 
   match 'intro' => 'posts#intro'
+  match 'info' => 'posts#info'
+  match 'chakkomi' => 'posts#chakkomi'
+  match 'project' => 'posts#project'
+  match 'comics' => 'posts#comics'
   match 'artmull' => 'posts#artmull'
 
 
