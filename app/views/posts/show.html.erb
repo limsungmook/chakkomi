@@ -1,25 +1,16 @@
-<p id="notice"><%= notice %></p>
+///////// 여기서부터
+<br />
+  <%= @post.category.name %> 카테고리의
+<br />
+  <%= @post.title %> 글입니다.
+<br />
+<%= link_to '편집하기', edit_post_path(@post) %> <br />
+<%= link_to '뒤로가기', :category %><br />
 
-<p>
-  <b>Category:</b>
-  <%= @post.category_id %>
-</p>
-
-<p>
-  <b>Title:</b>
-  <%= @post.title %>
-</p>
-
-<p>
-  <b>Body pic:</b>
-  <%= @post.body_pic %>
-</p>
-
-<p>
-  <b>Body txt:</b>
-  <%= @post.body_txt %>
-</p>
+////////////// 여기까지는 사용자에게 보이지 않습니다.
+<hr >
+<br />
+  <%= @post.body_txt.html_safe %>
 
 
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>
+<br />

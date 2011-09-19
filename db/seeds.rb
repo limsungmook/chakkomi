@@ -21,8 +21,13 @@ Product.delete_all
 # @user2.confirm!
 @connection = ActiveRecord::Base.connection();
 @connection.execute("INSERT INTO `users` (
-`confirmation_sent_at`, `confirmation_token`, `confirmed_at`, `created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `failed_attempts`, `haslocalpw`, `last_sign_in_at`, `last_sign_in_ip`, `locked_at`, `name`, `remember_created_at`, `reset_password_token`, `shortbio`, `sign_in_count`, `updated_at`, `weburl`) VALUES (
-'2011-09-07 16:45:28', NULL, '2011-09-07 16:45:33', '2011-09-07 16:45:28', '2011-09-07 16:45:33', '192.168.10.111', 'ipes4579@gmail.com', '$2a$10$YVD0ajDMkE9D19flkTF7S.YpxCwHZzV1fuzvYXesc51ZqsE/6qW0C', 0, '2011-09-07 16:45:33', '192.168.10.111', NULL, NULL, NULL, NULL, NULL, NULL, 1, '2011-09-07 16:45:33', NULL)");
+`confirmation_sent_at`, `confirmation_token`, `confirmed_at`, `created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `failed_attempts`, `haslocalpw`, `last_sign_in_at`, `last_sign_in_ip`, `locked_at`, `name`, `remember_created_at`, `reset_password_token`, `shortbio`, `sign_in_count`, `updated_at`, `weburl`, `role`) VALUES (
+'2011-09-19 07:04:50', NULL, '2011-09-19 07:06:39', '2011-09-19 07:04:50', '2011-09-19 07:06:39', '192.168.10.111', 'chakkomi@chakkomi.com', '$2a$10$ibZZNSpzst7nnA20HLFYh.r1kN0RJkfS3aL6kox0LsuMFbv.THMnS', 0,  '2011-09-19 07:06:39', '192.168.10.111', NULL, NULL, NULL, NULL, NULL, NULL, 1, '2011-09-19 07:06:39', 'www.chakkomi.com', 'admin')");
+
+@connection.execute("INSERT INTO `users` (
+`confirmation_sent_at`, `confirmation_token`, `confirmed_at`, `created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `failed_attempts`, `haslocalpw`, `last_sign_in_at`, `last_sign_in_ip`, `locked_at`, `name`, `remember_created_at`, `reset_password_token`, `shortbio`, `sign_in_count`, `updated_at`, `weburl`, `role`) VALUES (
+'2011-09-07 16:45:28', NULL, '2011-09-07 16:45:33', '2011-09-07 16:45:28', '2011-09-07 16:45:33', '192.168.10.111', 'ipes4579@gmail.com', '$2a$10$YVD0ajDMkE9D19flkTF7S.YpxCwHZzV1fuzvYXesc51ZqsE/6qW0C', 0, '2011-09-07 16:45:33', '192.168.10.111', NULL, NULL, NULL, NULL, NULL, NULL, 1, '2011-09-07 16:45:33', NULL, 'admin')");
+
 
 @category = Category.create! :name => 'intro', :detail => '착곰이 시작 페이지입니다. 시작시 이 페이지가 로딩됩니다. 1페이지만 출력합니다.'
 @post = @category.posts.create! :title => '첫번째 소개 테스트입니다.', :body_txt => '시작시 로딩되는 소개 페이지입니다. 1페이지만 출력되며 이것을 바꾸려면 임대리에게 말씀해주세요 ^-^; 새 글을 작성하면 자동으로 새로운 페이지가 출력됩니다.'

@@ -1,5 +1,5 @@
-<p>Welcome <%= @resource.email %>!</p>
+<p><%= @resource.email %>님 안녕하세요? ^^</p>
 
-<p>You can confirm your account through the link below:</p>
+<p>아래 링크를 클릭하시면 착곰이 계정 생성이 완료됩니다.</p>
 
-<p><%= link_to 'Confirm my account', confirmation_url(@resource, :confirmation_token => @resource.confirmation_token) %></p> 
+<p><%= link_to '계정 생성하기', confirmation_url(@resource, :confirmation_token => @resource.confirmation_token) %></p> 

@@ -18,7 +18,7 @@
   </div>
   <div class="field">
     <%= f.label :body_txt %><br />
-    <%= f.cktext_area :body_txt %>
+    <%= f.cktext_area :body_txt, :cols => 150, :rows => 150, :height => 800 %>
   </div>
 
   <%= f.hidden_field :category_id %>

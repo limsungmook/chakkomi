@@ -1,8 +1,0 @@
-<div class="artmull">
-  <% if @posts.count > 0 %>
-    <% @posts.each do |post| %>
-      <%= post.body_txt.html_safe %>
-      <hr>
-    <% end %>
-  <% end %>
-</div>

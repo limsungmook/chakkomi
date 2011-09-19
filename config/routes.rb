@@ -1,7 +1,7 @@
 Chakkomi::Application.routes.draw do
   devise_for :users, :controllers => { :registrations => "users/registrations" }
 
-  root :to => "posts#intro"
+  root :to => "articles#show"
   resources :orders
   resources :admins
   resources :accounts
@@ -11,15 +11,7 @@ Chakkomi::Application.routes.draw do
   resources :products
   resources :categories
   resources :posts 
-
-
-  match 'intro' => 'posts#intro'
-  match 'info' => 'posts#info'
-  match 'chakkomi' => 'posts#chakkomi'
-  match 'project' => 'posts#project'
-  match 'comics' => 'posts#comics'
-  match 'artmull' => 'posts#artmull'
-
+  resources :articles 
 
 
   resources :talks do

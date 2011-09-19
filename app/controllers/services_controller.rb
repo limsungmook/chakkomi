@@ -38,11 +38,12 @@ class ServicesController < ApplicationController
         omniauth['extra']['user_hash']['id'] ?  uid =  omniauth['extra']['user_hash']['id'] : uid = ''
         omniauth['provider'] ? provider =  omniauth['provider'] : provider = ''
       elsif service_route == 'twitter'
+#        omniauth['user_info']['email'] ? email =  omniauth['user_info']['email'] : email = ''
         email = ''    # Twitter API never returns the email address
         omniauth['user_info']['name'] ? name =  omniauth['user_info']['name'] : name = ''
         omniauth['uid'] ?  uid =  omniauth['uid'] : uid = ''
         omniauth['provider'] ? provider =  omniauth['provider'] : provider = ''
-      elsif service_route == 'google'
+      elsif service_route == 'google' || service_route == 'yahoo' || service_route == 'open_id'
         omniauth['user_info']['email'] ? email =  omniauth['user_info']['email'] : email = ''
         omniauth['user_info']['name'] ? name =  omniauth['user_info']['name'] : name = ''
         omniauth['uid'] ? uid =  omniauth['uid'] : uid = ''

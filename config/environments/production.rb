@@ -10,7 +10,7 @@ Chakkomi::Application.configure do
 
   # Disable Rails's static asset server (Apache or nginx will already do this)
 
-  config.action_mailer.default_url_options = { :host => 'chakkomi.heroku.com' }
+  config.action_mailer.default_url_options = { :host => 'dev.chakkomi.com' }
 #  config.serve_static_assets = false
   config.serve_static_assets = true
 
@@ -26,8 +26,8 @@ Chakkomi::Application.configure do
     :address              => "smtp.gmail.com",
     :port                 => 587,
     :domain               => 'gmail.com',
-    :user_name            => 'ipes4579@gmail.com',
-    :password             => '',
+    :user_name            => 'chakkomi@gmail.com',
+    :password             => 'rhavkddl529',
     :authentication       => 'plain',
     :enable_starttls_auto => true  }
 

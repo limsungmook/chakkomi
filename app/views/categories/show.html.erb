@@ -1,20 +1,14 @@
-<p id="notice"><%= notice %></p>
+<%= render :partial => "/admins/admin_menu" %>
 
-<p>
-  <b>Name:</b>
-  <%= @category.name %>
-</p>
+<%= @category.name  %>에 글 포스팅하기.
+<br />
+  <%= @category.name  %> : <%= @category.detail %>
 
-<p>
-  <b>Detail:</b>
-  <%= @category.detail %>
-</p>
 <br />
 
 <table>
   <tr>
-    <th>Title</th>
-    <th>Body txt</th>
+    <th>포스트 제목</th>
     <th></th>
     <th></th>
     <th></th>
@@ -22,19 +16,14 @@
 
 <% @posts.each do |post| %>
   <tr>
-    <td><%= post.title %></td>
-    <td><%= post.body_txt %></td>
-    <td><%= link_to 'Show', post %></td>
-    <td><%= link_to 'Edit', edit_post_path(post) %></td>
-    <td><%= link_to 'Destroy', post, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to post.title, post %></td>
+    <td><%= link_to '편집', edit_post_path(post) %></td>
+    <td><%= button_to '삭제', post, :confirm => '삭제하시겠습니까?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Post', url_for(:controller=>'posts', :action=>'new', :id => @category.id)  %>
+<%= link_to '새 글 작성', url_for(:controller=>'posts', :action=>'new', :id => @category.id)  %>
 
-
-<%= link_to 'Edit', edit_category_path(@category) %> |
-<%= link_to 'Back', categories_path %>
