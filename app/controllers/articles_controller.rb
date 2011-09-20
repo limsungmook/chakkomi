@@ -7,9 +7,21 @@ class ArticlesController < ApplicationController
         @posts = find_posts_all(params[:category_name])
       else
         @post = find_post_first(params[:category_name])
+        params[:one_article] = nil
       end
       params[:category_name] = nil
     end
+
+    respond_to do |format|
+      if !@post.nil? || !@posts.nil?
+        format.html 
+        format.js { @post }
+      else
+        format.html { redirect_to( :back ) }
+      end
+    end
+
+
   end
 
 

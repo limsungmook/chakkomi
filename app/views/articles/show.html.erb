@@ -1,11 +1,1 @@
-<% if !@post.nil? %>
-  <%= @post.body_txt.html_safe %>
-
-<% elsif !@posts.nil? %>
-  <% if @posts.count > 0 %>
-    <% @posts.each do |post| %>
-    <%= post.body_txt.html_safe %>
-    <% end %>
-  <% end %>
-<% end %>
-
+<%= render 'article' %>
