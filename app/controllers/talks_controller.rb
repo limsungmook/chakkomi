@@ -8,6 +8,7 @@ class TalksController < ApplicationController
 
     respond_to do |format|
       format.html # index.html.erb
+      format.js
       format.xml  { render :xml => @talks }
     end
   end
@@ -19,6 +20,7 @@ class TalksController < ApplicationController
 
     respond_to do |format|
       format.html # show.html.erb
+      format.js
       format.xml  { render :xml => @talk }
     end
   end
@@ -44,9 +46,13 @@ class TalksController < ApplicationController
   def create
     @talk = Talk.new(params[:talk])
     @talk.user = current_user
-
     respond_to do |format|
       if @talk.save
+        @relay = Relay.new()
+        @relay.user = @talk.user
+        @relay.content = @talk.content
+        @relay.talk_id = @talk.id
+        @relay.save
         #        format.html { redirect_to(@talk, :notice => 'Talk was successfully created.') }
         format.html { redirect_to(talks_path, :notice => 'Talk was successfully created.') }
         format.xml  { render :xml => @talk, :status => :created, :location => @talk }

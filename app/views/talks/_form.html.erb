@@ -2,7 +2,7 @@
    @talk = Talk.new 
    end %>
 
-<%= form_for(@talk) do |f| %>
+<%= form_for(@talk, :remote => true ) do |f| %>
   <% if @talk.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@talk.errors.count, "error") %> prohibited this talk from being saved:</h2>
@@ -15,6 +15,6 @@
     </div>
   <% end %>
 
-  <%= f.text_field :content %><%= f.check_box :secret %><%= f.label :secret %>
+  <%= f.text_field :content, :class => "defaultText", :title => "착곰이에게 하고 싶은 말을 남겨주세요 ^-^" %><%= f.check_box :secret %><%= f.label :secret %>
 
 <% end %>

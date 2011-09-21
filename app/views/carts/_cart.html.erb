@@ -1,3 +1,9 @@
+<% if notice %>
+<p id="notice" ><%= notice %></p>
+<% flash[:notice] = nil %>
+<% end %>
+
+
   <div class="line_item">
     <table>
       <tr>
@@ -12,7 +18,10 @@
       <td>총액 :&nbsp;</td>
       <td class="cart_total_cell" ><%= number_with_delimiter(@cart.total_price) %>원</td>
       <td><%= button_to '주문하기', new_order_path, :method => :get, :class => "cart_btn_order" %></td>
-      <td><%= button_to '비우기', @cart, :method => :delete, :confirm => '장바구니를 삭제하시겠습니까?', :class => "cart_btn_empty" %></td>
+      <td><%= button_to '비우기', @cart, :method => :delete, :confirm => '장바구니를 삭제하시겠습니까?', :class => "cart_btn_empty", :remote => true %></td>
+      <td>
+
+      </td>
     </tr>    
 </table>
 

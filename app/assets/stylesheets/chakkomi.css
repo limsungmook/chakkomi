@@ -31,13 +31,46 @@
 
 #relay_relay .relay_relay_admin
 {
-    text-align: right;
+    width:600px;
+    float: right;
 }
+.roundbox_green { background: url('/assets/roundbox/nt_green.gif') repeat; }
+.rbtop_green div { background: url('/assets/roundbox/tl_green.gif') no-repeat top left; }
+.rbtop_green { background: url('/assets/roundbox/tr_green.gif') no-repeat top right; }
+.rbbot_green div { background: url('/assets/roundbox/bl_green.gif') no-repeat bottom left; }
+.rbbot_green { background: url('/assets/roundbox/br_green.gif') no-repeat bottom right; }
 
+/* height and width stuff, width not really nessisary. */
+.rbtop_green div, .rbtop_green, .rbbot_green div, .rbbot_green {
+    width: 100%;
+    height: 7px;
+    font-size: 1px;
+
+}
+.rbcontent_green { margin: 0 7px; text-align:right;}
+.roundbox_green { float:right;width: 100% ; margin: 1em auto; display: inline_block;}
 #relay_relay .relay_relay_nobody
 {
-    text-align: left;
+    width:600px;
+    float: left;
 }
+.roundbox_pink { background: url('/assets/roundbox/nt_pink.gif') repeat; }
+.rbtop_pink div { background: url('/assets/roundbox/tl_pink.gif') no-repeat top left; }
+.rbtop_pink { background: url('/assets/roundbox/tr_pink.gif') no-repeat top right; }
+.rbbot_pink div { background: url('/assets/roundbox/bl_pink.gif') no-repeat bottom left; }
+.rbbot_pink { background: url('/assets/roundbox/br_pink.gif') no-repeat bottom right; }
+
+/* height and width stuff, width not really nessisary. */
+.rbtop_pink div, .rbtop_pink, .rbbot_pink div, .rbbot_pink {
+    width: 100%;
+    height: 7px;
+    font-size: 1px;
+
+}
+.rbcontent_pink { margin: 0 7px; text-align:right;}
+.roundbox_pink { float:left;width: 100% ; margin: 1em auto; display: inline_block;}
+
+
 
 /* 여기부터는 레이아웃 입니다. */
 
@@ -254,3 +287,5 @@
     -webkit-border-radius: 5px; 
 }
 
+.defaultText { width: 300px; }
+.defaultTextActive { color: #a1a1a1; font-style: italic; }

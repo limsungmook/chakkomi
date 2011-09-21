@@ -1,5 +1,18 @@
-<p>
-  <%= relay.user %>
-  <%= relay.content %>
-  <%= link_to 'del', [relay.talk, relay], :confirm => '정말로 지우시겠습니까?', :method => :delete %>
-</p>
+<p id="notice"><%= notice %></p>
+<% if @talk.secret == 1 %>
+<div class="relay_secret">쉿! 이 토크는 비밀입니다.</div>
+<% end %>
+
+<div class="relay_form">
+<% if user_signed_in? %>
+  <% if current_user.name == nil or current_user.name == '' %>
+    <%= link_to "프로필", edit_user_registration_path %> 에서 이름을 적어주세요.
+  <% else %>
+    <%= current_user.name %>
+    <%= form_for [@talk, current_user.relays.new], :remote => true do |f| %>
+    <%= f.text_field :content, :class => "defaultText", :title => "착곰이에게 하고 싶은 말을 남겨주세요 ^-^" %>
+    <% end %>
+  <% end %>
+<% end %>
+
+<%= render 'relay_relay' %>

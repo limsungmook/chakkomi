@@ -1,0 +1,22 @@
+$('#laydesk_body').html('<%= escape_javascript(render('store')) %>');
+
+$('.entry').draggable({
+	'opacity': 0.3,
+	'revert': "valid",
+	'delay': 200,
+	'distance':4,
+	'helper':"clone"
+});
+$('#cart').droppable({
+	'accept':'.entry',
+	'activeClass':'border',
+	'drop': function(){
+		$('#add_to_cart').click();
+	}
+});
+
+$('.entry').hover(function(){
+	$(this).css("background", "#1212f2");
+},function(){
+	$(this).css("background","#ffffff");
+});

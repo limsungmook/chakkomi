@@ -1,0 +1,34 @@
+<div id="cart">
+<% if @cart %>
+<%= hidden_div_if(@cart.line_items.empty?, :id => "cart") do %>
+  <%= render @cart %>
+  <% end %>
+<% end %>
+</div>
+
+<div class="product_list">
+<table>
+
+<% @products.each_with_index do |product, index| %>
+
+  <% if (index % 5) == 0 %>
+    <tr>
+  <% end %>
+
+  <td>
+    <div class="entry" >
+      <%= link_to image_tag(product.thumnail_pic.url) , :controller=>"store", :action => 'show', :id=>product %><br />
+      <%= product.title %><br />
+       <%= number_with_delimiter(product.price) %><br />
+      <%= button_to '장바구니', line_items_path(:product_id => product),  :id => 'add_to_cart', :remote => true %>
+    </div>
+  </td>
+ 
+  <% if (index % 5) == 4 %>
+    </tr>
+  <% end %>
+<% end %>
+    </tr>
+</table>
+</div>
+

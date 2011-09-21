@@ -78,12 +78,14 @@ class CartsController < ApplicationController
   # DELETE /carts/1
   # DELETE /carts/1.xml
   def destroy
+    @products = Product.all
     @cart = current_cart
     @cart.destroy
     session[:cart_id] = nil
 
     respond_to do |format|
       format.html { redirect_to(:action => 'index', :controller => 'store') }
+      format.js 
       format.xml  { head :ok }
     end
   end

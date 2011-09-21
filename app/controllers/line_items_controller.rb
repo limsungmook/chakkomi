@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 class LineItemsController < ApplicationController
   # GET /line_items
   # GET /line_items.xml
@@ -42,8 +43,13 @@ class LineItemsController < ApplicationController
   def create
     @cart = current_cart
     product = Product.find(params[:product_id])
-    @line_item = @cart.add_product(product.id)
-    
+    @retval = Hash.new
+    @retval = @cart.add_product(product.id)    
+
+    @line_item = @retval["current_item"]
+    if @retval["notice"]
+      flash[:notice] = @retval["notice"]
+    end
     respond_to do |format|
       if @line_item.save
         format.html { redirect_to(:action => 'index', :controller => 'store') }

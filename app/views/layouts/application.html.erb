@@ -49,7 +49,7 @@
 	  <li><span id="currentuser"><%= current_user.email %></span></li>
 	  <li><%= link_to "Profile", edit_user_registration_path %></li>
 	  <li><%= link_to "Setting", "/services" %></li>
-	  <li><%= link_to "Log out", destroy_user_session_path, :method => :delete %></li>
+	  <li><%= link_to "Log out", destroy_user_session_path %></li>
 	  <% else %>
 	  <li><%= link_to "Create Account", new_user_registration_path %></li>
 	  <li><%= link_to "Login", new_user_session_path %></li>
@@ -60,14 +60,13 @@
       </div>
     </div>
 
-  <div id="flash">
-    <% flash.each do |key, value| %>
-    <div class="flash <%= key %>"><%= value %></div>
-    <% end %>
-  </div>
-
-
     <div id="laydesk_body" class="laydesk_body">
+      <div id="flash">
+	<% flash.each do |key, value| %>
+	<div class="flash <%= key %>"><%= value %></div>
+	<% end %>
+      </div>
+
       <%= yield %>
     </div>
 

@@ -1,0 +1,22 @@
+<% if user_signed_in? %>
+  <% if current_user.name == nil or current_user.name == '' %>
+    <%= link_to "프로필", edit_user_registration_path %> 에서 이름을 적으셔야 글을 작성할 수 있습니다.
+  <% else %>
+  <%= render 'form' %>
+  <% end %>
+
+
+<% end %>
+
+<div id="talk">
+<table>
+<% @talks.each do |talk| %>
+  <tr>
+    <td><span class="talk_content"><%= link_to talk.content, talk, :remote => true %></span></td> 
+    <td><span class="talk_username"><%= talk.user.name %></span></td>
+    <td><span class="talk_delete"><%= button_to '삭제하기', talk, :confirm => '삭제하시겠습니까?', :method => :delete %></span></td> 
+  </tr>
+<% end %>
+</table>
+</div>
+<!-- <%= link_to 'New Talk', new_talk_path %> -->

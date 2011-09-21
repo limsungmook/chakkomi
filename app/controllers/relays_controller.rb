@@ -10,7 +10,7 @@ class RelaysController < ApplicationController
     
     respond_to do |format|
       if @relay.save
-        format.html { redirect_to(@talk, :notice => '릴레이 작성이 성공했습니다.') }
+        format.html { redirect_to(@talk) }
       else
         format.html { redirect_to(@talk, :notice => '릴레이 작성이 실패했습니다.') }
       end
