@@ -3,12 +3,16 @@
     <% if relay.user.role == "admin" %>
       <div class="relay_relay_admin">
 	<table align="right">
+	  <% if relay == @lastest_relay  %>
+	  <tr id="lastest_relay">
+	    <% else %>
 	  <tr>
+	    <% end %>
 	    <td>
 	      <div class="relay_timeago"><%= time_ago_in_words(relay.created_at) %> ago</div>
 	    </td>
 	    <td>
-	<div class="relay_username"><%= relay.user.name %></div>
+	      <div class="relay_username"><%= relay.user.name %></div>
 	    </td>
 	    <td>
 	      <div class="roundbox_green">
@@ -25,7 +29,11 @@
     <% else %>
     <div class="relay_relay_nobody">
       <table align="left">
+	<% if relay == @lastest_relay  %>
+	<tr id="lastest_relay">
+	  <% else %>
 	<tr>
+	  <% end %>
 	  <td>
 	    <div class="roundbox_pink">
 	      <div class="rbtop_pink"><div></div></div>

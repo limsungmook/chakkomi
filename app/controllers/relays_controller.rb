@@ -11,6 +11,7 @@ class RelaysController < ApplicationController
     respond_to do |format|
       if @relay.save
         format.html { redirect_to(@talk) }
+        format.js { @lastest_relay = @relay }
       else
         format.html { redirect_to(@talk, :notice => '릴레이 작성이 실패했습니다.') }
       end

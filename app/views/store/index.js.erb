@@ -1,4 +1,9 @@
-$('#laydesk_body').html('<%= escape_javascript(render('store')) %>');
+$('#laydesk_body').fadeOut('10000', function(){
+	$('#laydesk_body').html('<%= escape_javascript(render('store')) %>').fadeIn('slow');
+});
+
+
+// $('#laydesk_body').html('<%= escape_javascript(render('store')) %>');
 
 $('.entry').draggable({
 	'opacity': 0.3,

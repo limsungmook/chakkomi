@@ -44,6 +44,7 @@ class TalksController < ApplicationController
   # POST /talks
   # POST /talks.xml
   def create
+
     @talk = Talk.new(params[:talk])
     @talk.user = current_user
     respond_to do |format|
@@ -53,8 +54,10 @@ class TalksController < ApplicationController
         @relay.content = @talk.content
         @relay.talk_id = @talk.id
         @relay.save
+        @talks = Talk.all
         #        format.html { redirect_to(@talk, :notice => 'Talk was successfully created.') }
-        format.html { redirect_to(talks_path, :notice => 'Talk was successfully created.') }
+        format.html { redirect_to(@talk) }
+        format.js { @lastest_talk = @talk }
         format.xml  { render :xml => @talk, :status => :created, :location => @talk }
       else
         format.html { render :action => "new" }

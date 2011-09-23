@@ -2,7 +2,7 @@
 ;; --------------------------------------------------------------------------
 ;; Desktop File for Emacs
 ;; --------------------------------------------------------------------------
-;; Created Wed Sep 21 09:16:36 2011
+;; Created Fri Sep 23 08:53:25 2011
 ;; Desktop file format version 206
 ;; Emacs version 23.1.1
 
@@ -10,7 +10,7 @@
 (setq desktop-missing-file-warning nil)
 (setq tags-file-name "/root/work/limsungmook_ror/chakkomi/app/controllers/TAGS")
 (setq tags-table-list '("/root/work/limsungmook_ror/chakkomi/app/controllers/TAGS"))
-(setq search-ring '("entry" "current_item" "flash" "notice" "create" "flash" "add" "store" "stores" "js" "destroy" "store" "destroy" "js" "flash" "out"))
+(setq search-ring '("current" "laydesk-current" "item" "default" "body" "bbq" "getState" "laydesk" "alert" "body" "article" "test" "create" "@talk" "talk" "Talk."))
 (setq regexp-search-ring nil)
 (setq register-alist nil)
 

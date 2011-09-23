@@ -1,21 +1,24 @@
-$('#laydesk_body').html('<%= escape_javascript(render('talk')) %>');
+$('#laydesk_body').fadeOut('10000', function(){
+	$('#laydesk_body').html('<%= escape_javascript(render('talk')) %>').fadeIn('slow');
+	$(".defaultText").focus(function(srcc)
+				{
+				    if ($(this).val() == $(this)[0].title)
+				    {
+					$(this).removeClass("defaultTextActive");
+					$(this).val("");
+				    }
+				});
+	
+	$(".defaultText").blur(function()
+			       {
+				   if ($(this).val() == "")
+				   {
+				       $(this).addClass("defaultTextActive");
+				       $(this).val($(this)[0].title);
+				   }
+			       });
+	
+	$(".defaultText").blur();        
+	
+    });
 
-$(".defaultText").focus(function(srcc)
-{
-    if ($(this).val() == $(this)[0].title)
-    {
-	$(this).removeClass("defaultTextActive");
-	$(this).val("");
-    }
-});
-
-$(".defaultText").blur(function()
-		       {
-			   if ($(this).val() == "")
-			   {
-			       $(this).addClass("defaultTextActive");
-			       $(this).val($(this)[0].title);
-			   }
-		       });
-
-$(".defaultText").blur();        
