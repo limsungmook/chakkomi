@@ -1,24 +1,40 @@
-$('#laydesk_body').fadeOut('10000', function(){
-	$('#laydesk_body').html('<%= escape_javascript(render('talk')) %>').fadeIn('slow');
-	$(".defaultText").focus(function(srcc)
-				{
-				    if ($(this).val() == $(this)[0].title)
-				    {
-					$(this).removeClass("defaultTextActive");
-					$(this).val("");
-				    }
-				});
+$('#laydesk_body').html('<%= escape_javascript(render('talk')) %>').show('slide');
+
+
+
+
+$(".defaultText").focus(function(srcc)
+			{
+			    if ($(this).val() == $(this)[0].title)
+			    {
+				$(this).removeClass("defaultTextActive");
+				$(this).val("");
+			    }
+			});
+
+$(".defaultText").blur(function()
+		       {
+			   if ($(this).val() == "")
+			   {
+			       $(this).addClass("defaultTextActive");
+			       $(this).val($(this)[0].title);
+			   }
+		       });
+
+$(".defaultText").blur();        
+$("#laydesk_body a").click(function(e) {
+//		$.getScript(this.href);
+//		history.pushState(null, document.title, this.href);
+	var History = window.History;
+	if ( !History.enabled ){
+	    return false;
+	}
 	
-	$(".defaultText").blur(function()
-			       {
-				   if ($(this).val() == "")
-				   {
-				       $(this).addClass("defaultTextActive");
-				       $(this).val($(this)[0].title);
-				   }
-			       });
-	
-	$(".defaultText").blur();        
-	
+	History.pushState(null, document.title, this.href);
+	return false;
     });
+
+
+
+
 

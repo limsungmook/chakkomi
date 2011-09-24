@@ -3,16 +3,21 @@ $(function() {
 	if ( !History.enabled ){
 	    return false;
 	}
-	$(".laydesk_sidebar_menu a").live("click", function(e) {
-
+	$(".laydesk_sidebar_menu a, #laydesk_body a").click(function(e) {
 //		$.getScript(this.href);
+//		history.pushState(null, document.title, this.href);
+
 		History.pushState(null, document.title, this.href);
-//		e.preventDefault();
+
+		return false;
+
 	    });
 	History.Adapter.bind(window, 'statechange', function(){
 		var State = History.getState();
-//		History.log(State.data, State.title, State.url);
+
+		
 		$.getScript(State.url);
+
 		
 
 	    });

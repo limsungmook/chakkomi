@@ -6,7 +6,7 @@
   <%= stylesheet_link_tag "fonts-min", :media => "all" %>
   <%= stylesheet_link_tag "chakkomi", :media => "all" %>
   <%= javascript_include_tag :application %>
-  <script>if(typeof window.JSON == "undefined" ) { document.write('<script src="history.js/scripts/compressed/json2.js"><\/script>'); }</script>
+  <script>if ( typeof window.JSON === 'undefined') { document.write('<script src="http://dev.chakkomi.com/assets/history.js/scripts/compressed/json2.js"><\/script>'); }</script>
   <%= javascript_include_tag "history.js/scripts/compressed/amplify.store.js" %>
   <%= javascript_include_tag "history.js/scripts/compressed/history.adapter.jquery.js" %>
   <%= javascript_include_tag "history.js/scripts/compressed/history.js" %>
