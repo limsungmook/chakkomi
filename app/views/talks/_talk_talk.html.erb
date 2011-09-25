@@ -10,7 +10,9 @@
       <% end %>
       <td><span class="talk_content"><%= link_to talk.content, talk, :remote => true %></span></td> 
       <td><span class="talk_username"><%= talk.user.name %></span></td>
-      <td><span class="talk_delete"><%= button_to '삭제하기', talk, :confirm => '삭제하시겠습니까?', :method => :delete %></span></td> 
+      <% if can? :manage, :all || user_signed_in? && current_user.id == talk.user_id %>
+        <td><span class="talk_delete"><%= button_to '삭제하기', talk, :confirm => '삭제하시겠습니까?', :method => :delete %></span></td> 
+      <% end %>
     </tr>
 
 </div>

@@ -21,17 +21,17 @@
     <div id="laydesk" class="laydesk">
       <div class="laydesk_sidebar">
 	<div class="laydesk_sidebar_logo">
-	  <%= link_to image_tag("/assets/logo.png"), {:controller=>'/articles', :action => 'show', :category_name=>'intro', :one_article=>'1'}, :remote => true %>
+	  <%= link_to image_tag("/assets/logo.png"), {:controller=>'/articles', :action => 'show', :id => '1', :category_name=>'intro', :one_article=>'1'}, :remote => true %>
 	</div>
 	<div class="laydesk_sidebar_menu" >
 	  <ul>
-	    <li><%= link_to "NOTICE", {:controller=>'/articles', :action => 'show', :category_name=>'notice', :one_article=>'1'}, :remote => true, :class => "menu_link_notice" %></li>
+	    <li><%= link_to "NOTICE", {:controller=>'/articles', :action => 'show',:id => '1', :category_name=>'notice', :one_article=>'1'}, :remote => true, :class => "menu_link_notice" %></li>
 	    <li>&nbsp;</li>
-	    <li><%= link_to "CHAKKOMI", {:controller=>'/articles', :action => 'show', :category_name=>'chakkomi'}, :remote => true, :class => "menu_link_chakkomi"  %></li>
-	    <li><%= link_to "PROJECT", {:controller=>'/articles', :action => 'show', :category_name=>'project'}, :remote => true , :class => "menu_link_project"  %></li>
-	    <li><%= link_to "COMICS", {:controller=>'/articles', :action => 'show', :category_name=>'comics'}, :remote => true, :class => "menu_link_comics"  %></li>
+	    <li><%= link_to "CHAKKOMI", {:controller=>'/articles', :action => 'show',:id => '1', :category_name=>'chakkomi'}, :remote => true, :class => "menu_link_chakkomi"  %></li>
+	    <li><%= link_to "PROJECT", {:controller=>'/articles', :action => 'show', :id => '1',:category_name=>'project'}, :remote => true , :class => "menu_link_project"  %></li>
+	    <li><%= link_to "COMICS", {:controller=>'/articles', :action => 'show',:id => '1', :category_name=>'comics'}, :remote => true, :class => "menu_link_comics"  %></li>
 	    <li>&nbsp;</li>
-	    <li><%= link_to "PRODUCT", {:controller=>'/articles', :action => 'show', :category_name=>'artmull'}, :remote => true, :class => "menu_link_product"  %></li>
+	    <li><%= link_to "PRODUCT", {:controller=>'/articles', :action => 'show', :id => '1', :category_name=>'artmull'}, :remote => true, :class => "menu_link_product"  %></li>
 	    <li><%= link_to "STORE", "/store", :remote => true, :class => "menu_link_store"  %></li>
 	    <li>&nbsp;</li>
 	    <li><%= link_to "TALK", :talks, :remote => true, :class => "menu_link_talk"  %></li>
