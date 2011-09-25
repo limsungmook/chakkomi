@@ -6,6 +6,7 @@
     <% @posts.each do |post| %>
     <%= post.body_txt.html_safe %>
     <% end %>
+    <%= will_paginate @posts %>
   <% end %>
 <% end %>
 

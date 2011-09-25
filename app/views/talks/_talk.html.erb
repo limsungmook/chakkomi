@@ -1,5 +1,5 @@
 <p id="notice"><%= notice %></p>
-
+<div id="talk_wrapper">
 <div class="talk_form">
 <% if user_signed_in? %>
   <% if current_user.name == nil or current_user.name == '' %>
@@ -21,3 +21,4 @@
 </div>
 
 <%= render 'talk_talk' %>
+</div>

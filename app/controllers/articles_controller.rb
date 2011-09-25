@@ -31,7 +31,7 @@ class ArticlesController < ApplicationController
 
   def find_posts_all(category_name)
     @category = Category.find(:first, :conditions => ["name = ?", category_name]) 
-    @posts = @category.posts
+    @posts = @category.posts.paginate(:per_page => 5, :page => params[:page])
   end
   def find_post_first(category_name)
     @category = Category.find(:first, :conditions => ["name = ?", category_name]) 

@@ -4,8 +4,7 @@ class TalksController < ApplicationController
     # GET /talks
   # GET /talks.xml
   def index
-    @talks = Talk.all
-
+    @talks = Talk.paginate(:per_page => 10, :page => params[:page])
     respond_to do |format|
       format.html # index.html.erb
       format.js
@@ -54,7 +53,7 @@ class TalksController < ApplicationController
         @relay.content = @talk.content
         @relay.talk_id = @talk.id
         @relay.save
-        @talks = Talk.all
+        @talks = Talk.paginate(:per_page => 10, :page => params[:page])
         #        format.html { redirect_to(@talk, :notice => 'Talk was successfully created.') }
         format.html { redirect_to(@talk) }
         format.js { @lastest_talk = @talk }
