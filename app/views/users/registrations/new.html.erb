@@ -30,5 +30,22 @@
   <div id="devise_links">
     <%= render :partial => "devise/shared/links" %>
   </div>
-</section>
+</div>
+
+
+<div id="loading">
+  <center>  <%= image_tag "loading.gif" %></center>
+</div>
+
     
+<script type="text/javascript">
+  $(function() {
+  $("#loading").hide();
+  $("#deviseauth a").click(function(e) {
+
+    $('#deviseauth').hide();
+     $('#loading').show();
+  });
+});
+
+</script>

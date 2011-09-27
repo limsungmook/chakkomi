@@ -15,6 +15,10 @@ Chakkomi::Application.routes.draw do
 
 
   resources :talks do
+    collection do
+      get :check_update
+      get :check_update_relay
+    end
     resources :relays
   end
   

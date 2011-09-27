@@ -1,9 +1,10 @@
+
 <p id="notice"><%= notice %></p>
-<div id="talk_wrapper">
-<div class="talk_form">
+
+
 <% if user_signed_in? %>
   <% if current_user.name == nil or current_user.name == '' %>
-    <%= link_to "프로필", edit_user_registration_path %> 에서 이름을 적으셔야 글을 작성할 수 있습니다.
+    <%= link_to "프로필", edit_user_registration_path, :class => "profile" %> 에서 이름을 적으셔야 글을 작성할 수 있습니다.
   <% else %>
     <% if @talk.nil? %>
       <% @talk = Talk.new  %>
@@ -11,14 +12,16 @@
     
     <%= current_user.name %>
 
-      <%= form_for(@talk, :remote => true ) do |f| %>
+      <%= form_for(@talk, :remote => true, :html => {:class => 'talk_form'} ) do |f| %>
         <%= f.text_field :content, :class => "defaultText", :title => "착곰이에게 하고 싶은 말을 남겨주세요 ^-^" %>
         <%= f.check_box :secret %>
         <%= f.label :secret %>
       <% end %>
    <% end %>
 <% end %>
-</div>
+
 
 <%= render 'talk_talk' %>
-</div>
+
+
+

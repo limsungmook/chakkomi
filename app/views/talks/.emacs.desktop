@@ -1,0 +1,50 @@
+;; -*- mode: emacs-lisp; coding: emacs-mule; -*-
+;; --------------------------------------------------------------------------
+;; Desktop File for Emacs
+;; --------------------------------------------------------------------------
+;; Created Tue Sep 27 11:11:48 2011
+;; Desktop file format version 206
+;; Emacs version 23.1.1
+
+;; Global section:
+(setq desktop-missing-file-warning nil)
+(setq tags-file-name nil)
+(setq tags-table-list nil)
+(setq search-ring nil)
+(setq regexp-search-ring nil)
+(setq register-alist nil)
+
+;; Buffer section -- buffers listed in same order as in buffer list:
+(desktop-create-buffer 206
+  "/var/www/chakkomi/app/views/talks/index.js.erb"
+  "index.js.erb"
+  'java-mode
+  '(abbrev-mode)
+  99
+  '(958 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/var/www/chakkomi/app/controllers/talks_controller.rb"
+  "talks_controller.rb"
+  'ruby-mode
+  nil
+  1055
+  '(nil nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/var/www/chakkomi/app/assets/javascripts/chakkomi.js.erb"
+  "chakkomi.js.erb"
+  'java-mode
+  '(abbrev-mode)
+  541
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix)))
+

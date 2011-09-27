@@ -1,10 +1,43 @@
+# -*- coding: utf-8 -*-
+
 class TalksController < ApplicationController
   before_filter :authenticate_user!, :except => [:index, :show]
 
-    # GET /talks
+  #최신 글의 여부를 체크한다. 있으면 true, 없으면 false
+  def check_update
+    @talk_last = Talk.find(:first)
+    respond_to do |format|
+      if( @talk_last.updated_at != session[:saved_talk_last] )
+        session[:saved_talk_last] = @talk_last.updated_at
+        format.js {@retval = 1}
+      else
+        format.js {@retval = 0}
+      end
+    end
+  end
+
+  def check_update_relay
+    @talk = Talk.find(params[:talk_id])
+    @relay_last = @talk.relays.find(:first)
+    respond_to do |format|
+      if( @relay_last.created_at != session[:saved_relay_last] )
+        session[:saved_relay_last] = @relay_last.created_at
+        format.js {@retval = 1}
+      else
+        format.js {@retval = 0}
+      end
+    end
+  end
+
+
+
+  # GET /talks
   # GET /talks.xml
   def index
-    @talks = Talk.paginate(:per_page => 10, :page => params[:page])
+    # 지속적인 최신글의 체크를 위해 지금까지의 최신글을 세션에 넣어놓는다. 
+    @talk_last = Talk.find(:first)
+    session[:saved_talk_last] = @talk_last.updated_at
+    @talks = Talk.paginate(:per_page => 10, :page => params[:page])    
     respond_to do |format|
       format.html # index.html.erb
       format.js
@@ -16,7 +49,8 @@ class TalksController < ApplicationController
   # GET /talks/1.xml
   def show
     @talk = Talk.find(params[:id])
-
+    @relay_last = @talk.relays.find(:first)
+    session[:saved_relay_last] = @relay_last.created_at
     respond_to do |format|
       format.html # show.html.erb
       format.js
@@ -92,6 +126,7 @@ class TalksController < ApplicationController
       format.xml  { head :ok }
     end
   end
+
 end
 
 

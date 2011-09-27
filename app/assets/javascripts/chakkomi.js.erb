@@ -1,5 +1,7 @@
 $(function() {
 	var History = window.History;
+
+
 	if ( !History.enabled ){
 	    return false;
 	}
@@ -15,6 +17,16 @@ $(function() {
 		    return false;
 		}
 	    });
+
+/*
+ * 자동 리로딩기능. 아직 잘 작동 안함.
+
+
+	$(".menu_link_talk").click(function(){
+		$.getScript('/talks?start=1');
+		return false;
+	    });
+ */
 	History.Adapter.bind(window, 'statechange', function(){
 		var State = History.getState();
 //		History.log(State.data, State.title, State.url);

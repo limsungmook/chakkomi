@@ -6,5 +6,5 @@ class Talk < ActiveRecord::Base
   validates :content, :presence => true
   validates :secret, :presence => true, :numericality => true, :inclusion => { :in => 0..1 }
 
-  default_scope :order => 'talks.created_at DESC'
+  default_scope :order => 'talks.updated_at DESC'
 end
