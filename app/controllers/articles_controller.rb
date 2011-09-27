@@ -1,4 +1,7 @@
 class ArticlesController < ApplicationController
+  def intro
+  end
+
   def show
     if params[:category_name].nil?
       @post = find_post_first('intro')

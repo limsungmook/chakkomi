@@ -1,7 +1,8 @@
 Chakkomi::Application.routes.draw do
   devise_for :users, :controllers => { :registrations => "users/registrations" }
 
-  root :to => "articles#show", :remote => true
+#  root :to => "articles#show"
+  root :to => "articles#intro"
   resources :orders
   resources :admins
   resources :accounts

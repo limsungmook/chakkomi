@@ -1,0 +1,25 @@
+<% if session[:skip_intro].nil? %>
+<div id = "intro_image">
+  <%= link_to image_tag("/assets/intro.jpg"), {:controller=>'/articles', :action => 'show', :id => '1', :category_name=>'intro', :one_article=>'1'}, :remote => true %>
+</div>
+<% session[:skip_intro] = '1' %>
+
+
+<script type="text/javascript">
+$('#laydesk').hide();
+$('#intro_image').appendTo('#laydesk_outer');
+$('#intro_image').hide().delay(300).fadeIn('3000');
+
+$('a').click(function(){
+  $('#intro_image').fadeOut('3000', function(){
+    $('#laydesk').fadeIn('slow');
+  });
+});
+
+</script>
+
+<% else %>
+<script type="text/javascript">
+  $.getScript('/articles/intro');
+</script>
+<% end %>
