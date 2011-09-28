@@ -3,9 +3,9 @@ class Post < ActiveRecord::Base
 
   attr_accessible :category_id, :title, :body_pic, :body_txt
 
-  validates :body_pic, :presence => true
+#  validates :body_pic, :presence => true
 
   default_scope :order => 'posts.created_at DESC'
 
-  has_attached_file :body_pic
+#  has_attached_file :body_pic
 end

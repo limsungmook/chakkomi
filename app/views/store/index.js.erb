@@ -1,27 +1,19 @@
-$('#laydesk_body').fadeOut('10000', function(){
-	$('#laydesk_body').html('<%= escape_javascript(render('store')) %>').fadeIn('slow');
-});
+$(function(){
 
 
-// $('#laydesk_body').html('<%= escape_javascript(render('store')) %>');
+	$('#laydesk_body').fadeOut('10000', function(){
+		$('#laydesk_body').html('<%= escape_javascript(render('store')) %>').fadeIn('slow');
 
-$('.entry').draggable({
-	'opacity': 0.3,
-	'revert': "valid",
-	'delay': 200,
-	'distance':4,
-	'helper':"clone"
-});
-$('#cart').droppable({
-	'accept':'.entry',
-	'activeClass':'border',
-	'drop': function(){
-		$('#add_to_cart').click();
-	}
-});
-
-$('.entry').hover(function(){
-	$(this).css("background", "#1212f2");
-},function(){
-	$(this).css("background","#ffffff");
-});
+		var History = window.History;	
+		if ( !History.enabled ){
+		    return false;
+		}
+		
+		$("#cart a, .product_list a").click(function() {
+			History.pushState(null, document.title, this.href);
+			return false;
+		    });
+		// 프로필은 ajax이 아닌 페이지 리로딩이기 때문에 a href 리퀘스트를 무시하지 않는다. 
+		
+	    });
+    });

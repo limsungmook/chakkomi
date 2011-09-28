@@ -2,9 +2,10 @@
 <% if line_item == @current_item %>
 <div id="current_item">
   <% end %>
-  <%= image_tag line_item.product.thumnail_pic, :class => "thumnail_pic" %><br />
+  <%= image_tag line_item.product.thumnail_pic(:cart), :class => "thumnail_pic" %><br />
 <!--  <%= line_item.product.title %>-->(<%= line_item.quantity %>개)<br />
   <%= number_with_delimiter(line_item.total_price) %>원<br />
 <!--  <td><%= link_to '빼기', line_item_path(line_item),:method=>:delete, :remote => true  %></td> -->
 <%= button_to '빼기', line_item_path(line_item), :id => line_item.id ,:method=>:delete, :remote => true  %> 
 </div>
+</td>

@@ -1,6 +1,6 @@
-$('#laydesk_body').html('<%= escape_javascript(render('talk')) %>').show('slide');
-
 $(function(){
+    $('#laydesk_body').hide().html('<%= escape_javascript(render('talk')) %>').show('slide');
+
 	var intval = '';
 	var History = window.History;	
 	if ( !History.enabled ){

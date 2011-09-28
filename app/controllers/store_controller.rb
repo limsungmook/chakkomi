@@ -12,6 +12,11 @@ class StoreController < ApplicationController
   def show
     @cart = current_cart
     @product = Product.find(params[:id])
+    respond_to do |format|
+      format.html # index.html.erb
+      format.js
+
+    end
 
   end
 

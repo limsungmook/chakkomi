@@ -1,0 +1,31 @@
+<div id="product_detail">
+  <div id="spec">
+    <div id="product_detail_thumnail">
+      <%= image_tag @product.thumnail_pic(:detail), :class => "product_detail_thumnail_pic" %>
+    </div>
+    <div id="product_detail_spec">
+      <table>
+	<tr>
+	  <td>상품명</td>
+	  <td><%= @product.title %></td>
+	</tr>
+	<tr>
+	  <td>가격</td>
+	  <td><%= number_with_delimiter(@product.price) %></td>
+	</tr>
+	<tr>
+	  <td>배송형태</td>
+	  <td><%= @product.delivery_state %></td>
+	</tr>
+	<tr>
+	  <td>판매상태</td>
+	  <td><%= @product.state %></td>
+	</tr>
+      </table>
+    </div>
+  </div>
+  <hr />
+  <div id="product_detail_content">
+    <%= @product.content.html_safe %>
+  </div>
+</div>

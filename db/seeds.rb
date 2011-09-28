@@ -47,5 +47,3 @@ Product.delete_all
 @category = Category.create! :name => 'artmull', :detail => 'artmull 페이지입니다. 우선은 전체페이지 출력입니다.'
 @post = @category.posts.create! :title => 'artmull 테스트', :body_txt => 'artmull 페이지입니다. 최신 순서로 전체 페이지 출력이고, 이에 대한 옵션 변경은 임대리에게 말씀해주세요^-^'
 
-@product = Product.create! :title => 'test', :thumnail_pic => '/images/thumnail1.png', :content => 'hello', :price => '5000', :stock => '1', :delivery_state => '일반우편', :state => '판매중'
-

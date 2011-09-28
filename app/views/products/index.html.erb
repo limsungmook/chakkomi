@@ -17,7 +17,7 @@
 
 <% @products.each do |product| %>
   <tr>
-    <td><%= image_tag product.thumnail_pic %></td>
+    <td><%= image_tag product.thumnail_pic(:thumb) %></td>
     <td><%= product.title %></td>
     <td><%= number_with_delimiter( product.price ) %>원</td>
     <td><%= product.delivery_state %></td>
@@ -25,7 +25,7 @@
     <td><%= product.state %></td>
     <td><%= link_to 'Show', product %></td>
     <td><%= link_to 'Edit', edit_product_path(product) %></td>
-    <td><%= link_to 'Destroy', product, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= button_to 'Destroy', product, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>

@@ -1,2 +1,22 @@
-Use this README file to introduce your application and point to useful places in the API for learning more.
-Run "rake doc:app" to generate API documentation for your models, controllers, helpers, and libraries.
+chakkomi 웹은 창작공동체 '착한곰팡이'의 웹서비스입니다.
+
+현재 www.chakkomi.com 도메인으로 제공되고 있으며 RoR(rails 3.1)기반으로 만들어졌습니다.
+프로그램 소스에 대해선 MIT 라이센스를 할지 예정되어 있으며, 개발에 대한 모든 책임은 ipes4579@gmail.com 에게 있습니다. 
+
+
+HTML 구조는 다음과 같습니다.
+('#'는 독립된 문서 객체인 id이고 '.'은 다중으로 선택할 수 있는 class를 의미합니다.)
+#laydesk_outer - 가운데 정렬을 위해 가장 바깥에서 감싸주는 부분. 내용은 없음.
+ #laydesk - width(1024px). 실제 문서부분의 가장 바깥쪽 표현부분.
+  #laydesk_sidebar - width(190px). height(960px), margin(0 20px 20px 25px) 로고와 메뉴, 링크, 카피라이트를 포함하는 사이드바부분.
+   #laydesk_sidebar_logo - height(150px) - 로고만 출력
+   #laydesk_sidebar_menu - height(550px), margin(20px 0 0 15px), google font 의 Oswald 체. 메뉴부분.
+   #laydesk_ftr1 - 카피라이트
+  #laydesk_maj - width(750px)
+   #laydesk_hdr - width(748px) 헤더부분. 유저 부분만 존재. 
+    #laydesk_user - 로그인, 회원가입 등의 유저 정보가 존재한다.
+   #laydesk_body - width(750px), margin(50px 10px 0 10px)
+    #flash - 메시지 출력부분
+    #product_list - width(745px)
+     .entry - width(85px) height(140px) padding(20px)
+     .entry img - width(80px) height(90px)

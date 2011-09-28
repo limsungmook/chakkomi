@@ -2,7 +2,7 @@
 ;; --------------------------------------------------------------------------
 ;; Desktop File for Emacs
 ;; --------------------------------------------------------------------------
-;; Created Tue Sep 27 19:15:02 2011
+;; Created Wed Sep 28 09:26:09 2011
 ;; Desktop file format version 206
 ;; Emacs version 23.1.1
 
@@ -10,30 +10,19 @@
 (setq desktop-missing-file-warning nil)
 (setq tags-file-name nil)
 (setq tags-table-list nil)
-(setq search-ring '("/*" "talks" "bye" "clearIn" "alert" "saved_relay_last" "start_in" "check_update" "check_update_relay" "check_update" "check" "show" "created" "talk_title" "alert" "post"))
+(setq search-ring '("user_sign" "user" "“»õ“·Î“°í“Ä§" "index" "log" "a" "link_)to" "/*" "talks" "bye" "clearIn" "alert" "saved_relay_last" "start_in" "check_update" "check_update_relay"))
 (setq regexp-search-ring nil)
 (setq register-alist nil)
 
 ;; Buffer section -- buffers listed in same order as in buffer list:
 (desktop-create-buffer 206
-  "/var/www/chakkomi/public/index.html.erb"
-  "index.html.erb"
+  "/var/www/chakkomi/app/views/layouts/application.html.erb"
+  "application.html.erb"
   'html-mode
   nil
-  6
+  2581
   '(nil nil)
   nil
   nil
   '((buffer-file-coding-system . utf-8-unix)))
-
-(desktop-create-buffer 206
-  "/var/www/chakkomi/config/routes.rb"
-  "routes.rb"
-  'ruby-mode
-  nil
-  149
-  '(nil nil)
-  nil
-  nil
-  '((indent-tabs-mode) (buffer-file-coding-system . undecided-unix)))
 

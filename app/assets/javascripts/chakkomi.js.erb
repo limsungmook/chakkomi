@@ -5,7 +5,8 @@ $(function() {
 	if ( !History.enabled ){
 	    return false;
 	}
-	$(".laydesk_sidebar_menu a").click(function(e) {
+//	$(".laydesk_sidebar_menu a").click(function(e) {
+	$(".ajax_link").click(function(e) {
 //		history.pushState(null, document.title, this.href);
 		var State = History.getState();
 //		History.log(State.data, State.title, State.url);

@@ -12,20 +12,21 @@
 }
 #cart .line_item IMG
 {
-    width:80px;
-    height:80px;    
+    width:40px;
+    height:40px;
 }
 #cart .line_item table
 {
     text-align: center; 
-    margin: 5px 5px 1px 5px; 
+    margin: 1px 1px 2px 2px; 
+    font-size: 1px;
 }
 #cart .line_item .line_item_td
 {
     padding:5px;
-    width:85px;
-    border-left: 1px solid #d1d6dc;
-    border-right: 1px solid #d1d6dc;
+    width:45px;
+//    border-left: 1px solid #d1d6dc;
+//    border-right: 1px solid #d1d6dc;
     border-top: 1px solid #fff;
 }
 
@@ -77,12 +78,12 @@
 #laydesk_outer{
     width:100%;
     text-align:center;
-	height:100%;
+    height:100%;
 }
 
 #laydesk
 {
-	width:1024px;
+    width:1024px;
     margin: 0 auto;
     text-align:left;
    // float: left;
@@ -93,6 +94,7 @@
     float: left;
     display: inline;
     width: 190px;
+    height: 960px;
     overflow: hidden;
     margin: 0 20px 20px 25px; 
 //    background-image:url('/assets/desktop_sidebar_background_190x800.png');
@@ -185,10 +187,6 @@
 {
     color: #c81419;
 }
-#laydesk .laydesk_maj .laydesk_hdr .laydesk_body #flash
-{
-    float: right;
-}
 
 /*
 #laydesk .laydeskmaj .laydesk_hdr .laydesk_title IMG
@@ -207,6 +205,10 @@
     overflow: hidden;
     margin: 50px 10px 0 10px;
 //    font-family: 'NanumGothic';
+}
+#laydesk .laydesk_maj .laydesk_body #flash
+{
+    float: right;
 }
 
 #laydesk .laydesk_maj .laydesk_body  hr
@@ -232,23 +234,40 @@
 }
 #laydesk .laydesk_maj .laydesk_body .product_list .entry IMG
 {
-    width:80px;
-    height:90px;    
+    width:120px;
+    height:120px;    
    
 }
 #laydesk .laydesk_maj .laydesk_body .product_list .entry
 {
 
     padding:20px;
-    width:85px;
-    height:140px;
+    width:130px;
+    height:200px;
 }
 
-#laydesk .laydesk_maj .laydesk_body .product_detail
+#laydesk .laydesk_maj .laydesk_body #product_detail
 {
-
+    width: 750px;
+    margin: 30px 0 10px 10px;
 }
-
+#laydesk .laydesk_maj .laydesk_body #product_detail #spec
+{
+    height: 320px;
+}
+#laydesk .laydesk_maj .laydesk_body #product_detail #spec #product_detail_thumnail
+{
+    float: left;
+}
+#laydesk .laydesk_maj .laydesk_body #product_detail #spec #product_detail_spec
+{
+    margin: 10px 10px 20px 20px; 
+    float: left;
+}
+#laydesk .laydesk_maj .laydesk_body #product_detail #product_detail_content
+{
+    float: left;
+}
 #laydesk .laydesk_maj .laydesk_body .admin_menu ul
 {
     padding: 0; 
