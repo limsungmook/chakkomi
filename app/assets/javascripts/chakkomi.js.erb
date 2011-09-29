@@ -9,6 +9,7 @@ $(function() {
 	$(".ajax_link").click(function(e) {
 //		history.pushState(null, document.title, this.href);
 		var State = History.getState();
+//debug
 //		History.log(State.data, State.title, State.url);
 //		History.log(State.data, 'clicked', this.href);
 		History.pushState(null, document.title, this.href);
@@ -19,17 +20,10 @@ $(function() {
 		}
 	    });
 
-/*
- * 자동 리로딩기능. 아직 잘 작동 안함.
-
-
-	$(".menu_link_talk").click(function(){
-		$.getScript('/talks?start=1');
-		return false;
-	    });
- */
 	History.Adapter.bind(window, 'statechange', function(){
 		var State = History.getState();
+//		alert('state change');
+//debug
 //		History.log(State.data, State.title, State.url);
 //		History.log(State.data, 'getstate', State.url);
 

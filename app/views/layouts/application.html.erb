@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>타이틀</title>
+  <title>착한곰팡이</title>
   <%= stylesheet_link_tag "reset-min", :media => "all" %>
   <%= stylesheet_link_tag "fonts-min", :media => "all" %>
   <%= stylesheet_link_tag "chakkomi", :media => "all" %>
@@ -19,7 +19,7 @@
 
 </head>
 <body>
-  <div id = "laydesk_outer">
+  <div id="laydesk_outer">
     <div id="laydesk" class="laydesk">
       <div class="laydesk_sidebar">
 	<div class="laydesk_sidebar_logo">
@@ -33,7 +33,7 @@
 	    <li><%= link_to "PROJECT", {:controller=>'/articles', :action => 'show', :id => '1',:category_name=>'project'}, :remote => true , :class => "ajax_link"  %></li>
 	    <li><%= link_to "COMICS", {:controller=>'/articles', :action => 'show',:id => '1', :category_name=>'comics'}, :remote => true, :class => "ajax_link" %>&nbsp;</li>
 	    <li><%= link_to "PRODUCT", {:controller=>'/articles', :action => 'show', :id => '1', :category_name=>'artmull'}, :remote => true, :class => "ajax_link"  %></li>
-	    <li><%= link_to "STORE", "/store", :remote => true, :class => "ajax_link"  %></li>
+	    <li><%= link_to "STORE", "/store"  %></li>
 	    <li>&nbsp;</li>
 	    <li><%= link_to "TALK", :talks, :remote => true, :class => "ajax_link"  %></li>
 	  </ul>
@@ -77,6 +77,14 @@
 	</div>
       </div>
     </div>
+  <div id="loadingbar_move">
+    해당 페이지로 이동중 입니다. <br />
+    <%= image_tag("/assets/loadingbar_move.gif") %>
+  </div>
+  <script type="text/javascript">
+    $('#loadingbar_move').hide();
+  </script>
+
   </div>
 </body>
 </html>

@@ -1,19 +1,33 @@
 $(function(){
 
+	$('#laydesk_outer').fadeIn('10000', function(){
+		$('#laydesk_shop_main').hide().html('<%= escape_javascript(render('store')) %>').fadeIn('30000');
+		$(".entry a").hover(function(){
+			$(this).append($("<span>" + $(this)[0].title + "</span>"));
+		    },
+		    function() {
+			$(this).find("span:last").remove();
+		    }
+		    );
 
-	$('#laydesk_body').fadeOut('10000', function(){
-		$('#laydesk_body').html('<%= escape_javascript(render('store')) %>').fadeIn('slow');
 
 		var History = window.History;	
 		if ( !History.enabled ){
 		    return false;
 		}
 		
-		$("#cart a, .product_list a").click(function() {
+		$("#laydesk_shop a").click(function(e) {
 			History.pushState(null, document.title, this.href);
 			return false;
 		    });
-		// 프로필은 ajax이 아닌 페이지 리로딩이기 때문에 a href 리퀘스트를 무시하지 않는다. 
 		
 	    });
-    });
+	
+
+//	$('#laydesk').fadeOut('10000', function(){
+//		$('#loadingbar_move').show();
+//		$('body').load('/store');
+		
+		
+	    });
+//    });

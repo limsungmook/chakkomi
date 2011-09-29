@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>착곰이샾</title>
+  <%= stylesheet_link_tag "reset-min", :media => "all" %>
+  <%= stylesheet_link_tag "fonts-min", :media => "all" %>
+  <%= stylesheet_link_tag "chakkomi", :media => "all" %>
+  <%= stylesheet_link_tag "jquery-ui", :media => "all" %>
+  <%= javascript_include_tag :application %>
+  <script>if ( typeof window.JSON === 'undefined') { document.write('<script src="http://dev.chakkomi.com/assets/history.js/scripts/compressed/json2.js"><\/script>'); }</script>
+  <%= javascript_include_tag "history.js/scripts/compressed/amplify.store.js" %>
+  <%= javascript_include_tag "history.js/scripts/compressed/history.adapter.jquery.js" %>
+  <%= javascript_include_tag "history.js/scripts/compressed/history.js" %>
+  <%= javascript_include_tag "history.js/scripts/compressed/history.html4.js" %>
+  <%= javascript_include_tag "chakkomi" %>
+
+  <%= csrf_meta_tag %>
+  <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Oswald">
+
+</head>
+<body>
+  <div id = "laydesk_outer">
+    <div id="laydesk" class="laydesk">
+      <div id="laydesk_shop">
+	<div id="laydesk_shop_hdr">
+	  <div id="laydesk_shop_hdr_logo">
+	    <%= image_tag("/assets/logo_shop.png") %>
+	  </div>
+	  <div id="laydesk_shop_hdr_menu">
+	    <ul>
+	      <li><%= link_to image_tag("/assets/btn_shop_list_default.png"), '#' %></li>
+	      <li><%= link_to image_tag("/assets/btn_shop_cart_default.png"), '#' %></li>
+	      <li><%= link_to image_tag("/assets/btn_shop_qna_default.png"), '#' %></li>
+	      <% if user_signed_in? %>
+	      <% if can? :magage, :all%>
+  	      <li><%= link_to "관리자 페이지", :admins %></li>
+	      <% end %>
+	      <li><span id="currentuser"><%= current_user.email %></span></li>
+	      <li><%= link_to image_tag("/assets/btn_shop_profile_default.png"), edit_user_registration_path %></li>
+	      <li><%= link_to image_tag("/assets/btn_shop_setting_default.png"), "/services" %></li>
+	      <li><%= link_to image_tag("/assets/btn_shop_logout_default.png"), destroy_user_session_path %></li>
+	      <% else %>
+	      <li><%= link_to image_tag("/assets/btn_shop_signup_default.png"), new_user_registration_path %></li>
+	      <li><%= link_to image_tag("/assets/btn_shop_signin_default.png"), new_user_session_path %></li>
+	      <% end %>
+	    </ul>
+	  </div>
+	</div><!-- end: laydesk_shop_hdr -->
+	<div id="laydesk_shop_main">
+	  <%= yield %>
+	</div>
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript">
+    $('#laydesk_outer').hide();
+  </script>
+
+
+</body>
+</html>

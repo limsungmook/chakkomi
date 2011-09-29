@@ -1,0 +1,7 @@
+<div id="product_list">
+  <ul>
+    <% @products.each_with_index do |product, index| %>
+    <li><%= image_tag(product.thumnail_pic.url(:thumb)) %></li>
+    <% end %>
+  </ul>
+</div>

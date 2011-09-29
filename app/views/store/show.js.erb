@@ -1,6 +1,7 @@
 $(function(){
-	$('#laydesk_body').fadeOut('10000', function(){
-		$('#laydesk_body').html('<%= escape_javascript(render('detail')) %>').fadeIn('slow');
+	$('#laydesk_shop_main').fadeOut('10000', function(){
+		
+		$('#laydesk_shop_main').html('<%= escape_javascript(render('show')) %>').fadeIn('slow');
 
 	    });
-});
+    });

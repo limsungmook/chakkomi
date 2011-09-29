@@ -1,0 +1,27 @@
+<%= render :partial => "/admins/admin_menu" %>
+<%= @item_category.name  %>에 글 포스팅하기.
+<br />
+  <%= @item_category.name  %> : <%= @item_category.detail %>
+
+<br />
+
+<table>
+  <tr>
+    <th>포스트 제목</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @products.each do |product| %>
+  <tr>
+    <td><%= link_to product.title, product %></td>
+    <td><%= link_to '편집', edit_product_path(product) %></td>
+    <td><%= button_to '삭제', product, :confirm => '삭제하시겠습니까?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to '새 글 작성', url_for(:controller=>'products', :action=>'new', :id => @item_category.id)  %>

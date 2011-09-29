@@ -1,4 +1,6 @@
 Chakkomi::Application.routes.draw do
+  resources :item_categories
+
   devise_for :users, :controllers => { :registrations => "users/registrations" }
 
 #  root :to => "articles#show"

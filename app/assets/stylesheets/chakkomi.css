@@ -222,52 +222,6 @@
 
 }
 
-#laydesk .laydesk_maj .laydesk_body .product_list
-{
-    border: 2px dashed #00ffff;
-    width: 745px;
-}
-
-#laydesk .laydesk_maj .laydesk_body .product_list table
-{
-    text-align: center;
-}
-#laydesk .laydesk_maj .laydesk_body .product_list .entry IMG
-{
-    width:120px;
-    height:120px;    
-   
-}
-#laydesk .laydesk_maj .laydesk_body .product_list .entry
-{
-
-    padding:20px;
-    width:130px;
-    height:200px;
-}
-
-#laydesk .laydesk_maj .laydesk_body #product_detail
-{
-    width: 750px;
-    margin: 30px 0 10px 10px;
-}
-#laydesk .laydesk_maj .laydesk_body #product_detail #spec
-{
-    height: 320px;
-}
-#laydesk .laydesk_maj .laydesk_body #product_detail #spec #product_detail_thumnail
-{
-    float: left;
-}
-#laydesk .laydesk_maj .laydesk_body #product_detail #spec #product_detail_spec
-{
-    margin: 10px 10px 20px 20px; 
-    float: left;
-}
-#laydesk .laydesk_maj .laydesk_body #product_detail #product_detail_content
-{
-    float: left;
-}
 #laydesk .laydesk_maj .laydesk_body .admin_menu ul
 {
     padding: 0; 
@@ -308,3 +262,128 @@
 
 .defaultText { width: 300px; }
 .defaultTextActive { color: #a1a1a1; font-style: italic; }
+
+
+
+/*  laydesk shop 구조 */
+
+#laydesk #laydesk_shop #laydesk_shop_hdr
+{
+    float: left;
+    width: 1000px;
+    overflow: hidden;
+    padding: 0 0 0 ;
+    margin: 20px 0 0 0 ;
+//    border-bottom: 1px solid #d1d6dc;
+}
+#laydesk #laydesk_shop #laydesk_shop_hdr #laydesk_shop_hdr_logo
+{
+    float: left;
+    display: inline;
+}
+#laydesk #laydesk_shop #laydesk_shop_hdr #laydesk_shop_hdr_logo IMG
+{
+    width: 200px;
+    height: 80px;
+}
+
+#laydesk #laydesk_shop #laydesk_shop_hdr #laydesk_shop_hdr_menu 
+{
+    text-align: right;
+}
+#laydesk #laydesk_shop #laydesk_shop_hdr #laydesk_shop_hdr_menu IMG
+{
+    width: 60px;
+    height: 60px;
+}
+#laydesk #laydesk_shop #laydesk_shop_hdr #laydesk_shop_hdr_menu ul
+{
+    padding: 0; 
+    margin: 0; 
+    list-style: none;
+}
+#laydesk #laydesk_shop #laydesk_shop_hdr #laydesk_shop_hdr_menu ul li
+{
+    padding: 0; 
+    margin: 0 20px 0 0; 
+    display:inline;
+}
+#laydesk #laydesk_shop #laydesk_shop_hdr #laydesk_shop_hdr_menu  li a 
+{
+    width: 100px; 
+    font-size: 11px; 
+    text-align: center; 
+    text-decoration: none;
+}
+#laydesk #laydesk_shop #laydesk_shop_hdr #laydesk_shop_hdr_menu  ul li.selected a
+{
+    color: #c81419;
+}
+
+#laydesk #laydesk_shop #laydesk_shop_main
+{
+    margin-top: 30px;
+    float: left;
+    width: 100%;
+
+}
+#laydesk #laydesk_shop #laydesk_shop_main #laydesk_shop_main_title .laydesk_shop_main_title_string
+{
+    font-size: 32px;     
+}
+#laydesk #laydesk_shop #laydesk_shop_main .item_category_list
+{
+    width: 800px;
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right:auto;
+}
+
+#laydesk #laydesk_shop #laydesk_shop_main .item_category_list table
+{
+    width: 100%;
+    text-align: center;
+}
+#laydesk #laydesk_shop #laydesk_shop_main .item_category_list .entry
+{
+
+    padding:20px;
+    width:130px;
+    height:200px;
+}
+#laydesk #laydesk_shop #laydesk_shop_main .item_category_list .entry IMG
+{
+    width:120px;
+    height:120px;    
+}
+#laydesk #laydesk_shop #laydesk_shop_main .item_category_list .entry IMG:hover
+{
+    width:140px;
+    height:140px;    
+}
+#laydesk #laydesk_shop #laydesk_shop_main .item_category_list .entry span
+{
+    color: black;
+}
+#laydesk #laydesk_shop #laydesk_shop_main #product_detail
+{
+    width: 750px;
+    margin: 30px 0 10px 10px;
+}
+#laydesk #laydesk_shop #laydesk_shop_main #product_detail #spec
+{
+    height: 320px;
+}
+#laydesk #laydesk_shop #laydesk_shop_main #product_detail #spec #product_detail_thumnail
+{
+    float: left;
+}
+#laydesk #laydesk_shop #laydesk_shop_main #product_detail #spec #product_detail_spec
+{
+    margin: 10px 10px 20px 20px; 
+    float: left;
+}
+#laydesk #laydesk_shop #laydesk_shop_main #product_detail #product_detail_content
+{
+    float: left;
+}

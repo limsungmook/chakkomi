@@ -2,7 +2,12 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.xml
   def index
-    @products = Product.all
+    if params[:category_id].nil?
+      @products = Product.all
+    else
+      @products = Post.find(:all, :conditions => ["item_category_id = ?", params[:category_id]])
+      params[:category_id] = nil
+    end
 
     respond_to do |format|
       format.html # index.html.erb
@@ -25,6 +30,7 @@ class ProductsController < ApplicationController
   # GET /products/new.xml
   def new
     @product = Product.new
+    @product.item_category_id = params[:id]
 
     respond_to do |format|
       format.html # new.html.erb
@@ -40,15 +46,16 @@ class ProductsController < ApplicationController
   # POST /products
   # POST /products.xml
   def create
-    @product = Product.new(params[:product])
+    @item_category = ItemCategory.new(:item_category_id => params[:item_category_id])
+    @product = @item_category.products.build(params[:product])
 
     respond_to do |format|
       if @product.save
-        format.html { redirect_to(@product, :notice => 'Product was successfully created.') }
-        format.xml  { render :xml => @product, :status => :created, :location => @product }
+        format.html { redirect_to(@item_category, :notice => 'Product was successfully created.') }
+#        format.xml  { render :xml => @product, :status => :created, :location => @product }
       else
         format.html { render :action => "new" }
-        format.xml  { render :xml => @product.errors, :status => :unprocessable_entity }
+#        format.xml  { render :xml => @product.errors, :status => :unprocessable_entity }
       end
     end
   end
@@ -72,6 +79,7 @@ class ProductsController < ApplicationController
   # DELETE /products/1
   # DELETE /products/1.xml
   def destroy
+    @item_category = ItemCategory.new(:item_category_id => params[:item_category_id])
     @product = Product.find(params[:id])
     @product.destroy
 

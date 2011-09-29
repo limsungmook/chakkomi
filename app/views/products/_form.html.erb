@@ -40,6 +40,7 @@
     <%= f.label :state %><br />
     <%= f.select :state, Product::STATE, :prompt => '현재 판매 여부' %>
   </div>
+  <%= f.hidden_field :item_category_id %>
   <div class="actions">
     <%= f.submit %>
   </div>

@@ -1,39 +1,22 @@
-<div id='store_wrapper'>
-
-<div id="cart">
-<% if @cart %>
-<%= hidden_div_if(@cart.line_items.empty?, :id => "cart") do %>
-  <%= render @cart %>
-  <% end %>
-<% end %>
+<div id="laydesk_shop_main_title">
+  <span class="laydesk_shop_main_title_string">리스트</span><br /><hr />
 </div>
-
-<div class="product_list">
-<table>
-
-<% @products.each_with_index do |product, index| %>
-
-  <% if (index % 4) == 0 %>
+<div class="item_category_list">
+  <table>
+    <% @item_categories.each_with_index do |item_category, index| %>
+    <% if (index % 4) == 0 %>
     <tr>
-  <% end %>
-
-  <td>
-    <div class="entry" >
-      <%= link_to image_tag(product.thumnail_pic.url(:thumb)) , {:controller=>"store", :action => 'show', :id=>product}, :remote => true %><br />
-      <%= product.title %><br />
-       <%= number_with_delimiter(product.price) %><br />
-      <%= button_to '장바구니', line_items_path(:product_id => product),  :id => 'add_to_cart', :remote => true %>
-    </div>
-  </td>
- 
-  <% if (index % 4) == 3 %>
+	<% end %>
+	<td>
+	  <div class="entry" >
+	    <%= link_to image_tag(item_category.thumnail_pic.url(:thumb)), {:controller=>"store", :action => 'show', :id=>item_category}, {:title =>  item_category.name }, :remote => true %><br />
+	  </div>
+	</td>
+	<% if (index % 4) == 3 %>
     </tr>
-  <% end %>
-<% end %>
-    </tr>
-</table>
-
+    <% end %>
+    <% end %>
+  </table>
 </div>
 
-</div>
 
