@@ -1,7 +1,7 @@
 $(function(){
 
-	$('#laydesk_outer').fadeIn('10000', function(){
-		$('#laydesk_shop_main').hide().html('<%= escape_javascript(render('store')) %>').fadeIn('30000');
+	$('#laydesk_shop_main').fadeOut('slow', function(){
+		$('#laydesk_shop_main').html('<%= escape_javascript(render('store')) %>').fadeIn('slow');
 		$(".entry a").hover(function(){
 			$(this).append($("<span>" + $(this)[0].title + "</span>"));
 		    },
@@ -9,25 +9,9 @@ $(function(){
 			$(this).find("span:last").remove();
 		    }
 		    );
-
-
-		var History = window.History;	
-		if ( !History.enabled ){
-		    return false;
-		}
-		
-		$("#laydesk_shop a").click(function(e) {
+		$(".entry a").click(function(){
 			History.pushState(null, document.title, this.href);
 			return false;
 		    });
-		
 	    });
-	
-
-//	$('#laydesk').fadeOut('10000', function(){
-//		$('#loadingbar_move').show();
-//		$('body').load('/store');
-		
-		
-	    });
-//    });
+    });

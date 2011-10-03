@@ -1,3 +1,4 @@
+<%= render :partial => "/admins/admin_menu" %>
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -35,6 +36,16 @@
   <b>State:</b>
   <%= @product.state %>
 </p>
+
+<% @product_options.each do |product_option| %>
+  <tr>
+    <td><%= link_to product_option.option, product_option %></td>
+    <td><%= link_to '편집', edit_product_option_path(product_option) %></td>
+    <td><%= button_to '삭제', product_option, :confirm => '삭제하시겠습니까?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+<%= link_to '옵션 생성',  url_for(:controller=>'product_options', :action=>'new', :id => @product.id ) %>
 
 
 <%= link_to 'Edit', edit_product_path(@product) %> |

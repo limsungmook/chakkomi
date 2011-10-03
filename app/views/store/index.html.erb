@@ -1,4 +1,22 @@
+
 <script type="text/javascript">
-  $.getScript('/store');
+$(function(){
+
+	$('#laydesk_shop_main').fadeOut('slow', function(){
+		$('#laydesk_shop_main').html('<%= escape_javascript(render('store')) %>').fadeIn('slow');
+	$(".entry a").hover(function(){
+		$(this).append($("<span>" + $(this)[0].title + "</span>"));
+	    },
+	    function() {
+		$(this).find("span:last").remove();
+	    }
+	    );
+	$(".entry a").click(function(){
+		History.pushState(null, document.title, this.href);
+                return false;
+	    });
+    });
+});
+
 </script>
 

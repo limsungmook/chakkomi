@@ -3,5 +3,5 @@ class ItemCategory < ActiveRecord::Base
 
   has_attached_file :thumnail_pic, :styles => { :thumb => "140x140>" }
   
-  attr_accessible :name, :detail
+  attr_accessible :name, :detail, :order, :thumnail_pic
 end

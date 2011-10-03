@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110929110715) do
+ActiveRecord::Schema.define(:version => 20110930233836) do
 
   create_table "carts", :force => true do |t|
     t.datetime "created_at"
@@ -42,6 +42,7 @@ ActiveRecord::Schema.define(:version => 20110929110715) do
   create_table "item_categories", :force => true do |t|
     t.string   "name"
     t.text     "detail"
+    t.integer  "order"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "thumnail_pic_file_name"
@@ -53,6 +54,7 @@ ActiveRecord::Schema.define(:version => 20110929110715) do
   create_table "line_items", :force => true do |t|
     t.integer  "product_id"
     t.integer  "cart_id"
+    t.string   "option"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "quantity",   :default => 1
@@ -84,6 +86,14 @@ ActiveRecord::Schema.define(:version => 20110929110715) do
   end
 
   add_index "posts", ["category_id"], :name => "index_posts_on_category_id"
+
+  create_table "product_options", :force => true do |t|
+    t.integer  "product_id"
+    t.string   "option"
+    t.integer  "stock"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "products", :force => true do |t|
     t.integer  "item_category_id"

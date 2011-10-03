@@ -9,9 +9,14 @@ Chakkomi::Application.routes.draw do
   resources :admins
   resources :accounts
   resources :line_items
-  resources :store
+  resources :store do
+    collection do
+      get :detail
+    end
+  end
   resources :carts
   resources :products
+  resources :product_options
   resources :categories
   resources :posts 
   resources :articles 

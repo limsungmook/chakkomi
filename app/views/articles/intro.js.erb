@@ -2,7 +2,7 @@ $('#laydesk').hide();
 $('#intro_image').appendTo('#laydesk_outer');
 $('#intro_image').hide().delay(300).fadeIn('3000');
 
-$('a').click(function(){
+$('.ajax_link').click(function(){
   $('#intro_image').fadeOut('3000', function(){
     $('#laydesk').fadeIn('slow');
   });

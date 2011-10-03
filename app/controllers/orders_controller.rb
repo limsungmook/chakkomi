@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 class OrdersController < ApplicationController
+  layout "shop"
   # GET /orders
   # GET /orders.xml
   def index

@@ -1,3 +1,11 @@
+<script type="text/javascript">
+  $(function(){
+  $("#product_list_ul li").each(function(){
+  $(this).css("background", "#FFFFFF");
+  });
+  $("#product_list_ul .product_<%= @product.id %>").css("background", "#4f2f3f");
+});
+</script>
 <div id="product_detail">
   <div id="spec">
     <div id="product_detail_thumnail">
@@ -6,21 +14,36 @@
     <div id="product_detail_spec">
       <table>
 	<tr>
-	  <td>상품명</td>
-	  <td><%= @product.title %></td>
+	  <td class="spec_left">상&nbsp;&nbsp;품&nbsp;명</td>
+	  <td class="spec_right"><%= @product.title %></td>
 	</tr>
 	<tr>
-	  <td>가격</td>
-	  <td><%= number_with_delimiter(@product.price) %></td>
+	  <td class="spec_left">가&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;격</td>
+	  <td class="spec_right"><%= number_with_delimiter(@product.price) %> 원</td>
 	</tr>
 	<tr>
-	  <td>배송형태</td>
-	  <td><%= @product.delivery_state %></td>
+	  <td class="spec_left">판매상태</td>
+	  <td class="spec_right"><%= @product.state %></td>
+	</tr>
+	<%= form_for(@line_item, :remote => true) do |f| %>
+	<% if @product.product_options.count > 0 %>
+	<tr>
+	  <td class="spec_left">옵&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;션</td>
+
+	  <td class="spec_right"><%= select_tag 'option', options_from_collection_for_select(@product.product_options, "option", "option") %></td>
+	</tr>
+	<% end %>
+	<tr>
+	  <td class="spec_left">수&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;량</td>
+	  <td class="spec_right"><%= number_field_tag :quantity, 1, :in => 1...@product.stock, :style => 'width:40px;' %> 개</td>
 	</tr>
 	<tr>
-	  <td>판매상태</td>
-	  <td><%= @product.state %></td>
+
+	  <%= hidden_field_tag :product_id ,@product.id %>
+	  <td><%= f.submit '장바구니 담기' %></td>
+	  <td></td>
 	</tr>
+	<% end %>
       </table>
     </div>
   </div>

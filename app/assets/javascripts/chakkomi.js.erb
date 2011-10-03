@@ -8,6 +8,7 @@ $(function() {
 //	$(".laydesk_sidebar_menu a").click(function(e) {
 	$(".ajax_link").click(function(e) {
 //		history.pushState(null, document.title, this.href);
+
 		var State = History.getState();
 //debug
 //		History.log(State.data, State.title, State.url);
@@ -19,6 +20,41 @@ $(function() {
 		    return false;
 		}
 	    });
+
+	$(".store_link").click(function(e){
+		$('#laydesk').hide();
+		$('#loadingbar_move').show();
+//		History.pushState(null, document.title, this.href);
+
+//		return false;
+
+	    });
+		$("#laydesk_shop_hdr_menu a").click(function(e) {
+			History.pushState(null, document.title, this.href);
+			return false;
+		    });
+	$("#shop_menu_ul li img").hover(function()
+        {
+	  $(this).attr("src", "/assets/" + $(this)[0].title + "_clicked.png");
+	  $("#shop_menu_ul li img").click(function(){
+		  
+		  $("#shop_menu_ul li img").each(function(){
+			  $(this).attr("src", "/assets/" + $(this)[0].title + ".png");
+			  $(this).attr("alt", $(this)[0].title);
+		      });
+		  
+		  $(this).attr("src", "/assets/" + $(this)[0].title + "_clicked.png");
+		  $(this).attr("alt", $(this)[0].title + "_clicked");
+		  
+	      });
+	  
+      }, function(){
+	    if( $(this).attr("alt") != $(this)[0].title + "_clicked" )
+	    {
+		$(this).attr("src", "/assets/" + $(this)[0].title + ".png");
+	    }
+    
+	});
 
 	History.Adapter.bind(window, 'statechange', function(){
 		var State = History.getState();
@@ -32,4 +68,6 @@ $(function() {
 //	$(window).bind("popstate", function() {
 //		$.getScript(location.href);
 //	    });
+		
+
 });

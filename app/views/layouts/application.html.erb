@@ -33,7 +33,7 @@
 	    <li><%= link_to "PROJECT", {:controller=>'/articles', :action => 'show', :id => '1',:category_name=>'project'}, :remote => true , :class => "ajax_link"  %></li>
 	    <li><%= link_to "COMICS", {:controller=>'/articles', :action => 'show',:id => '1', :category_name=>'comics'}, :remote => true, :class => "ajax_link" %>&nbsp;</li>
 	    <li><%= link_to "PRODUCT", {:controller=>'/articles', :action => 'show', :id => '1', :category_name=>'artmull'}, :remote => true, :class => "ajax_link"  %></li>
-	    <li><%= link_to "STORE", "/store"  %></li>
+	    <li><%= link_to "STORE", {:controller=>'/store', :action => 'index'},  :class => "store_link"  %></li>
 	    <li>&nbsp;</li>
 	    <li><%= link_to "TALK", :talks, :remote => true, :class => "ajax_link"  %></li>
 	  </ul>
@@ -86,5 +86,7 @@
   </script>
 
   </div>
+
+
 </body>
 </html>

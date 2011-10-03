@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 class ProductsController < ApplicationController
   # GET /products
   # GET /products.xml
@@ -19,6 +21,7 @@ class ProductsController < ApplicationController
   # GET /products/1.xml
   def show
     @product = Product.find(params[:id])
+    @product_options = @product.product_options.all
 
     respond_to do |format|
       format.html # show.html.erb

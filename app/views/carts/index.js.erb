@@ -1,0 +1,5 @@
+$(function(){
+	$('#laydesk_shop_main').fadeOut('slow', function(){
+		$('#laydesk_shop_main').html('<%= escape_javascript(render('cart')) %>').fadeIn('slow');
+	    });
+    });

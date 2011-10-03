@@ -43,13 +43,26 @@ class LineItemsController < ApplicationController
   def create
     @cart = current_cart
     product = Product.find(params[:product_id])
-    @retval = Hash.new
-    @retval = @cart.add_product(product.id)    
-
-    @line_item = @retval["current_item"]
-    if @retval["notice"]
-      flash[:notice] = @retval["notice"]
+    @line_item = @cart.line_items.find_by_product_id(product.id)
+    if @line_item
+      if params[:quantity].to_i < @line_item.product.stock
+        @line_item.quantity = params[:quantity]
+      end
+    else
+      if params[:option].nil?
+        @line_item = @cart.line_items.build(:product_id => product.id, :quantity => params[:quantity])
+      else
+        @line_item = @cart.line_items.build(:product_id => product.id, :quantity => params[:quantity], :option => params[:option])
+      end
     end
+      
+#    @retval = Hash.new
+#    @retval = @cart.add_product(product.id)    
+
+#    @line_item = @retval["current_item"]
+#    if @retval["notice"]
+#      flash[:notice] = @retval["notice"]
+#    end
     respond_to do |format|
       if @line_item.save
         format.html { redirect_to(:action => 'index', :controller => 'store') }
