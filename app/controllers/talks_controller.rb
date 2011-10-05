@@ -36,13 +36,16 @@ class TalksController < ApplicationController
   def index
     # 지속적인 최신글의 체크를 위해 지금까지의 최신글을 세션에 넣어놓는다. 
     @talk_last = Talk.find(:first)
-    session[:saved_talk_last] = @talk_last.updated_at
-    @talks = Talk.paginate(:per_page => 10, :page => params[:page])    
-    respond_to do |format|
-      format.html # index.html.erb
-      format.js
-      format.xml  { render :xml => @talks }
+    if !@talk_last.nil?
+      session[:saved_talk_last] = @talk_last.updated_at
+      @talks = Talk.paginate(:per_page => 10, :page => params[:page])    
     end
+      respond_to do |format|
+        format.html # index.html.erb
+        format.js
+        format.xml  { render :xml => @talks }
+      end
+
   end
 
   # GET /talks/1

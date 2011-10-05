@@ -21,18 +21,6 @@ $(function() {
 		}
 	    });
 
-	$(".store_link").click(function(e){
-		$('#laydesk').hide();
-		$('#loadingbar_move').show();
-//		History.pushState(null, document.title, this.href);
-
-//		return false;
-
-	    });
-		$("#laydesk_shop_hdr_menu a").click(function(e) {
-			History.pushState(null, document.title, this.href);
-			return false;
-		    });
 	$("#shop_menu_ul li img").hover(function()
         {
 	  $(this).attr("src", "/assets/" + $(this)[0].title + "_clicked.png");

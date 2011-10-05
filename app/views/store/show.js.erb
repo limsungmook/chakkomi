@@ -1,17 +1,11 @@
 $(function(){
 	if ($("#product_list").length)
 	{
-	    $('#product_detail_wrapper').html('<%= escape_javascript(render('detail')) %>');
+	    $('#product_detail_wrapper').html('<%= escape_javascript(render('detail')) %>').show('slide');
 	}else
 	{
 	    $('#laydesk_shop_main').fadeOut('10000', function(){
 		    $('#laydesk_shop_main').html('<%= escape_javascript(render('show')) %>').fadeIn('slow');
-		    
-		    $("#product_list_ul a").click(function(){
-			    History.pushState(null, document.title, this.href);
-			    return false;
-			});
-		    
 		});
 	}
     });

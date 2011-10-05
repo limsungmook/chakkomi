@@ -2,7 +2,7 @@
 ;; --------------------------------------------------------------------------
 ;; Desktop File for Emacs
 ;; --------------------------------------------------------------------------
-;; Created Mon Oct  3 13:29:02 2011
+;; Created Wed Oct  5 10:25:10 2011
 ;; Desktop file format version 206
 ;; Emacs version 23.1.1
 
@@ -10,7 +10,7 @@
 (setq desktop-missing-file-warning nil)
 (setq tags-file-name nil)
 (setq tags-table-list nil)
-(setq search-ring '("entry" "product" "find" "detail" "show" "pushstate" "entry" "script" "<script" "put" "History" "HIstory" "script" "function" "product" "create"))
+(setq search-ring '("update" "create" "update" "create" "product_id" "destroy" "update" "create" "show" "option" "render" "aja" "ajax" "index" "ajax" "store"))
 (setq regexp-search-ring nil)
 (setq register-alist nil)
 

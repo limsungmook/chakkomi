@@ -46,6 +46,9 @@ class LineItemsController < ApplicationController
     @line_item = @cart.line_items.find_by_product_id(product.id)
     if @line_item
       if params[:quantity].to_i < @line_item.product.stock
+        if !params[:option].nil?
+          @line_item.option = params[:option]
+        end
         @line_item.quantity = params[:quantity]
       end
     else

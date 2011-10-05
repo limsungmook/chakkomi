@@ -2,21 +2,14 @@
 <html>
 <head>
   <title>착한곰팡이</title>
-  <%= stylesheet_link_tag "reset-min", :media => "all" %>
-  <%= stylesheet_link_tag "fonts-min", :media => "all" %>
-  <%= stylesheet_link_tag "chakkomi", :media => "all" %>
-  <%= stylesheet_link_tag "jquery-ui", :media => "all" %>
+  <%= stylesheet_link_tag "reset-min", "fonts-min", "jquery-ui", "chakkomi", :cache => true %>
   <%= javascript_include_tag :application %>
   <script>if ( typeof window.JSON === 'undefined') { document.write('<script src="http://dev.chakkomi.com/assets/history.js/scripts/compressed/json2.js"><\/script>'); }</script>
-  <%= javascript_include_tag "history.js/scripts/compressed/amplify.store.js" %>
-  <%= javascript_include_tag "history.js/scripts/compressed/history.adapter.jquery.js" %>
-  <%= javascript_include_tag "history.js/scripts/compressed/history.js" %>
-  <%= javascript_include_tag "history.js/scripts/compressed/history.html4.js" %>
-  <%= javascript_include_tag "chakkomi" %>
+  <%= javascript_include_tag "history.js/scripts/compressed/amplify.store.js", "history.js/scripts/compressed/history.adapter.jquery.js", "history.js/scripts/compressed/history.js", "history.js/scripts/compressed/history.html4.js", "chakkomi", :cache => true %>
 
   <%= csrf_meta_tag %>
   <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Oswald">
-
+<% session[:back_url] = '/store' %>
 </head>
 <body>
   <div id="laydesk_outer">
@@ -54,12 +47,12 @@
   	      <li><%= link_to "관리자 페이지", :admins %></li>
 	      <% end %>
 	      <li><span id="currentuser"><%= current_user.email %></span></li>
-	      <li><%= link_to "Profile", edit_user_registration_path %></li>
-	      <li><%= link_to "Setting", "/services" %></li>
-	      <li><%= link_to "Log out", destroy_user_session_path %></li>
+	      <li><%= link_to "Profile", edit_user_registration_path , :remote => true, :class => "ajax_link"%></li>
+	      <li><%= link_to "Setting", "/services" , :remote => true, :class => "ajax_link"%></li>
+	      <li><%= link_to "Log out", destroy_user_session_path%></li>
 	      <% else %>
-	      <li><%= link_to "Create Account", new_user_registration_path %></li>
-	      <li><%= link_to "Login", new_user_session_path %></li>
+	      <li><%= link_to "Create Account", new_user_registration_path , :remote => true, :class => "ajax_link" %></li>
+	      <li><%= link_to "Login", new_user_session_path, :remote => true, :class => "ajax_link" %></li>
 	      <% end %>
 	    </ul>
 	  </div>
@@ -73,20 +66,16 @@
 	    <div class="flash <%= key %>"><%= value %></div>
 	    <% end %>
 	  </div>
-	  <%= yield %>
+	    <%= yield %>
 	</div>
       </div>
     </div>
-  <div id="loadingbar_move">
-    해당 페이지로 이동중 입니다. <br />
-    <%= image_tag("/assets/loadingbar_move.gif") %>
-  </div>
-  <script type="text/javascript">
-    $('#loadingbar_move').hide();
-  </script>
-
-  </div>
-
-
+<script type="text/javascript">
+  $(function(){
+  $(".store_link").click(function(){
+    $('#laydesk').html('<%= escape_javascript(render('store/loading')) %>');
+  });
+});
+</script>
 </body>
 </html>

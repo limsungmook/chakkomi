@@ -1,14 +1,17 @@
 $(function(){
-
 	$('#laydesk_shop_main').fadeOut('slow', function(){
 		$('#laydesk_shop_main').html('<%= escape_javascript(render('store')) %>').fadeIn('slow');
+		var default_thumnail = $(".entry IMG").css('width');
 		$(".entry a").hover(function(){
-			$(this).append($("<span>" + $(this)[0].title + "</span>"));
+		        $(this).children('IMG').css('width', default_thumnail + 20);
+			$(this).children('IMG').css('height', default_thumnail + 20);
+			$(this).append($("<span><br />" + $(this)[0].title + "</span>"));
 		    },
 		    function() {
+		        $(this).children('IMG').css('width', default_thumnail);
+			$(this).children('IMG').css('height', default_thumnail);
 			$(this).find("span:last").remove();
-		    }
-		    );
+		    });
 		$(".entry a").click(function(){
 			History.pushState(null, document.title, this.href);
 			return false;

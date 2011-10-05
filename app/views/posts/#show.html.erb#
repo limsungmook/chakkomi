@@ -1,0 +1,16 @@
+///////// 여기서부터
+<br />
+  <%= @post.category.name %> 카테고리의
+<br />
+  <%= @post.title %> 글입니다.
+<br />
+<%= link_to '편집하기', edit_post_path(@post) %> <br />
+<%= link_to '뒤로가기', :category %><br />
+
+////////////// 여기까지는 사용자에게 보이지 않습니다.
+<hr >
+<br />
+  <%= @post.body_txt.html_safe %>
+
+
+<br />

@@ -1,0 +1,75 @@
+$(function(){
+    $('#laydesk_body').hide().html('<%= escape_javascript(render('talk')) %>').show('slide');
+
+	var intval = '';
+	var History = window.History;	
+	if ( !History.enabled ){
+	    return false;
+	}
+
+	History.Adapter.bind(window, 'statechange', function(){
+		clearInterval(intval);
+	    });
+	// 페이지를 떠나면 무조건 check_update 인터벌을 종료한다. 
+	$('a').click(function(){
+		clearInterval(intval);
+	    });
+	$(".talk_title").click(function() {
+		History.pushState(null, document.title, this.href);
+		return false;
+	    });
+	// 프로필은 ajax이 아닌 페이지 리로딩이기 때문에 a href 리퀘스트를 무시하지 않는다. 
+	$(".profile").click(function() {
+		History.pushState(null, document.title, this.href);
+	    });
+	$("#new_talk").submit(function(){
+		clearInterval(intval);
+	    });
+
+	$.extend({
+	    check_update: function(){
+		$.ajax({
+		    type: "GET",
+		    url: '<%= url_for :action => 'check_update' %>',
+		    dataType:'script',
+		    success : function(retval){
+			    if(retval == '1')
+			    {
+				// 페이지 리로딩 시 인터벌이 리로드되기 때문에 미리 없애준다. 
+				clearInterval(intval);
+				$.getScript('/talks');
+			    }//if
+			}//success
+		    });//ajax
+		},//check_update
+	    start_interval: function(){
+		    intval = setInterval(function(){
+			    $.check_update()
+			}, 30000);
+		}//start_interval
+	    });//extend
+
+	$.start_interval();
+
+// Text Field 에 디폴트 값 주기 + 마우스 오버시 사라지기
+	$(".defaultText").focus(function(srcc)
+				{
+				    if ($(this).val() == $(this)[0].title)
+				    {
+					$(this).removeClass("defaultTextActive");
+					$(this).val("");
+				    }
+				});
+	
+	$(".defaultText").blur(function()
+			       {
+				   if ($(this).val() == "")
+				   {
+				       $(this).addClass("defaultTextActive");
+				       $(this).val($(this)[0].title);
+				   }
+			       });
+	
+	$(".defaultText").blur();        
+// end of Text Field effect 
+    });

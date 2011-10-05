@@ -11,37 +11,52 @@
       </ul>
     </div>
   <% end %>
-
+<br />
   <div class="field">
-    <%= f.label :title %><br />
+    <%= f.label "상품명(주문시 여기에 적은 이름으로 등록됩니다.)" %><br />
     <%= f.text_field :title %>
   </div>
+<br /><br />
   <div class="field">
-    <%= f.label :thumnail_pic %><br />
+    <%= f.label "미리보기 이미지. 상품 리스트와 디테일 부분에서 이 사진이 나옵니다.(현재 310x310 이상으로 등록하셔야합니다.)" %><br />
     <%= f.file_field :thumnail_pic %>
   </div>
+<br /><br />
   <div class="field">
-    <%= f.label :content %><br />
+    <%= f.label "본문 등록. 상품 디테일 부분에 그대로 나오니 이쁘게 입력해주세요 ^-^" %><br />
     <%= f.cktext_area :content, :cols => 150, :rows => 150, :height => 800   %>
   </div>
   <div class="field">
-    <%= f.label :price %><br />
+    <%= f.label "가격" %><br />
     <%= f.number_field :price %>
   </div>
   <div class="field">
-    <%= f.label :stock %><br />
+    <%= f.label "재고량" %><br />
     <%= f.number_field :stock %>
   </div>
   <div class="field">
-    <%= f.label :delivery_state %><br />
+    <%= f.label "배송형태" %><br />
     <%= f.select :delivery_state, Order::DELIVERY_TYPES, :prompt => '가능한 배송 형태를 고르세요' %>
   </div>
   <div class="field">
-    <%= f.label :state %><br />
+    <%= f.label "판매상태" %><br />
     <%= f.select :state, Product::STATE, :prompt => '현재 판매 여부' %>
   </div>
+  <div class="field">
+    <% if @product.product_options.count < 1 %>
+       옵션 선택(선택된 옵션들은 상품 디테일에서  메뉴에 모두 보여집니다. 기본옵션 추가는 개발자한테 직접 말하셔야되구요, 이 상품에 대해서만 옵션을 추가하려면 상품 등록 후 상품이름을 클릭하면 추가할 수 있습니다^^)<br />
+         <% Product::DEFAULT_OPTION.each_with_index do |option, index| %>
+         <%= check_box_tag "product_option[" + index.to_s + "]", option %><%= option %><br />
+	 <% end %>
+       <% else %>
+       옵션 변경은 여기선 불가능합니다.
+       <% end %>
+  </div>
+
+
   <%= f.hidden_field :item_category_id %>
+<br />
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "상품 등록(변경)하기" %>
   </div>
 <% end %>

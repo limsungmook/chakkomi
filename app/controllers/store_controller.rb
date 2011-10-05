@@ -7,7 +7,7 @@ class StoreController < ApplicationController
     
     respond_to do |format|
       format.html # index.html.erb
-      format.js
+      format.js { render :layout => 'shop' }
       format.json { render json: @cart }
     end
   end

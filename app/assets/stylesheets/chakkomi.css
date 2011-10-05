@@ -1,35 +1,3 @@
-#cart
-{
-    width: 746px;
-    border-left: 1px solid #00ffff;
-    border-right: 1px solid #00ffff;
-    border-top: 1px solid #00ffff;
-    border-bottom: 1px solid #00ffff;
-}
-#cart .cart_total_line
-{
-    text-align: right;
-}
-#cart .line_item IMG
-{
-    width:40px;
-    height:40px;
-}
-#cart .line_item table
-{
-    text-align: center; 
-    margin: 1px 1px 2px 2px; 
-    font-size: 1px;
-}
-#cart .line_item .line_item_td
-{
-    padding:5px;
-    width:45px;
-//    border-left: 1px solid #d1d6dc;
-//    border-right: 1px solid #d1d6dc;
-    border-top: 1px solid #fff;
-}
-
 #relay_relay .relay_relay_admin
 {
     width:600px;
@@ -269,6 +237,12 @@
     margin-top: 300px;
 }
 
+#loading
+{
+    text-align: center;
+    margin-top: 300px;
+}
+
 /*  laydesk shop 구조 */
 
 #laydesk #laydesk_shop #laydesk_shop_hdr
@@ -284,12 +258,13 @@
 {
     float: left;
     display: inline;
-
 }
-
-
-
-#laydesk #laydesk_shop #laydesk_shop_hdr #laydesk_shop_hdr_logo IMG
+#laydesk #laydesk_shop #laydesk_shop_hdr #laydesk_shop_hdr_logo .logo
+{
+    width: 141px;
+    height: 141px;
+}
+#laydesk #laydesk_shop #laydesk_shop_hdr #laydesk_shop_hdr_logo .logo_shop
 {
     width: 300px;
     height: 141px;
@@ -340,7 +315,7 @@
     width: 100%;
 
 }
-#laydesk #laydesk_shop #laydesk_shop_main #laydesk_shop_main_title .laydesk_shop_main_title_string
+#laydesk #laydesk_shop #laydesk_shop_main .laydesk_shop_main_title .laydesk_shop_main_title_string
 {
     font-size: 32px;     
 }
@@ -369,11 +344,6 @@
     width:120px;
     height:120px;    
 }
-#laydesk #laydesk_shop #laydesk_shop_main .item_category_list .entry IMG:hover
-{
-    width:140px;
-    height:140px;    
-}
 #laydesk #laydesk_shop #laydesk_shop_main .item_category_list .entry span
 {
     color: black;
@@ -398,10 +368,12 @@
     width: 200px;
     height: 110px;
     background: #FFFFFF;
+
 }
 #laydesk #laydesk_shop #laydesk_shop_main #product_list_wrapper #product_list ul li .product_list_entry
 {
     height:110px;
+
 }
 #laydesk #laydesk_shop #laydesk_shop_main #product_list_wrapper #product_list ul li .product_list_entry IMG
 {
@@ -409,12 +381,18 @@
     width: 90px;
     height: 90px;
 }
+#laydesk #laydesk_shop #laydesk_shop_main #product_list_wrapper #product_list ul #list_first
+{
+    background: #4f2f3f;
+}
 #laydesk #laydesk_shop #laydesk_shop_main #product_list_wrapper #product_list ul li div:hover, #laydesk #laydesk_shop #laydesk_shop_main #product_list_wrapper #product_list ul li div:focus:hover
 {
     background: #010101;
 }
-
-
+#laydesk #laydesk_shop #laydesk_shop_main #product_list_wrapper #product_list ul li a:hover, #laydesk #laydesk_shop #laydesk_shop_main #product_list_wrapper #product_list ul li a:focus:hover
+{
+    background: #010101;
+}
 
 #laydesk #laydesk_shop #laydesk_shop_main #product_detail_wrapper
 {

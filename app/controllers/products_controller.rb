@@ -51,10 +51,21 @@ class ProductsController < ApplicationController
   def create
     @item_category = ItemCategory.new(:item_category_id => params[:item_category_id])
     @product = @item_category.products.build(params[:product])
+    @check_tests = params[:product_option]
 
     respond_to do |format|
       if @product.save
-        format.html { redirect_to(@item_category, :notice => 'Product was successfully created.') }
+        @check_tests.each do |check|        
+          @product_option = ProductOption.new()
+          @product_option.option = check[1]
+          @product_option.product_id = @product.id
+          @product_option.save
+        end
+
+#        format.html { render :template => 'item_categories/show'}
+
+
+        format.html { redirect_to '/item_categories/' + @product.item_category.id.to_s }
 #        format.xml  { render :xml => @product, :status => :created, :location => @product }
       else
         format.html { render :action => "new" }
@@ -70,7 +81,7 @@ class ProductsController < ApplicationController
 
     respond_to do |format|
       if @product.update_attributes(params[:product])
-        format.html { redirect_to(@product, :notice => 'Product was successfully updated.') }
+        format.html { redirect_to '/item_categories/' + @product.item_category.id.to_s }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -82,12 +93,13 @@ class ProductsController < ApplicationController
   # DELETE /products/1
   # DELETE /products/1.xml
   def destroy
-    @item_category = ItemCategory.new(:item_category_id => params[:item_category_id])
     @product = Product.find(params[:id])
     @product.destroy
 
     respond_to do |format|
-      format.html { redirect_to(products_url) }
+
+
+      format.html { redirect_to :back}
       format.xml  { head :ok }
     end
   end

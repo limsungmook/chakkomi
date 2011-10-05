@@ -1,3 +1,4 @@
+<% session[:back_url] = request.url %>
 <% if !@post.nil? %>
   <%= @post.body_txt.html_safe %>
 

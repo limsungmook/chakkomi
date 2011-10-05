@@ -1,7 +1,3 @@
 $(function(){
-	$('#laydesk_shop_main').fadeOut('10000', function(){
-		
-		$('#laydesk_shop_main').html('<%= escape_javascript(render('/carts/cart')) %>').fadeIn('slow');
-
-	    });
+	History.pushState(null, document.title, '/carts');
     });

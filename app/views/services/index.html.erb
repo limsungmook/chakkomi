@@ -1,30 +1,8 @@
-<section id="deviseauth">
-    <h2>Authentication Services - Setting</h2>
+<script type="text/javascript">
+$(function(){
+	$('.laydesk_body').fadeOut('10000', function(){
+	    $('.laydesk_body').html('<%= escape_javascript(render('index')) %>').fadeIn('slow');
+	});
+    });
 
-    <div id="currservices">
-        <h3>아래의 <%= @services.count == 1 ? '서비스가' : '서비스들이' %> 착곰이 계정과 연결되어 있습니다.</h3>
-    
-        <% @services.each do |service| %>  
-          <div class="services_used">  
-              <%= image_tag "#{service.provider}_64.png", :size => "64x64" %>
-              <div class = "user">
-                <div class="line1">이름: <%= service.uname %> (ID: <%= service.uid %>)</div>  
-                <div class="line2">메일: <%= service.uemail != '' ? service.uemail : '지정되지 않았습니다.' %></div>
-                <div class="line3"><% @services.count == 1 ? @msg = '현재 연결된 서비스가 하나밖에 없으므로 이 서비스를 삭제하실 경우엔 착곰이 계정이 휴면 상태에 들어갑니다.' : @msg = '' %>
-                    <%= button_to "연결된 서비스 삭제", service, :confirm => '정말 이 서비스를 삭제하시겠습니까?' + @msg, :method => :delete, :class => "remove" %>
-                </div>
-              </div>
-          </div>  
-        <% end %>
-    </div>
-
-    <div id="availableservices">
-        <h3>추가로 다음의 서비스와 착곰이 계정의 연결이 가능합니다. </h3>
-        <div id="services">
-            <a href="/auth/facebook" class="services"><%= image_tag "facebook_64.png", :size => "64x64",  :alt => "Facebook" %>Facebook</a>
-            <a href="/auth/google" class="services"><%= image_tag "google_64.png", :size => "64x64",  :alt => "Google" %>Google</a>
-            <a href="/auth/twitter" class="services"><%= image_tag "twitter_64.png", :size => "64x64",  :alt => "Twitter" %>Twitter</a>
-        </div>
-        <h4>만약 서비스와의 연결을 통해 착곰이 사이트에 가입하신 경우엔 랜덤으로 비밀번호가 저장됩니다. 비밀번호 변경을 원하시면 회원가입 -> 비밀번호 찾기 를 눌러주세요.</h4>
-    </div>  
-</section>
+</script>

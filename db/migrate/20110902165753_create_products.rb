@@ -7,6 +7,7 @@ class CreateProducts < ActiveRecord::Migration
       t.integer :price
       t.string :delivery_state
       t.integer :stock
+      t.integer :default_stock
       t.string :state
 
       t.timestamps

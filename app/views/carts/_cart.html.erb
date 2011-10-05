@@ -1,14 +1,23 @@
+<% session[:back_url] = request.url %>
+<div class="laydesk_shop_main_title">
+  <span class="laydesk_shop_main_title_string">장바구니</span><br /><hr />
+</div>
+  <div class="line_item">
 <% if notice %>
 <p id="notice" ><%= notice %></p>
 <% flash[:notice] = nil %>
 <% end %>
-
-
-  <div class="line_item">
     <table>
       <tr>
-	<%= render(@cart.line_items) %>
+	<td>제품사진</td>
+	<td>제품명</td>
+	<td>옵션</td>
+	<td>수량</td>
+	<td>합계</td>
+	<td>수정</td>
+	<td>삭제</td>
       </tr>
+      <%= render(@cart.line_items) %>
     </table>
   </div>
   <hr>
@@ -17,11 +26,14 @@
     <tr >
       <td>총액 :&nbsp;</td>
       <td class="cart_total_cell" ><%= number_with_delimiter(@cart.total_price) %>원</td>
+    </tr>
+      <tr>
+      <% if user_signed_in? %>
       <td><%= button_to '주문하기', new_order_path, :method => :get, :class => "cart_btn_order" %></td>
       <td><%= button_to '비우기', @cart, :method => :delete, :confirm => '장바구니를 삭제하시겠습니까?', :class => "cart_btn_empty", :remote => true %></td>
-      <td>
-
-      </td>
+      <% else %>
+      <td>주문을 하시려면 <%= link_to '로그인', new_user_session_path, :remote => true, :class => "ajax_link"  %>을 하셔야합니다.</td>
+      <% end %>
     </tr>    
 </table>
 

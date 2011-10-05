@@ -10,20 +10,23 @@
       </ul>
     </div>
   <% end %>
+ <br /> <br />
   <div class="field">
-    <%= f.label :thumnail_pic %><br />
+    <%= f.label "샾 메인에 보일 미리보기 이미지를 선택해주세요(현재 140x140 보다만 크면 됩니다.)" %><br />
     <%= f.file_field :thumnail_pic %>
   </div>
+  <br />  <br /> 
   <div class="field">
-    <%= f.label :name %><br />
+    <%= f.label "카테고리명(샾 메인에서 마우스 오버시 여기 적은 카테고리명이 나옵니다) "%><br />
     <%= f.text_field :name %>
   </div>
+  <br />  <br /> 
   <div class="field">
-    <%= f.label :detail %><br />
+    <%= f.label "카테고리 설명(사용자에게 보이지는 않고, 나중에 혹시 설명 참고하라고 넣어두었습니다)" %><br />
     <%= f.text_area :detail %>
   </div>
   <div class="field">
-    <%= f.label :order %><br />
+    <%= f.label "샾 메인에서 보이는 순서입니다. 1부터 가장 위 왼쪽부터 나열됩니다." %><br />
     <%= f.number_field :order %>
   </div>
 

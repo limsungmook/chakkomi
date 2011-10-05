@@ -1,5 +1,6 @@
 <div id="talk_talk">
   <table align="left">
+<% if !@talks.nil? %>
 <% @talks.each do |talk| %>
 <div class="talk_talk_article">
 
@@ -25,3 +26,6 @@
   </table>
 </div>
 
+<% else %>
+    작성된 글이 없습니다.
+<% end %>

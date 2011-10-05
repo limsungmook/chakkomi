@@ -7,7 +7,7 @@ class Product < ActiveRecord::Base
   before_destroy :ensure_not_referenced_by_any_line_item
  
 
-
+  DEFAULT_OPTION = [ "기본옵션", "0.5mm", "1.0mm" ]
   STATE = [ "판매중", "판매중지" , "품절", "문의요망" ]
 
 #  validates :thumnail_pic, :content_pic, :format => {

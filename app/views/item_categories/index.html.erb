@@ -1,23 +1,23 @@
 <%= render :partial => "/admins/admin_menu" %>
 
-<h1>Listing item_categories</h1>
+<h1>상품 카테고리</h1>
 
 <table>
   <tr>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th>카테고리 이름</th>
+    <th>수정하기</th>
+    <th>삭제하기</th>
   </tr>
 
 <% @item_categories.each do |item_category| %>
   <tr>
     <td><%= link_to item_category.name, item_category %></td>
-    <td><%= link_to 'Edit', edit_item_category_path(item_category) %></td>
-    <td><%= link_to 'Destroy', item_category, confirm: 'Are you sure?', method: :delete %></td>
+    <td><%= link_to '수정', edit_item_category_path(item_category) %></td>
+    <td><%= link_to '삭제', item_category, confirm: '삭제하시겠습니까?', method: :delete %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Item category', new_item_category_path %>
+<%= link_to '새 상품 카테고리 만들기', new_item_category_path %>

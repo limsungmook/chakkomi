@@ -56,7 +56,7 @@ class PostsController < ApplicationController
     
     respond_to do |format|
       if @post.save
-        format.html { redirect_to(@category, :notice => '글 작성이 완료되었습니다.') }
+        format.html { redirect_to('/categories/' + @post.category.id.to_s, :notice => '글 작성이 완료되었습니다.') }
 #        format.xml  { render :xml => @post, :status => :created, :location => @post }
       else
         format.html { render :action => "new" }
@@ -71,7 +71,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     respond_to do |format|
       if @post.update_attributes(params[:post])
-        format.html { redirect_to(@post, :notice => '글 수정이 완료되었습니다') }
+        format.html { redirect_to('/categories/' + @post.category.id.to_s, :notice => '글 수정이 완료되었습니다') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -87,7 +87,7 @@ class PostsController < ApplicationController
     @post.destroy
 
     respond_to do |format|
-      format.html { redirect_to @category }
+      format.html { redirect_to :back }
 #      format.html { redirect_to(posts_url) }
 #      format.xml  { head :ok }
     end
