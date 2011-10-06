@@ -1,5 +1,6 @@
 <script type="text/javascript">
 $(function(){
+
 	if ($("#product_list").length)
 	{
 	    $('#product_detail_wrapper').html('<%= escape_javascript(render('detail')) %>').show('slide');
@@ -11,3 +12,6 @@ $(function(){
 	}
     });
 </script>
+<noscript>
+<%= render('show') %>;
+</noscript>

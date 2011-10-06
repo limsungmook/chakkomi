@@ -14,7 +14,7 @@ $(function(){
 		$(this).find("span:last").remove();
 	    }
 	    );
-	$(".entry a").click(function(){
+	$(".shop_item_category").click(function(e){
 		History.pushState(null, document.title, this.href);
                 return false;
 	    });
@@ -22,4 +22,6 @@ $(function(){
 });
 
 </script>
-
+<noscript>
+<%= render('store') %>
+</noscript>

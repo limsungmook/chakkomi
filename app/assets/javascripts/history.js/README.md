@@ -1,4 +1,4 @@
-Welcome to History.js (v1.7.0 - April 01 2011)
+Welcome to History.js (v1.7.1 - October 4 2011)
 ==================
 
 
@@ -18,33 +18,35 @@ Copyright 2011 [Benjamin Arthur Lupton](http://balupton.com)
 
 ### Working with History.js:
 
-	(function(window,undefined){
+``` javascript
+(function(window,undefined){
 
-		// Prepare
-		var History = window.History; // Note: We are using a capital H instead of a lower h
-		if ( !History.enabled ) {
-			 // History.js is disabled for this browser.
-			 // This is because we can optionally choose to support HTML4 browsers or not.
-			return false;
-		}
+	// Prepare
+	var History = window.History; // Note: We are using a capital H instead of a lower h
+	if ( !History.enabled ) {
+		 // History.js is disabled for this browser.
+		 // This is because we can optionally choose to support HTML4 browsers or not.
+		return false;
+	}
 
-		// Bind to StateChange Event
-		History.Adapter.bind(window,'statechange',function(){ // Note: We are using statechange instead of popstate
-			var State = History.getState(); // Note: We are using History.getState() instead of event.state
-			History.log(State.data, State.title, State.url);
-		});
+	// Bind to StateChange Event
+	History.Adapter.bind(window,'statechange',function(){ // Note: We are using statechange instead of popstate
+		var State = History.getState(); // Note: We are using History.getState() instead of event.state
+		History.log(State.data, State.title, State.url);
+	});
 
-		// Change our States
-		History.pushState({state:1}, "State 1", "?state=1"); // logs {state:1}, "State 1", "?state=1"
-		History.pushState({state:2}, "State 2", "?state=2"); // logs {state:2}, "State 2", "?state=2"
-		History.replaceState({state:3}, "State 3", "?state=3"); // logs {state:3}, "State 3", "?state=3"
-		History.pushState(null, null, "?state=4"); // logs {}, '', "?state=4"
-		History.back(); // logs {state:3}, "State 3", "?state=3"
-		History.back(); // logs {state:1}, "State 1", "?state=1"
-		History.back(); // logs {}, "Home Page", "?"
-		History.go(2); // logs {state:3}, "State 3", "?state=3"
+	// Change our States
+	History.pushState({state:1}, "State 1", "?state=1"); // logs {state:1}, "State 1", "?state=1"
+	History.pushState({state:2}, "State 2", "?state=2"); // logs {state:2}, "State 2", "?state=2"
+	History.replaceState({state:3}, "State 3", "?state=3"); // logs {state:3}, "State 3", "?state=3"
+	History.pushState(null, null, "?state=4"); // logs {}, '', "?state=4"
+	History.back(); // logs {state:3}, "State 3", "?state=3"
+	History.back(); // logs {state:1}, "State 1", "?state=1"
+	History.back(); // logs {}, "Home Page", "?"
+	History.go(2); // logs {state:3}, "State 3", "?state=3"
 
-	})(window);
+})(window);
+```
 
 To ajaxify your entire website with the HTML5 History API, History.js and jQuery [this snippet of code](https://gist.github.com/854622) is all you need. It's that easy.
 
@@ -98,46 +100,43 @@ To ajaxify your entire website with the HTML5 History API, History.js and jQuery
 
 1. Download History.js and upload it to your webserver. Download links: [tar.gz](https://github.com/balupton/history.js/tarball/master) or [zip](https://github.com/balupton/history.js/zipball/master)
 
-2. Include [JSON2](http://www.json.org/js.html) for HTML4 Browsers Only *(replace www.yourwebsite.com)*
+1. Include History.js
 
-		<script>if ( typeof window.JSON === 'undefined' ) { document.write('<script src="http://www.yourwebsite.com/history.js/scripts/compressed/json2.js"><\/script>'); }</script>
+	- For [jQuery](http://jquery.com/) v1.3+
 
-3. Include [Amplify.js Store](http://amplifyjs.com/) for Data Persistance and Synchronisation Support (optional but recommended)
+		``` html
+		<script src="http://www.yourwebsite.com/history.js/scripts/bundled/html4+html5/jquery.history.js"></script>
+		```
 
-		<script src="http://www.yourwebsite.com/history.js/scripts/compressed/amplify.store.js"></script>
+	- For [Mootools](http://mootools.net/) v1.3+
 
-4. Include the Adapter for your Framework:
+		``` html
+		<script src="http://www.yourwebsite.com/history.js/scripts/bundled/html4+html5/mootools.history.js"></script>
+		```
 
-	- [jQuery](http://jquery.com/) v1.3+
+	- For [Right.js](http://rightjs.org/) v2.2+
 
-			<script src="http://www.yourwebsite.com/history.js/scripts/compressed/history.adapter.jquery.js"></script>
+		``` html
+		<script src="http://www.yourwebsite.com/history.js/scripts/bundled/html4+html5/right.history.js"></script>
+		```
+	
+	- For [Zepto](http://zeptojs.com/) v0.5+
 
-	- [Mootools](http://mootools.net/) v1.3+
+		``` html
+		<script src="http://www.yourwebsite.com/history.js/scripts/bundled/html4+html5/zepto.history.js"></script>
+		```
 
-			<script src="http://www.yourwebsite.com/history.js/scripts/compressed/history.adapter.mootools.js"></script>
+	- For everything else
 
-	- [Prototype](http://www.prototypejs.org/) v1.7+ (does not support versions of IE prior to 9 due to a bug in the prototype library)
+		``` html
+		<script src="http://www.yourwebsite.com/history.js/scripts/bundled/html4+html5/native.history.js"></script>
+		```
 
-			<script src="http://www.yourwebsite.com/history.js/scripts/compressed/history.adapter.prototype.js"></script>
-
-	- [Zepto](http://zeptojs.com/) v0.5+
-
-			<script src="http://www.yourwebsite.com/history.js/scripts/compressed/history.adapter.zepto.js"></script>
-
-	- _Would you like to support another framework? No problem! It's very easy to create adapters, and I'll be happy to include them or help out if you [let me know](https://github.com/balupton/history.js/issues) :-)_
-
-5. Include History.js
-
-		<script src="http://www.yourwebsite.com/history.js/scripts/compressed/history.js"></script>
-		<script src="http://www.yourwebsite.com/history.js/scripts/compressed/history.html4.js"></script>
-
-> Note: If you want to only support HTML5 Browsers and not HTML4 Browsers (so no hash fallback support) then just remove the `history.html4.js` file include in step #5 and the JSON2 (`json2.js`) file include in step #2 [- why supporting HTML4 browsers could be either good or bad based on my app's use cases](https://github.com/balupton/history.js/wiki/Intelligent-State-Handling)
+> Note: If you want to only support HTML5 Browsers and not HTML4 Browsers (so no hash fallback support) then just change the `/html4+html5/` part in the urls to just `/html5/`. [Why supporting HTML4 browsers could be either good or bad based on my app's use cases](https://github.com/balupton/history.js/wiki/Intelligent-State-Handling)
 
 
 ## Subscribe to Updates
 
-- For Email Updates:
-	- You can subscribe via the subscription form included in the demo page
 - For Commit RSS/Atom Updates:
 	- You can subscribe via the [GitHub Commit Atom Feed](http://feeds.feedburner.com/historyjs)
 - For GitHub News Feed Updates:
@@ -167,18 +166,19 @@ Thanks! every bit of help really does make a difference. Again thank you.
 
 ### HTML5 Browsers
 
-- Chrome 8,9,10
-- Firefox 4
-- Safari 5
-- Safari iOS 4.3
+- Firefox 4+
+- Chrome 8+
+- Opera 11.5
+- Safari 5.0+
+- Safari iOS 4.3+
 
 ### HTML4 Browsers
 
-- IE 6,7,8,9
+- IE 6, 7, 8, 9
 - Firefox 3
-- Opera 10,11
+- Opera 10, 11.0
 - Safari 4
-- Safari iOS prior to version 4.3
+- Safari iOS 4.2, 4.1, 4.0, 3.2
 
 
 ## Exposed API
@@ -236,7 +236,16 @@ Thanks! every bit of help really does make a difference. Again thank you.
 
 ## Changelog
 
-- v1.7.0 - April 01 2011
+- v1.7.1 - October 4 2011
+	- Added a new native adapter which is framework agnostic (can be used with, or without any framework)
+	- Provided bundled files
+	- Added RightJS adapter
+	- Updated supported browser listing
+	- Added sessionStorage support in core instead of optional Amplify.js Store support
+	- Fixed issue with state id generation growing slower over time
+	- Closes #104, #95, #102, #92, #81, #90, #94, #93, #91, #67, #83, #54, #45
+
+- v1.7.0 - April 1 2011
 	- Added `History.enabled` property (refer to usage section). This reflects whether or not History.js is enabled for our particular browser. For instance, if we have not included support for a HTML4 browser and we are accessing through a HTML4 browser then `History.enabled` will be `false`.
 	- Added (optional but recommended) Data Persistance and Synchronisation Support thanks to [AppendTo's](http://appendto.com/) [Amplify.js](http://amplifyjs.com/) (refer to installation and compatibility sections for details)
 	- Made HTML5 SUIDs more transparent - [Reported](https://github.com/balupton/history.js/issues#issue/34) by [azago](https://github.com/azago) and [Mark Jaquith](http://markjaquith.com/)
@@ -276,7 +285,7 @@ Thanks! every bit of help really does make a difference. Again thank you.
 	- Included a Subscribe Form in the Demo for Version Updates via Email
 	- Small updates to Documentation
 
-- v1.3.1 - February 04 2011
+- v1.3.1 - February 4 2011
 	- Improved Documentation
 
 - v1.3.0 - January 31 2011

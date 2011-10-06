@@ -3,3 +3,6 @@ $('#laydesk_body').fadeOut('10000', function(){
 	$('#laydesk_body').html('<%= escape_javascript(render('article')) %>').fadeIn('slow');
 });
 </script>
+<noscript>
+<%= render('article') %>
+</noscript>

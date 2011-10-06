@@ -5,14 +5,14 @@
   <%= stylesheet_link_tag "reset-min", "fonts-min", "jquery-ui", "chakkomi", :cache => true %>
   <%= javascript_include_tag :application %>
   <script>if ( typeof window.JSON === 'undefined') { document.write('<script src="http://dev.chakkomi.com/assets/history.js/scripts/compressed/json2.js"><\/script>'); }</script>
-  <%= javascript_include_tag "history.js/scripts/compressed/amplify.store.js", "history.js/scripts/compressed/history.adapter.jquery.js", "history.js/scripts/compressed/history.js", "history.js/scripts/compressed/history.html4.js", "chakkomi", :cache => true %>
-
+  <%= javascript_include_tag "history.js/scripts/bundled/html4+html5/jquery.history.js", "jquery.onefblikev1.1", "chakkomi", :cache => true %>
   <%= csrf_meta_tag %>
   <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Oswald">
 
   <% session[:back_url] = '/store' %>
 </head>
 <body>
+
   <div id = "laydesk_outer">
     <div id="laydesk" class="laydesk">
       <div id="laydesk_shop">
@@ -36,6 +36,7 @@
 	      <% end %>
 	    </ul>
 	  </div>
+
 	</div><!-- end: laydesk_shop_hdr -->
 	<div id="laydesk_shop_main" class="laydesk_body">
 	  <div id="flash">

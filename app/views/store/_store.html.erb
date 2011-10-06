@@ -9,7 +9,7 @@
 	<% end %>
 	<td>
 	  <div class="entry" >
-	    <%= link_to image_tag(item_category.thumnail_pic.url(:thumb)), {:controller=>"store", :action => 'show', :id=>item_category}, {:title =>  item_category.name, :remote => true } %><br />
+	    <%= link_to image_tag(item_category.thumnail_pic.url(:thumb)), {:controller=>"store", :action => 'show', :id=>item_category}, {:title =>  item_category.name, :class => "shop_item_category", :remote => true } %><br />
 	  </div>
 	</td>
 	<% if (index % 4) == 3 %>

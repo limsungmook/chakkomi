@@ -1,20 +1,39 @@
 $(function() {
-	var History = window.History;
+
+	$("#shop_menu_ul li img").hover(function()
+        {
+	  $(this).attr("src", "/assets/" + $(this)[0].title + "_clicked.png");
+	  $("#shop_menu_ul li img").click(function(){
+		  
+		  $("#shop_menu_ul li img").each(function(){
+			  $(this).attr("src", "/assets/" + $(this)[0].title + ".png");
+			  $(this).attr("alt", $(this)[0].title);
+		      });
+		  
+		  $(this).attr("src", "/assets/" + $(this)[0].title + "_clicked.png");
+		  $(this).attr("alt", $(this)[0].title + "_clicked");
+		  
+	      });
+	  
+      }, function(){
+	    if( $(this).attr("alt") != $(this)[0].title + "_clicked" )
+	    {
+		$(this).attr("src", "/assets/" + $(this)[0].title + ".png");
+	    }
+    
+	});
 
 
-	if ( !History.enabled ){
-	    return false;
-	}
+
 //	$(".laydesk_sidebar_menu a").click(function(e) {
 	$(".ajax_link").click(function(e) {
 //		history.pushState(null, document.title, this.href);
-
 		var State = History.getState();
 //debug
 //		History.log(State.data, State.title, State.url);
 //		History.log(State.data, 'clicked', this.href);
-		History.pushState(null, document.title, this.href);
 
+		History.pushState(null, document.title, this.href);
 		if (this.href != State.url)
 		{
 		    return false;
@@ -46,12 +65,13 @@ $(function() {
 
 	History.Adapter.bind(window, 'statechange', function(){
 		var State = History.getState();
-//		alert('state change');
+
 //debug
 //		History.log(State.data, State.title, State.url);
 //		History.log(State.data, 'getstate', State.url);
 
 		$.getScript(State.url);
+
 	    });
 //	$(window).bind("popstate", function() {
 //		$.getScript(location.href);

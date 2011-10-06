@@ -35,6 +35,7 @@ class ProductsController < ApplicationController
     @product = Product.new
     @product.item_category_id = params[:id]
 
+
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @product }
@@ -55,11 +56,13 @@ class ProductsController < ApplicationController
 
     respond_to do |format|
       if @product.save
+        if !@check_tests.nil?
         @check_tests.each do |check|        
           @product_option = ProductOption.new()
           @product_option.option = check[1]
           @product_option.product_id = @product.id
           @product_option.save
+          end
         end
 
 #        format.html { render :template => 'item_categories/show'}
