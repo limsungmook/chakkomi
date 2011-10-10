@@ -1,36 +1,22 @@
-<% if session[:skip_intro].nil? || !user_signed_in? %>   <!-- 원래 && 이지만 테스트용으로 무조건 실행되도록 || 로 바꿈 -->
 <div id = "intro_image">
-<!-- <%= link_to image_tag("/assets/intro.jpg"), {:controller=>'/articles', :action => 'show', :id => '1', :category_name=>'intro', :one_article=>'1'}, :remote => true, :class => "ajax_link" %>  -->
- <%= image_tag("/assets/intro.jpg", :usemap => "#intro_map") %>
-<map id="intro_map" name="intro_map">
-  <area shape="poly" coords="406,585,346,651,384,747,583,684,572,635,507,556," href=<%= url_for({:controller=>'/articles', :action => 'show', :id => '1', :category_name=>'intro', :one_article=>'1'}) %> class="ajax_link" alt="착곰이 바로가기" title="착곰이 바로가기"/>
-  <area shape="poly" coords="596,540,534,566,560,640,634,609,615,542," href="http://www.facebook.com/chakkomi" alt="페이스북" title="페이스북"   />
-  <area shape="poly" coords="621,541,623,616,725,598,703,523," href="http://twitter.com/#!/chakkomi" alt="트위터" title="트위터" />
-  <area shape="poly" coords="704,514,730,607,822,565,809,473," href="#" alt="월페이퍼(준비중)" title="월페이퍼(준비중)"   />
-  <area shape="rect" coords="41,57,568,504" href="<%= url_for({:controller=>'/articles', :action => 'show', :id => '1', :category_name=>'intro', :one_article=>'1'}) %>" alt="착한곰팡이 바로가기" title="착한곰팡이 바로가기" class="ajax_link"    />
-
-</map>
-
-
+  <%= image_tag("/assets/intro.jpg", :usemap => "#intro_map") %>
+  <map id="intro_map" name="intro_map">
+    <area shape="poly" coords="406,585,346,651,384,747,583,684,572,635,507,556," href=<%= url_for({:controller=>'/articles', :action => 'chakkomi'}) %>  alt="착곰이 바로가기" title="착곰이 바로가기" class="index_link"/>
+    <area shape="poly" coords="596,540,534,566,560,640,634,609,615,542," href="http://www.facebook.com/chakkomi" alt="페이스북" title="페이스북"   />
+    <area shape="poly" coords="621,541,623,616,725,598,703,523," href="http://twitter.com/#!/chakkomi" alt="트위터" title="트위터" />
+    <area shape="poly" coords="704,514,730,607,822,565,809,473," href="#" alt="월페이퍼(준비중)" title="월페이퍼(준비중)"   />
+    <area shape="rect" coords="41,57,568,504" href="<%= url_for({:controller=>'/articles', :action => 'chakkomi'}) %>" alt="착한곰팡이 바로가기" title="착한곰팡이 바로가기" class="index_link"    />
+  </map>
 </div>
-<%  session[:skip_intro] = nil %>  <!-- 원래 nil -> 1 이었지만 테스트용으로 무조건 nil로 넣음 -->
-
-
 <script type="text/javascript">
-$('#laydesk').hide();
-$('#intro_image').appendTo('#laydesk_outer');
-$('#intro_image').hide().delay(300).fadeIn('3000');
-
-$('.ajax_link').click(function(){
-  $('#intro_image').fadeOut('3000', function(){
-    $('#laydesk').fadeIn('slow');
+  $('#laydesk').hide();
+  $('#intro_image').appendTo('#laydesk_outer');
+  $('#intro_image').hide().delay(300).fadeIn('3000');
+  
+  $('.index_link').click(function(){
+    $('#intro_image').fadeOut('3000', function(){
+    $('#laydesk').fadeIn('3000');
+  
   });
-});
-
+  });
 </script>
-
-<% else %>
-<script type="text/javascript">
-  $.getScript('/articles/intro');
-</script>
-<% end %>

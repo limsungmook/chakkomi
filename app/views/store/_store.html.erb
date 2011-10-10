@@ -1,11 +1,11 @@
-<div class="laydesk_shop_main_title">
-  <span class="laydesk_shop_main_title_string">리스트</span><br /><hr />
+<div id="body_title">
+  <span class="title_string">리스트</span><br /><hr />
 </div>
-<div class="item_category_list">
+<div id="item_category_list">
   <table>
     <% @item_categories.each_with_index do |item_category, index| %>
-    <% if (index % 4) == 0 %>
-    <tr>
+        <% if (index % 4) == 0 %>
+        <tr>
 	<% end %>
 	<td>
 	  <div class="entry" >
@@ -13,8 +13,8 @@
 	  </div>
 	</td>
 	<% if (index % 4) == 3 %>
-    </tr>
-    <% end %>
+        </tr>
+        <% end %>
     <% end %>
   </table>
 </div>

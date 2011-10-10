@@ -15,6 +15,8 @@ class DeviseCreateUsers < ActiveRecord::Migration
       t.text :shortbio
       t.string :weburl
       t.boolean :haslocalpw, :null => false, :default => true
+      t.string :role
+      t.string :delivery_address
 
       t.timestamps
     end

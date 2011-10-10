@@ -1,79 +1,85 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
   <title>착한곰팡이</title>
-  <%= stylesheet_link_tag "reset-min", "fonts-min", "jquery-ui", "chakkomi", :cache => true %>
-  <%= javascript_include_tag :application %>
-  <%= javascript_include_tag "history.js/scripts/bundled/html4+html5/jquery.history.js","chakkomi", :cache => true %>
+  <%= stylesheet_link_tag :application, :cache => true %>
+  <%= javascript_include_tag :application, :cache => true %>
   <%= csrf_meta_tag %>
   <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Oswald">
-<% session[:back_url] = '/store' %>
+  
+  <!-- login 성공시 돌아오기 위한 세션  저장-->
+  <% session[:back_url] = url_for(:controller=>'/articles', :action => 'chakkomi') %>
+     <script type="text/javascript">
+     $(function(){
+
+     $('#loading').hide();
+
+     // bind clicks
+     $(".store_link").click(function(){
+     $('#laydesk').html('<%= escape_javascript(render('store/loading')) %>');
+
+     });
+     });
+  </script>
 </head>
+
 <body>
   <div id="laydesk_outer">
     <div id="laydesk" class="laydesk">
-      <div class="laydesk_sidebar">
-	<div class="laydesk_sidebar_logo">
-	  <%= link_to image_tag("/assets/logo.png"), {:controller=>'/articles', :action => 'show', :id => '1', :category_name=>'intro', :one_article=>'1'}, :remote => true, :class => "ajax_link"  %>
-	</div>
-	<div class="laydesk_sidebar_menu" >
-	  <ul>
-	    <li><%= link_to "NOTICE", {:controller=>'/articles', :action => 'show',:id => '1', :category_name=>'notice', :one_article=>'1'}, :remote => true, :class => "ajax_link" %></li>
-	    <li>&nbsp;</li>
-	    <li><%= link_to "CHAKKOMI", {:controller=>'/articles', :action => 'show',:id => '1', :category_name=>'chakkomi'}, :remote => true, :class => "ajax_link" %></li>
-	    <li><%= link_to "PROJECT", {:controller=>'/articles', :action => 'show',:id => '1', :category_name=>'project'}, :remote => true, :class => "ajax_link"  %></li>
-	    <li><%= link_to "COMICS", {:controller=>'/articles', :action => 'show',:id => '1', :category_name=>'comics'}, :remote => true, :class => "ajax_link" %>&nbsp;</li>
-	    <li><%= link_to "PRODUCT", {:controller=>'/articles', :action => 'show', :id => '1', :category_name=>'artmull'}, :remote => true, :class => "ajax_link"  %></li>
-	    <li><%= link_to "STORE", {:controller=>'/store', :action => 'index'},  :class => "store_link"  %></li>
-	    <li>&nbsp;</li>
-	    <li><%= link_to "TALK", :talks, :remote => true, :class => "ajax_link"  %></li>
-	  </ul>
-	</div>
-	<div class="laydesk_sidebar_links" >
-	</div>
-	<div class="laydesk_ftr1">
-	  <h6>Copyright © </h6>
-	</div>
-      </div>    
-      
-      <div class="laydesk_maj">
-	<div class="laydesk_hdr">
-	  <div class="laydesk_user">
+
+      <div id="laydesk_default">
+	<div id="laydesk_default_sidebar">
+
+	  <div id="laydesk_default_sidebar_logo">
+	    <%= link_to image_tag("/assets/logo.png"), {:controller=>'/articles', :action => 'chakkomi'}, :remote => true, :class => "ajax_link"  %>
+	  </div>
+	  <div id="laydesk_default_sidebar_menu" >
 	    <ul>
-	      <% if user_signed_in? %>
-	      <% if can? :magage, :all%>
-  	      <li><%= link_to "관리자 페이지", :admins %></li>
-	      <% end %>
-	      <li><span id="currentuser"><%= current_user.email %></span></li>
-	      <li><%= link_to "Profile", edit_user_registration_path , :remote => true, :class => "ajax_link"%></li>
-	      <li><%= link_to "Setting", "/services" , :remote => true, :class => "ajax_link"%></li>
-	      <li><%= link_to "Log out", destroy_user_session_path%></li>
-	      <% else %>
-	      <li><%= link_to "Create Account", new_user_registration_path , :remote => true, :class => "ajax_link" %></li>
-	      <li><%= link_to "Login", new_user_session_path, :remote => true, :class => "ajax_link" %></li>
-	      <% end %>
+	      <li><%= link_to "NOTICE", {:controller=>'/articles', :action => 'notice'}, :remote => true, :class => "ajax_link" %></li>
+	      <li>&nbsp;</li>
+	      <li><%= link_to "CHAKKOMI", {:controller=>'/articles', :action => 'chakkomi'}, :remote => true, :class => "ajax_link" %></li>
+	      <li><%= link_to "PROJECT", {:controller=>'/articles', :action => 'project'}, :remote => true, :class => "ajax_link"  %></li>
+	      <li><%= link_to "COMICS", {:controller=>'/articles', :action => 'comics'}, :remote => true, :class => "ajax_link" %>&nbsp;</li>
+	      <li><%= link_to "PRODUCT", {:controller=>'/articles', :action => 'product'}, :remote => true, :class => "ajax_link"  %></li>
+	      <li><%= link_to "STORE", {:controller=>'/store', :action => 'index'},  :class => "store_link"  %></li>
+	      <li>&nbsp;</li>
+	      <li><%= link_to "TALK", :talks, :remote => true, :class => "ajax_link"  %></li>
 	    </ul>
 	  </div>
-	  <div class="laydesk_title">
+	  <div id="laydesk_default_sidebar_ftr1">
+	    <h6>Copyright © </h6>
 	  </div>
-	</div>
+
+	</div><!-- #laydesk_default_sidebar -->
 	
-	<div id="laydesk_body" class="laydesk_body">
-	  <div id="flash">
-	    <% flash.each do |key, value| %>
-	    <div class="flash <%= key %>"><%= value %></div>
-	    <% end %>
-	  </div>
+	<div id="laydesk_default_maj">
+	  <!-- 테스트용으로 로그인되었을 때만 메뉴가 보이게함 -->
+	  <% if user_signed_in? %>
+	  <% if can? :magage, :all%>
+	  <div id="laydesk_default_maj_hdr">
+	    <div id="laydesk_default_maj_hdr_user">
+	      <ul>
+  		<li><%= link_to "관리자 페이지", :admins %></li>
+		<% end %>
+		<li><span id="currentuser"><%= current_user.email %></span></li>
+		<li><%= link_to "Profile", edit_user_registration_path , :remote => true, :class => "ajax_link"%></li>
+		<li><%= link_to "Setting", "/services" , :remote => true, :class => "ajax_link"%></li>
+		<li><%= link_to "Log out", destroy_user_session_path%></li>
+		<li><%= link_to "Create Account", new_user_registration_path , :remote => true, :class => "ajax_link" %></li>
+		<li><%= link_to "Login", new_user_session_path, :remote => true, :class => "ajax_link" %></li>
+	      </ul>
+	    </div><!-- #laydesk_default_user -->
+	  </div><!-- #laydesk_default_hdr -->
+	  <% end %>
+
+	  <div id="laydesk_default_body" class="laydesk_body">
 	    <%= yield %>
-	</div>
-      </div>
-    </div>
-<script type="text/javascript">
-  $(function(){
-  $(".store_link").click(function(){
-    $('#laydesk').html('<%= escape_javascript(render('store/loading')) %>');
-  });
-});
-</script>
+	  </div>
+
+	</div><!-- #laydesk_default_maj -->
+      </div><!-- #laydesk_default -->
+    </div><!-- #laydesk & .laydesk -->
+  </div><!-- laydesk_default_outer -->
 </body>
 </html>

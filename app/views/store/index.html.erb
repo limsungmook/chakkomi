@@ -1,8 +1,8 @@
 <script type="text/javascript">
 $(function(){
 
-	$('#laydesk_shop_main').fadeOut('slow', function(){
-		$('#laydesk_shop_main').html('<%= escape_javascript(render('store')) %>').fadeIn('slow');
+	$('#laydesk_shop_body').fadeOut('slow', function(){
+		$('#laydesk_shop_body').html('<%= escape_javascript(render('store')) %>').fadeIn('slow');
 	$(".entry a").hover(function(){
                 $(this).children('IMG').css('width', '140px');
                 $(this).children('IMG').css('height', '140px');

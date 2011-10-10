@@ -8,6 +8,11 @@
 	    <% else %>
 	  <tr>
 	    <% end %>
+	    <% if can? :manage, :all %>
+	    <td>
+	      <span class="relay_delete"><%= button_to '삭제하기', [@talk, relay], :confirm => '삭제하시겠습니까?', :method => :delete, :remote => true %></span>
+	    </td>
+	    <% end %>
 	    <td>
 	      <div class="relay_timeago"><%= time_ago_in_words(relay.created_at) %> ago</div>
 	    </td>
@@ -18,7 +23,7 @@
 	      <div class="roundbox_green">
 		<div class="rbtop_green"><div></div></div>
 		<div class="rbcontent_green">
-		  <span class="relay_content"><%= relay.content %></span>
+		  <div class="relay_content"><pre><%= relay.content %></pre></div>
 		</div>
 		<div class="rbbot_green"><div></div></div>
 	      </div>
@@ -34,11 +39,17 @@
 	  <% else %>
 	<tr>
 	  <% end %>
+	  <% if can? :manage, :all  %>
+	  <td>
+	    <span class="relay_delete"><%= button_to '삭제하기',  [@talk, relay.destroy], :confirm => '삭제하시겠습니까?', :method => :delete, :remote => true %></span>
+	  </td>
+	  <% end %>
+
 	  <td>
 	    <div class="roundbox_pink">
 	      <div class="rbtop_pink"><div></div></div>
 	      <div class="rbcontent_pink">
-		<span class="relay_content"><%= relay.content %></span>
+		  <div class="relay_content"><pre><%= relay.content %></pre></div>
 	      </div>
 	      <div class="rbbot_pink"><div></div></div>
 	    </div>

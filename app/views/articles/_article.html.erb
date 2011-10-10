@@ -1,7 +1,8 @@
 <% session[:back_url] = request.url %>
+<!-- controller 에서 one_article = 1 파라미터가 있으면 @post를, 없으면 @posts를 반환한다 -->
+
 <% if !@post.nil? %>
   <%= @post.body_txt.html_safe %>
-
 <% elsif !@posts.nil? %>
   <% if @posts.count > 0 %>
     <% @posts.each do |post| %>

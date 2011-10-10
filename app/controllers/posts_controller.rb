@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 
 class PostsController < ApplicationController
+  caches_page :index, :show
+  
   # GET /posts
   # GET /posts.xml
   def index
@@ -51,6 +53,7 @@ class PostsController < ApplicationController
   # POST /posts
   # POST /posts.xml
   def create
+    expire_page :action => :index
     @category = Category.new(:category_id => params[:category_id])
     @post = @category.posts.build(params[:post])
     

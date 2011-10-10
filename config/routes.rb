@@ -19,13 +19,22 @@ Chakkomi::Application.routes.draw do
   resources :product_options
   resources :categories
   resources :posts 
-  resources :articles 
+  resources :articles do
+    collection do
+      get :notice
+      get :chakkomi
+      get :project
+      get :comics
+      get :product
+    end
+  end
 
 
   resources :talks do
     collection do
       get :check_update
       get :check_update_relay
+
     end
     resources :relays
   end

@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
 
 class TalksController < ApplicationController
-  before_filter :authenticate_user!, :except => [:index, :show]
+  before_filter :authenticate_user!, :except => [:index, :show, :check_update, :check_update_relay]
 
   #최신 글의 여부를 체크한다. 있으면 true, 없으면 false
   def check_update
-    @talk_last = Talk.find(:first)
+    @talk_last = Talk.find(:first)  # updated_at 기준 최신글
     respond_to do |format|
       if( @talk_last.updated_at != session[:saved_talk_last] )
         session[:saved_talk_last] = @talk_last.updated_at
@@ -15,10 +15,11 @@ class TalksController < ApplicationController
       end
     end
   end
-
+  
   def check_update_relay
     @talk = Talk.find(params[:talk_id])
     @relay_last = @talk.relays.find(:first)
+    hello = session[:saved_relay_last]
     respond_to do |format|
       if( @relay_last.created_at != session[:saved_relay_last] )
         session[:saved_relay_last] = @relay_last.created_at
@@ -90,6 +91,7 @@ class TalksController < ApplicationController
         @relay.content = @talk.content
         @relay.talk_id = @talk.id
         @relay.save
+        session[:saved_talk_last] = @talk.updated_at
         @talks = Talk.paginate(:per_page => 10, :page => params[:page])
         #        format.html { redirect_to(@talk, :notice => 'Talk was successfully created.') }
         format.html { redirect_to(@talk) }
@@ -125,8 +127,8 @@ class TalksController < ApplicationController
     @talk.destroy
 
     respond_to do |format|
-      format.html { redirect_to(talks_url) }
-      format.xml  { head :ok }
+      format.html { redirect_to('/talks') }
+      format.js
     end
   end
 

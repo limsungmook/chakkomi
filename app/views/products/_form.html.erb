@@ -28,15 +28,11 @@
   </div>
   <div class="field">
     <%= f.label "가격" %><br />
-    <%= f.number_field :price, :value => 1 %>
+    <%= f.number_field :price, :value => 0 %>
   </div>
   <div class="field">
-    <%= f.label "재고량" %><br />
-    <%= f.number_field :stock, :value => 1 %>
-  </div>
-  <div class="field">
-    <%= f.label "배송형태" %><br />
-    <%= f.select :delivery_state, Order::DELIVERY_TYPES, :prompt => '가능한 배송 형태를 고르세요' %>
+    <%= f.label "하루재고량" %><br />
+    <%= f.number_field :stock, :value => 0 %>
   </div>
   <div class="field">
     <%= f.label "판매상태" %><br />
@@ -49,7 +45,7 @@
       <%= check_box_tag "product_option[" + index.to_s + "]", option %><%= option %><br />
     <% end %>
     <% else %>
-    옵션 변경은 여기선 불가능합니다.
+    옵션 변경은 '수정하기' 에선 불가능합니다. 상품 목록에서 이름을 클릭 후 수정해주세요.
     <% end %>
     
 

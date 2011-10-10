@@ -3,9 +3,9 @@ class CreateProductOptions < ActiveRecord::Migration
     create_table :product_options do |t|
       t.integer :product_id
       t.string :option
-      t.integer :stock
       t.timestamps
     end
+    add_index :product_options, :product_id
   end
 
   def self.down

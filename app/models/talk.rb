@@ -1,6 +1,6 @@
 class Talk < ActiveRecord::Base
   belongs_to :user
-  has_many :relays
+  has_many :relays, :dependent => :destroy
   attr_accessible :content, :secret
 
   validates :content, :presence => true

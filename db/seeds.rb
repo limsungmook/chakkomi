@@ -31,14 +31,11 @@ Talk.delete_all
 '2011-09-07 16:45:28', NULL, '2011-09-07 16:45:33', '2011-09-07 16:45:28', '2011-09-07 16:45:33', '192.168.10.111', 'ipes4579@gmail.com', '$2a$10$YVD0ajDMkE9D19flkTF7S.YpxCwHZzV1fuzvYXesc51ZqsE/6qW0C', 0, '2011-09-07 16:45:33', '192.168.10.111', NULL, NULL, '임성묵', NULL, NULL, NULL, 1, '2011-09-07 16:45:33', NULL, 'admin')");
 
 
-@category = Category.create! :name => 'intro', :detail => '착곰이 시작 페이지입니다. 시작시 이 페이지가 로딩됩니다. 1페이지만 출력합니다.'
-@post = @category.posts.create! :title => '첫번째 소개 테스트입니다.', :body_txt => '시작시 로딩되는 소개 페이지입니다. 1페이지만 출력되며 이것을 바꾸려면 임대리에게 말씀해주세요 ^-^; 새 글을 작성하면 자동으로 새로운 페이지가 출력됩니다.'
-
-@category = Category.create! :name => 'notice', :detail => 'Notice 페이지입니다. NOTICE에 해당되는 페이지로, 우선은 전체페이지 출력입니다.'
+@category = Category.create! :name => 'notice', :detail => 'Notice 페이지입니다. NOTICE에 해당되는 페이지로, 최신 순서로 전체 페이지  출력입니다. 이에 대한 옵션 변경은 임대리에게 말씀해주세요^-^'
 @post = @category.posts.create! :title => 'Notice 테스트', :body_txt => 'Notice 페이지입니다. 최신 순서로 전체 페이지 출력이고, 이에 대한 옵션 변경은 임대리에게 말씀해주세요^-^'
 
-@category = Category.create! :name => 'chakkomi', :detail => 'CHAKKOMI 페이지입니다. 우선은 전체페이지 출력입니다.'
-@post = @category.posts.create! :title => 'chakkomi 테스트', :body_txt => 'chakkomi 페이지입니다. 최신 순서로 전체 페이지 출력이고, 이에 대한 옵션 변경은 임대리에게 말씀해주세요^-^'
+@category = Category.create! :name => 'chakkomi', :detail => 'chakkomi 착곰이 시작 페이지입니다. 1페이지만 출력되며 이것을 바꾸려며 임대리에게 말씀해주세요 ^-^ '
+@post = @category.posts.create! :title => 'chakkomi 테스트', :body_txt => 'chakkomi 페이지입니다. 최신 1페이지만 출력됩니다. , 이에 대한 옵션 변경은 임대리에게 말씀해주세요^-^'
 
 @category = Category.create! :name => 'project', :detail => 'project 페이지입니다. 우선은 전체페이지 출력입니다.'
 @post = @category.posts.create! :title => 'project 테스트', :body_txt => 'project 페이지입니다. 최신 순서로 전체 페이지 출력이고, 이에 대한 옵션 변경은 임대리에게 말씀해주세요^-^'

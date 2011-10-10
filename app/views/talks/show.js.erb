@@ -1,4 +1,4 @@
-$('#laydesk_body').html('<%= escape_javascript(render('relay')) %>').show('slide');
+$('#laydesk_default_body').html('<%= escape_javascript(render('relay')) %>').show('slide');
 
 $(function(){
 	var intval = '';
@@ -21,27 +21,21 @@ $(function(){
 	    });
 
 	$("#new_relay").submit(function(){
+		$('#relay_form').html('<br /><%= image_tag '/assets/loader.gif' %>');
 		clearInterval(intval);
 	    });
 
 	$.extend({
 
 	    check_update_relay: function(){
-		$.ajax({
-		    type: "GET",
-		    url: '<%= url_for :action => 'check_update_relay' %>',
-		    data:'talk_id=<%= @talk.id %>',
-		    dataType:'script',
-		    success : function(retval){
-
+		    $.get('<%= url_for :action => 'check_update_relay' %>', { talk_id: '<%= @talk.id %>' }, function(retval){
 			    if(retval == '1')
 			    {
-				// 페이지 리로딩 시 인터벌이 리로드되기 때문에 미리 없애준다. 
 				clearInterval(intval);
 				$.getScript('/talks/<%= @talk.id %>');
-			    }//if
-			}//success
-		    });//ajax
+			    }
+			});
+
 		},//check_update_relay
 	    start_interval: function(){
 		    intval = setInterval(function(){

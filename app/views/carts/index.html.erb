@@ -1,1 +1,19 @@
-<%= render 'cart' %>
+<script type="text/javascript">
+$(function(){
+	$('#laydesk_shop_body').fadeOut('slow', function(){
+		$('#laydesk_shop_body').html('<%= escape_javascript(render('cart')) %>').fadeIn('slow');
+		$(".ajax_link").click(function(e) {
+			var State = History.getState();
+			History.pushState(null, document.title, this.href);
+			if (this.href != State.url)
+			{
+			    return false;
+			}
+		    });
+		
+	    });
+    });
+</script>
+<noscript>
+  <%= render('cart') %>
+</noscript>

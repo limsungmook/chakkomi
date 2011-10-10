@@ -1,38 +1,14 @@
 <% session[:back_url] = request.url %>
-<script type="text/javascript">
-  $(function(){
-  $("#product_list_ul li").each(function(){
-  $(this).css("background", "#FFFFFF");
-  });
-  $("#product_list_ul .product_<%= @product.id %>").css("background", "#4f2f3f");
-  
-  var switchTo5x=true;
-  $.getScript("http://w.sharethis.com/button/buttons.js", function(){
-  var State = History.getState();
-  stLight.options({publisher:'946d14c5-62b3-4999-bb63-eb17baf5da56'});
-  $('#fb-like-example').onefblike({appID:'213249652066160'});
-  $(".st_facebook_large").attr({st_url: State.url});
-  $(".st_twitter_large").attr({st_url: State.url});
-  $(".st_gbuzz_large").attr({st_url: State.url});
-  $(".st_email_large").attr({st_url: State.url});
-  $(".st_sharethis_large").attr({st_url: State.url});
-  });
-});
-</script>
 
 <div id="product_detail">
   <div id="spec">
     <div id="product_detail_thumnail">
       <%= image_tag @product.thumnail_pic(:detail), :class => "product_detail_thumnail_pic" %><br />
-      <span class='st_facebook_large' st_url='/store'></span>
+      <span class='st_facebook_large'></span>
       <span class='st_twitter_large'></span>
       <span class='st_gbuzz_large'></span>
       <span class='st_email_large'></span>
       <span class='st_sharethis_large'></span>
-      <div id="fb-like-example"></div>
-      <script type="text/javascript">
-
-      </script>
     </div>
 
     <div id="product_detail_spec">
@@ -59,19 +35,16 @@
 	<% end %>
 	<tr>
 	  <td class="spec_left">수&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;량</td>
-	  <td class="spec_right"><%= number_field_tag :quantity, 1, :in => 1...@product.stock, :style => 'width:40px;' %> 개</td>
+	  <td class="spec_right"><%= number_field_tag :quantity, 1, :in => 1...@product.stock, :style => 'width:40px;' %> 개(하루 최대 <%= @product.default_stock %>개</td>
 	</tr>
 	<tr>
 	  <%= hidden_field_tag :product_id ,@product.id %>
 	  <td><%= f.submit '장바구니 담기' %></td>
 	  <td></td>
 	</tr>
-	<tr>
-	  <td>
-	  </td>
-	</tr>
 	<% end %>
       </table>
+      <div id="fb-like-example"></div>
     </div>
   </div>
   <hr />

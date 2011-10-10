@@ -1,26 +1,28 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
   <title>착곰이샾</title>
-  <%= stylesheet_link_tag "reset-min", "fonts-min", "jquery-ui", "chakkomi", :cache => true %>
-  <%= javascript_include_tag :application %>
-  <script>if ( typeof window.JSON === 'undefined') { document.write('<script src="http://dev.chakkomi.com/assets/history.js/scripts/compressed/json2.js"><\/script>'); }</script>
-  <%= javascript_include_tag "history.js/scripts/bundled/html4+html5/jquery.history.js", "jquery.onefblikev1.1", "chakkomi", :cache => true %>
+  <%= stylesheet_link_tag :application, :cache => true %>
+  <%= javascript_include_tag :application, :cache => true %>
   <%= csrf_meta_tag %>
   <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Oswald">
 
+  <!-- login 성공시 돌아오기 위한 세션  저장-->
   <% session[:back_url] = '/store' %>
 </head>
 <body>
-
   <div id = "laydesk_outer">
     <div id="laydesk" class="laydesk">
+
       <div id="laydesk_shop">
 	<div id="laydesk_shop_hdr">
+
 	  <div id="laydesk_shop_hdr_logo">
-	    <%= link_to image_tag("/assets/logo.png", :class => 'logo'), {:controller=>'/articles', :action => 'intro'}  %>
-	    <%= link_to image_tag("logo_shop_161x300.png", :class => 'logo_shop'), '/store' %>
+	    <%= link_to image_tag("/assets/logo.png", :class => 'goto_root'), {:controller=>'/articles', :action => 'chakkomi'}  %>
+	    <%= link_to image_tag("logo_shop_161x300.png", :class => 'goto_store'), '/store', :remote => true, :class => "ajax_link" %>
 	  </div>
+
 	  <div id="laydesk_shop_hdr_menu">
 	    <ul id="shop_menu_ul">
 	      <li><%= link_to image_tag("/assets/btn_shop_list_default.png",  :title => 'btn_shop_list_default'), {:controller=>'/store', :action => 'index'}, :remote => true, :class => "ajax_link" %></li>
@@ -35,19 +37,15 @@
 	      <li><%= link_to image_tag("/assets/btn_shop_signin_default.png", :title => 'btn_shop_signin_default'), new_user_session_path, :remote => true, :class => "ajax_link" %></li>
 	      <% end %>
 	    </ul>
-	  </div>
+	  </div><!-- laydesk_shop_hdr_menu -->
 
-	</div><!-- end: laydesk_shop_hdr -->
-	<div id="laydesk_shop_main" class="laydesk_body">
-	  <div id="flash">
-	    <% flash.each do |key, value| %>
-	    <div class="flash <%= key %>"><%= value %></div>
-	    <% end %>
-	  </div>
-	    <%= yield %>
+	</div><!-- laydesk_shop_hdr -->
+
+	<div id="laydesk_shop_body" class="laydesk_body">
+	  <%= yield %>
 	</div>
-      </div>
-    </div>
-  </div>
+      </div><!-- #laydesk_shop -->
+    </div><!-- #laydesk & .laydesk -->
+  </div><!-- #laydesk_outer -->
 </body>
 </html>

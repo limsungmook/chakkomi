@@ -43,22 +43,22 @@ ActiveRecord::Schema.define(:version => 20110930233836) do
     t.string   "name"
     t.text     "detail"
     t.integer  "order"
-    t.datetime "created_at"
-    t.datetime "updated_at"
     t.string   "thumnail_pic_file_name"
     t.string   "thumnail_pic_content_type"
     t.integer  "thumnail_pic_file_size"
     t.datetime "thumnail_pic_updated_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "line_items", :force => true do |t|
     t.integer  "product_id"
     t.integer  "cart_id"
     t.string   "option"
+    t.integer  "order_id"
+    t.integer  "quantity",   :default => 1
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "quantity",   :default => 1
-    t.integer  "order_id"
   end
 
   create_table "orders", :force => true do |t|
@@ -69,7 +69,6 @@ ActiveRecord::Schema.define(:version => 20110930233836) do
     t.string   "phone"
     t.string   "email"
     t.string   "pay_type"
-    t.string   "delivery_type"
     t.string   "arrival_payment"
     t.integer  "total_price"
     t.string   "deposit_check"
@@ -90,25 +89,26 @@ ActiveRecord::Schema.define(:version => 20110930233836) do
   create_table "product_options", :force => true do |t|
     t.integer  "product_id"
     t.string   "option"
-    t.integer  "stock"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "product_options", ["product_id"], :name => "index_product_options_on_product_id"
 
   create_table "products", :force => true do |t|
     t.integer  "item_category_id"
     t.string   "title"
     t.text     "content"
     t.integer  "price"
-    t.string   "delivery_state"
     t.integer  "stock"
+    t.integer  "default_stock"
     t.string   "state"
-    t.datetime "created_at"
-    t.datetime "updated_at"
     t.string   "thumnail_pic_file_name"
     t.string   "thumnail_pic_content_type"
     t.integer  "thumnail_pic_file_size"
     t.datetime "thumnail_pic_updated_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   add_index "products", ["item_category_id"], :name => "index_products_on_item_category_id"
@@ -172,9 +172,10 @@ ActiveRecord::Schema.define(:version => 20110930233836) do
     t.text     "shortbio"
     t.string   "weburl"
     t.boolean  "haslocalpw",                          :default => true, :null => false
+    t.string   "role"
+    t.string   "delivery_address"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "role"
   end
 
   add_index "users", ["confirmation_token"], :name => "index_users_on_confirmation_token", :unique => true

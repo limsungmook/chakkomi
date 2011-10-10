@@ -8,7 +8,6 @@ class CreateOrders < ActiveRecord::Migration
       t.string :phone
       t.string :email
       t.string :pay_type
-      t.string :delivery_type
       t.string :arrival_payment
       t.integer :total_price
       t.string :deposit_check

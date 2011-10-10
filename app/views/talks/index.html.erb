@@ -1,13 +1,8 @@
 <script type="text/javascript">
 $(function(){
-    $('#laydesk_body').hide().html('<%= escape_javascript(render('talk')) %>').show('slide');
+    $('#laydesk_default_body').hide().html('<%= escape_javascript(render('talk')) %>').show('slide');
 
 	var intval = '';
-	var History = window.History;	
-	if ( !History.enabled ){
-	    return false;
-	}
-
 	History.Adapter.bind(window, 'statechange', function(){
 		clearInterval(intval);
 	    });
@@ -19,37 +14,27 @@ $(function(){
 		History.pushState(null, document.title, this.href);
 		return false;
 	    });
-	// 프로필은 ajax이 아닌 페이지 리로딩이기 때문에 a href 리퀘스트를 무시하지 않는다. 
-	$(".profile").click(function() {
-		History.pushState(null, document.title, this.href);
-	    });
 	$("#new_talk").submit(function(){
+		$('#talk_form').html('<br /><%= image_tag '/assets/loader.gif' %>');
 		clearInterval(intval);
 	    });
-
 	$.extend({
 	    check_update: function(){
-		$.ajax({
-		    type: "GET",
-		    url: '<%= url_for :action => 'check_update' %>',
-		    dataType:'script',
-		    success : function(retval){
+		    $.get('<%= url_for :action => 'check_update' %>', function(retval){
 			    if(retval == '1')
 			    {
-				// 페이지 리로딩 시 인터벌이 리로드되기 때문에 미리 없애준다. 
 				clearInterval(intval);
 				$.getScript('/talks');
-			    }//if
-			}//success
-		    });//ajax
-		},//check_update
+			    }
+			});
+		},
 	    start_interval: function(){
 		    intval = setInterval(function(){
 			    $.check_update()
 			}, 30000);
 		}//start_interval
 	    });//extend
-
+	
 	$.start_interval();
 
 // Text Field 에 디폴트 값 주기 + 마우스 오버시 사라지기
