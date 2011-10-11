@@ -16,7 +16,9 @@ class DeviseCreateUsers < ActiveRecord::Migration
       t.string :weburl
       t.boolean :haslocalpw, :null => false, :default => true
       t.string :role
-      t.string :delivery_address
+      t.string :delivery_address1
+      t.string :delivery_address2
+      t.string :phone
 
       t.timestamps
     end

@@ -75,10 +75,21 @@ class OrdersController < ApplicationController
     @order = Order.new(params[:order])
     @order.add_line_items_from_cart(current_cart)
     @order.user_id = current_user.id
+    @order.name = params[:name]
+    @order.account_owner = params[:account_owner]
     address = params[:address1] + params[:address2]
     @order.address = address
     @order.total_price = params[:total_price]
     
+    if current_user.delivery_address1 != params[:address1] || current_user.delivery_address2 != params[:address2]
+      if  current_user.delivery_address1 != params[:address1]
+        current_user.delivery_address1 = params[:address1]
+      end
+      if  current_user.delivery_address2 != params[:address2]
+        current_user.delivery_address2 = params[:address2]
+      end
+      current_user.save
+    end
 
     respond_to do |format|
       if @order.save

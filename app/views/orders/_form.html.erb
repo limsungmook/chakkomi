@@ -12,15 +12,15 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
+    <%= f.label "주문자 이름" %><br />
+    <%= text_field_tag :name, current_user.name  %>
   </div>
   <div class="field">
-    <%= f.label :account_owner %><br />
-    <%= f.text_field :account_owner %>
+    <%= f.label "예금주" %><br />
+    <%= text_field_tag :account_owner, current_user.name %>
   </div>
   <div class="field">
-    <%= f.label :phone %><br />
+    <%= f.label "연락 가능 번호" %><br />
     <%= f.text_field :phone %>
   </div>
 
@@ -32,9 +32,9 @@
   </div>
   <div class="field">
     <%= f.label :address %><br />
-    <%= text_field_tag :address1 ,'', :size => 50 %><br />
+    <%= text_field_tag :address1 ,current_user.delivery_address1, :size => 50 %><br />
   상세 주소 입력<br />
-     <%= text_field_tag :address2 %>
+     <%= text_field_tag :address2, current_user.delivery_address2 %>
   </div>
   <div class="field">
     <%= f.label :email %><br />
@@ -53,6 +53,7 @@
   <%= hidden_field_tag :total_price ,@cart.total_price %>
   </div>
   <div class="actions">
+    
     <%= f.submit '주문하기'%>
   </div>
 <% end %>
