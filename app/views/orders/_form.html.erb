@@ -89,11 +89,11 @@ $(function(){
 			break;
 		    }
 		    present_addressdata = present_addressdata +
- 							 '<a href=# class=postaddress_link>(<span class=xml_postcd>' + 
+ 							 '<a href=# class=postaddress_link><span class=parsed_address>(' + 
 							 $(current_item).find("postcd").text().substr(0,3)  + 
 							 '-' + 
 							 $(current_item).find("postcd").text().substr(3,5) + 
-							 ')<span class=xml_address>' + 
+							 ')' + 
 							 $(current_item).find("address").text() + 
 							 '</span></a><br />'
 		}
@@ -155,7 +155,7 @@ $(function(){
 			address.back_page();
 		    });
 		$('.zipcode_search_result .postaddress_link').click(function(){
-			$('#address1').val($(this).text());
+			$('#address1').val($(this).children('.parsed_address').text());
 			address.hideZipcodeFinder();
 			$('[name=addr]').focus();
 			return false;
