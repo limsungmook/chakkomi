@@ -1,0 +1,55 @@
+<% session[:back_url] = request.url %>
+
+<div id="product_detail">
+  <div id="spec">
+    <div id="product_detail_thumnail">
+      <%= image_tag @product.thumnail_pic(:detail), :class => "product_detail_thumnail_pic" %><br />
+      <span class='st_facebook_large'></span>
+      <span class='st_twitter_large'></span>
+      <span class='st_gbuzz_large'></span>
+      <span class='st_email_large'></span>
+      <span class='st_sharethis_large'></span>
+    </div>
+
+    <div id="product_detail_spec">
+      <table>
+	<tr>
+	  <td class="spec_left">상&nbsp;&nbsp;품&nbsp;명</td>
+	  <td class="spec_right"><%= @product.title %></td>
+	</tr>
+	<tr>
+	  <td class="spec_left">가&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;격</td>
+	  <td class="spec_right"><%= number_with_delimiter(@product.price) %> 원</td>
+	</tr>
+	<tr>
+	  <td class="spec_left">판매상태</td>
+	  <td class="spec_right"><%= @product.state %></td>
+	</tr>
+	<%= form_for(@line_item, :remote => true) do |f| %>
+	<% if @product.product_options.count > 0 %>
+	<tr>
+	  <td class="spec_left">옵&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;션</td>
+	  
+	  <td class="spec_right"><%= select_tag 'option', options_from_collection_for_select(@product.product_options, "option", "option") %></td>
+	</tr>
+	<% end %>
+	<tr>
+	  <td class="spec_left">수&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;량</td>
+	  <td class="spec_right"><%= number_field_tag :quantity, 1, :in => 1...@product.stock, :style => 'width:40px;' %> 개(하루 최대 <%= @product.default_stock %>개</td>
+	</tr>
+	<tr>
+	  <%= hidden_field_tag :product_id ,@product.id %>
+	  <td><%= f.submit '장바구니 담기' %></td>
+	  <td></td>
+	</tr>
+	<% end %>
+      </table>
+      <div id="fb-like-example"></div>
+    </div>
+  </div>
+  <hr />
+  <div id="product_detail_content">
+    <%= @product.content.html_safe %>
+  </div>
+  
+</div>

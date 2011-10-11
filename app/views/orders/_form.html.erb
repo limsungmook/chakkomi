@@ -32,7 +32,7 @@
   </div>
   <div class="field">
     <%= f.label :address %><br />
-    <%= text_field_tag :address1 ,'', :size => 30, :disabled => true %><br />
+    <%= text_field_tag :address1 ,'', :size => 50 %><br />
   상세 주소 입력<br />
      <%= text_field_tag :address2 %>
   </div>
@@ -48,8 +48,9 @@
     <%= f.label :arrival_payment %><br />
     <%= f.select :arrival_payment, Order::ARRIVAL_PAYMENT, :prompt => '선불? 착불?'  %>
   </div>
-  <div class="field">
-    총액: <%= number_with_delimiter(@cart.total_price) %>원
+  <div id="total_price">
+    총액: <span id="total_price"><%= number_with_delimiter(@cart.total_price) %></span>원
+  <%= hidden_field_tag :total_price ,@cart.total_price %>
   </div>
   <div class="actions">
     <%= f.submit '주문하기'%>
@@ -63,6 +64,16 @@ $(function(){
 	var xml_addressdata = ''
 	var html_render = ''
 	var current_end = 0
+
+	$('#order_arrival_payment').change(function() {
+		if($("#order_arrival_payment").val() == '선불')
+		{
+		    $('#total_price').html('<span id=span_total_price>총액:  <%= number_with_delimiter(@cart.total_price + Order::DELIVERY_COST) %> 원</span><%= hidden_field_tag :total_price, @cart.total_price + Order::DELIVERY_COST %>' );
+		}else
+		{
+		    $('#total_price').html('<span id=span_total_price>총액:  <%= number_with_delimiter(@cart.total_price) %> 원</span><%= hidden_field_tag :total_price, @cart.total_price %>' );
+		}
+	    });
 	var address = {
 	back_page: function(){
 		address.present_posts(xml_addressdata, current_end - 20, current_end - 10);

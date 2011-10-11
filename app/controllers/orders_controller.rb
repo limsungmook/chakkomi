@@ -73,9 +73,12 @@ class OrdersController < ApplicationController
   def create
     @cart = current_cart
     @order = Order.new(params[:order])
-    @order.check_finally(current_cart)
     @order.add_line_items_from_cart(current_cart)
     @order.user_id = current_user.id
+    address = params[:address1] + params[:address2]
+    @order.address = address
+    @order.total_price = params[:total_price]
+    
 
     respond_to do |format|
       if @order.save
