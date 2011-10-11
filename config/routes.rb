@@ -5,7 +5,11 @@ Chakkomi::Application.routes.draw do
 
 #  root :to => "articles#show"
   root :to => "articles#intro"
-  resources :orders
+  resources :orders do
+    collection do
+      get :zipsearch
+    end
+  end
   resources :admins
   resources :accounts
   resources :line_items

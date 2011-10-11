@@ -1,8 +1,26 @@
 # -*- coding: utf-8 -*-
+
 class OrdersController < ApplicationController
   layout "shop"
   # GET /orders
   # GET /orders.xml
+
+  def zipsearch
+    require 'uri'
+    require 'net/http'
+    require 'iconv'
+
+    dong_name = Iconv.iconv('euc-kr', 'utf-8', params[:query])
+    res = Net::HTTP.post_form(URI.parse('http://biz.epost.go.kr/KpostPortal/openapi'), {'regkey' => '18132c774fa887e6d1318210963744', 'target' => 'post', 'query' => dong_name})
+    new_response_body = Iconv.iconv('UTF-8//IGNORE', 'euc-kr', res.body).join
+    @retval = new_response_body
+    respond_to do |format|
+      format.xml { render :xml => @retval }
+    end
+  end
+      
+
+
   def index
     @orders = Order.all
 
@@ -39,19 +57,6 @@ class OrdersController < ApplicationController
     end
     
 
-    @cart.line_items.each do |line_item|
-      @retval = Product.where("id = ? AND delivery_state = ?", line_item.product_id, '직접수령')
-      if @retval.count > 0
-        @delivery_region = 1
-      elsif @delivery_region != 1
-        @retval = Product.where("id = ? AND delivery_state = ?", line_item.product_id, '택배')
-        if @retval.count > 0
-          @delivery_region = 2
-        elsif @delivery_region != 2
-          @delivery_region = 3
-        end
-      end
-    end
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @order }
