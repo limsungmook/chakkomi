@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
 
+  WillPaginate.per_page = 2
 
   protect_from_forgery
 

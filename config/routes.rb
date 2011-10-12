@@ -10,7 +10,11 @@ Chakkomi::Application.routes.draw do
       get :zipsearch
     end
   end
-  resources :admins
+  resources :admins do
+    collection do
+      get :order_list
+    end
+  end
   resources :accounts
   resources :line_items
   resources :store do

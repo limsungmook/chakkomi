@@ -1,12 +1,14 @@
-<div id = "intro_image">
-  <%= image_tag("/assets/intro.jpg", :usemap => "#intro_map") %>
-  <map id="intro_map" name="intro_map">
-    <area shape="poly" coords="406,585,346,651,384,747,583,684,572,635,507,556," href=<%= url_for({:controller=>'/articles', :action => 'chakkomi'}) %>  alt="착곰이 바로가기" title="착곰이 바로가기" class="index_link"/>
-    <area shape="poly" coords="596,540,534,566,560,640,634,609,615,542," href="http://www.facebook.com/chakkomi" alt="페이스북" title="페이스북"   />
-    <area shape="poly" coords="621,541,623,616,725,598,703,523," href="http://twitter.com/#!/chakkomi" alt="트위터" title="트위터" />
-    <area shape="poly" coords="704,514,730,607,822,565,809,473," href="#" alt="월페이퍼(준비중)" title="월페이퍼(준비중)"   />
-    <area shape="rect" coords="41,57,568,504" href="<%= url_for({:controller=>'/articles', :action => 'chakkomi'}) %>" alt="착한곰팡이 바로가기" title="착한곰팡이 바로가기" class="index_link"    />
-  </map>
+<div id="laydesk_outer">
+  <div id = "intro_image">
+    <%= image_tag("/assets/intro.jpg", :usemap => "#intro_map") %>
+    <map id="intro_map" name="intro_map">
+      <area shape="poly" coords="406,585,346,651,384,747,583,684,572,635,507,556," href=<%= url_for({:controller=>'/articles', :action => 'chakkomi'}) %>  alt="착곰이 바로가기" title="착곰이 바로가기" class="index_link"/>
+      <area shape="poly" coords="596,540,534,566,560,640,634,609,615,542," href="http://www.facebook.com/chakkomi" alt="페이스북" title="페이스북"   />
+      <area shape="poly" coords="621,541,623,616,725,598,703,523," href="http://twitter.com/#!/chakkomi" alt="트위터" title="트위터" />
+      <area shape="poly" coords="704,514,730,607,822,565,809,473," href="#" alt="월페이퍼(준비중)" title="월페이퍼(준비중)"   />
+      <area shape="rect" coords="41,57,568,504" href="<%= url_for({:controller=>'/articles', :action => 'chakkomi'}) %>" alt="착한곰팡이 바로가기" title="착한곰팡이 바로가기" class="index_link"    />
+    </map>
+  </div>
 </div>
 <script type="text/javascript">
   $('#laydesk').hide();

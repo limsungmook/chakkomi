@@ -1,35 +1,9 @@
 $(function() {
+
 	var History = window.History;
 	if ( !History.enabled ){
 	    return false;
 	}
-	
-	// Store's hover events
-	$("#shop_menu_ul li img").hover(function()
-					{
-					    $(this).attr("src", "/assets/" + $(this)[0].title + "_clicked.png");
-					    $("#shop_menu_ul li img").click(function(){
-						    
-						    $("#shop_menu_ul li img").each(function(){
-							    $(this).attr("src", "/assets/" + $(this)[0].title + ".png");
-							    $(this).attr("alt", $(this)[0].title);
-							});
-						    
-						    $(this).attr("src", "/assets/" + $(this)[0].title + "_clicked.png");
-						    $(this).attr("alt", $(this)[0].title + "_clicked");
-						    
-						});
-					    
-					}, function(){
-					    if( $(this).attr("alt") != $(this)[0].title + "_clicked" )
-					    {
-						$(this).attr("src", "/assets/" + $(this)[0].title + ".png");
-					    }
-					    
-					});
-
-
-
 	
 	$(".ajax_link").click(function(e) {
 		var State = History.getState();
@@ -45,4 +19,4 @@ $(function() {
 		var State = History.getState();
 		$.getScript(State.url);
 	    });
-});
+    });
