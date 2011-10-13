@@ -14,6 +14,7 @@
         <%= f.text_field :content, :class => "defaultText", :title => "착곰이에게 하고 싶은 말을 남겨주세요 ^-^" %>
         <%= f.check_box :secret %>
         <%= f.label :secret %>
+	<%= f.hidden_field :mid, :value =>@mid %>
       <% end %>
    <% end %>
 <% else %>

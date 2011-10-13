@@ -1,5 +1,5 @@
 Chakkomi::Application.routes.draw do
-  resources :item_categories
+
 
   devise_for :users, :controllers => { :registrations => "users/registrations" }
 
@@ -26,6 +26,8 @@ Chakkomi::Application.routes.draw do
   resources :products
   resources :product_options
   resources :categories
+  resources :item_categories
+  resources :talk_categories
   resources :posts 
   resources :articles do
     collection do

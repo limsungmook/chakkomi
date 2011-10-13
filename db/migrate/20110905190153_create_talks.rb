@@ -4,6 +4,7 @@ class CreateTalks < ActiveRecord::Migration
       t.integer :user_id
       t.text :content, :null => false
       t.integer :secret, :default => 0
+      t.string :mid
 
       t.timestamps
     end

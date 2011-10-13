@@ -1,6 +1,6 @@
 <script type="text/javascript">
 $(function(){
-    $('#laydesk_default_body').hide().html('<%= escape_javascript(render('talk')) %>').show('slide');
+    $('.laydesk_body').hide().html('<%= escape_javascript(render('talk')) %>').show('slide');
 
 	var intval = '';
 	History.Adapter.bind(window, 'statechange', function(){

@@ -73,7 +73,7 @@
 	    <ul id="shop_menu_ul">
 	      <li><%= link_to image_tag("/assets/btn_shop_list_default.png",  :title => 'btn_shop_list_default'), {:controller=>'/store', :action => 'index'}, :remote => true, :class => "ajax_link" %></li>
 	      <li><%= link_to image_tag("/assets/btn_shop_cart_default.png",  :title => 'btn_shop_cart_default'), {:controller=>'/carts', :action => 'index'}, :remote => true, :class => "ajax_link" %></li>
-	      <li><%= link_to image_tag("/assets/btn_shop_qna_default.png", :title => 'btn_shop_qna_default'), '#', :remote => true, :class => "ajax_link" %></li>
+	      <li><%= link_to image_tag("/assets/btn_shop_qna_default.png", :title => 'btn_shop_qna_default'), {:controller=>'/talks', :action => 'index', :mid => 'qna'}, :remote => true, :class => "ajax_link" %></li>
 	      <% if user_signed_in? %>
 	      <li><%= link_to image_tag("/assets/btn_shop_profile_default.png", :title => 'btn_shop_profile_default'), edit_user_registration_path, :remote => true, :class => "ajax_link" %></li>
 	      <li><%= link_to image_tag("/assets/btn_shop_setting_default.png",:title => 'btn_shop_setting_default'), "/services", :remote => true, :class => "ajax_link" %></li>
