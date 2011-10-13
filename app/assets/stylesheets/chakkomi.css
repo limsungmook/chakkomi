@@ -363,7 +363,7 @@
 {
     width: 970px;
     margin-top: 10px;
-    margin-left: 20px;
+/*    margin-left: 20px; */
 }
 
 #laydesk_shop_body #item_category_list table
@@ -373,15 +373,14 @@
 }
 #laydesk_shop_body #item_category_list .entry
 {
-    padding:20px;
-    width:240px;
-    height:220px;
+    width:230px;
+    height:200px; 
     text-align: center;
 }
 #laydesk_shop_body #item_category_list .entry IMG
 {
     width:220px;
-    height:205px;    
+    height:180px;    
 }
 #laydesk_shop_body #item_category_list .entry span
 {
@@ -441,12 +440,13 @@
 #laydesk_shop_body #product_detail_wrapper
 {
     width: 600px;
+    margin: 0 0 10px 40px;
     overflow: hidden;
     float: left;
 }
 #laydesk_shop_body #product_detail_wrapper #product_detail
 {
-    margin: 0 0 10px 40px;
+
 }
 #laydesk_shop_body #product_detail_wrapper #product_detail #spec
 {

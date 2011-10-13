@@ -1,70 +1,74 @@
 <div id="relay_relay">
   <% @talk.relays.each do |relay| %> 
-    <% if relay.user.role == "admin" %>
-      <div class="relay_relay_admin">
-	<table align="right">
-	  <% if relay == @lastest_relay  %>
-	  <tr id="lastest_relay">
-	    <% else %>
-	  <tr>
-	    <% end %>
-	    <% if can? :manage, :all %>
-	    <td>
-	      <span class="relay_delete"><%= button_to '삭제하기', [@talk, relay], :confirm => '삭제하시겠습니까?', :method => :delete, :remote => true %></span>
-	    </td>
-	    <% end %>
-	    <td>
-	      <div class="relay_timeago"><%= time_ago_in_words(relay.created_at) %> ago</div>
-	    </td>
-	    <td>
-	      <div class="relay_username"><%= relay.user.name %></div>
-	    </td>
-	    <td>
-	      <div class="roundbox_green">
-		<div class="rbtop_green"><div></div></div>
-		<div class="rbcontent_green">
-		  <div class="relay_content"><pre><%= relay.content %></pre></div>
-		</div>
-		<div class="rbbot_green"><div></div></div>
-	      </div>
-	    </td>
-	  </tr>
-	</table>
-      </div>
-    <% else %>
-    <div class="relay_relay_nobody">
-      <table align="left">
-	<% if relay == @lastest_relay  %>
-	<tr id="lastest_relay">
-	  <% else %>
-	<tr>
-	  <% end %>
-	  <% if can? :manage, :all  %>
-	  <td>
-	    <span class="relay_delete"><%= button_to '삭제하기',  [@talk, relay.destroy], :confirm => '삭제하시겠습니까?', :method => :delete, :remote => true %></span>
-	  </td>
-	  <% end %>
-
-	  <td>
-	    <div class="roundbox_pink">
-	      <div class="rbtop_pink"><div></div></div>
-	      <div class="rbcontent_pink">
-		  <div class="relay_content"><pre><%= relay.content %></pre></div>
-	      </div>
-	      <div class="rbbot_pink"><div></div></div>
+  <!-- chakkomi 가 말하는 부분. 오른쪽정렬-->
+  <% if relay.user.role == "admin" %>
+  <div class="relay_relay_admin">
+    <table align="right">
+      <% if relay == @lastest_relay  %>
+      <tr id="lastest_relay">
+	<% else %>
+      <tr>
+	<% end %>
+	<% if can? :manage, :all %>
+	<td>
+	  <span class="relay_delete"><%= button_to '삭제하기', [@talk, relay], :confirm => '삭제하시겠습니까?', :method => :delete, :remote => true %></span>
+	</td>
+	<% end %>
+	<td>
+	  <div class="roundbox_green">
+	    <div class="rbtop_green"><div></div></div>
+	    <div class="rbcontent_green">
+	      <div class="relay_content"><pre><%= relay.content %></pre></div>
 	    </div>
-	  </td>
-	  <td>
-	    <div class="relay_username"><%= relay.user.name %></div>
-	  </td>
-	  <td>
-	    <div class="relay_timeago"><%= time_ago_in_words(relay.created_at) %> ago</div>
-	  </td>
-	</tr>
-      </table>
-    </div>
-    <% end %>
-    <br />
+	    <div class="rbbot_green"><div></div></div>
+	  </div>
+	</td>
+
+	<td>
+	  <div class="relay_timeago"><%= time_ago_in_words(relay.created_at) %> ago</div>
+	</td>
+	<td>
+	  <div class="relay_username"><%= relay.user.name %></div>
+	</td>
+      </tr>
+    </table>
+  </div>
+  <!-- 일반 user 가 말하는 부분 -->
+  <% else %>
+  <div class="relay_relay_nobody">
+    <table align="left">
+      <% if relay == @lastest_relay  %>
+      <tr id="lastest_relay">
+	<% else %>
+      <tr>
+	<% end %>
+	<% if can? :manage, :all  %>
+	<td>
+	  <span class="relay_delete"><%= button_to '삭제하기',  [@talk, relay.destroy], :confirm => '삭제하시겠습니까?', :method => :delete, :remote => true %></span>
+	</td>
+	<% end %>
+	
+	<td>
+	  <div class="relay_username"><%= relay.user.name %></div>
+	</td>
+	<td>
+	  <div class="relay_timeago"><%= time_ago_in_words(relay.created_at) %> ago</div>
+	</td>
+	<td>
+	  <div class="roundbox_pink">
+	    <div class="rbtop_pink"><div></div></div>
+	    <div class="rbcontent_pink">
+	      <div class="relay_content"><pre><%= relay.content %></pre></div>
+	    </div>
+	    <div class="rbbot_pink"><div></div></div>
+	  </div>
+	</td>
+
+      </tr>
+    </table>
+  </div>
+  <% end %>
+  <br />
   <% end  %>
 </div>
 

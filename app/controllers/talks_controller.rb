@@ -5,7 +5,13 @@ class TalksController < ApplicationController
 
   #최신 글의 여부를 체크한다. 있으면 true, 없으면 false
   def check_update
-    @talk_last = Talk.find(:first)  # updated_at 기준 최신글
+    if !session[:mid].nil?
+      @mid = session[:mid]
+    else
+      return false
+    end
+
+    @talk_last = Talk.find(:first, :conditions => ["mid = ?", @mid])  # updated_at 기준 최신글
     respond_to do |format|
       if( @talk_last.updated_at != session[:saved_talk_last] )
         session[:saved_talk_last] = @talk_last.updated_at

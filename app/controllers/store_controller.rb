@@ -1,7 +1,7 @@
 class StoreController < ApplicationController
   layout "shop"
   def index
-    @item_categories = ItemCategory.all
+    @item_categories = ItemCategory.paginate(:per_page => 8, :page => params[:page])
 #    @products = Product.all
 #    @cart = current_cart
     
