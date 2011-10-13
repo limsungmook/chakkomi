@@ -1,17 +1,21 @@
 $(function(){
 	$('#laydesk_shop_body').fadeOut('slow', function(){
 		$('#laydesk_shop_body').html('<%= escape_javascript(render('store')) %>').fadeIn('slow');
-	$(".entry a").hover(function(){
-                $(this).children('IMG').css('width', '140px');
-                $(this).children('IMG').css('height', '140px');
-		$(this).append($("<span><br />" + $(this)[0].title + "</span>"));
-	    },
-	    function() {
-	        $(this).children('IMG').css('width', '120px');
-		$(this).children('IMG').css('height', '120px');
-		$(this).find("span:last").remove();
-	    }
-	    );
+	     var default_width = 0;
+	     var default_height = 0;
+	     $(".entry_image").hover(function(){
+		     default_width = parseInt($(this).css('width'));
+		     default_height = parseInt($(this).css('height'));
+		     $(this).css('width', default_width * 1.2);
+		     $(this).css('height', default_height * 1.2);
+		     
+		 },
+		 function() {
+		     $(this).css('width', default_width);
+		     $(this).css('height', default_height);
+		 });
+
+
 	$(".shop_item_category").click(function(e){
 		History.pushState(null, document.title, this.href);
                 return false;

@@ -14,7 +14,7 @@
     background-image:url('/assets/intro_970x970.png');    
     background-repeat: no-repeat;
 }
-#intro_image #intro_shop
+ #intro_shop
 {
     position: absolute;
     top: 268px;
@@ -23,7 +23,7 @@
     height: 92px;
     text-align:center;
 }
-#intro_image #intro_home
+ #intro_home
 {
     position: absolute;
     top: 199px;
@@ -34,7 +34,7 @@
 
 }
 
-#intro_image #intro_chakkomi
+ #intro_chakkomi
 {
     position: absolute;
     top: 595px;
@@ -44,7 +44,7 @@
     text-align:center;
 
 }
-#intro_image #intro_fb
+ #intro_fb
 {
     position: absolute;
     top: 527px;
@@ -55,7 +55,7 @@
 
 
 }
-#intro_image #intro_twt
+ #intro_twt
 {
     position: absolute;
     top: 527px;
@@ -65,7 +65,7 @@
     text-align:center;
 
 }
-#intro_image #intro_wallpaper
+ #intro_wallpaper
 {
     position: absolute;
     top: 527px;
@@ -231,7 +231,7 @@
     font-size: 11px; 
     line-height:20.5px;   
     font-weight: bold;
-    color:     #36d6e71;
+    color: #36d6e71;
 }
 #laydesk_default_body .title
 {
@@ -361,10 +361,9 @@
 /* app/view/store/_store.html.erb 즉, 카테고리 index 구조 */
 #laydesk_shop_body #item_category_list
 {
-    width: 800px;
+    width: 970px;
     margin-top: 10px;
-    margin-left: auto;
-    margin-right:auto;
+    margin-left: 20px;
 }
 
 #laydesk_shop_body #item_category_list table
@@ -375,13 +374,14 @@
 #laydesk_shop_body #item_category_list .entry
 {
     padding:20px;
-    width:130px;
-    height:200px;
+    width:240px;
+    height:220px;
+    text-align: center;
 }
 #laydesk_shop_body #item_category_list .entry IMG
 {
-    width:120px;
-    height:120px;    
+    width:220px;
+    height:205px;    
 }
 #laydesk_shop_body #item_category_list .entry span
 {
