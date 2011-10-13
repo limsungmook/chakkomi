@@ -18,9 +18,13 @@
 <script type="text/javascript">
   $(function(){
     $("#product_list_ul a").click(function(){
-      $('#product_detail_wrapper').html('<%= escape_javascript(render('loading')) %>');
+      $('#product_detail_wrapper').html('<br /><%= image_tag '/assets/loader.gif' %>');
+      var State = History.getState();
       History.pushState(null, document.title, this.href);
-      return false;
+      if (this.href != State.url)
+      {
+	  return false;
+      }
     });
   });
 </script>

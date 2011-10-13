@@ -44,13 +44,12 @@
 		 });
 	     
 	     
-     $('#loading').hide();
 
-     // bind clicks
-     $(".store_link").click(function(){
-     $('#laydesk').html('<%= escape_javascript(render('store/loading')) %>');
-  });
-  });
+	     // bind clicks
+	     $(".store_link").click(function(){
+		     $('#laydesk_default').html('<div id=loading>샾으로 이동합니다<br /><img src="/assets/loader.gif"></div>');
+		 });
+	 });
   </script>
 </head>
 

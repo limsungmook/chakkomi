@@ -1,8 +1,0 @@
-<div id="show_product">
-  <div id="product_list_wrapper">
-    <%= render('product_list') %>
-  </div>
-  <div id="product_detail_wrapper">
-    <%= render('detail') %>
-  </div>
-</div>

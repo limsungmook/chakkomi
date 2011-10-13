@@ -12,12 +12,12 @@
   <% end %>
  <br /> <br />
   <div class="field">
-    <%= f.label "샾 메인에 보일 미리보기 이미지를 선택해주세요(현재 140x140 보다만 크면 됩니다.)" %><br />
+    <%= f.label "샾 메인에 보일 미리보기 이미지를 선택해주세요(무조건 220x180 으로 리사이즈되니 비율을 염두에 두고 올려주세요.)" %><br />
     <%= f.file_field :thumnail_pic %>
   </div>
   <br />  <br /> 
   <div class="field">
-    <%= f.label "카테고리명(샾 메인에서 마우스 오버시 여기 적은 카테고리명이 나옵니다) "%><br />
+    <%= f.label "카테고리명 "%><br />
     <%= f.text_field :name %>
   </div>
   <br />  <br /> 

@@ -231,7 +231,7 @@
     font-size: 11px; 
     line-height:20.5px;   
     font-weight: bold;
-    color: #36d6e71;
+    color: #36d6e7;
 }
 #laydesk_default_body .title
 {
@@ -242,9 +242,9 @@
     color:     #00a1ce;
 }
 
-#laydesk_default_body hr
+.laydesk_body hr
 {
-    border: 1px dashed #e0ffff;
+    border: 1px solid #00a1cf;
 }
 
 
@@ -352,10 +352,6 @@
 {
     font-size: 24px;
 }
-#laydesk_shop_body #body_title hr
-{
-    
-}
 /* #laydesk_shop_body 공통 내부 구조 끝 */
 
 /* app/view/store/_store.html.erb 즉, 카테고리 index 구조 */
@@ -393,7 +389,7 @@
 {
     width: 100%;
     height: 800px;
-    margin: 5px 0 0 0;
+    margin-top: 10px ;
 }
 #laydesk_shop_body #product_list_wrapper
 {
@@ -440,7 +436,7 @@
 #laydesk_shop_body #product_detail_wrapper
 {
     width: 600px;
-    margin: 0 0 10px 40px;
+    margin: 0 0 10px 10px; 
     overflow: hidden;
     float: left;
 }
@@ -460,8 +456,8 @@
 }
 #laydesk_shop_body #product_detail_wrapper #product_detail #spec #product_detail_thumnail .product_detail_thumnail_pic
 {
-    width: 240px;
-    height: 240px;
+    width: 200px;
+    height: 200px;
     border-top: 1px solid #d1d6dc;    
     border-right: 1px solid #d1d6dc;
     border-left: 1px solid #d1d6dc;
@@ -471,7 +467,7 @@
 #laydesk_shop_body #product_detail_wrapper #product_detail #spec #product_detail_spec
 {
     margin: 0 10px 20px 20px; 
-    width: 490px;
+    width: 310px;
     height: 300px;
     float: left;
     
@@ -609,6 +605,5 @@
 }
 .rbcontent_pink { margin: 0 7px; text-align:right;}
 .roundbox_pink { float:left;width: 100% ; margin: 1em auto; display: inline_block;}
-
 
 
