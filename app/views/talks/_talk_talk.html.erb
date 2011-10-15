@@ -9,10 +9,16 @@
       <% else %>
     <tr>
       <% end %>
-      <td><span class="talk_content"><%= link_to talk.content, talk, :remote => true, :class => 'talk_title' %></span></td> 
+      <td>
+	<div class="talk_round">
+	  <div class="talk_tr"><div class="talk_tl"></div></div>
+	    <div class="talk_content"><pre><%= link_to talk.content, {:controller => 'talks', :action => 'show', :id => talk, :mid => @mid }, :remote => true, :class => 'talk_title' %></pre></div>
+	  <div class="talk_br"><div class="talk_bl"></div></div>
+	</div>
+      </td> 
       <td><span class="talk_username"><%= talk.user.name %></span></td>
       <% if can? :manage, :all || user_signed_in? && current_user.id == talk.user_id %>
-        <td><span class="talk_delete"><%= button_to '삭제하기', talk, :confirm => '삭제하시겠습니까?', :method => :delete, :remote => true %></span></td> 
+      <td><span class="talk_delete"><%= button_to '삭제하기', talk, :confirm => '삭제하시겠습니까?', :method => :delete, :remote => true %></span></td> 
       <% end %>
     </tr>
 

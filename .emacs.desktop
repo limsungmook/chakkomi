@@ -2,7 +2,7 @@
 ;; --------------------------------------------------------------------------
 ;; Desktop File for Emacs
 ;; --------------------------------------------------------------------------
-;; Created Thu Oct 13 17:18:01 2011
+;; Created Thu Oct 13 18:51:51 2011
 ;; Desktop file format version 206
 ;; Emacs version 23.1.1
 
@@ -10,8 +10,30 @@
 (setq desktop-missing-file-warning nil)
 (setq tags-file-name nil)
 (setq tags-table-list nil)
-(setq search-ring '("nanum" "span" "loading" "load" "image" "store" "store_link" "loading" "load" "600" "hr" "big" "hover" "product_list" "index" "pag"))
+(setq search-ring '("famil" "nanum" "span" "loading" "load" "image" "store" "store_link" "loading" "load" "600" "hr" "big" "hover" "product_list" "index"))
 (setq regexp-search-ring nil)
 (setq register-alist nil)
 
 ;; Buffer section -- buffers listed in same order as in buffer list:
+(desktop-create-buffer 206
+  "/var/www/chakkomi/app/assets/stylesheets/chakkomi.css"
+  "chakkomi.css"
+  'css-mode
+  nil
+  2017
+  '(310 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix)))
+
+(desktop-create-buffer 206
+  "/var/www/chakkomi/app/views/layouts/application.html.erb"
+  "application.html.erb"
+  'html-mode
+  nil
+  365
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix)))
+

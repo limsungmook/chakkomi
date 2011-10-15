@@ -4,7 +4,7 @@
 */
 
 /* intro */
-#intro_image
+#intro_image 
 {
     width:970px;
     height:970px;
@@ -14,67 +14,70 @@
     background-image:url('/assets/intro_970x970.png');    
     background-repeat: no-repeat;
 }
- #intro_shop
+#intro_image #intro_shop
 {
-    position: absolute;
+    position: relative;
     top: 268px;
-    left: 327px;
+    left: 180px;
     width: 140px;
     height: 92px;
     text-align:center;
 }
- #intro_home
+#intro_image #intro_home
 {
-    position: absolute;
-    top: 199px;
-    left: 647px;
+    position: relative;
+    top: 107px;
+    left: 498px;
     width: 77px;
     height: 103px;
     text-align:center;
 
 }
 
- #intro_chakkomi
+#intro_image #intro_chakkomi
 {
-    position: absolute;
-    top: 595px;
-    left: 609px;
+    position: relative;
+    top: 398px;
+    left: 462px;
     width: 206px;
     height: 113px;
     text-align:center;
 
 }
- #intro_fb
+#intro_image #intro_fb
 {
-    position: absolute;
-    top: 527px;
-    left: 782px;
+    position: relative;
+    top: 210px;
+    left: 629px;
     width: 97px;
     height: 139px;
     text-align:center;
 
 
 }
- #intro_twt
+#intro_image #intro_twt
 {
-    position: absolute;
-    top: 527px;
-    left: 868px;
+    position: relative;
+    top: 69px;
+    left: 712px;
     width: 111px;
     height: 139px;
     text-align:center;
 
 }
- #intro_wallpaper
+#intro_image #intro_wallpaper
 {
-    position: absolute;
-    top: 527px;
-    left: 962px;
+    position: relative;
+    top: -69px;
+    left: 803px;
     width: 112px;
     height: 139px;
     text-align:center;
+}
 
-
+.goto_store
+{
+    background-color: white;
 }
 
 
@@ -136,7 +139,7 @@
     margin: 40px 0 0 34px;
     height: 230px;
     text-align: left;
-    font-family:  'Poly', Arial Narrow, Arial, Serif; 
+    font-family:  'Francois One', Arial Narrow, Arial, sans-serif; 
     font-size: 16px;
     font-weight: bold;
 }
@@ -152,8 +155,8 @@
 }
 #laydesk_default_sidebar_menu a:hover
 {
-/*    background-color: #00a1ce;  */
-    text-shadow: 4px 4px 4px #00a1ce; 
+    background-color: #00a1ce;  
+/*    text-shadow: 4px 4px 4px #00a1ce;  */
     text-decoration: none !important;
 }
 #laydesk_default_sidebar_link
@@ -231,7 +234,7 @@
     font-size: 11px; 
     line-height:20.5px;   
     font-weight: bold;
-    color: #36d6e7;
+    color: #36d6e7; 
 }
 #laydesk_default_body .title
 {
@@ -569,22 +572,61 @@
 {
     text-align: center;
 }
-.roundbox_green { background: url('/assets/roundbox/content_green.png') repeat; }
 
-.rbtop_green div { background: url('/assets/roundbox/up_left_green.png') no-repeat top left; }
-.rbtop_green { background: url('/assets/roundbox/up_right_green.png') no-repeat top right; }
-.rbbot_green div { background: url('/assets/roundbox/bottom_left_green.png') no-repeat bottom left; }
-.rbbot_green { background: url('/assets/roundbox/bottom_right_green.png') no-repeat bottom right; }
-.relay_content { margin: 0 12px 0 0; }
+
+.talk_round { background: #6666e0; }
+.talk_round { float:right;width: 100% ; margin: 5px auto; display: inline_block;}
+.talk_tl {background: url('/assets/talk_tl_10x10.png') no-repeat top left;}
+.talk_tr {background: url('/assets/talk_tr_10x10.png') no-repeat top right; }
+.talk_bl {background: url('/assets/talk_bl_10x10.png') no-repeat bottom left; }
+.talk_br {background: url('/assets/talk_br_10x10.png') no-repeat bottom right; }
+.talk_content { margin: 0 10px 0 10px;padding: 1px; }
+.talk_tl, .talk_tr, .talk_bl, .talk_br{
+    width: 100%;
+    height: 7px;
+    font-size: 1px;
+}
+
+.talk_content a { color: #000000;  text-decoration: none !important;}
+.talk_content a:visited { color: #000000;  }
+.talk_content a:hover { color: #36d6e7;  }
+
+
+
+
+
+.relay_admin_round { background: #f6f82f; }
+.relay_admin_round { float:right;width: 100% ; margin: 5px auto; display: inline_block;}
+.relay_admin_tl { background: url('/assets/roundbox/relay_admin_tl_12x12.png') no-repeat top left; }
+.relay_admin_tr { background: url('/assets/roundbox/relay_admin_tr_24x12.png') no-repeat top right; }
+.relay_admin_bl { background: url('/assets/roundbox/relay_admin_bl_12x12.png') no-repeat bottom left; }
+.relay_admin_br { background: url('/assets/roundbox/relay_admin_br_24x12.png') no-repeat bottom right; }
+.relay_admin_cr { background: url('/assets/roundbox/relay_cr_12x12.png') repeat-y right center;}
+.relay_admin_content { margin: 0 10px 0 0;padding: 10px }
 /* height and width stuff, width not really nessisary. */
-.rbtop_green div, .rbtop_green, .rbbot_green div, .rbbot_green {
+.relay_admin_tl, .relay_admin_tr, .relay_admin_bl , .relay_admin_br {
     width: 100%;
     height: 8px;
     font-size: 1px;
-
 }
-.rbcontent_green { text-align:right; background: url('/assets/roundbox/center_right_write.png') repeat-y right center;}
-.roundbox_green { float:right;width: 100% ; margin: 1em auto; display: inline_block;}
+
+.relay_user_round { background: #2bf6dc; }
+.relay_user_round { float:left;width: 100% ; margin: 1em auto; display: inline_block;}
+.relay_user_tl { background: url('/assets/roundbox/relay_user_tl_24x12.png') no-repeat top left; }
+.relay_user_tr { background: url('/assets/roundbox/relay_user_tr_12x12.png') no-repeat top right; }
+.relay_user_bl { background: url('/assets/roundbox/relay_user_bl_24x12.png') no-repeat bottom left; }
+.relay_user_br { background: url('/assets/roundbox/relay_user_br_12x12.png') no-repeat bottom right; }
+.relay_user_cr { text-align:right; background: url('/assets/roundbox/relay_cr_12x12.png') repeat-y left center;}
+.relay_user_content { margin: 0 0 0 12px;padding: 10px }
+/* height and width stuff, width not really nessisary. */
+.relay_user_tl, .relay_user_tr, .relay_user_bl , .relay_user_br {
+    width: 100%;
+    height: 8px;
+    font-size: 1px;
+}
+
+
+
 #relay_relay .relay_relay_nobody
 {
     width:600px;

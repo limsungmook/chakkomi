@@ -13,8 +13,7 @@ class TalksController < ApplicationController
 
     @talk_last = Talk.find(:first, :conditions => ["mid = ?", @mid])  # updated_at 기준 최신글
     respond_to do |format|
-      if( @talk_last.updated_at != session[:saved_talk_last] )
-        session[:saved_talk_last] = @talk_last.updated_at
+      if( @talk_last.updated_at != params[:recent_talk] )
         format.js {@retval = 1}
       else
         format.js {@retval = 0}
@@ -23,12 +22,10 @@ class TalksController < ApplicationController
   end
   
   def check_update_relay
-    @talk = Talk.find(params[:talk_id])
-    @relay_last = @talk.relays.find(:first)
-    hello = session[:saved_relay_last]
+    @relay_last = Relay.find(:first, :conditions => ["talk_id = ?", params[:talk_id]])
+    
     respond_to do |format|
-      if( @relay_last.created_at != session[:saved_relay_last] )
-        session[:saved_relay_last] = @relay_last.created_at
+      if( @relay_last.created_at != params[:recent_relay] )
         format.js {@retval = 1}
       else
         format.js {@retval = 0}
@@ -44,14 +41,12 @@ class TalksController < ApplicationController
     # 지속적인 최신글의 체크를 위해 지금까지의 최신글을 세션에 넣어놓는다.
     if !params[:mid].nil?
       @mid = params[:mid]
-      session[:mid] = params[:mid]
-    elsif !session[:mid].nil?
-      @mid = session[:mid]
     end
     @talk_last = Talk.find(:first, :conditions => ["mid = ?", @mid])
 
     if !@talk_last.nil?
       session[:saved_talk_last] = @talk_last.updated_at
+      @recent_talk = @talk_last.updated_at
       @talks = Talk.where(:mid => @mid).paginate(:per_page => 10, :page => params[:page])    
     end
     respond_to do |format|
@@ -71,7 +66,7 @@ class TalksController < ApplicationController
   def show
     @talk = Talk.find(params[:id])
     @relay_last = @talk.relays.find(:first)
-    session[:saved_relay_last] = @relay_last.created_at
+    @recent_relay = @relay_last.updated_at
     respond_to do |format|
       if session[:mid] == 'qna'
         format.html { render :layout => 'shop' }# index.html.erb
@@ -91,7 +86,6 @@ class TalksController < ApplicationController
   # POST /talks
   # POST /talks.xml
   def create
-
     @talk = Talk.new(params[:talk])
     
     @talk.user = current_user
@@ -103,10 +97,11 @@ class TalksController < ApplicationController
         @relay.talk_id = @talk.id
         @relay.save
         session[:saved_talk_last] = @talk.updated_at
+        session[:mid] = @talk.mid
         @talks = Talk.paginate(:per_page => 10, :page => params[:page])
         #        format.html { redirect_to(@talk, :notice => 'Talk was successfully created.') }
         format.html { redirect_to(@talk) }
-        format.js { session[:mid] = @talk.mid }
+        format.js {@talk}
         format.xml  { render :xml => @talk, :status => :created, :location => @talk }
       else
         format.html { render :action => "new" }

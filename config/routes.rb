@@ -44,7 +44,9 @@ Chakkomi::Application.routes.draw do
     collection do
       get :check_update
       get :check_update_relay
-
+    end
+    member do
+      put 'submit'
     end
     resources :relays
   end

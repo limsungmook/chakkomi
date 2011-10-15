@@ -3,6 +3,8 @@ Chakkomi::Application.configure do
 
   # Code is not reloaded between requests
   config.cache_classes = true
+  config.time_zone = 'Seoul'
+  config.active_record.default_timezone = :local
 
   # Full error reports are disabled and caching is turned on
   config.consider_all_requests_local       = false

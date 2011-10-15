@@ -1,4 +1,5 @@
-$.getScript('/talks');
+History.pushState(null, document.title, '/talks/<%= @talk.id %>');
+
 /*
 $('#talk_talk').html('<%= escape_javascript(render('talks/talk_talk')) %>');
 

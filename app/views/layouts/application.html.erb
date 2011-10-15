@@ -6,7 +6,7 @@
   <%= stylesheet_link_tag :application, :cache => true %>
   <%= javascript_include_tag :application, :cache => true %>
   <%= csrf_meta_tag %>
- <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Poly"> 
+ <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Francois+One"> 
 <link rel="stylesheet" type="text/css" href="http://nanumgothic.appspot.com/css" />
   
   <!-- login 성공시 돌아오기 위한 세션  저장-->
@@ -18,12 +18,6 @@
 	     
 	     var default_width = 0;
 	     var default_height = 0;
-             var textshadow_option = {
-	     x: 4,
-	     y: 4,
-	     radius: 4,
-	     color: "#00a1ce"
-	     }
 	     $(".home_link_icon").hover(function(){
 		     default_width = parseInt($(this).css('width'));
 		     default_height = parseInt($(this).css('height'));
@@ -36,15 +30,6 @@
 		     $(this).css('height', default_height);
 		 }
 		 );
-	     $("#laydesk_default_sidebar_menu a").hover(function(){
-		     $(this).textShadow(textshadow_option);
-		 },
-		 function(){
-		     $(this).textShadowRemove();
-		 });
-	     
-	     
-
 	     // bind clicks
 	     $(".store_link").click(function(){
 		     $('#laydesk_default').html('<div id=loading>샾으로 이동합니다<br /><img src="/assets/loader.gif"></div>');

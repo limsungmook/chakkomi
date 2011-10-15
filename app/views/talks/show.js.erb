@@ -28,11 +28,11 @@ $(function(){
 	$.extend({
 
 	    check_update_relay: function(){
-		    $.get('<%= url_for :action => 'check_update_relay' %>', { talk_id: '<%= @talk.id %>' }, function(retval){
+		    $.get('<%= url_for :action => 'check_update_relay' %>', { talk_id: '<%= @talk.id %>', recent_relay: '<%= @recent_relay %>'}, function(retval){
 			    if(retval == '1')
 			    {
 				clearInterval(intval);
-				$.getScript('/talks/<%= @talk.id %>');
+				$.getScript('/talks/<%= @talk.id %>?mid=<%= @mid %>');
 			    }
 			});
 

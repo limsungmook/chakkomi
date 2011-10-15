@@ -6,7 +6,6 @@
   <%= stylesheet_link_tag :application, :cache => true %>
   <%= javascript_include_tag :application, :cache => true %>
   <%= csrf_meta_tag %>
-  <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Oswald">
 
   <!-- login 성공시 돌아오기 위한 세션  저장-->
   <% session[:back_url] = '/store' %>
@@ -19,7 +18,7 @@
 	     var default_width = 0;
 	     var default_height = 0;
 /*	     $(".icon_bigger, .goto_store").hover(function(){ */
-
+	     
 	     $(".goto_store").hover(function(){
 		     default_width = parseInt($(this).css('width'));
 		     default_height = parseInt($(this).css('height'));
@@ -31,8 +30,8 @@
 		     $(this).css('width', default_width);
 		     $(this).css('height', default_height);
 		 });
-//menu hover event
-	     $("#shop_menu_ul li img").hover(function()
+     //menu hover event
+     $("#shop_menu_ul li img").hover(function()
       {
 	  $(this).attr("src", "/assets/" + $(this)[0].title + "_clicked.png");
 	  $("#shop_menu_ul li img").click(function(){
@@ -54,7 +53,7 @@
 					     });
 	     
 	 });
-  </script>
+</script>
 </head>
 <body>
   <div id = "laydesk_outer">
@@ -65,10 +64,10 @@
 
 	  <div id="laydesk_shop_hdr_logo">
 	    <div id="laydesk_shop_hdr_logo_root">
-	    <%= link_to image_tag("logo_195x79.png", :class => 'goto_root'), {:controller=>'/articles', :action => 'chakkomi'}  %>
+	    <%= link_to image_tag("/assets/logo_195x79.png", :class => 'goto_root'), {:controller=>'/articles', :action => 'chakkomi'}  %>
 	    </div>
 	    <div id="laydesk_shop_hdr_logo_store">
-	    <%= link_to image_tag("intro_shop_116x76.png", :class => 'goto_store'), '/store', :remote => true, :class => "ajax_link" %>
+	    <%= link_to image_tag("/assets/intro_shop_116x76.png", :class => 'goto_store'), '/store', :remote => true, :class => "ajax_link" %>
 	    </div>
 	  </div>
 

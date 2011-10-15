@@ -20,11 +20,11 @@ $(function(){
 	    });
 	$.extend({
 	    check_update: function(){
-		    $.get('<%= url_for :action => 'check_update' %>', function(retval){
+		    $.get('<%= url_for :action => 'check_update' %>', { recent_talk: '<%= @recent_talk %>'}, function(retval){
 			    if(retval == '1')
 			    {
 				clearInterval(intval);
-				$.getScript('/talks');
+				$.getScript('/talks?mid=<%= @mid %>');
 			    }
 			});
 		},
