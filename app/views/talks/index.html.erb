@@ -1,9 +1,8 @@
 <script type="text/javascript">
 $(function(){
     $('.laydesk_body').hide().html('<%= escape_javascript(render('talk')) %>').show('slide');
-
 	var intval = '';
-	History.Adapter.bind(window, 'statechange', function(){
+	$.address.change(function(event){
 		clearInterval(intval);
 	    });
 	// 페이지를 떠나면 무조건 check_update 인터벌을 종료한다. 
@@ -11,20 +10,23 @@ $(function(){
 		clearInterval(intval);
 	    });
 	$(".talk_title").click(function() {
-		History.pushState(null, document.title, this.href);
+	     var href = $(this).attr('href');
+	     $.address.value(href);
 		return false;
 	    });
-	$("#new_talk").submit(function(){
-		$('#talk_form').html('<br /><%= image_tag '/assets/loader.gif' %>');
-		clearInterval(intval);
-	    });
+	if(!$.browser.msie){
+	    $("#new_talk").submit(function(){
+		    $('#talk_form').html('<br /><%= image_tag '/assets/loader.gif' %>');
+		    clearInterval(intval);
+		});
+	}
 	$.extend({
 	    check_update: function(){
 		    $.get('<%= url_for :action => 'check_update' %>', { recent_talk: '<%= @recent_talk %>'}, function(retval){
 			    if(retval == '1')
 			    {
 				clearInterval(intval);
-				$.getScript('/talks?mid=<%= @mid %>');
+				$.getScript('/talks');
 			    }
 			});
 		},
@@ -57,8 +59,11 @@ $(function(){
 			       });
 	
 	$(".defaultText").blur();        
+
+
 // end of Text Field effect 
     });
+
 </script>
 <noscript>
 <%= render('talk') %>

@@ -1,41 +1,73 @@
 <% session[:back_url] = request.url %>
-<div class="laydesk_shop_main_title">
-  <span class="laydesk_shop_main_title_string">장바구니</span><br /><hr />
-</div>
-  <div class="line_item">
 <% if notice %>
 <p id="notice" ><%= notice %></p>
 <% flash[:notice] = nil %>
 <% end %>
+
+<div id="laydesk_shop_cart">
+  <div id="box_out">
+    <div id="box_in">
+      <div class="current_cart">
+	<div class="number">1</div>
+	<div class="name">장바구니</div>
+      </div>
+      <span class="arrow"> >> </span>
+      <div class="other_cart">
+	<span class="number">2</span>
+	<span class="name">주문결제</span>
+      </div>
+      <span class="arrow"> >> </span>
+      <div class="other_cart">
+	<span class="number">3</span>
+	<span class="name">주문완료</span>
+      </div>
+    </div><!-- box_in -->
+  </div><!-- box_out -->
+
+  <div id="order_list">
+    <div id="order_list_title">주/문/리/스/트<br /></div>
+    <div class="line_item">
     <table>
-      <tr>
-	<td>제품사진</td>
-	<td>제품명</td>
-	<td>옵션</td>
+      <tr id="table_menu">
+	<td><%= check_box_tag 'all' %></td>
+	<td>상품</td>
+	<td>상품명</td>
+	<td>판매가</td>
 	<td>수량</td>
-	<td>합계</td>
-	<td>수정</td>
-	<td>삭제</td>
+	<td>주문금액</td>
+	<td>&nbsp;</td>
+	<td>&nbsp;</td>
       </tr>
       <%= render(@cart.line_items) %>
     </table>
+    <hr />
   </div>
-  <hr>
-<div class="cart_total_line">
+<div id="ps">
+  <span id="ps_left">선택상품을 <%= link_to "삭제하기", "#" %></span>
+  <span id="ps_right">- 상품배송비는 상품 총금액 20,000원 이상 구매시 무료배송입니다.</span>
+</div>
+<div id="cart_total_line">
   <table>
-    <tr >
-      <td>총액 :&nbsp;</td>
-      <td class="cart_total_cell" ><%= number_with_delimiter(@cart.total_price) %>원</td>
+    <tr>
+      <th ROWSPAN=3>총 주문금액</th>
+      <td class="cart_total_cell" >ㅇㅇㅇㅇ</td>
     </tr>
-      <tr>
-      <% if user_signed_in? %>
-      <td><%= button_to '주문하기', new_order_path, :method => :get, :class => "cart_btn_order" %></td>
-      <td><%= button_to '비우기', @cart, :method => :delete, :confirm => '장바구니를 삭제하시겠습니까?', :class => "cart_btn_empty", :remote => true %></td>
-      <% else %>
-      <td>주문을 하시려면 <%= link_to '로그인', new_user_session_path, :remote => true, :class => "ajax_link"  %>을 하셔야합니다.</td>
-      <% end %>
-    </tr>    
+    <tr>
+      <td><hr /></td>
+    </tr>
+    <tr>
+      <td>총 합계금액 <%= number_with_delimiter(@cart.total_price) %>원</td>
+    </tr>
 </table>
+</div>
+      <% if user_signed_in? %>
+      <div id="create_order"><%= button_to '주문하기', new_order_path, :method => :get, :class => "cart_btn_order" %></div>
+      <div id="empty_cart"><%= button_to '비우기', @cart, :method => :delete, :confirm => '장바구니를 삭제하시겠습니까?', :class => "cart_btn_empty", :remote => true %></div>
+      <% else %>
+      <div id="login_for_order">주문을 하시려면 <%= link_to '로그인', new_user_session_path, :remote => true, :class => "ajax_link"  %>을 하셔야합니다.</div>
+      <% end %>
+
 
 </div>
+
 

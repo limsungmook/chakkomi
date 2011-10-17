@@ -1,12 +1,20 @@
 <tr>
-<td rowspan="2" class="line_item_td">
+  <td>
+    <%= check_box_tag '1' %>
+</td>
+<td>
   <%= image_tag line_item.product.thumnail_pic.url(:thumb), :class => "thumnail_pic" %>
 </td>
-<td height="50px">
+<td>
 <%= line_item.product.title %>
 </td>
-</tr>
-<tr>
+  <td><%= number_with_delimiter(line_item.product.price) %>원</td>
+  <td><%= line_item.quantity %></td>
+  <td><%= number_with_delimiter(line_item.total_price) %>원</td>
+<td>
+  <%= button_to '삭제하기', line_item_path(line_item), :id => line_item.id ,:method=>:delete, :remote => true  %> 
+</td>
+
   <td>옵션 : 
     <% if line_item.option %>
     <%= line_item.option %>
@@ -14,14 +22,8 @@
     (없음)
     <% end %>
   </td>
-  <td>(<%= line_item.quantity %>개)</td>
-  <td><%= number_with_delimiter(line_item.total_price) %>원</td>
-  <!--  <td><%= link_to '빼기', line_item_path(line_item),:method=>:delete, :remote => true  %></td> -->
-<td>
-  <%= button_to '빼기', line_item_path(line_item), :id => line_item.id ,:method=>:delete, :remote => true  %> 
-</td>
 
-  <td>
-    <%= button_to '빼기', line_item_path(line_item), :id => line_item.id ,:method=>:delete, :remote => true  %> 
-  </td>
+
+  <!--  <td><%= link_to '빼기', line_item_path(line_item),:method=>:delete, :remote => true  %></td> -->
+
 </tr>

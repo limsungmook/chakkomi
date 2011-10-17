@@ -1,5 +1,19 @@
 $(function() {
 
+	$.address.state('/');
+
+     $.address.change(function(event){
+	     $.getScript(event.value);	
+	 });
+     $(".ajax_link").click(function() {
+	     var href = $(this).attr('href');
+//	     alert('value: ' + href);
+	     $.address.value(href);
+	     return false;
+	 });
+     
+
+/*
 	var History = window.History;
 	if ( !History.enabled ){
 	    return false;
@@ -18,9 +32,10 @@ $(function() {
 		}
 	    });
 	
-	
+
 	History.Adapter.bind(window, 'statechange', function(){
 		var State = History.getState();
 		$.getScript(State.url);
 	    });
+*/
     });

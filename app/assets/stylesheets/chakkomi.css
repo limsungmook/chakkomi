@@ -505,6 +505,101 @@
 
 /* app/view/store/show.html.erb 즉, 제품 리스트 & 제품 디테일 구조 끝 */
 
+
+/* cart 구조 시작  */
+
+#laydesk_shop_body #laydesk_shop_cart #box_out
+{
+    width: 100%;
+
+    border-top: 2px solid #d1d6dc;    
+    border-right: 2px solid #d1d6dc;
+    border-left: 2px solid #d1d6dc;
+    border-bottom: 2px solid #d1d6dc;
+
+}
+#laydesk_shop_body #laydesk_shop_cart #box_out #box_in
+{
+
+    margin: 3px 3px 3px 3px; 
+    border-top: 1px solid #d1d6dc;    
+    border-right: 1px solid #d1d6dc;
+    border-left: 1px solid #d1d6dc;
+    border-bottom: 1px solid #d1d6dc;
+    
+    padding: 20px;    
+}
+#laydesk_shop_body #laydesk_shop_cart #box_in .current_cart
+{
+    width: 130px;
+    height: 50px;
+    display: inline-block;
+}
+#laydesk_shop_body #laydesk_shop_cart #box_in .other_cart
+{
+    width: 120px;
+    height: 40px;
+    display: inline-block;
+}
+#laydesk_shop_body #laydesk_shop_cart #box_in .current_cart .number
+{
+    font-size: 20px;
+    color:     #00a1ce;
+    vertical-align: super;
+    display: inline-block;
+}
+#laydesk_shop_body #laydesk_shop_cart #box_in .current_cart .name
+{
+    font-family: 'NanumGothic';
+    font-size: 29px;    
+    font-weight: bold;
+    display: inline-block;
+}
+#laydesk_shop_body #laydesk_shop_cart #box_in .other_cart .number
+{
+
+}
+#laydesk_shop_body #laydesk_shop_cart #box_in .other_cart .name
+{
+
+}
+#laydesk_shop_body #laydesk_shop_cart #box_in .arrow
+{
+    color:     #00a1ce;
+}
+#laydesk_shop_body #laydesk_shop_cart #order_list
+{
+
+}
+#laydesk_shop_body #laydesk_shop_cart #order_list #order_list_title
+{
+    font-family: 'NanumGothic';
+    font-size: 24px;    
+    font-weight: bold;
+    color:     #00a1ce;
+    border-bottom: 3px solid #d1d6dc;
+}
+#laydesk_shop_body #laydesk_shop_cart #order_list .line_item table
+{
+    width: 100%
+}
+#laydesk_shop_body #laydesk_shop_cart #order_list .line_item #table_menu
+{
+    background: #ff0f0f;
+}
+
+#laydesk_shop_body #laydesk_shop_cart #cart_total_line
+{
+    width: 100%
+    margin: 3px 0 0 0;
+    border-top: 5px solid #d1d6dc;    
+    border-right: 5px solid #d1d6dc;
+    border-left: 5px solid #d1d6dc;
+    border-bottom: 5px solid #d1d6dc;
+    
+    padding: 20px;    
+}
+
 /* Shop 구조 끝 */
 
 .laydesk_body .admin_menu ul

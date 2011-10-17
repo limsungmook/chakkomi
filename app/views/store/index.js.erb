@@ -17,8 +17,10 @@ $(function(){
 
 
 	$(".shop_item_category").click(function(e){
-		History.pushState(null, document.title, this.href);
-                return false;
+	     var href = $(this).attr('href');
+	     $.address.value(href);
+             return false;
+
 	    });
     });
 });
