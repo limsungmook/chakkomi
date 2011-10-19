@@ -7,6 +7,7 @@
   <%= javascript_include_tag :application, :cache => true %>
   <%= csrf_meta_tag %>
 
+  
   <!-- login 성공시 돌아오기 위한 세션  저장-->
   <% session[:back_url] = '/store' %>
 
@@ -64,7 +65,7 @@
 
 	  <div id="laydesk_shop_hdr_logo">
 	    <div id="laydesk_shop_hdr_logo_root">
-	    <%= link_to image_tag("/assets/logo_195x79.png", :class => 'goto_root'), {:controller=>'/articles', :action => 'chakkomi'}  %>
+	    <%= link_to image_tag("/assets/logo_195x79.png", :class => 'goto_root'), "/articles/#/articles"  %>
 	    </div>
 	    <div id="laydesk_shop_hdr_logo_store">
 	    <%= link_to image_tag("/assets/intro_shop_116x76.png", :class => 'goto_store'), '/store', :remote => true, :class => "ajax_link" %>

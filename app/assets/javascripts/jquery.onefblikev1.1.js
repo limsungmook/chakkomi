@@ -10,9 +10,9 @@ jQuery.fn.onefblike = function(options) {
   //Set the default values, use comma to separate the settings 
   var defaults = {  
 	appID: '213249652066160',
-	//siteTitle: '',
-	//siteName: '',
-	//siteImage: '',
+	siteTitle: '',
+	siteName: '',
+	siteImage: '',
 	buttonWidth: 300,
 	buttonHeight: 35,
 	showfaces: true,
@@ -27,14 +27,18 @@ var options =  $.extend(defaults, options);
   return this.each(function() {  
   var o = options;  
   var obj = $(this);
-  var State = History.getState();
 
-  var dynUrl = State.url;
-  
+
+  var chakkomi_url = 'http://' + location.host + $.address.value();
+//  var chakkomi_url = location.href;
+  var dynUrl = chakkomi_url;
+
   // Add Meta Tags for additional data - options
   jQuery('head').append('<meta property="og:title" content="'+o.siteTitle+'"/>');
   jQuery('head').append('<meta property="og:site_name" content="'+o.siteName+'"/>');
   jQuery('head').append('<meta property="og:image" content="'+o.siteImage+'"/>');
+
+
   
   // Add #fb-root div - mandatory - do not remove
   jQuery('body').append('<div id="fb-root"></div>');

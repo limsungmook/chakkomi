@@ -12,7 +12,7 @@
       <td>
 	<div class="talk_round">
 	  <div class="talk_tr"><div class="talk_tl"></div></div>
-	    <div class="talk_content"><pre><%= link_to talk.content, {:controller => 'talks', :action => 'show', :id => talk, :mid => @mid }, :remote => true, :class => 'talk_title' %></pre></div>
+	    <div class="talk_content"><pre><%= link_to talk.content, {:controller => '/talks', :action => 'show', :id => talk, :mid => @mid}, :remote => true, :class => 'talk_title', :rel => '/talks/' + talk.id.to_s + '?mid=' + @mid %></pre></div>
 	  <div class="talk_br"><div class="talk_bl"></div></div>
 	</div>
       </td> 

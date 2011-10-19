@@ -1,3 +1,4 @@
+<script type="text/javascript">
 $(function(){
 	$('#laydesk_shop_body').fadeOut('slow', function(){
 		$('#laydesk_shop_body').html('<%= escape_javascript(render('store')) %>').fadeIn('slow');
@@ -17,10 +18,17 @@ $(function(){
 
 
 	$(".shop_item_category").click(function(e){
-	     var rel = $(this).attr('rel');
-	     $.address.value(rel);
+	     var href = $(this).attr('href');
+	     $.address.value(href);
              return false;
 
 	    });
     });
 });
+
+
+
+</script>
+<noscript>
+<%= render('store') %>
+</noscript>

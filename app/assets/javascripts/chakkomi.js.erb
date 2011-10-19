@@ -1,17 +1,15 @@
 $(function() {
 
-	$.address.state('/');
+	$.address.change(function(event){
 
-     $.address.change(function(event){
-	     $.getScript(event.value);	
+		$.getScript(event.value);
+		return false;
 	 });
-     $(".ajax_link").click(function() {
+     $(".ajax_link").click(function(e) {
 	     var href = $(this).attr('href');
-//	     alert('value: ' + href);
 	     $.address.value(href);
 	     return false;
 	 });
-     
 
 /*
 	var History = window.History;

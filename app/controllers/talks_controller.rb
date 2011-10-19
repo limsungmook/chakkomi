@@ -97,7 +97,7 @@ class TalksController < ApplicationController
         @relay.talk_id = @talk.id
         @relay.save
         session[:saved_talk_last] = @talk.updated_at
-        session[:mid] = @talk.mid
+        @mid = @talk.mid
         @talks = Talk.paginate(:per_page => 10, :page => params[:page])
         #        format.html { redirect_to(@talk, :notice => 'Talk was successfully created.') }
         format.html { redirect_to(@talk) }
@@ -129,7 +129,9 @@ class TalksController < ApplicationController
   # DELETE /talks/1
   # DELETE /talks/1.xml
   def destroy
+
     @talk = Talk.find(params[:id])
+    @mid = @talk.mid
     @talk.destroy
 
     respond_to do |format|

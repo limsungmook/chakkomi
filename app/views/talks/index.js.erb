@@ -10,8 +10,8 @@ $(function(){
 		clearInterval(intval);
 	    });
 	$(".talk_title").click(function() {
-	     var href = $(this).attr('href');
-	     $.address.value(href);
+	     var rel = $(this).attr('rel');
+	     $.address.value(rel);
 	     return false;
 	    });
 	if(!$.browser.msie){

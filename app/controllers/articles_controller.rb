@@ -1,6 +1,8 @@
 class ArticlesController < ApplicationController
 
-
+  def index
+    @post = find_post_first('chakkomi');
+  end
   def notice
     @posts = find_posts_all('notice');
   end
