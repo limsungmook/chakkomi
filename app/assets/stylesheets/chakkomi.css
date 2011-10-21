@@ -130,7 +130,7 @@
 #laydesk_default_sidebar_logo IMG
 {
     width: 195px;
-    height: 79px;
+    height: 70px;
 
 }
 
@@ -141,7 +141,7 @@
     text-align: left;
     font-family:  'Francois One', Arial Narrow, Arial, sans-serif; 
     font-size: 16px;
-    font-weight: bold;
+//    font-weight: bold;
 }
 
 #laydesk_default_sidebar_menu li 
@@ -225,11 +225,10 @@
 #laydesk_default_body
 {
     width: 650px;
-
+    margin: 40px 0 0 0;
     float: left;
     display: inline;
     overflow: hidden;
-    margin: 60px 0 0 0;
     font-family: 'NanumGothic';
     font-size: 11px; 
     line-height:20.5px;   
@@ -248,6 +247,14 @@
 .laydesk_body hr
 {
     border: 1px solid #00a1cf;
+}
+#laydesk_default_body #chakkomi_wrapper
+{
+    margin: 140px 0 0 0;
+}
+#laydesk_default_body #article_wrapper
+{
+
 }
 
 
@@ -543,17 +550,18 @@
 }
 #laydesk_shop_body #laydesk_shop_cart #box_in .current_cart .number
 {
+    float: left;
     font-size: 20px;
     color:     #00a1ce;
     vertical-align: super;
-    display: inline-block;
+
 }
 #laydesk_shop_body #laydesk_shop_cart #box_in .current_cart .name
 {
     font-family: 'NanumGothic';
     font-size: 29px;    
     font-weight: bold;
-    display: inline-block;
+
 }
 #laydesk_shop_body #laydesk_shop_cart #box_in .other_cart .number
 {
@@ -581,7 +589,7 @@
 }
 #laydesk_shop_body #laydesk_shop_cart #order_list .line_item table
 {
-    width: 100%
+    width: 100%;
 }
 #laydesk_shop_body #laydesk_shop_cart #order_list .line_item #table_menu
 {
@@ -590,7 +598,7 @@
 
 #laydesk_shop_body #laydesk_shop_cart #cart_total_line
 {
-    width: 100%
+    width: 100%;
     margin: 3px 0 0 0;
     border-top: 5px solid #d1d6dc;    
     border-right: 5px solid #d1d6dc;
@@ -668,6 +676,19 @@
     text-align: center;
 }
 
+#talk_wrapper
+{
+    width: 480px;
+    height:698px;
+    background: url('/assets/talk_background_480x698.png') no-repeat ;
+}
+#relay_wrapper
+{
+    width: 480px;
+    height:698px;
+    background: url('/assets/talk_background_480x698.png') no-repeat ;
+
+}
 
 .talk_round { background: #6666e0; }
 .talk_round { float:right;width: 100% ; margin: 5px auto; display: inline_block;}

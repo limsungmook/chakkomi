@@ -20,7 +20,6 @@
     $("#product_list_ul a").click(function(){
       $('#product_detail_wrapper').html('<br /><%= image_tag '/assets/loader.gif' %>');
   	     var rel = $(this).attr('rel');
-
 	     $.address.value(rel);
              return false;
 

@@ -16,21 +16,7 @@
 
 	     $("body").css("display", "none");
 	     $("body").fadeIn(1000);
-	     var default_width = 0;
-	     var default_height = 0;
-/*	     $(".icon_bigger, .goto_store").hover(function(){ */
 	     
-	     $(".goto_store").hover(function(){
-		     default_width = parseInt($(this).css('width'));
-		     default_height = parseInt($(this).css('height'));
-		     $(this).css('width', default_width * 1.1);
-		     $(this).css('height', default_height * 1.1);
-		     
-		 },
-		 function() {
-		     $(this).css('width', default_width);
-		     $(this).css('height', default_height);
-		 });
      //menu hover event
      $("#shop_menu_ul li img").hover(function()
       {
