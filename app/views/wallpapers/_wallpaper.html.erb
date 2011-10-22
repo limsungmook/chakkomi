@@ -1,0 +1,53 @@
+<% if user_signed_in? %>
+<% if can? :manage, :all %>
+<% @admin = 1 %>
+<% else %>
+<% @admin = 0 %>
+<% end %>
+<% else %>
+<% @admin = 0 %>
+<% end %>
+
+
+<div id="wallpaper_wrapper">
+<div id="wallpaper_title">
+  <span>Wallpaper</span>
+</div>
+
+
+  <div id="wallpaper_year_category">
+    <ul>
+      <% @years.each do |year| %>
+      <li>
+	<% if year.year == @year.to_i %>
+	<span class="year_category_selected">
+	  <% else %>
+	<span class="year_category_default">
+	  <% end %>
+	  <%= link_to year.year, {:controller=>'/wallpapers', :action => 'index', :year => year.year}, :remote => true, :class => "ajax_link"  %></span></li>
+      <% end %>
+    </ul>
+  </div>
+  <div id="wallpaper_month_list">
+    <ul>
+    <% @wallpapers.each_with_index do |wallpaper,index| %>
+      <% if index > 3 || (index % 4) == 0 %>
+        </ul>
+        <ul>
+      <% end %>
+      <li>
+	<div class="wallpaper_each_month"><%= link_to image_tag(wallpaper.wallpaper_thumb.url(:thumb)), wallpaper.wallpaper_zip.url %><div><%= wallpaper.month %></div>
+	  <% if @admin == 1 %>
+	  <div>
+	    <%= link_to 'Edit', edit_wallpaper_path(wallpaper) %>
+	    <%= link_to 'Destroy', wallpaper, :confirm => 'Are you sure?', :method => :delete %>
+	  </div>
+	  <% end %>
+	</div>
+      </li>
+    <% end %>
+    </ul>
+
+</div>
+  
+</div>

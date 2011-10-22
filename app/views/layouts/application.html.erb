@@ -67,7 +67,7 @@
 	  <div id="laydesk_default_sidebar_link">
 	      <li><%= link_to image_tag("/assets/icon_fb_55x83.png", :class => "home_link_icon"), "http://www.facebook.com/chakkomi" %></li>
 	      <li><%= link_to image_tag("/assets/icon_twt_50x83.png", :class => "home_link_icon"), "http://twitter.com/#!/chakkomi"  %></li>
-	      <li><%= link_to image_tag("/assets/icon_wall_59x83.png", :class => "home_link_icon"), "#"  %></li>
+	      <li><%= link_to image_tag("/assets/icon_wall_59x83.png", :class => "home_link_icon"), {:controller=>'/wallpapers', :action => 'index'}, :remote => true, :class => "ajax_link"  %></li>
 	      <li><%= link_to image_tag("/assets/icon_shop_50x83.png", :class => "home_link_icon"), "/store/#/store/" %></li>
 	  </div>
 
@@ -80,7 +80,7 @@
 	<div id="laydesk_default_maj">
 	  <!-- 테스트용으로 로그인되었을 때만 메뉴가 보이게함 -->
 	  <% if user_signed_in? %>
-	  <% if can? :magage, :all%>
+	  <% if can? :manage, :all%>
 	  <div id="laydesk_default_maj_hdr">
 	    <div id="laydesk_default_maj_hdr_user">
 	      <ul>

@@ -1,12 +1,23 @@
 <% session[:back_url] = request.url %>
 <!-- controller 에서 one_article = 1 파라미터가 있으면 @post를, 없으면 @posts를 반환한다 -->
 <div id="article_wrapper">
+
 <% if !@post.nil? %>
-  <%= @post.body_txt.html_safe %>
+<div class="article_title">
+  <%= @post.title %>
+</div>
+<div class="article_content">
+<%= @post.body_txt.html_safe %>
+</div>
 <% elsif !@posts.nil? %>
   <% if @posts.count > 0 %>
     <% @posts.each do |post| %>
-    <%= post.body_txt.html_safe %>
+    <div class="article_title">
+      <%= post.title %>
+    </div>
+    <div class="article_content">
+      <%= post.body_txt.html_safe %>
+    </div>
     <% end %>
     <%= will_paginate @posts %>
   <% end %>

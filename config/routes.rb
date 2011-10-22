@@ -38,7 +38,7 @@ Chakkomi::Application.routes.draw do
       get :product
     end
   end
-
+  resources :wallpapers
 
   resources :talks do
     collection do

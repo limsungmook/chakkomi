@@ -18,27 +18,17 @@
 	     $("body").fadeIn(1000);
 	     
      //menu hover event
-     $("#shop_menu_ul li img").hover(function()
-      {
-	  $(this).attr("src", "/assets/" + $(this)[0].title + "_clicked.png");
-	  $("#shop_menu_ul li img").click(function(){
-		  $("#shop_menu_ul li img").each(function(){
-			  $(this).attr("src", "/assets/" + $(this)[0].title + ".png");
-			  $(this).attr("alt", $(this)[0].title);
+	  $("#shop_menu_ul li a").click(function(){
+		  $("#shop_menu_ul li a").each(function(){
+			  $(this).hide();
+
 		      });
 		  
-		  $(this).attr("src", "/assets/" + $(this)[0].title + "_clicked.png");
-		  $(this).attr("alt", $(this)[0].title + "_clicked");
+		  $(this).show();
+
 		  
 	      });
 	  
-      }, function(){
-						 if( $(this).attr("alt") != $(this)[0].title + "_clicked" )
-						 {
-						     $(this).attr("src", "/assets/" + $(this)[0].title + ".png");
-						 }
-					     });
-	     
 	 });
 </script>
 </head>
@@ -51,31 +41,103 @@
 
 	  <div id="laydesk_shop_hdr_logo">
 	    <div id="laydesk_shop_hdr_logo_root">
-	    <%= link_to image_tag("/assets/logo_195x79.png", :class => 'goto_root'), "/articles/#/articles"  %>
+	    <%= link_to image_tag("/assets/shop_logo_217x110.png", :class => 'goto_root'), "/articles/#/articles"  %>
 	    </div>
 	    <div id="laydesk_shop_hdr_logo_store">
-	    <%= link_to image_tag("/assets/intro_shop_116x76.png", :class => 'goto_store'), '/store', :remote => true, :class => "ajax_link" %>
+	    <%= link_to image_tag("/assets/intro_shop_85x92.png", :class => 'goto_store'), '/store', :remote => true, :class => "ajax_link" %>
 	    </div>
 	  </div>
 
 	  <div id="laydesk_shop_hdr_menu">
 	    <ul id="shop_menu_ul">
-	      <li><%= link_to image_tag("/assets/btn_shop_list_default.png",  :title => 'btn_shop_list_default'), {:controller=>'/store', :action => 'index'}, :remote => true, :class => "ajax_link" %></li>
-	      <li><%= link_to image_tag("/assets/btn_shop_cart_default.png",  :title => 'btn_shop_cart_default'), {:controller=>'/carts', :action => 'index'}, :remote => true, :class => "ajax_link" %></li>
-	      <li><%= link_to image_tag("/assets/btn_shop_qna_default.png", :title => 'btn_shop_qna_default'), {:controller=>'/talks', :action => 'index', :mid => 'qna'}, :remote => true, :class => "ajax_link" %></li>
+	      <li>
+		<div class="shop_icon">
+		  <%= link_to({:controller=>'/store', :action => 'index'}, :remote => true, :class => "ajax_link") do %>
+		  <%= image_tag("/assets/icon_list.png") %>
+		  <div>
+		    리스트
+		  </div>
+		  <% end %>
+		</div>
+	      </li>
+	      <li>
+		<div class="shop_icon">
+		  <%= link_to({:controller=>'/carts', :action => 'index'}, :remote => true, :class => "ajax_link") do %>
+		  <%= image_tag("/assets/icon_basket.png") %>
+		  <div>
+		    장바구니
+		  </div>
+		  <% end %>
+		</div>
+	      </li>
+	      <li>
+		<div class="shop_icon">
+		  <%= link_to({:controller=>'/talks', :action => 'index', :mid => 'qna'}, {:remote => true, :class => "ajax_link"}) do %>
+		  <%=  image_tag("/assets/icon_QnA.png") %>
+		  <div>
+		    Q & A
+		  </div>
+		  <% end %>
+		</div>
+	      </li>
 	      <% if user_signed_in? %>
-	      <li><%= link_to image_tag("/assets/btn_shop_profile_default.png", :title => 'btn_shop_profile_default'), edit_user_registration_path, :remote => true, :class => "ajax_link" %></li>
-	      <li><%= link_to image_tag("/assets/btn_shop_setting_default.png",:title => 'btn_shop_setting_default'), "/services", :remote => true, :class => "ajax_link" %></li>
-	      <li><%= link_to image_tag("/assets/btn_shop_logout_default.png",:title => 'btn_shop_logout_default'), destroy_user_session_path %></li>
+	      <li>
+		<div class="shop_icon">
+		  <%= link_to(edit_user_registration_path, :remote => true, :class => "ajax_link") do %>
+		  <%= image_tag("/assets/btn_shop_profile.png") %>
+		  <div>
+		    프로필
+		  </div>
+		  <% end %>
+		</div>
+	      </li>
+	      <li>
+		<div class="shop_icon">
+		  <%= link_to("/services", :remote => true, :class => "ajax_link") do %>
+		  <%=  image_tag("/assets/btn_shop_setting.png") %>
+		  <div>
+		    세팅
+		  </div>
+		  <% end %>
+		</div>
+	      </li>
+	      <li>
+		<div class="shop_icon">
+		  <%= link_to(destroy_user_session_path) do %>
+		  <%=  image_tag("/assets/btn_shop_logout.png") %>
+		  <div>
+		    로그인
+		  </div>
+		  <% end %>
+		</div>
+	      </li>
 	      <% else %>
-	      <li><%= link_to image_tag("/assets/btn_shop_signup_default.png", :title => 'btn_shop_signup_default'), new_user_registration_path, :remote => true, :class => "ajax_link" %></li>
-	      <li><%= link_to image_tag("/assets/btn_shop_signin_default.png", :title => 'btn_shop_signin_default'), new_user_session_path, :remote => true, :class => "ajax_link" %></li>
+	      <li>
+		<div class="shop_icon">
+		  <%= link_to(new_user_registration_path, :remote => true, :class => "ajax_link") do %>
+		  <%= image_tag("/assets/icon_login.png") %>
+		  <div>
+		    로그인
+		  </div>
+		  <% end %>
+		</div>
+	      </li>
+	      <li>
+		<div class="shop_icon">
+		  <%= link_to(new_user_session_path, :remote => true, :class => "ajax_link") do %>
+		  <%= image_tag("/assets/icon_join.png") %>
+		  <div>
+		    회원가입
+		  </div>
+		  <% end %>
+		</div>
+	      </li>
 	      <% end %>
 	    </ul>
 	  </div><!-- laydesk_shop_hdr_menu -->
 
 	</div><!-- laydesk_shop_hdr -->
-
+	<hr class="laydesk_shop_hdr_hr" />
 	<div id="laydesk_shop_body" class="laydesk_body">
 	  <%= yield %>
 	</div>

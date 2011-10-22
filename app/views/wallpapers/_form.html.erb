@@ -1,0 +1,35 @@
+<%= form_for @wallpaper, :html => { :multipart => true } do |f| %>
+  <% if @wallpaper.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@wallpaper.errors.count, "error") %> prohibited this wallpaper from being saved:</h2>
+
+      <ul>
+      <% @wallpaper.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :year %><br />
+    <%= f.number_field :year %>
+  </div>
+  <div class="field">
+    <%= f.label :month %><br />
+    <%= f.number_field :month %>
+  </div>
+  <div class="field">
+    썸네일
+    <%= f.file_field :wallpaper_thumb %><br />
+  </div>
+
+  <div class="field">
+    zip 파일
+    <%= f.file_field :wallpaper_zip %><br />
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

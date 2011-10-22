@@ -1,5 +1,5 @@
 <script type="text/javascript">
-  location.replace('/store/#/store/<%= @product.id %>');
+  location.replace('/store/#/store/<%= @item_category.id %>?product_id=<%= @product.id %>');
 </script>
 <noscript>
 <%= render('show') %>;

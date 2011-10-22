@@ -136,7 +136,7 @@
 
 #laydesk_default_sidebar_menu
 {
-    margin: 40px 0 0 34px;
+    margin: 42px 0 0 32px;
     height: 230px;
     text-align: left;
     font-family:  'Francois One', Arial Narrow, Arial, sans-serif; 
@@ -233,15 +233,22 @@
     font-size: 11px; 
     line-height:20.5px;   
     font-weight: bold;
-    color: #36d6e7; 
+    color: #6d6e71; 
 }
-#laydesk_default_body .title
+#laydesk_default_body #article_wrapper .article_title
 {
-   font-family: 'NanumGothic';
-    font-size: 16px; 
-    line-height:16px;   
-    font-weight: bold;
+    font-family: 'NanumGothic';
+    font-size: 13px; 
     color:     #00a1ce;
+}
+
+#laydesk_default_body #article_wrapper .article_content
+{
+    margin: 20px 0 0 0;
+    font-family: 'NanumGothic';
+    font-size: 11px; 
+    color:     #6d6e71;
+
 }
 
 .laydesk_body hr
@@ -256,7 +263,85 @@
 {
 
 }
+#laydesk_default_body #wallpaper_wrapper
+{
+    margin: 140px 0 0 0;
+}
+#laydesk_default_body #wallpaper_wrapper #wallpaper_title
+{
+    font-family: 'NanumGothic';
+    font-size: 16px; 
+    font-weight: bold;
+    color:     #00a1ce;
+}
 
+#laydesk_default_body #wallpaper_wrapper #wallpaper_year_category 
+{
+    margin: 40px 0 0 0;
+    font-family: 'NanumGothic';
+}
+#laydesk_default_body #wallpaper_wrapper #wallpaper_year_category .year_category_default a
+{
+    color: #c2c2c3;  text-decoration: none !important;
+}
+#laydesk_default_body #wallpaper_wrapper #wallpaper_year_category .year_category_default a:visited { color: #c2c2c3;  }
+#laydesk_default_body #wallpaper_wrapper #wallpaper_year_category .year_category_default a:hover { color: #00a1ce;  }
+
+#laydesk_default_body #wallpaper_wrapper #wallpaper_year_category .year_category_selected
+{
+    font-size: 11px; 
+    color:     #6dde71;
+
+}
+#laydesk_default_body #wallpaper_wrapper #wallpaper_year_category .year_category_selected a
+{
+    color: #6d6e71;  text-decoration: none !important;
+}
+#laydesk_default_body #wallpaper_wrapper #wallpaper_year_category .year_category_selected a:visited { color: #6d6e71;  }
+#laydesk_default_body #wallpaper_wrapper #wallpaper_year_category .year_category_selected a:hover { color: #36d6e7;  }
+
+#laydesk_default_body #wallpaper_wrapper #wallpaper_year_category ul
+{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+#laydesk_default_body #wallpaper_wrapper #wallpaper_year_category ul li
+{
+    padding: 0;
+    margin: 0 20px 0 0;
+    display: inline;
+}
+
+#laydesk_default_body #wallpaper_wrapper #wallpaper_month_list 
+{
+    text-align: left;
+}
+
+#laydesk_default_body #wallpaper_wrapper #wallpaper_month_list ul
+{
+    padding: 0;
+    margin: 50px 0 0 0;
+    list-style: none;
+
+}
+#laydesk_default_body #wallpaper_wrapper #wallpaper_month_list ul li
+{
+    padding: 0;
+    margin: 0 8px 0 0;
+    display: block; 
+    float: left;
+    text-align: center;
+}
+#laydesk_default_body #wallpaper_wrapper #wallpaper_month_list ul a
+{
+    
+}
+#laydesk_default_body #wallpaper_wrapper #wallpaper_month_list ul IMG
+{
+    width: 115px;
+    height: 90px;
+}
 
 /* default 레이아웃 구조 끝 */
 
@@ -272,70 +357,81 @@
 {
     float: left;
     width: 100%;
-    height: 135px;
+    height: 113px;
     overflow: hidden;
     padding: 0 0 0 ;
     margin: 0 0 0 0 ;
-    background-image:url('/assets/desktop_sidebar_background_220x970.png');
-    background-repeat: no-repeat;
+//    background-image:url('/assets/desktop_sidebar_background_220x970.png');
+//    background-repeat: no-repeat;
 
 }
 #laydesk_shop_hdr_logo
 {
     float: left;
     width: 400px;
-    height: 135px;
+    height: 113px;
 
 }
 #laydesk_shop_hdr_logo_root
 {
     float: left;
-    margin: 60px 0 0 30px;
-    width: 195px;
-    height: 79px;
+    margin: 0 0 0 30px;
+    width: 217px;
+    height: 110px;
 }
 #laydesk_shop_hdr_logo_root .goto_root
 {
-    width: 195px;
-    height: 79px;
+    width: 217px;
+    height: 110px;
 }
 #laydesk_shop_hdr_logo_store
 {
     float: left;
-    margin: 50px 0 0 0;
-    width: 130px;
-    height: 90px;
+    margin: 20px 0 0 15px;
+    width: 85px;
+    height: 92px;
 }
 #laydesk_shop_hdr_logo_store .goto_store
 {
-    width: 116px;
-    height: 76px;
+    width: 85px;
+    height: 92px;
 
 }
 #laydesk_shop_hdr_menu
 { 
-    float: left;
-    margin: 15px 0 0 0;
+    float: right;
+    margin: 45px 40px 0 0;
     text-align: right;
 }
 #laydesk_shop_hdr_menu IMG
 {
-    width: 60px;
-    height: 60px;
+    width: 42px;
+    height: 45px;
 }
 #laydesk_shop_hdr_menu ul
 {
     padding: 0; 
     margin: 0; 
     list-style: none;
+    text-align: center;
 }
 #laydesk_shop_hdr_menu ul li
 {
     padding: 0; 
-    margin: 0 20px 0 0; 
-    display:inline;
+    margin: 0 0 0 0;
+    display: block; 
+    float: left;
 }
+#laydesk_shop_hdr_menu ul li .shop_icon
+{
+    width: 55px;
+    height: 60px;
 
+}
+.laydesk_shop_hdr_hr
+{
+    border: 1px solid #00a1cf;
+}
 #laydesk_shop_body
 {
     margin-top: 30px;
@@ -518,7 +614,7 @@
 #laydesk_shop_body #laydesk_shop_cart #box_out
 {
     width: 100%;
-
+    height: 80px;
     border-top: 2px solid #d1d6dc;    
     border-right: 2px solid #d1d6dc;
     border-left: 2px solid #d1d6dc;
@@ -529,85 +625,169 @@
 {
 
     margin: 3px 3px 3px 3px; 
+    height: 71px;
     border-top: 1px solid #d1d6dc;    
     border-right: 1px solid #d1d6dc;
     border-left: 1px solid #d1d6dc;
     border-bottom: 1px solid #d1d6dc;
-    
-    padding: 20px;    
+    font-family: 'NanumGothic';
+}
+
+#laydesk_shop_body #laydesk_shop_cart #box_in ul
+{
+    padding: 0; 
+    margin: 0; 
+    list-style: none;
+    text-align: left;
+}
+#laydesk_shop_body #laydesk_shop_cart #box_in ul li
+{
+    padding: 0; 
+    margin: 12px 0 0 30px;
+    display: block; 
+    float: left;
 }
 #laydesk_shop_body #laydesk_shop_cart #box_in .current_cart
 {
-    width: 130px;
-    height: 50px;
-    display: inline-block;
+    margin: 10px 0 0 30px;
 }
-#laydesk_shop_body #laydesk_shop_cart #box_in .other_cart
+#laydesk_shop_body #laydesk_shop_cart #box_in .current_cart .name
 {
-    width: 120px;
-    height: 40px;
-    display: inline-block;
+    margin: 10px 0 0 0 ;
+    width: 130px;
+    font-size: 29px;    
+    font-weight: bold;
 }
+#laydesk_shop_body #laydesk_shop_cart #box_in .current_cart .name span
+{
+    border-bottom: 3px solid #00a1ce;
+}
+
 #laydesk_shop_body #laydesk_shop_cart #box_in .current_cart .number
 {
     float: left;
     font-size: 20px;
-    color:     #00a1ce;
+    color: #00a1ce;
     vertical-align: super;
-
 }
-#laydesk_shop_body #laydesk_shop_cart #box_in .current_cart .name
+#laydesk_shop_body #laydesk_shop_cart #box_in .other_cart
 {
-    font-family: 'NanumGothic';
-    font-size: 29px;    
-    font-weight: bold;
+    margin: 17px 0 0 30px;
+}
 
+#laydesk_shop_body #laydesk_shop_cart #box_in .other_cart .name
+{
+    margin: 10px 0 0 0 ;
+    width: 90px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #afafaf;
 }
 #laydesk_shop_body #laydesk_shop_cart #box_in .other_cart .number
 {
-
+    float: left;
+    font-size: 10px;
+    color: #00a1ce;
+    vertical-align: super;
 }
-#laydesk_shop_body #laydesk_shop_cart #box_in .other_cart .name
-{
 
-}
 #laydesk_shop_body #laydesk_shop_cart #box_in .arrow
 {
+    margin: 15px 0 0 0;
+    font-size: 20px;
+    font-weight: bold;
     color:     #00a1ce;
 }
+
 #laydesk_shop_body #laydesk_shop_cart #order_list
 {
-
+    margin: 40px 0 0 0;
 }
 #laydesk_shop_body #laydesk_shop_cart #order_list #order_list_title
 {
+    padding: 10px;
     font-family: 'NanumGothic';
-    font-size: 24px;    
+    font-size: 16px;    
     font-weight: bold;
     color:     #00a1ce;
-    border-bottom: 3px solid #d1d6dc;
+    border-bottom: 3px solid #529ec2;
 }
 #laydesk_shop_body #laydesk_shop_cart #order_list .line_item table
 {
     width: 100%;
+    border-bottom: 3px solid #e5e5e5;
+    text-align: center;
+
 }
 #laydesk_shop_body #laydesk_shop_cart #order_list .line_item #table_menu
 {
-    background: #ff0f0f;
+    height: 25px;
+    background: #f2f2f2;
+    text-align: center;
+}
+
+#laydesk_shop_body #laydesk_shop_cart #order_list table .cart_check
+{
+    width: 10px;
+}
+#laydesk_shop_body #laydesk_shop_cart #order_list table .cart_thumb
+{
+    width: 190px;
+}
+#laydesk_shop_body #laydesk_shop_cart #order_list table .cart_name
+{
+    width: 300px;
+}
+#laydesk_shop_body #laydesk_shop_cart #order_list table .cart_price
+{
+    width: 113px;
+}
+#laydesk_shop_body #laydesk_shop_cart #order_list table .cart_count
+{
+    width: 100px;
+}
+#laydesk_shop_body #laydesk_shop_cart #order_list table .cart_total_price
+{
+    width: 140px;
+}
+#laydesk_shop_body #laydesk_shop_cart #order_list #ps
+{
+    margin: 10px 0 0 0;
+    height: 30px;
+    font-size: 12px;
+    color: #afafaf;
+}
+
+#laydesk_shop_body #laydesk_shop_cart #order_list #ps_left
+{
+    float: left;
+}
+#laydesk_shop_body #laydesk_shop_cart #order_list #ps_right
+{
+    float: right;
 }
 
 #laydesk_shop_body #laydesk_shop_cart #cart_total_line
 {
-    width: 100%;
+
     margin: 3px 0 0 0;
     border-top: 5px solid #d1d6dc;    
     border-right: 5px solid #d1d6dc;
     border-left: 5px solid #d1d6dc;
     border-bottom: 5px solid #d1d6dc;
-    
+    text-align: right;
     padding: 20px;    
 }
+#laydesk_shop_body #laydesk_shop_cart #cart_total_line .cart_total_line_title
+{
+    font-size: 25px;
+    width: 160px;
+}
 
+#laydesk_shop_body #laydesk_shop_cart #cart_total_line .cart_total_cell
+{
+    width: 82%;
+}
 /* Shop 구조 끝 */
 
 .laydesk_body .admin_menu ul
@@ -649,6 +829,8 @@
     -webkit-border-radius: 5px; 
 }
 
+
+
 .relay_textarea { width: 600px; }
 .defaultText { width: 300px; }
 .defaultTextActive { color: #a1a1a1; font-style: italic; }
@@ -680,13 +862,13 @@
 {
     width: 480px;
     height:698px;
-    background: url('/assets/talk_background_480x698.png') no-repeat ;
+//    background: url('/assets/talk_background_480x698.png') no-repeat ;
 }
 #relay_wrapper
 {
     width: 480px;
     height:698px;
-    background: url('/assets/talk_background_480x698.png') no-repeat ;
+//    background: url('/assets/talk_background_480x698.png') no-repeat ;
 
 }
 
