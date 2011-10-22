@@ -80,10 +80,6 @@ ActiveRecord::Schema.define(:version => 20110930233836) do
     t.integer  "category_id"
     t.string   "title"
     t.text     "body_txt"
-    t.string   "upload_file_name"
-    t.string   "upload_content_type"
-    t.integer  "upload_file_size"
-    t.datetime "upload_updated_at"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -176,11 +172,9 @@ ActiveRecord::Schema.define(:version => 20110930233836) do
     t.string   "name"
     t.text     "shortbio"
     t.string   "weburl"
-    t.string   "phone",                :limit => 30
     t.boolean  "haslocalpw",                          :default => true, :null => false
     t.string   "role"
-    t.string   "delivery_address1"
-    t.string   "delivery_address2"
+    t.string   "delivery_address"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -193,10 +187,14 @@ ActiveRecord::Schema.define(:version => 20110930233836) do
     t.integer  "year"
     t.integer  "month"
     t.integer  "count"
-    t.string   "upload_file_name"
-    t.string   "upload_content_type"
-    t.integer  "upload_file_size"
-    t.datetime "upload_updated_at"
+    t.string   "wallpaper_zip_file_name"
+    t.string   "wallpaper_zip_content_type"
+    t.integer  "wallpaper_zip_file_size"
+    t.datetime "wallpaper_zip_updated_at"
+    t.string   "wallpaper_thumb_file_name"
+    t.string   "wallpaper_thumb_content_type"
+    t.integer  "wallpaper_thumb_file_size"
+    t.datetime "wallpaper_thumb_updated_at"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

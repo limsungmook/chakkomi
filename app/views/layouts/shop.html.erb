@@ -13,23 +13,36 @@
 
   <script type="text/javascript">
      $(function(){
-
+	     var toggle_icon = 0;
 	     $("body").css("display", "none");
 	     $("body").fadeIn(1000);
 	     
      //menu hover event
-	  $("#shop_menu_ul li a").click(function(){
-		  $("#shop_menu_ul li a").each(function(){
-			  $(this).hide();
+	     $("#shop_menu_ul li a").click(function(){
+		     $("#shop_menu_ul li a IMG").each(function(){
+			     $(this).hide();
+			 });
+		     $(this).find('img').show();
+		     toggle_icon = 0;
+		 });
 
-		      });
-		  
-		  $(this).show();
+	     $("#shop_menu_ul li a").hover(function(){
+		     if( $(this).find('img').css('display') == 'none' )
+		     {
+			 $(this).find('img').toggle();
+			 toggle_icon = 1;
+		     }
 
-		  
-	      });
-	  
+		 },function(){
+
+		     if( toggle_icon == 1 )
+		     {
+			 $(this).find('img').toggle();
+			 toggle_icon = 0;
+		     }
+		 });
 	 });
+
 </script>
 </head>
 <body>
@@ -53,7 +66,7 @@
 	      <li>
 		<div class="shop_icon">
 		  <%= link_to({:controller=>'/store', :action => 'index'}, :remote => true, :class => "ajax_link") do %>
-		  <%= image_tag("/assets/icon_list.png") %>
+		  <div class="shop_menu_image"><%= image_tag("/assets/icon_list.png", :class => "icon_image") %></div>
 		  <div>
 		    리스트
 		  </div>
@@ -63,7 +76,7 @@
 	      <li>
 		<div class="shop_icon">
 		  <%= link_to({:controller=>'/carts', :action => 'index'}, :remote => true, :class => "ajax_link") do %>
-		  <%= image_tag("/assets/icon_basket.png") %>
+		  <div class="shop_menu_image"><%= image_tag("/assets/icon_basket.png") %></div>
 		  <div>
 		    장바구니
 		  </div>
@@ -73,7 +86,7 @@
 	      <li>
 		<div class="shop_icon">
 		  <%= link_to({:controller=>'/talks', :action => 'index', :mid => 'qna'}, {:remote => true, :class => "ajax_link"}) do %>
-		  <%=  image_tag("/assets/icon_QnA.png") %>
+		  <div class="shop_menu_image"><%=  image_tag("/assets/icon_QnA.png") %></div>
 		  <div>
 		    Q & A
 		  </div>
@@ -84,7 +97,7 @@
 	      <li>
 		<div class="shop_icon">
 		  <%= link_to(edit_user_registration_path, :remote => true, :class => "ajax_link") do %>
-		  <%= image_tag("/assets/btn_shop_profile.png") %>
+		  <div class="shop_menu_image"><%= image_tag("/assets/btn_shop_profile.png") %></div>
 		  <div>
 		    프로필
 		  </div>
@@ -94,7 +107,7 @@
 	      <li>
 		<div class="shop_icon">
 		  <%= link_to("/services", :remote => true, :class => "ajax_link") do %>
-		  <%=  image_tag("/assets/btn_shop_setting.png") %>
+		  <div class="shop_menu_image"><%=  image_tag("/assets/btn_shop_setting.png") %></div>
 		  <div>
 		    세팅
 		  </div>
@@ -104,7 +117,7 @@
 	      <li>
 		<div class="shop_icon">
 		  <%= link_to(destroy_user_session_path) do %>
-		  <%=  image_tag("/assets/btn_shop_logout.png") %>
+		  <div class="shop_menu_image"><%=  image_tag("/assets/btn_shop_logout.png") %></div>
 		  <div>
 		    로그인
 		  </div>
@@ -115,7 +128,7 @@
 	      <li>
 		<div class="shop_icon">
 		  <%= link_to(new_user_registration_path, :remote => true, :class => "ajax_link") do %>
-		  <%= image_tag("/assets/icon_login.png") %>
+		  <div class="shop_menu_image"><%= image_tag("/assets/icon_login.png") %></div>
 		  <div>
 		    로그인
 		  </div>
@@ -125,7 +138,7 @@
 	      <li>
 		<div class="shop_icon">
 		  <%= link_to(new_user_session_path, :remote => true, :class => "ajax_link") do %>
-		  <%= image_tag("/assets/icon_join.png") %>
+		  <div class="shop_menu_image"><%= image_tag("/assets/icon_join.png") %></div>
 		  <div>
 		    회원가입
 		  </div>

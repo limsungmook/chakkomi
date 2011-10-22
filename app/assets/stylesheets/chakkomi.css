@@ -426,8 +426,13 @@
 {
     width: 55px;
     height: 60px;
-
 }
+#laydesk_shop_hdr_menu ul li .shop_icon .shop_menu_image
+{
+    width: 42px;
+    height: 45px;
+}
+
 .laydesk_shop_hdr_hr
 {
     border: 1px solid #00a1cf;
