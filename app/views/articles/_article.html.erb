@@ -3,7 +3,7 @@
 <div id="article_wrapper">
 
 <% if !@post.nil? %>
-<div class="article_title">
+<div class="content_title">
   <%= @post.title %>
 </div>
 <div class="article_content">
@@ -12,7 +12,7 @@
 <% elsif !@posts.nil? %>
   <% if @posts.count > 0 %>
     <% @posts.each do |post| %>
-    <div class="article_title">
+    <div class="content_title">
       <%= post.title %>
     </div>
     <div class="article_content">

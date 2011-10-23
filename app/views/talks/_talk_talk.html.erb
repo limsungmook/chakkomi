@@ -1,28 +1,89 @@
 <div id="talk_talk">
-  <table align="left">
 <% if !@talks.nil? %>
 <% @talks.each do |talk| %>
-<div class="talk_talk_article">
+<!-- chakkomi 가 말하는 부분. 오른쪽 정렬 -->
+  <% if talk.user.role == "admin" %>
+  <div class="relay_relay_admin">
+    <table align="right">
+      <% if talk == @lastest_talk  %>
+      <tr id="lastest_talk">
+	<% else %>
+      <tr>
+	<% end %>
+	<td>
+	  <div class="relay_admin_username"><%= talk.user.name %></div>
+	</td>
+      </tr>
+      <tr>
+	<td>
+	  <%= link_to({:controller => '/talks', :action => 'show', :id => talk, :mid => @mid}, {:remote => true, :class => 'talk_title', :rel => '/talks/' + talk.id.to_s + '?mid=' + @mid}) do %>
+	  <div class="relay_admin_round">
+	  <div class="relay_admin_tr"><div class="relay_admin_tl"></div></div>
+	    <div class="relay_admin_cr">
+	      <div class="relay_admin_content"><pre><%= talk.content %></pre></div>
+	    </div>
+	    <div class="relay_admin_br"><div class="relay_admin_bl"></div></div>
+	  </div>
+	  <% end %>
+	</td> 
+      </tr>
+      <tr>
+	<td>
+	  <div class="relay_admin_timeago"><%= time_ago_in_words(talk.created_at) %> 전</div>
+	</td>
+	<td>
+	  <% if can? :manage, :all || user_signed_in? && current_user.id == talk.user_id %>
+	  <span class="relay_admin_delete"><%= button_to '삭제하기', talk, :confirm => '삭제하시겠습니까?', :method => :delete, :remote => true %></span>
+	</td> 
+	<% end %>
+      </tr>
+    </table>
 
-    <% if talk == @lastest_talk  %>
-    <tr id="lastest_talk">
-      <% else %>
-    <tr>
-      <% end %>
-      <td>
-	<div class="talk_round">
-	  <div class="talk_tr"><div class="talk_tl"></div></div>
-	    <div class="talk_content"><pre><%= link_to talk.content, {:controller => '/talks', :action => 'show', :id => talk, :mid => @mid}, :remote => true, :class => 'talk_title', :rel => '/talks/' + talk.id.to_s + '?mid=' + @mid %></pre></div>
-	  <div class="talk_br"><div class="talk_bl"></div></div>
-	</div>
-      </td> 
-      <td><span class="talk_username"><%= talk.user.name %></span></td>
-      <% if can? :manage, :all || user_signed_in? && current_user.id == talk.user_id %>
-      <td><span class="talk_delete"><%= button_to '삭제하기', talk, :confirm => '삭제하시겠습니까?', :method => :delete, :remote => true %></span></td> 
-      <% end %>
-    </tr>
+  </div>
+  <!-- 일반 user 가 말하는 부분 -->
+  <% else %>
+  <div class="relay_relay_user">
+    <table align="left">
+      <% if talk == @lastest_talk  %>
+      <tr id="lastest_relay">
+	<% else %>
+      <tr>
+	<% end %>
+	<td>
+	  <div class="relay_user_username"><%= talk.user.name %></div>
+	</td>
+      </tr>
+      <tr>
+	<td>
+	  <%= link_to({:controller => '/talks', :action => 'show', :id => talk, :mid => @mid}, { :remote => true, :class => 'talk_title', :rel => '/talks/' + talk.id.to_s + '?mid=' + @mid }) do %>
+	  <div class="relay_user_round">
+	    <div class="relay_user_tr"><div class="relay_user_tl"></div></div>
+	    <div class="relay_user_cr">
+	      <div class="relay_user_content"><pre><%= talk.content  %></pre></div>
+	    </div>
+	    <div class="relay_user_br"><div class="relay_user_bl"></div></div>
+	  </div>
+	  <% end %>
+	</td>
+      </tr>
+      <tr>
 
-</div>
+	<td>
+	  <div class="relay_user_timeago"><%= time_ago_in_words(talk.created_at) %> 전</div>
+	</td>
+	<% if can? :manage, :all  %>
+	<td>
+	  <span class="relay_user_delete"><%= button_to '삭제하기',   talk, :confirm => '삭제하시겠습니까?', :method => :delete, :remote => true %></span>
+	</td>
+	<% end %>
+
+      </tr>
+    </table>
+
+  </div>
+  <% end %>
+
+
 <% end %>
 <tr>
 <td>

@@ -2,7 +2,7 @@
 ;; --------------------------------------------------------------------------
 ;; Desktop File for Emacs
 ;; --------------------------------------------------------------------------
-;; Created Fri Oct 21 20:12:54 2011
+;; Created Sun Oct 23 14:16:37 2011
 ;; Desktop file format version 206
 ;; Emacs version 23.1.1
 
@@ -10,8 +10,52 @@
 (setq desktop-missing-file-warning nil)
 (setq tags-file-name nil)
 (setq tags-table-list nil)
-(setq search-ring '("famil" "nanum" "span" "loading" "load" "image" "store" "store_link" "loading" "load" "600" "hr" "big" "hover" "product_list" "index"))
+(setq search-ring '("talk" "admin" "talk" "link_to" "shop_icon" "shop_menu" "ul" "total_pri" "total" "ps_left" "total_price" "total" "laydesk_shop_cart" "hr" "title" "ul"))
 (setq regexp-search-ring nil)
 (setq register-alist nil)
 
 ;; Buffer section -- buffers listed in same order as in buffer list:
+(desktop-create-buffer 206
+  "/var/www/chakkomi/app/views/talks/index.js.erb"
+  "index.js.erb"
+  'fundamental-mode
+  nil
+  109
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix)))
+
+(desktop-create-buffer 206
+  "/var/www/chakkomi/app/views/talks/_relay_relay.html.erb"
+  "_relay_relay.html.erb"
+  'html-mode
+  nil
+  2005
+  '(1752 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix)))
+
+(desktop-create-buffer 206
+  "/var/www/chakkomi/app/assets/stylesheets/chakkomi.css"
+  "chakkomi.css"
+  'css-mode
+  nil
+  18104
+  '(1 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix)))
+
+(desktop-create-buffer 206
+  "/var/www/chakkomi/app/views/stych"
+  "stych"
+  'fundamental-mode
+  nil
+  1
+  '(nil nil)
+  nil
+  nil
+  nil)
+

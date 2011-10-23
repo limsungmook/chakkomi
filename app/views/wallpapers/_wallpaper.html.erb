@@ -29,14 +29,14 @@
     </ul>
   </div>
   <div id="wallpaper_month_list">
-    <ul>
+    <table>
+      <tr>
     <% @wallpapers.each_with_index do |wallpaper,index| %>
-      <% if index > 3 || (index % 4) == 0 %>
-        </ul>
-        <ul>
+      <% if (index % 4) == 0 %>
+      <tr>
       <% end %>
-      <li>
-	<div class="wallpaper_each_month"><%= link_to image_tag(wallpaper.wallpaper_thumb.url(:thumb)), wallpaper.wallpaper_zip.url %><div><%= wallpaper.month %></div>
+      <td>
+	<div class="wallpaper_each_month"><%= link_to image_tag(wallpaper.wallpaper_thumb.url(:thumb)), wallpaper.wallpaper_zip.url %><div><% if wallpaper.month < 10 %>0<% end %><%= wallpaper.month %></div>
 	  <% if @admin == 1 %>
 	  <div>
 	    <%= link_to 'Edit', edit_wallpaper_path(wallpaper) %>
@@ -44,10 +44,12 @@
 	  </div>
 	  <% end %>
 	</div>
-      </li>
+      </td>
+	<% if (index % 4) == 3 %>
+        </tr>
+        <% end %>
     <% end %>
-    </ul>
-
+</table>
 </div>
   
 </div>

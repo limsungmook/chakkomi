@@ -7,7 +7,7 @@
   <%= javascript_include_tag :application, :cache => true %>
   <%= csrf_meta_tag %>
  <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Francois+One"> 
-<link rel="stylesheet" type="text/css" href="http://nanumgothic.appspot.com/css" />
+<!-- <link rel="stylesheet" type="text/css" href="http://nanumgothic.appspot.com/css" /> -->
   
   <!-- login 성공시 돌아오기 위한 세션  저장-->
   <% session[:back_url] = url_for(:controller=>'/articles', :action => 'chakkomi') %>
@@ -35,6 +35,7 @@
 	     $(".store_link").click(function(){
 		     $('#laydesk_default').html('<div id=loading>샾으로 이동합니다<br /><img src="/assets/loader.gif"></div>');
 		 });
+
 	 });
   </script>
 </head>
@@ -105,5 +106,15 @@
       </div><!-- #laydesk_default -->
     </div><!-- #laydesk & .laydesk -->
   </div><!-- laydesk_default_outer -->
+  <script src="http://www.google.com/jsapi"></script>
+<script>
+      google.load( "webfont", "1" );
+ google.setOnLoadCallback(function() {
+  WebFont.load({ custom: {
+   families: [ "NanumGothic" ],
+   urls: [ "http://fontface.kr/NanumGothic/css" ]
+  }});
+ });
+</script>
 </body>
 </html>

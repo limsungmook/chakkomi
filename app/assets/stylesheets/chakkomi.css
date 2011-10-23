@@ -232,23 +232,23 @@
     font-family: 'NanumGothic';
     font-size: 11px; 
     line-height:20.5px;   
-    font-weight: bold;
     color: #6d6e71; 
+}
+#laydesk_default_body .content_title
+{
+    font-family: 'NanumGothic';
+    font-size: 16px; 
+    color:     #00a1ce;    
+    font-weight: bold;
 }
 #laydesk_default_body #article_wrapper .article_title
 {
-    font-family: 'NanumGothic';
-    font-size: 13px; 
-    color:     #00a1ce;
+
 }
 
 #laydesk_default_body #article_wrapper .article_content
 {
     margin: 20px 0 0 0;
-    font-family: 'NanumGothic';
-    font-size: 11px; 
-    color:     #6d6e71;
-
 }
 
 .laydesk_body hr
@@ -290,6 +290,7 @@
 #laydesk_default_body #wallpaper_wrapper #wallpaper_year_category .year_category_selected
 {
     font-size: 11px; 
+    font-weight: bold;
     color:     #6dde71;
 
 }
@@ -318,29 +319,27 @@
     text-align: left;
 }
 
-#laydesk_default_body #wallpaper_wrapper #wallpaper_month_list ul
+#laydesk_default_body #wallpaper_wrapper #wallpaper_month_list table
 {
-    padding: 0;
     margin: 50px 0 0 0;
-    list-style: none;
+    text-align: center;
+    font-size: 11px;
+    font-weight: bold;
 
 }
-#laydesk_default_body #wallpaper_wrapper #wallpaper_month_list ul li
+#laydesk_default_body #wallpaper_wrapper #wallpaper_month_list .wallpaper_each_month
 {
-    padding: 0;
-    margin: 0 8px 0 0;
-    display: block; 
-    float: left;
-    text-align: center;
+    margin: 0 20px 0 0;
+    height: 200px;
+
 }
-#laydesk_default_body #wallpaper_wrapper #wallpaper_month_list ul a
-{
-    
-}
-#laydesk_default_body #wallpaper_wrapper #wallpaper_month_list ul IMG
+
+#laydesk_default_body #wallpaper_wrapper #wallpaper_month_list  IMG
 {
     width: 115px;
     height: 90px;
+//    border: 1px solid #00a1cf;
+    
 }
 
 /* default 레이아웃 구조 끝 */
@@ -853,102 +852,70 @@
 }
 
 
-#relay_relay .relay_relay_admin
+.relay_relay_admin
 {
     width:600px;
     float: right;
+
 }
 #relay_form 
 {
     text-align: center;
 }
 
-#talk_wrapper
+#talk_wrapper, #relay_wrapper
 {
-    width: 480px;
+    width: 80%;
     height:698px;
+    margin: 0 auto;
+    font-family: 'NanumGothic';
+    font-size: 11px;    
+    font-weight: normal;
+    color:     #6d6e71;
+
 //    background: url('/assets/talk_background_480x698.png') no-repeat ;
 }
-#relay_wrapper
-{
-    width: 480px;
-    height:698px;
-//    background: url('/assets/talk_background_480x698.png') no-repeat ;
-
-}
-
-.talk_round { background: #6666e0; }
-.talk_round { float:right;width: 100% ; margin: 5px auto; display: inline_block;}
-.talk_tl {background: url('/assets/talk_tl_10x10.png') no-repeat top left;}
-.talk_tr {background: url('/assets/talk_tr_10x10.png') no-repeat top right; }
-.talk_bl {background: url('/assets/talk_bl_10x10.png') no-repeat bottom left; }
-.talk_br {background: url('/assets/talk_br_10x10.png') no-repeat bottom right; }
-.talk_content { margin: 0 10px 0 10px;padding: 1px; }
-.talk_tl, .talk_tr, .talk_bl, .talk_br{
-    width: 100%;
-    height: 7px;
-    font-size: 1px;
-}
-
-.talk_content a { color: #000000;  text-decoration: none !important;}
-.talk_content a:visited { color: #000000;  }
-.talk_content a:hover { color: #36d6e7;  }
 
 
+#talk_talk_wrapper a { color: #6d6e71;  text-decoration: none !important;}
+#talk_talk_wrapper a:visited { color: #6d6e71;  }
+#talk_talk_wrapper a:hover { color: #36d6e7;  }
 
 
+.relay_admin_username { margin: 0 12px 0 0; color: black; float: right; font-weight: bold; line-height: 13px;}
+.relay_admin_timeago { margin: 0 12px 0 0; color: #afafaf; float: right; font-weight: lighter; font-size: 8px; line-height: 13px;}
+.relay_admin_round { background: #bfe4dc; }
+.relay_admin_round { float:right;width: 100% ;  }
+.relay_admin_tl { background: url('/assets/roundbox/talk_admin_tl_10x10.jpg') no-repeat top left; }
+.relay_admin_tr { background: url('/assets/roundbox/talk_admin_tr_20x10.jpg') no-repeat top right; }
+.relay_admin_bl { background: url('/assets/roundbox/talk_admin_bl_10x10.jpg') no-repeat bottom left; }
+.relay_admin_br { background: url('/assets/roundbox/talk_admin_br_20x10.jpg') no-repeat bottom right; }
+.relay_admin_cr { background: url('/assets/roundbox/talk_cr_10x10.jpg') repeat-y right center;}
+.relay_admin_content {  text-align: right; margin: 0 12px 0 10px;padding: 3px; width:340px; word-break: break-word;}
 
-.relay_admin_round { background: #f6f82f; }
-.relay_admin_round { float:right;width: 100% ; margin: 5px auto; display: inline_block;}
-.relay_admin_tl { background: url('/assets/roundbox/relay_admin_tl_12x12.png') no-repeat top left; }
-.relay_admin_tr { background: url('/assets/roundbox/relay_admin_tr_24x12.png') no-repeat top right; }
-.relay_admin_bl { background: url('/assets/roundbox/relay_admin_bl_12x12.png') no-repeat bottom left; }
-.relay_admin_br { background: url('/assets/roundbox/relay_admin_br_24x12.png') no-repeat bottom right; }
-.relay_admin_cr { background: url('/assets/roundbox/relay_cr_12x12.png') repeat-y right center;}
-.relay_admin_content { margin: 0 10px 0 0;padding: 10px }
 /* height and width stuff, width not really nessisary. */
 .relay_admin_tl, .relay_admin_tr, .relay_admin_bl , .relay_admin_br {
     width: 100%;
     height: 8px;
-    font-size: 1px;
-}
 
-.relay_user_round { background: #2bf6dc; }
-.relay_user_round { float:left;width: 100% ; margin: 1em auto; display: inline_block;}
-.relay_user_tl { background: url('/assets/roundbox/relay_user_tl_24x12.png') no-repeat top left; }
-.relay_user_tr { background: url('/assets/roundbox/relay_user_tr_12x12.png') no-repeat top right; }
-.relay_user_bl { background: url('/assets/roundbox/relay_user_bl_24x12.png') no-repeat bottom left; }
-.relay_user_br { background: url('/assets/roundbox/relay_user_br_12x12.png') no-repeat bottom right; }
-.relay_user_cr { text-align:right; background: url('/assets/roundbox/relay_cr_12x12.png') repeat-y left center;}
-.relay_user_content { margin: 0 0 0 12px;padding: 10px }
+}
+.relay_user_username { margin: 0 0 0 12px;color: black; float: left; font-weight: bold; line-height: 13px;}
+.relay_user_timeago { margin: 0 0 0 12px; color: #afafaf; float: left; font-weight: lighter; font-size: 8px;line-height: 13px;}
+.relay_user_round { background: #d3d746; }
+.relay_user_round { float:left;width: 100% ;}
+.relay_user_tl { background: url('/assets/roundbox/talk_user_tl_20x10.jpg') no-repeat top left; }
+.relay_user_tr { background: url('/assets/roundbox/talk_user_tr_10x10.jpg') no-repeat top right; }
+.relay_user_bl { background: url('/assets/roundbox/talk_user_bl_20x10.jpg') no-repeat bottom left; }
+.relay_user_br { background: url('/assets/roundbox/talk_user_br_10x10.jpg') no-repeat bottom right; }
+.relay_user_cr { text-align:right; background: url('/assets/roundbox/talk_cr_10x10.jpg') repeat-y left center;}
+.relay_user_content { text-align: left; margin: 0 0 0 12px;padding: 3px; width:340px; word-break: break-word;}
+
+
 /* height and width stuff, width not really nessisary. */
 .relay_user_tl, .relay_user_tr, .relay_user_bl , .relay_user_br {
     width: 100%;
     height: 8px;
-    font-size: 1px;
 }
 
-
-
-#relay_relay .relay_relay_nobody
-{
-    width:600px;
-    float: left;
-}
-.roundbox_pink { background: url('/assets/roundbox/nt_pink.gif') repeat; }
-.rbtop_pink div { background: url('/assets/roundbox/tl_pink.gif') no-repeat top left; }
-.rbtop_pink { background: url('/assets/roundbox/tr_pink.gif') no-repeat top right; }
-.rbbot_pink div { background: url('/assets/roundbox/bl_pink.gif') no-repeat bottom left; }
-.rbbot_pink { background: url('/assets/roundbox/br_pink.gif') no-repeat bottom right; }
-
-/* height and width stuff, width not really nessisary. */
-.rbtop_pink div, .rbtop_pink, .rbbot_pink div, .rbbot_pink {
-    width: 100%;
-    height: 7px;
-    font-size: 1px;
-
-}
-.rbcontent_pink { margin: 0 7px; text-align:right;}
-.roundbox_pink { float:left;width: 100% ; margin: 1em auto; display: inline_block;}
 
 
