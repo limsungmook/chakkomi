@@ -24,7 +24,7 @@ Talk.delete_all
 
 @connection.execute("INSERT INTO `users` (
 `confirmation_sent_at`, `confirmation_token`, `confirmed_at`, `created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `failed_attempts`, `haslocalpw`, `last_sign_in_at`, `last_sign_in_ip`, `locked_at`, `name`, `remember_created_at`, `reset_password_token`, `shortbio`, `sign_in_count`, `updated_at`, `weburl`, `role`) VALUES (
-'2011-09-19 07:04:50', NULL, '2011-09-19 07:06:39', '2011-09-19 07:04:50', '2011-09-19 07:06:39', '192.168.10.111', 'chakkomi@chakkomi.com', '$2a$10$ibZZNSpzst7nnA20HLFYh.r1kN0RJkfS3aL6kox0LsuMFbv.THMnS', 0,  '2011-09-19 07:06:39', '192.168.10.111', NULL, NULL, '착곰이', NULL, NULL, NULL, 1, '2011-09-19 07:06:39', 'http://www.chakkomi.com', 'admin')");
+'2011-09-19 07:04:50', NULL, '2011-09-19 07:06:39', '2011-09-19 07:04:50', '2011-09-19 07:06:39', '192.168.10.111', 'chakkomi@gmail.com', '$2a$10$ibZZNSpzst7nnA20HLFYh.r1kN0RJkfS3aL6kox0LsuMFbv.THMnS', 0,  '2011-09-19 07:06:39', '192.168.10.111', NULL, NULL, '착한곰팡이', NULL, NULL, NULL, 1, '2011-09-19 07:06:39', 'http://www.chakkomi.com', 'admin')");
 
 @connection.execute("INSERT INTO `users` (
 `confirmation_sent_at`, `confirmation_token`, `confirmed_at`, `created_at`, `current_sign_in_at`, `current_sign_in_ip`, `email`, `encrypted_password`, `failed_attempts`, `haslocalpw`, `last_sign_in_at`, `last_sign_in_ip`, `locked_at`, `name`, `remember_created_at`, `reset_password_token`, `shortbio`, `sign_in_count`, `updated_at`, `weburl`, `role`) VALUES (

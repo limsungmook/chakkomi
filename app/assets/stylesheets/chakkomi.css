@@ -141,7 +141,7 @@
     text-align: left;
     font-family:  'Francois One', Arial Narrow, Arial, sans-serif; 
     font-size: 16px;
-//    font-weight: bold;
+/*    font-weight: bold; */
 }
 
 #laydesk_default_sidebar_menu li 
@@ -338,7 +338,7 @@
 {
     width: 115px;
     height: 90px;
-//    border: 1px solid #00a1cf;
+/*    border: 1px solid #00a1cf; */
     
 }
 
@@ -360,8 +360,8 @@
     overflow: hidden;
     padding: 0 0 0 ;
     margin: 0 0 0 0 ;
-//    background-image:url('/assets/desktop_sidebar_background_220x970.png');
-//    background-repeat: no-repeat;
+/*    background-image:url('/assets/desktop_sidebar_background_220x970.png'); */
+/*    background-repeat: no-repeat; */
 
 }
 #laydesk_shop_hdr_logo
@@ -852,12 +852,6 @@
 }
 
 
-.relay_relay_admin
-{
-    width:600px;
-    float: right;
-
-}
 #relay_form 
 {
     text-align: center;
@@ -873,7 +867,17 @@
     font-weight: normal;
     color:     #6d6e71;
 
-//    background: url('/assets/talk_background_480x698.png') no-repeat ;
+/*    background: url('/assets/talk_background_480x698.png') no-repeat ; */
+}
+.relay_relay_user
+{
+    width:360px;  
+}
+.relay_relay_admin
+{
+    width:100%; 
+/*    float: right; */
+/*    width: 350px; */
 }
 
 
@@ -894,6 +898,7 @@
 .relay_admin_content {  text-align: right; margin: 0 12px 0 10px;padding: 3px; width:340px; }
 .relay_admin_content pre
 {
+    line-height: 16px;
     white-space: pre;           /* CSS 2.0 */
     white-space: pre-wrap;      /* CSS 2.1 */
     white-space: pre-line;      /* CSS 3.0 */
@@ -922,6 +927,7 @@
 .relay_user_content { text-align: left; margin: 0 0 0 12px;padding: 3px; width:340px;}
 .relay_user_content pre
 {
+    line-height: 16px;
     white-space: pre;           /* CSS 2.0 */
     white-space: pre-wrap;      /* CSS 2.1 */
     white-space: pre-line;      /* CSS 3.0 */
