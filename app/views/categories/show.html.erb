@@ -1,15 +1,13 @@
+<div id="admin_wrapper">
 <%= render :partial => "/admins/admin_menu" %>
 
-<%= @category.name  %>에 글 포스팅하기.
 <br />
   <%= @category.name  %> : <%= @category.detail %>
 
 <br />
-
-<table>
+<table id="admin_post_table" class="admin_table">
   <tr>
     <th>포스트 제목</th>
-    <th></th>
     <th></th>
     <th></th>
   </tr>
@@ -27,3 +25,4 @@
 
 <%= link_to '새 글 작성', url_for(:controller=>'posts', :action=>'new', :id => @category.id)  %>
 
+</div>

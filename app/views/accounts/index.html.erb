@@ -1,7 +1,8 @@
+<div id="admin_wrapper">
 <%= render :partial => "/admins/admin_menu" %>
 
-<h1>Users</h1>
-<table>
+<h1>유저목록</h1>
+<table  id="admin_order_table" class="admin_table">
 <% @users.each do |user| %>
   <tr>
     <td><%= link_to user.email, :controller=>"accounts", :action=>"show", :id => user.id %></td>
@@ -9,3 +10,4 @@
   </tr>
 <% end %>
 </table>
+</div>

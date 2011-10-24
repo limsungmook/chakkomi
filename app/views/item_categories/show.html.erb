@@ -1,12 +1,10 @@
+<div id="admin_wrapper">
 <%= render :partial => "/admins/admin_menu" %>
-<br /><br />
+<br />
 카테고리 이름 : <%= @item_category.name  %> <br />
-카테고리 설명 : <%= @item_category.detail %>
-
-<br /><br />
+카테고리 설명 : <%= @item_category.detail %><br />
 (상품이름을 클릭하시면 '옵션'을 설정할 수 있습니다)
-<br /><br />
-<table>
+<table  id="admin_order_table" class="admin_table">
   <tr>
     <th>상품이름&nbsp;&nbsp;&nbsp;&nbsp;</th>
     <th>수정&nbsp;&nbsp;&nbsp;</th>
@@ -27,3 +25,4 @@
 
 <%= link_to '새로운 상품 등록', url_for(:controller=>'products', :action=>'new', :id => @item_category.id)  %><br />
 <%= link_to '카테고리 목록으로 가기', item_categories_path %>
+</div>

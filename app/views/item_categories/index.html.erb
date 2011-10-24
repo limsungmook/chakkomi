@@ -1,8 +1,9 @@
+<div id="admin_wrapper">
 <%= render :partial => "/admins/admin_menu" %>
 
 <h1>상품 카테고리</h1>
 
-<table>
+<table id="admin_item_category_table" class="admin_table">
   <tr>
     <th>카테고리 이름</th>
     <th>수정하기</th>
@@ -21,3 +22,4 @@
 <br />
 
 <%= link_to '새 상품 카테고리 만들기', new_item_category_path %>
+</div>

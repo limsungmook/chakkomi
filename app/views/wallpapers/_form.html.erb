@@ -20,16 +20,16 @@
     <%= f.number_field :month %>
   </div>
   <div class="field">
-    썸네일
+    썸네일(주의! 파일명에 한글이 들어가면 안됩니다)
     <%= f.file_field :wallpaper_thumb %><br />
   </div>
 
   <div class="field">
-    zip 파일
+    zip 파일(주의! 파일명에 한글이 들어가면 안됩니다)
     <%= f.file_field :wallpaper_zip %><br />
   </div>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "포스팅!"%>
   </div>
 <% end %>

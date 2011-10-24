@@ -794,29 +794,55 @@
 }
 /* Shop 구조 끝 */
 
-.laydesk_body .admin_menu ul
+.laydesk_body #admin_menu ul
 {
     padding: 0; 
     margin: 0; 
     list-style: none;
 }
-.laydesk_body .admin_menu ul li
+.laydesk_body #admin_menu ul li
 {
     padding: 0; 
     margin: 0 20px 0 0; 
     display:inline;
 }
-.laydesk_body .admin_menu li a 
+.laydesk_body #admin_menu li a 
 {
     width: 100px; 
     font-size: 11px; 
     text-align: center; 
     text-decoration: none;
 }
-.laydesk_body .admin_menu ul li.selected a
+.laydesk_body #admin_menu ul li.selected a
 {
     color: #c81419;
 }
+
+.laydesk_body #admin_wrapper 
+{
+    width: 100%;
+    font-family: arial;
+    color: black;
+}
+.laydesk_body .admin_table
+{
+    margin: 30px 0 0 0;
+    width: 100%;
+    text-align: center;
+    border: 1px solid #d1d6dc;
+}
+
+.laydesk_body .admin_table td, .laydesk_body .admin_table th
+{
+    text-align: center;
+    border-width: 1px;
+    padding: 1px;
+    border-style: inset;
+    border-color: gray;
+
+}
+
+
 
 #deviseauth 
 { 

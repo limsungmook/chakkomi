@@ -10,46 +10,49 @@
 
 
 <div id="wallpaper_wrapper">
-<div id="wallpaper_title">
-  <span>Wallpaper</span>
-</div>
-
-
+  <div id="wallpaper_title">
+    <span>Wallpaper</span>
+  </div>
   <div id="wallpaper_year_category">
     <ul>
       <% @years.each do |year| %>
       <li>
 	<% if year.year == @year.to_i %>
-	<span class="year_category_selected">
-	  <% else %>
-	<span class="year_category_default">
-	  <% end %>
-	  <%= link_to year.year, {:controller=>'/wallpapers', :action => 'index', :year => year.year}, :remote => true, :class => "ajax_link"  %></span></li>
+	  <span class="year_category_selected">
+	<% else %>
+	  <span class="year_category_default">
+	<% end %>
+	  <%= link_to year.year, {:controller=>'/wallpapers', :action => 'index', :year => year.year}, {:remote => true, :class => "ajax_link", :rel => '/wallpapers?year=' + year.year.to_s}  %>
+          </span>
+      </li>
       <% end %>
     </ul>
   </div>
   <div id="wallpaper_month_list">
     <table>
       <tr>
-    <% @wallpapers.each_with_index do |wallpaper,index| %>
-      <% if (index % 4) == 0 %>
+	<% @wallpapers.each_with_index do |wallpaper,index| %>
+	<% if (index % 4) == 0 %>
       <tr>
-      <% end %>
-      <td>
-	<div class="wallpaper_each_month"><%= link_to image_tag(wallpaper.wallpaper_thumb.url(:thumb)), wallpaper.wallpaper_zip.url %><div><% if wallpaper.month < 10 %>0<% end %><%= wallpaper.month %></div>
-	  <% if @admin == 1 %>
-	  <div>
-	    <%= link_to 'Edit', edit_wallpaper_path(wallpaper) %>
-	    <%= link_to 'Destroy', wallpaper, :confirm => 'Are you sure?', :method => :delete %>
+	<% end %>
+	<td>
+	  <div class="wallpaper_each_month">
+	    <%= link_to image_tag(wallpaper.wallpaper_thumb.url(:thumb)), wallpaper.wallpaper_zip.url %>
+	    <div>
+	      <% if wallpaper.month < 10 %>0<% end %><%= wallpaper.month %>
+	    </div>
+	    <% if @admin == 1 %>
+	    <div>
+	      <%= link_to 'Edit', edit_wallpaper_path(wallpaper) %>
+	      <%= link_to 'Destroy', wallpaper, :confirm => 'Are you sure?', :method => :delete %>
+	    </div>
+	    <% end %>
 	  </div>
-	  <% end %>
-	</div>
-      </td>
+	</td>
 	<% if (index % 4) == 3 %>
-        </tr>
-        <% end %>
-    <% end %>
-</table>
-</div>
-  
+      </tr>
+      <% end %>
+      <% end %>
+    </table>
+  </div>
 </div>

@@ -80,6 +80,10 @@ ActiveRecord::Schema.define(:version => 20110930233836) do
     t.integer  "category_id"
     t.string   "title"
     t.text     "body_txt"
+    t.string   "upload_file_name"
+    t.string   "upload_content_type"
+    t.integer  "upload_file_size"
+    t.datetime "upload_updated_at"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -145,9 +149,9 @@ ActiveRecord::Schema.define(:version => 20110930233836) do
 
   create_table "talks", :force => true do |t|
     t.integer  "user_id"
-    t.string   "mid",                       :null => false
     t.text     "content",                   :null => false
     t.integer  "secret",     :default => 0
+    t.string   "mid"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -174,7 +178,9 @@ ActiveRecord::Schema.define(:version => 20110930233836) do
     t.string   "weburl"
     t.boolean  "haslocalpw",                          :default => true, :null => false
     t.string   "role"
-    t.string   "delivery_address"
+    t.string   "delivery_address1"
+    t.string   "delivery_address2"
+    t.string   "phone"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

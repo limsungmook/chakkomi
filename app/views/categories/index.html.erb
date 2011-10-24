@@ -1,9 +1,10 @@
+<div id="admin_wrapper">
 <%= render :partial => "/admins/admin_menu" %>
 
 <h1>카테고리</h1>
 <h3>각 메뉴 당 한 카테고리입니다. 각자 카테고리에 글을 올리면 자동으로 각 메뉴의 최신 글에 반영됩니다.</h3>
 <br /><br />
-<table>
+<table id="admin_category_table" class="admin_table">
   <tr>
   </tr>
 
@@ -20,3 +21,4 @@
 
 <%= link_to '카테고리 생성', new_category_path %><br />
 <h3>카테고리를 생성한다고 옆의 메뉴도 생성되지는 않습니다. 혹시 그 기능이 필요하시면 만들어드릴께요. </h3>
+</div>

@@ -1,13 +1,11 @@
+<div id="admin_wrapper">
 <%= render :partial => "/admins/admin_menu" %>
 
 
 <p id="notice"><%= notice %></p>
+"<%= @product.item_category.name %>" 카테고리의  "<%= @product.title %>" 상품입니다.
 <br />
-  <%= @product.item_category.name %> 카테고리의
-<br />
-  <%= @product.title %> 상품입니다.
-<br />
-이미지<br /><%= image_tag(@product.thumnail_pic) %>
+이미지<br /><%= image_tag(@product.thumnail_pic.url(:thumb)) %>
 <br />
 가격 : <%= number_with_delimiter(@product.price) %>
 <br />
@@ -16,7 +14,7 @@
 판매현황 :   <%= @product.state %>
 <br />
 옵션목록 :
-<table>
+<table id="admin_options_table" class="admin_table">
 <% @product_options.each do |product_option| %>
 
   <tr>
@@ -42,3 +40,4 @@
 <%= link_to '수정하기', edit_product_path(@product) %> <br />
 <%= link_to '아이템 목록으로 돌아가기', {:controller=>"item_categories", :action => 'show', :id => @product.item_category.id }%> <br />
 <%= link_to '아이템 카테고리 목록으로 돌아가기', item_categories_path %>
+</div>
