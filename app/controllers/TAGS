@@ -1,109 +1,0 @@
-
-accounts_controller.rb,64
-class AccountsController 3,25
-        format.html html23,543
-
-carts_controller.rb,286
-class CartsController 2,24
-      @cart 18,319
-    @cart 33,713
-    @cart 43,886
-        format.xml xml54,1149
-        format.html html56,1246
-        format.xml xml57,1294
-    @cart 65,1456
-        format.html html72,1699
-        format.xml xml73,1748
-    @cart 81,1917
-
-categories_controller.rb,308
-class CategoriesController 1,0
-    @category 16,324
-    @category 28,586
-    @category 38,776
-        format.xml xml49,1081
-        format.html html51,1186
-        format.xml xml52,1234
-    @category 60,1410
-        format.html html67,1677
-        format.xml xml68,1726
-    @category 76,1909
-
-line_items_controller.rb,535
-class LineItemsController 1,0
-    @line_item 16,323
-    @line_item 27,554
-    @line_item 37,746
-        format.js js50,1076
-        format.xml xml51,1127
-        format.html html53,1234
-        format.xml xml54,1282
-    @line_item 63,1460
-        format.html html70,1732
-        format.xml xml71,1781
-    @cart 79,1965
-        format.js js88,2245
-        format.xml xml89,2296
-          format.js js93,2480
-          format.xml xml94,2533
-          format.html html96,2644
-          format.xml xml97,2697
-
-orders_controller.rb,289
-class OrdersController 2,24
-    @order 17,317
-    @cart 28,529
-    @order 44,884
-        format.xml xml58,1289
-        format.html html60,1388
-        format.xml xml61,1436
-    @order 69,1601
-        format.html html76,1850
-        format.xml xml77,1899
-    @order 85,2071
-
-posts_controller.rb,174
-class PostsController 3,25
-    @post 23,483
-    @post 48,937
-        format.html html62,1392
-    @post 71,1603
-        format.html html77,1850
-    @category 85,1982
-
-products_controller.rb,301
-class ProductsController 1,0
-    @product 16,309
-    @product 27,531
-    @product 37,716
-        format.xml xml48,1009
-        format.html html50,1112
-        format.xml xml51,1160
-    @product 59,1331
-        format.html html66,1592
-        format.xml xml67,1641
-    @product 75,1819
-
-relays_controller.rb,29
-class RelaysController 3,25
-
-talks_controller.rb,283
-class TalksController 1,0
-    @talk 18,352
-    @talk 29,559
-    @talk 39,732
-        format.xml xml52,1127
-        format.html html54,1224
-        format.xml xml55,1272
-    @talk 63,1434
-        format.html html70,1677
-        format.xml xml71,1726
-    @talk 79,1895
-
-store_controller.rb,0
-
-services_controller.rb,0
-
-application_controller.rb,0
-
-admins_controller.rb,0

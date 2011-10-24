@@ -1,7 +1,0 @@
-$.address.value('/talks/<%= @talk.id %>?mid=<%= @mid %>');
-
-/*
-$('#talk_talk').html('<%= escape_javascript(render('talks/talk_talk')) %>');
-
-$('#lastest_talk').hide().fadeIn('1800');
-*/
