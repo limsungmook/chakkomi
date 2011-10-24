@@ -6,6 +6,16 @@
   <%= stylesheet_link_tag :application, :cache => true %>
   <%= javascript_include_tag :application, :cache => true %>
   <%= csrf_meta_tag %>
+  <script src="http://www.google.com/jsapi"></script>
+<script>
+      google.load( "webfont", "1" );
+ google.setOnLoadCallback(function() {
+  WebFont.load({ custom: {
+   families: [ "NanumGothic" ],
+   urls: [ "http://fontface.kr/NanumGothic/css" ]
+  }});
+ });
+</script>
 
   
   <!-- login 성공시 돌아오기 위한 세션  저장-->
@@ -157,16 +167,6 @@
       </div><!-- #laydesk_shop -->
     </div><!-- #laydesk & .laydesk -->
   </div><!-- #laydesk_outer -->
-  <script src="http://www.google.com/jsapi"></script>
-<script>
-      google.load( "webfont", "1" );
- google.setOnLoadCallback(function() {
-  WebFont.load({ custom: {
-   families: [ "NanumGothic" ],
-   urls: [ "http://fontface.kr/NanumGothic/css" ]
-  }});
- });
-</script>
 
 </body>
 </html>

@@ -891,7 +891,18 @@
 .relay_admin_bl { background: url('/assets/roundbox/talk_admin_bl_10x10.jpg') no-repeat bottom left; }
 .relay_admin_br { background: url('/assets/roundbox/talk_admin_br_20x10.jpg') no-repeat bottom right; }
 .relay_admin_cr { background: url('/assets/roundbox/talk_cr_10x10.jpg') repeat-y right center;}
-.relay_admin_content {  text-align: right; margin: 0 12px 0 10px;padding: 3px; width:340px; word-break: break-word;}
+.relay_admin_content {  text-align: right; margin: 0 12px 0 10px;padding: 3px; width:340px; }
+.relay_admin_content pre
+{
+    white-space: pre;           /* CSS 2.0 */
+    white-space: pre-wrap;      /* CSS 2.1 */
+    white-space: pre-line;      /* CSS 3.0 */
+    white-space: -pre-wrap;     /* Opera 4-6 */
+    white-space: -o-pre-wrap;   /* Opera 7 */
+    white-space: -moz-pre-wrap; /* Mozilla */
+    white-space: -hp-pre-wrap;  /* HP Printers */
+    word-wrap: break-word;      /* IE 5+ */
+}
 
 /* height and width stuff, width not really nessisary. */
 .relay_admin_tl, .relay_admin_tr, .relay_admin_bl , .relay_admin_br {
@@ -908,7 +919,18 @@
 .relay_user_bl { background: url('/assets/roundbox/talk_user_bl_20x10.jpg') no-repeat bottom left; }
 .relay_user_br { background: url('/assets/roundbox/talk_user_br_10x10.jpg') no-repeat bottom right; }
 .relay_user_cr { text-align:right; background: url('/assets/roundbox/talk_cr_10x10.jpg') repeat-y left center;}
-.relay_user_content { text-align: left; margin: 0 0 0 12px;padding: 3px; width:340px; word-break: break-word;}
+.relay_user_content { text-align: left; margin: 0 0 0 12px;padding: 3px; width:340px;}
+.relay_user_content pre
+{
+    white-space: pre;           /* CSS 2.0 */
+    white-space: pre-wrap;      /* CSS 2.1 */
+    white-space: pre-line;      /* CSS 3.0 */
+    white-space: -pre-wrap;     /* Opera 4-6 */
+    white-space: -o-pre-wrap;   /* Opera 7 */
+    white-space: -moz-pre-wrap; /* Mozilla */
+    white-space: -hp-pre-wrap;  /* HP Printers */
+    word-wrap: break-word;      /* IE 5+ */
+}
 
 
 /* height and width stuff, width not really nessisary. */
