@@ -1,16 +1,25 @@
 $(function() {
-
 	$.address.change(function(event){
 
-		$.getScript(event.value);
-		return false;
-	 });
-     $(".ajax_link").click(function(e) {
-	     var href = $(this).attr('href');
-	     $.address.value(href);
-	     return false;
-	 });
+		if(event.value != '/')
+		{
+		    $.getScript(event.value);
+		    return false;
+		}
+	    });
+	$(".ajax_link").click(function(e) {
+		var href = $(this).attr('href');
 
+
+		if (href == $.address.value())
+		{
+		    $.address.value(href);
+		    return true;
+		}
+		$.address.value(href);
+		return false;
+	    });
+	
 /*
 	var History = window.History;
 	if ( !History.enabled ){

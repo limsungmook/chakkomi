@@ -2,7 +2,10 @@
    개발자 : 임성묵
    수정한날짜 : 11.10.07
 */
-
+body
+{
+    display: none;
+}
 /* intro */
 #intro_image 
 {
@@ -139,10 +142,11 @@
     margin: 42px 0 0 32px;
     height: 230px;
     text-align: left;
-    font-family:  'Francois One', Arial Narrow, Arial, sans-serif; 
+    font-family:  'Francois One', Arial Narrow, Arial, sans-serif;   
     font-size: 16px;
 /*    font-weight: bold; */
 }
+
 
 #laydesk_default_sidebar_menu li 
 {
@@ -159,6 +163,7 @@
 /*    text-shadow: 4px 4px 4px #00a1ce;  */
     text-decoration: none !important;
 }
+
 #laydesk_default_sidebar_link
 {
     width: 190px;
@@ -229,14 +234,14 @@
     float: left;
     display: inline;
     overflow: hidden;
-    font-family: 'NanumGothic';
+    font-family: 'Malgun Gothic', 'Tahoma', arial; 
     font-size: 11px; 
     line-height:20.5px;   
     color: #6d6e71; 
 }
 #laydesk_default_body .content_title
 {
-    font-family: 'NanumGothic';
+    font-family: 'Malgun Gothic', 'Tahoma', arial; 
     font-size: 16px; 
     color:     #00a1ce;    
     font-weight: bold;
@@ -269,7 +274,7 @@
 }
 #laydesk_default_body #wallpaper_wrapper #wallpaper_title
 {
-    font-family: 'NanumGothic';
+    font-family: 'Malgun Gothic', 'Tahoma', arial; 
     font-size: 16px; 
     font-weight: bold;
     color:     #00a1ce;
@@ -278,7 +283,7 @@
 #laydesk_default_body #wallpaper_wrapper #wallpaper_year_category 
 {
     margin: 40px 0 0 0;
-    font-family: 'NanumGothic';
+    font-family: 'Malgun Gothic', 'Tahoma', arial; 
 }
 #laydesk_default_body #wallpaper_wrapper #wallpaper_year_category .year_category_default a
 {
@@ -354,7 +359,6 @@
 
 #laydesk_shop_hdr
 {
-    float: left;
     width: 100%;
     height: 113px;
     overflow: hidden;
@@ -467,8 +471,9 @@
 /* app/view/store/_store.html.erb 즉, 카테고리 index 구조 */
 #laydesk_shop_body #item_category_list
 {
-    width: 970px;
-    margin-top: 10px;
+    width: 920px;
+    margin-top: 70px;
+    margin-left: 30px;
 /*    margin-left: 20px; */
 }
 
@@ -476,17 +481,20 @@
 {
     width: 100%;
     text-align: center;
+
 }
 #laydesk_shop_body #item_category_list .entry
 {
     width:230px;
-    height:200px; 
+    height:250px; 
     text-align: center;
 }
 #laydesk_shop_body #item_category_list .entry IMG
 {
-    width:220px;
+/*
+    width:215px;
     height:180px;    
+*/
 }
 #laydesk_shop_body #item_category_list .entry span
 {
@@ -634,7 +642,7 @@
     border-right: 1px solid #d1d6dc;
     border-left: 1px solid #d1d6dc;
     border-bottom: 1px solid #d1d6dc;
-    font-family: 'NanumGothic';
+    font-family: 'Malgun Gothic', 'Tahoma', arial; 
 }
 
 #laydesk_shop_body #laydesk_shop_cart #box_in ul
@@ -710,7 +718,7 @@
 #laydesk_shop_body #laydesk_shop_cart #order_list #order_list_title
 {
     padding: 10px;
-    font-family: 'NanumGothic';
+    font-family: 'Malgun Gothic', 'Tahoma', arial; 
     font-size: 16px;    
     font-weight: bold;
     color:     #00a1ce;
@@ -888,7 +896,7 @@
     width: 80%;
     height:698px;
     margin: 0 auto;
-    font-family: 'NanumGothic';
+    font-family: 'Malgun Gothic', 'Tahoma', arial; 
     font-size: 11px;    
     font-weight: normal;
     color:     #6d6e71;

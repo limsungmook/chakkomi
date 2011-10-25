@@ -32,7 +32,6 @@ var options =  $.extend(defaults, options);
   var chakkomi_url = 'http://' + location.host + $.address.value();
 //  var chakkomi_url = location.href;
   var dynUrl = chakkomi_url;
-
   // Add Meta Tags for additional data - options
   jQuery('head').append('<meta property="og:title" content="'+o.siteTitle+'"/>');
   jQuery('head').append('<meta property="og:site_name" content="'+o.siteName+'"/>');

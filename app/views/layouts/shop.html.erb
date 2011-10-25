@@ -6,54 +6,45 @@
   <%= stylesheet_link_tag :application, :cache => true %>
   <%= javascript_include_tag :application, :cache => true %>
   <%= csrf_meta_tag %>
-  <script src="http://www.google.com/jsapi"></script>
-<script>
-      google.load( "webfont", "1" );
- google.setOnLoadCallback(function() {
-  WebFont.load({ custom: {
-   families: [ "NanumGothic" ],
-   urls: [ "http://fontface.kr/NanumGothic/css" ]
-  }});
- });
-</script>
-
+  
   
   <!-- login 성공시 돌아오기 위한 세션  저장-->
   <% session[:back_url] = '/store' %>
-
+  
   <script type="text/javascript">
-     $(function(){
-	     var toggle_icon = 0;
-	     $("body").css("display", "none");
-	     $("body").fadeIn(1000);
-	     
-     //menu hover event
-	     $("#shop_menu_ul li a").click(function(){
-		     $("#shop_menu_ul li a IMG").each(function(){
-			     $(this).hide();
-			 });
-		     $(this).find('img').show();
-		     toggle_icon = 0;
-		 });
-
-	     $("#shop_menu_ul li a").hover(function(){
-		     if( $(this).find('img').css('display') == 'none' )
-		     {
-			 $(this).find('img').toggle();
-			 toggle_icon = 1;
-		     }
-
-		 },function(){
-
-		     if( toggle_icon == 1 )
-		     {
-			 $(this).find('img').toggle();
-			 toggle_icon = 0;
-		     }
-		 });
-	 });
+    $(function(){
+    var toggle_icon = 0;
+    //	     $("body").css("display", "none");
+    $("body").delay(300).fadeIn(1000, function(){
+    
+	    $("#shop_menu_ul li a").click(function(){
+		    $("#shop_menu_ul li a IMG").each(function(){
+			    $(this).hide();
+			});
+		    $(this).find('img').show();
+		    toggle_icon = 0;
+		});
+	    
+	    $("#shop_menu_ul li a").hover(function(){
+		    if( $(this).find('img').css('display') == 'none' )
+		    {
+			$(this).find('img').toggle();
+			toggle_icon = 1;
+		    }
+		    
+		},function(){
+		    
+		    if( toggle_icon == 1 )
+		    {
+			$(this).find('img').toggle();
+			toggle_icon = 0;
+		    }
+		});
+	});
+	});
 
 </script>
+
 <script type="text/javascript">
 
   var _gaq = _gaq || [];
@@ -67,6 +58,11 @@
   })();
 
 </script>
+<noscript>
+  <style type="text/css">
+    body { display:block}
+  </style>
+</noscript>
 </head>
 <body>
   <div id = "laydesk_outer">
@@ -77,7 +73,7 @@
 
 	  <div id="laydesk_shop_hdr_logo">
 	    <div id="laydesk_shop_hdr_logo_root">
-	    <%= link_to image_tag("/assets/shop_logo_217x110.png", :class => 'goto_root'), "/articles/#/articles"  %>
+	    <%= link_to image_tag("/assets/shop_logo_217x110.png", :class => 'goto_root', :rel => 'image_src'), "/articles/#/articles"  %>
 	    </div>
 	    <div id="laydesk_shop_hdr_logo_store">
 	    <%= link_to image_tag("/assets/intro_shop_85x92.png", :class => 'goto_store'), '/store', :remote => true, :class => "ajax_link" %>

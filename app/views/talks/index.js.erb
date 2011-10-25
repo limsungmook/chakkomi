@@ -1,5 +1,5 @@
 $(function(){
-    $('.laydesk_body').hide().html('<%= escape_javascript(render('talk')) %>').show('slide');
+    $('.laydesk_body').hide().html('<%= escape_javascript(render('talk')) %>').show('slide', function(){
 
 	var intval = '';
 	$.address.change(function(event){
@@ -62,3 +62,4 @@ $(function(){
 	$(".defaultText").blur();        
 // end of Text Field effect 
     });
+});

@@ -6,7 +6,7 @@
 	<% end %>
 	<td>
 	  <div class="entry" >
-	    <%= link_to image_tag(item_category.thumnail_pic.url(:thumb), :class => "entry_image"), {:controller=>"store", :action => 'show', :id=>item_category}, {:title =>  item_category.name, :class => "shop_item_category", :remote => true, :rel => '/store/' + item_category.id.to_s } %><br />
+	    <%= link_to image_tag(item_category.thumnail_pic, :class => "entry_image"), {:controller=>"store", :action => 'show', :id=>item_category}, {:title =>  item_category.name, :class => "shop_item_category", :remote => true, :rel => '/store/' + item_category.id.to_s } %><br />
 	  </div>
 	</td>
 	<% if (index % 4) == 3 %>

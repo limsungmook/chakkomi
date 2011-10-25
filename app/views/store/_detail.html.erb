@@ -1,5 +1,6 @@
 <% session[:back_url] = request.url %>
-
+<meta name="title" content="<%= @product.title %> | 착한곰팡이" />
+<link rel="image_src" href="http://dev.chakkomi.com/<%= @product.thumnail_pic(:thumb) %>">
 <div id="product_detail">
   <div id="spec">
     <div id="product_detail_thumnail">

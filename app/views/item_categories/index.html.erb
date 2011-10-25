@@ -5,6 +5,7 @@
 
 <table id="admin_item_category_table" class="admin_table">
   <tr>
+    <th>순서</th>
     <th>카테고리 이름</th>
     <th>수정하기</th>
     <th>삭제하기</th>
@@ -12,6 +13,7 @@
 
 <% @item_categories.each do |item_category| %>
   <tr>
+    <td><%= item_category.order %></td>
     <td><%= link_to item_category.name, item_category %></td>
     <td><%= link_to '수정', edit_item_category_path(item_category) %></td>
     <td><%= link_to '삭제', item_category, confirm: '삭제하시겠습니까?', method: :delete %></td>
