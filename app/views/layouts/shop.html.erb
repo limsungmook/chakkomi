@@ -12,36 +12,54 @@
   <% session[:back_url] = '/store' %>
   
   <script type="text/javascript">
-    $(function(){
-    var toggle_icon = 0;
-    //	     $("body").css("display", "none");
-    $("body").delay(300).fadeIn(1000, function(){
-    
-	    $("#shop_menu_ul li a").click(function(){
-		    $("#shop_menu_ul li a IMG").each(function(){
-			    $(this).hide();
-			});
-		    $(this).find('img').show();
-		    toggle_icon = 0;
-		});
-	    
-	    $("#shop_menu_ul li a").hover(function(){
-		    if( $(this).find('img').css('display') == 'none' )
-		    {
-			$(this).find('img').toggle();
-			toggle_icon = 1;
-		    }
-		    
-		},function(){
-		    
-		    if( toggle_icon == 1 )
-		    {
-			$(this).find('img').toggle();
-			toggle_icon = 0;
-		    }
-		});
-	});
-	});
+     $(function(){
+	     var toggle_icon = 0;
+	     //	     $("body").css("display", "none");
+	     if($.browser.mozilla)
+	     {
+		 $("body").css("display", "block").hide().delay(300).fadeIn(1000);
+	     }else
+	     {
+		 $("body").delay(300).fadeIn(1000, function(){
+			 if( $.browser.msie )
+			 {
+			     if($.browser.version == '6.0')
+			     {
+				 
+				 DD_belatedPNG.fix('img');  
+			     }
+			     
+			 }
+			 
+			 
+		     });
+	     }
+	     
+	     $("#shop_menu_ul li a").click(function(){
+		     $("#shop_menu_ul li a IMG").each(function(){
+			     $(this).hide();
+			 });
+		     $(this).find('img').show();
+		     toggle_icon = 0;
+		 });
+	     
+	     $("#shop_menu_ul li a").hover(function(){
+		     if( $(this).find('img').css('display') == 'none' )
+		     {
+			 $(this).find('img').toggle();
+			 toggle_icon = 1;
+		     }
+		     
+		 },function(){
+		     
+		     if( toggle_icon == 1 )
+		     {
+			 $(this).find('img').toggle();
+			 toggle_icon = 0;
+		     }
+		 });
+	 });
+
 
 </script>
 

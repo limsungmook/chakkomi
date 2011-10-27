@@ -6,10 +6,16 @@
      <% else %>
      <li class="product_<%= product.id %>">
 <% end %>
-<%= link_to({:controller=>"store", :action => 'show', :id => @item_category.id, :product_id => product.id}, { :remote => true, :rel => '/store/' + @item_category.id.to_s + '?product_id=' + product.id.to_s})  do %>
+<%= link_to({:controller=>"store", :action => 'show', :id => @item_category.id, :product_id => product.id}, { :remote => true, :class => 'ajax_link', :rel => '/store/' + @item_category.id.to_s + '?product_id=' + product.id.to_s})  do %>
       <div class="product_list_entry">
-      <%= image_tag(product.thumnail_pic.url(:thumb)) %>
+	<div class="product_list_entry_thumb">
+	  <%= image_tag(product.thumnail_pic.url(:thumb)) %>
+	</div>
+	<div class="product_list_entry_spec">
+	  <%= product.title %>
+	</div>
       </div>
+
       <% end %>
     </li>
     <% end %>
@@ -20,6 +26,12 @@
     $("#product_list_ul a").click(function(){
       $('#product_detail_wrapper').html('<br /><%= image_tag '/assets/loader.gif' %>');
   	     var rel = $(this).attr('rel');
+		if (rel == $.address.value())
+		{
+		    $.address.value(rel);
+		    return true;
+		}
+  
 	     $.address.value(rel);
              return false;
 

@@ -28,13 +28,13 @@ body
 }
 #intro_image #intro_home
 {
+
     position: relative;
     top: 107px;
     left: 498px;
     width: 77px;
     height: 103px;
     text-align:center;
-
 }
 
 #intro_image #intro_chakkomi
@@ -532,11 +532,25 @@ body
     height:110px;
 
 }
-#laydesk_shop_body #product_list_wrapper #product_list ul li .product_list_entry IMG
+#laydesk_shop_body #product_list_wrapper #product_list ul li .product_list_entry .product_list_entry_thumb
 {
+    display: inline;
+    float: left;
+}
+#laydesk_shop_body #product_list_wrapper #product_list ul li .product_list_entry .product_list_entry_thumb IMG
+{
+    
     margin: 10px 10px 0 10px;
     width: 90px;
     height: 90px;
+}
+#laydesk_shop_body #product_list_wrapper #product_list ul li .product_list_entry .product_list_entry_spec
+{
+    display: inline;
+    float: left;
+    width: 80px;
+    height: 90px;
+    margin: 10px 0 0 6px;
 }
 #laydesk_shop_body #product_list_wrapper #product_list ul #list_first
 {

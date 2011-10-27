@@ -8,6 +8,9 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery-ui.min
-//= require_tree .
+//= require jquery.address-1.4.min
+//= require jquery.onefblikev1.1
+//= require chakkomi
+// require_tree .
 
 
