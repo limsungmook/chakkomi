@@ -31,8 +31,12 @@
     <%= f.number_field :price %>
   </div>
   <div class="field">
-    <%= f.label "하루재고량" %><br />
+    <%= f.label "재고량" %><br />
     <%= f.number_field :stock %>
+  </div>
+  <div class="field">
+    <%= f.label "복구재고량(0으로 설정하면 위의 재고량이 복원되지 않고 숫자를 설정하면 매일 새벽 6시에 이 값으로 복구됩니다. )" %><br />
+    <%= f.number_field :default_stock %>
   </div>
   <div class="field">
     <%= f.label "판매상태" %><br />

@@ -200,7 +200,8 @@ body
 
 #laydesk_default_maj_hdr_user
 {
-    text-align: right;
+    text-align: left;
+    margin-left: 40px;
 }
 #laydesk_default_maj_hdr_user ul
 {
@@ -234,14 +235,14 @@ body
     float: left;
     display: inline;
     overflow: hidden;
-    font-family: 'Malgun Gothic', 'Tahoma', arial; 
+/*    font-family: 'Malgun Gothic', 'Tahoma', arial;  */
     font-size: 11px; 
     line-height:20.5px;   
     color: #6d6e71; 
 }
 #laydesk_default_body .content_title
 {
-    font-family: 'Malgun Gothic', 'Tahoma', arial; 
+/*    font-family: 'Malgun Gothic', 'Tahoma', arial;  */
     font-size: 16px; 
     color:     #00a1ce;    
     font-weight: bold;
@@ -274,7 +275,7 @@ body
 }
 #laydesk_default_body #wallpaper_wrapper #wallpaper_title
 {
-    font-family: 'Malgun Gothic', 'Tahoma', arial; 
+/*    font-family: 'Malgun Gothic', 'Tahoma', arial;  */
     font-size: 16px; 
     font-weight: bold;
     color:     #00a1ce;
@@ -283,7 +284,7 @@ body
 #laydesk_default_body #wallpaper_wrapper #wallpaper_year_category 
 {
     margin: 40px 0 0 0;
-    font-family: 'Malgun Gothic', 'Tahoma', arial; 
+/*    font-family: 'Malgun Gothic', 'Tahoma', arial;  */
 }
 #laydesk_default_body #wallpaper_wrapper #wallpaper_year_category .year_category_default a
 {
@@ -656,7 +657,7 @@ body
     border-right: 1px solid #d1d6dc;
     border-left: 1px solid #d1d6dc;
     border-bottom: 1px solid #d1d6dc;
-    font-family: 'Malgun Gothic', 'Tahoma', arial; 
+/*    font-family: 'Malgun Gothic', 'Tahoma', arial;  */
 }
 
 #laydesk_shop_body #laydesk_shop_cart #box_in ul
@@ -732,7 +733,7 @@ body
 #laydesk_shop_body #laydesk_shop_cart #order_list #order_list_title
 {
     padding: 10px;
-    font-family: 'Malgun Gothic', 'Tahoma', arial; 
+/*    font-family: 'Malgun Gothic', 'Tahoma', arial;  */
     font-size: 16px;    
     font-weight: bold;
     color:     #00a1ce;
@@ -803,6 +804,7 @@ body
     border-bottom: 5px solid #d1d6dc;
     text-align: right;
     padding: 20px;    
+
 }
 #laydesk_shop_body #laydesk_shop_cart #cart_total_line .cart_total_line_title
 {
@@ -843,7 +845,7 @@ body
 .laydesk_body #admin_wrapper 
 {
     width: 100%;
-    font-family: arial;
+/*    font-family: arial; */
     color: black;
 }
 .laydesk_body .admin_table
@@ -910,7 +912,7 @@ body
     width: 80%;
     height:698px;
     margin: 0 auto;
-    font-family: 'Malgun Gothic', 'Tahoma', arial; 
+/*     font-family: 'Malgun Gothic', 'Tahoma', arial;  */
     font-size: 11px;    
     font-weight: normal;
     color:     #6d6e71;

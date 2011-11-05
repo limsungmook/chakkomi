@@ -106,4 +106,11 @@ class ProductsController < ApplicationController
       format.xml  { head :ok }
     end
   end
+  def restore_stock
+    @products = Product.where("default_stock > 0");
+    @products.each do |product|
+      product.stock = product.default_stock
+    end
+  end
+
 end

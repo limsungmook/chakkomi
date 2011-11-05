@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Francois+One">
 <!--
   <script type="text/javascript">
     WebFontConfig = {
@@ -24,7 +25,7 @@
   <%= stylesheet_link_tag :application %>
   <%= javascript_include_tag :application %>
   <%= csrf_meta_tag %>
-  <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Francois+One">
+
   <!--[if IE 6]>
   <script type="text/javascript" src="/assets/DD_belatedPNG_0.0.8a-min.js"></script>
 <![endif]-->
@@ -106,7 +107,7 @@ _gaq.push(['_trackPageview']);
 	<div id="laydesk_default_sidebar">
 	  
 	  <div id="laydesk_default_sidebar_logo">
-	    <%= link_to image_tag("/assets/logo_195x79.png", :class => 'home_link_icon'), {:controller=>'/articles', :action => 'chakkomi'}, :remote => true, :class => "ajax_link"  %> 
+	    <%= link_to image_tag("/assets/logo_195x79.png"), {:controller=>'/articles', :action => 'chakkomi'}, :remote => true, :class => "ajax_link"  %> 
 	  </div>
 	  <div id="laydesk_default_sidebar_menu" >
 	    <ul>
