@@ -13,12 +13,14 @@
     <td><%= link_to category.name, category %></td>
     <td><%= category.detail %></td>
     <td><%= link_to '설명편집', edit_category_path(category) %></td>
+<!--    <td><%= button_to 'Destroy', category, :confirm => 'Are you sure?', :method => :delete %></td>-->
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to '카테고리 생성', new_category_path %><br />
+<!-- <%= link_to '카테고리 생성', new_category_path %><br />
 <h3>카테고리를 생성한다고 옆의 메뉴도 생성되지는 않습니다. 혹시 그 기능이 필요하시면 만들어드릴께요. </h3>
+-->
 </div>
