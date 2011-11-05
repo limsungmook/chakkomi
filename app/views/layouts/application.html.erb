@@ -1,7 +1,35 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Francois+One">
+<!--  <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Cookie"> -->
+
+    <script type="text/javascript">
+
+     WebFontConfig = {
+ google: { families: [ 'Francois One', 'Oswald' ] }
+ };
+(function() {
+    var wf = document.createElement('script');
+    wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+	'://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+    wf.type = 'text/javascript';
+    wf.async = 'true';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(wf, s);
+})();
+    </script>
+    <style type="text/css">
+    .wf-loading  #laydesk_default_sidebar_menu {
+    font-family: serif
+}
+.wf-inactive #laydesk_default_sidebar_menu {
+    font-family: serif
+	 }
+.wf-active #laydesk_default_sidebar_menu {
+    font-family: 'Francois One','Oswald', serif
+	 }
+    </style>
+
 <!--
   <script type="text/javascript">
     WebFontConfig = {
@@ -117,8 +145,8 @@ _gaq.push(['_trackPageview']);
 	      <li><%= link_to "CHAKKOMI", {:controller=>'/articles', :action => 'chakkomi'}, :remote => true, :class => "ajax_link" %></li>
 	      <li><%= link_to "PROJECT", {:controller=>'/articles', :action => 'project'}, :remote => true, :class => "ajax_link"  %></li>
 	      <li><%= link_to "COMICS", {:controller=>'/articles', :action => 'comics'}, :remote => true, :class => "ajax_link" %></li><li>&nbsp;</li>
-	      <li><%= link_to "PRODUCT", {:controller=>'/articles', :action => 'product'}, :remote => true, :class => "ajax_link"  %></li>
-	      <li><%= link_to "STORE", "/store/#/store/",  :class => "store_link"  %></li>
+<!-- 	      <li><%= link_to "PRODUCT", {:controller=>'/articles', :action => 'product'}, :remote => true, :class => "ajax_link"  %></li> -->
+	      <li><%= link_to "SHOP", "/store/#/store/",  :class => "store_link"  %></li>
 	      <li>&nbsp;</li>
 	      <li><%= link_to "TALK", {:controller=>'/talks', :action => 'index', :mid => 'talk'}, :remote => true, :class => "ajax_link"  %></li>
 	    </ul>
