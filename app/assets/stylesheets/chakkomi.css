@@ -24,10 +24,10 @@ body
 
 #shop_and_home
 {
-    width: 385px;
+    width: 373px;
     height: 150px;
-    margin-top: 188px;
-    margin-left: 183px;
+    margin-top: 190px;
+    margin-left: 190px;
 
 }
 #intro_shop
@@ -44,18 +44,18 @@ body
 {
     width: 500px;
     height: 187px;
-    margin-top: 193px;
-    margin-left: 473px;
+    margin-top: 172px;
+    margin-left: 479px;
 }
 #intro_chakkomi
 {
     margin-top: 70px;
-    width: 170px;
+    width: 156px;
     float:left;
 }
 #intro_fb
 {
-    width: 82px;
+    width: 90px;
     float:left;
 }
 #intro_twt
@@ -67,6 +67,7 @@ body
 {
     width: 100px;
     float:left;
+    margin-top: 4px;
 }
 /* 여기부터 마지막 주석까진 IE에서만 잘 안되어 잠시 접어두는 곳
 #intro_image #intro_shop

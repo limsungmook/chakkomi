@@ -1,4 +1,8 @@
 class ArticlesController < ApplicationController
+  
+  def intro
+    render :layout => false
+  end
 
   def index
     @post = find_post_first('chakkomi');
