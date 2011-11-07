@@ -1,3 +1,4 @@
+<% session[:back_url] = '/articles/#/articles' %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -59,7 +60,7 @@
 <![endif]-->
 
 	  <!-- login 성공시 돌아오기 위한 세션  저장-->
-	  <% session[:back_url] = url_for(:controller=>'/articles', :action => 'chakkomi') %>
+
 	  <script type="text/javascript">
 	  $(function(){
 		  

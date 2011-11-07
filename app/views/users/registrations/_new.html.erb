@@ -41,7 +41,7 @@
     $("#new_user").submit(function(){
       $('.laydesk_body').html('<%= escape_javascript(render('loading')) %>');
     });
-    $("#devise_links a, #services").click(function(){
+    $("#devise_links a").click(function(){
       $('.laydesk_body').html('<%= escape_javascript(render('loading')) %>');
   });
   });

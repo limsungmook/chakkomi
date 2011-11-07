@@ -65,12 +65,15 @@ class TalksController < ApplicationController
   # GET /talks/1.xml
   def show
     @talk = Talk.find(params[:id])
+    @mid = session[:mid]
     @relay_last = @talk.relays.find(:first)
     @recent_relay = @relay_last.updated_at
     respond_to do |format|
       if session[:mid] == 'qna'
+        @mid = 'qna'
         format.html { render :layout => 'shop' }# index.html.erb
       else
+        @mid = 'talk'
         format.html # index.html.erb
       end
       format.js

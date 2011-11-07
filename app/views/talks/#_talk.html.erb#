@@ -1,3 +1,4 @@
+<% session[:back_url] = '/articles/#/talks?mid=' + @mid %>
 <div id="talk_wrapper">
 <p id="notice"><%= notice %></p>
 <div id="talk_form">
