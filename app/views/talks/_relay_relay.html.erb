@@ -28,7 +28,7 @@
       </tr>
       <tr>
 	<td>
-	  <div class="relay_admin_timeago"><%= time_ago_in_words(relay.created_at) %> ago</div>
+	  <div class="relay_admin_timeago"><%= time_ago_in_words(relay.created_at) %> 전</div>
 	</td>
 	<% if can? :manage, :all %>
 	<td>
@@ -67,7 +67,7 @@
       <tr>
 
 	<td>
-	  <div class="relay_user_timeago"><%= time_ago_in_words(relay.created_at) %> ago</div>
+	  <div class="relay_user_timeago"><%= time_ago_in_words(relay.created_at) %> 전</div>
 	</td>
 	<% if can? :manage, :all  %>
 	<td>
