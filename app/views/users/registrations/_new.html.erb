@@ -8,16 +8,22 @@
       <%= link_to "이용 약관", "/terms", {:target => "_blank"} %>
     </div>
     <div id="services" class="box">
-
+      
       <a href="/auth/facebook" class="services2"><%= image_tag "/assets/facebook_64.png", :size => "64x64",  :alt => "Facebook" %>Facebook</a>
       <a href="/auth/google" class="services2"><%= image_tag "/assets/google_64.png", :size => "64x64",  :alt => "Google" %>Google</a>
     </div>  
   </div>
-
+  
   <div id="local2" class="box">
+    <section id="flash">
+      <% flash.each do |key, value| %>
+      <div class="flash <%= key %>"><%= value %></div>
+      <% end %>
+    </section>  
+    
     <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
     <%= devise_error_messages! %>
-
+    
     <p><%= f.label '이메일 주소(예:chakkomi@chakkomi.com)' %><br />
       <%= f.email_field :email %></p>
     
@@ -26,23 +32,23 @@
     
     <p><%= f.label '비밀번호 재입력' %><br />
       <%= f.password_field :password_confirmation %></p>
-
+    
     <p><%= f.submit "계정생성" %></p>
     <% end %>
   </div>
-
-
+  
+  
   <div id="devise_links">
     <%= render :partial => "devise/shared/links" %>
   </div>
 </div>
 <script type="text/javascript">
   $(function(){
-    $("#new_user").submit(function(){
-      $('.laydesk_body').html('<%= escape_javascript(render('loading')) %>');
-    });
-    $("#devise_links a").click(function(){
-      $('.laydesk_body').html('<%= escape_javascript(render('loading')) %>');
+  $("#new_user").submit(function(){
+  $('.laydesk_body').html('<%= escape_javascript(render('loading')) %>');
+  });
+  $("#devise_links a").click(function(){
+  $('.laydesk_body').html('<%= escape_javascript(render('loading')) %>');
   });
   });
 </script>
