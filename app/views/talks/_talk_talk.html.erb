@@ -17,6 +17,7 @@
       <tr>
 	<td>
 	  <%= link_to({:controller => '/talks', :action => 'show', :id => talk, :mid => @mid}, {:remote => true, :class => 'talk_title', :rel => '/talks/' + talk.id.to_s + '?mid=' + @mid}) do %>
+
 	  <div class="relay_admin_round">
 	  <div class="relay_admin_tr"><div class="relay_admin_tl"></div></div>
 	    <div class="relay_admin_cr">

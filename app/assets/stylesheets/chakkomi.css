@@ -7,7 +7,7 @@ body
     display: none;
 }
 /* intro */
-#intro_image 
+#laydesk_outer #intro_image
 {
     width:970px;
     height:970px;
@@ -17,6 +17,58 @@ body
     background-image:url('/assets/intro_970x970.png');    
     background-repeat: no-repeat;
 }
+#intro_image #nothing
+{
+    margin-top: -17px;
+}
+
+#shop_and_home
+{
+    width: 385px;
+    height: 150px;
+    margin-top: 188px;
+    margin-left: 183px;
+
+}
+#intro_shop
+{
+    margin-top:60px;
+    float: left;
+}
+
+#intro_home
+{
+    float: right;
+}
+#chakkomi_and_socials_and_wallpaper
+{
+    width: 500px;
+    height: 187px;
+    margin-top: 193px;
+    margin-left: 473px;
+}
+#intro_chakkomi
+{
+    margin-top: 70px;
+    width: 170px;
+    float:left;
+}
+#intro_fb
+{
+    width: 82px;
+    float:left;
+}
+#intro_twt
+{
+    width: 93px;
+    float:left;
+}
+#intro_wallpaper
+{
+    width: 100px;
+    float:left;
+}
+/* 여기부터 마지막 주석까진 IE에서만 잘 안되어 잠시 접어두는 곳
 #intro_image #intro_shop
 {
     position: relative;
@@ -77,7 +129,7 @@ body
     height: 139px;
     text-align:center;
 }
-
+*/
 .goto_store
 {
     background-color: white;

@@ -9,6 +9,20 @@ $(function(){
 	$('a').click(function(){
 		clearInterval(intval);
 	    });
+	    
+	$(".talk_links").click(function() {
+		var rel = $(this).attr('rel');
+
+
+		if (rel == $.address.value())
+		{
+		    $.address.value(rel);
+		    return true;
+		}
+		$.address.value(rel);
+		return false;
+	    });
+	    
 	$(".talk_title").click(function() {
 	     var rel = $(this).attr('rel');
 	     $.address.value(rel);

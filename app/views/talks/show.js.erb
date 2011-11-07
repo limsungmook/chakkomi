@@ -12,13 +12,18 @@ $(function(){
 		clearInterval(intval);
 	    });
 	// 프로필은 ajax이 아닌 페이지 리로딩이기 때문에 a href 리퀘스트를 무시하지 않는다. 
-	$(".talk_title").click(function() {
-		
-		var href = $(this).attr('href');
 
-		$.address.value(href);
+	$(".relay_links").click(function() {
+		var rel = $(this).attr('rel');
+		if (rel == $.address.value())
+		{
+		    $.address.value(rel);
+		    return true;
+		}
+		$.address.value(rel);
 		return false;
 	    });
+
 	if(!$.browser.msie){
 	    $("#new_relay").submit(function(){
 		    $('#relay_form').html('<br /><%= image_tag '/assets/loader.gif' %>');

@@ -51,13 +51,10 @@
 	     $('.move_links').click(function(event){
 		     event.preventDefault();
 		     linkLocation = this.href;
-		     
-		     if( $.browser.msie )
-		     {
-			 $('.intro_icon').hide();
-		     }
-		     
-		     $("body").fadeOut('slow', redirectPage);
+		     $("body").fadeOut('slow', function(){
+     redirectPage();
+     });
+
 		 });
 	     function redirectPage() {
 		 window.location = linkLocation;
@@ -75,40 +72,47 @@
   
   <body>
     <div id="laydesk_outer">
-      <div id="intro_image">
-	<div id="intro_shop">
-<!--	  <a href="/store/#/store/"> 
- 	    <img src="/assets/intro_shop_116x76.png" class="intro_icon" alt="샾으로" />-->
-          <a href="javascript-x:void(0);" onClick="alert('준비중입니다.');return false">
-	    <img src="/assets/intro_shop_116x76.png" />
-	  </a>
-	</div>
-	<div id="intro_home">
-	  <a href="/articles/#/articles" class="move_links">
-	    <img src="/assets/intro_home_64x85.png" class="intro_icon" alt="홈으로" />
-	  </a>
-	</div>
-	<div id="intro_chakkomi">
-	  <a href="/articles/#/articles" class="move_links">
-	    <img src="/assets/intro_chakkomi_171x93.png" class="intro_icon" alt="홈으로" />
-	  </a>
-	</div>
-	<div id="intro_fb">
-	  <a href="http://www.facebook.com/chakkomi" class="move_links">
-	    <img src="/assets/intro_fb_80x115.png" class="intro_icon" alt="착곰이 페이스북" />
-	  </a>
-	</div>
-	<div id="intro_twt">
-	  <a href="http://twitter.com/#!/chakkomi" class="move_links">
-	    <img src="/assets/intro_twt_92x115.png" class="intro_icon" alt="착곰이 트위터" />
-	  </a>
-	</div>
-	<div id="intro_wallpaper">
-	  <a href="/articles/#/wallpapers" class="move_links">
-	    <img src="/assets/intro_wall_93x115.png" class="intro_icon" alt="착곰이 월페이퍼" />
-	  </a>
-	</div>
-      </div><!-- intro_image -->
+      	<div id="intro_image">
+	  <div id="nothing">
+&nbsp;
+	  </div>
+	  <div id="shop_and_home">
+	    <div id="intro_shop">
+	      <!--	  <a href="/store/#/store/"> 
+ 			  <img src="/assets/intro_shop_116x76.png" class="intro_icon" alt="샾으로" />-->
+              <a href="#" onClick="alert('준비중입니다.');return false">
+		<img src="/assets/intro_shop_116x76.png" class="intro_icon"/>
+	      </a>
+	    </div>
+	    <div id="intro_home">
+	      <a href="/articles/#/articles" class="move_links">
+		<img src="/assets/intro_home_64x85.png" class="intro_icon" alt="홈으로" />
+	      </a>
+	    </div>
+	  </div>
+	  <div id="chakkomi_and_socials_and_wallpaper">
+	    <div id="intro_chakkomi">
+	      <a href="/articles/#/articles" class="move_links">
+		<img src="/assets/intro_chakkomi_171x93.png" class="intro_icon" alt="홈으로" />
+	      </a>
+	    </div>
+	    <div id="intro_fb">
+	      <a href="http://www.facebook.com/chakkomi" class="move_links">
+		<img src="/assets/intro_fb_80x115.png" class="intro_icon" alt="착곰이 페이스북" />
+	      </a>
+	    </div>
+	    <div id="intro_twt">
+	      <a href="http://twitter.com/#!/chakkomi" class="move_links">
+		<img src="/assets/intro_twt_92x115.png" class="intro_icon" alt="착곰이 트위터" />
+	      </a>
+	    </div>
+	    <div id="intro_wallpaper">
+	      <a href="/articles/#/wallpapers" class="move_links">
+		<img src="/assets/intro_wall_93x115.png" class="intro_icon" alt="착곰이 월페이퍼" />
+	      </a>
+	    </div>
+	  </div><!-- chakkomi_and_socials_and_wallpaper -->
+	</div><!-- intro_image -->
     </div><!-- laydesk_outer -->
   </body>
 </html>

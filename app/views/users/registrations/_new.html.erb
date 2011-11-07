@@ -1,4 +1,19 @@
 <div id="deviseauth">
+  <h2>회원가입하기</h2>
+
+  <h3>이메일 인증을 통해 가입하거나 소셜 서비스를 통해 가입할 수 있습니다.</h3>
+
+  <div id="remote2">
+    <div id="terms" class="box">
+      <%= link_to "이용 약관", "/terms", {:target => "_blank"} %>
+    </div>
+    <div id="services" class="box">
+
+      <a href="/auth/facebook" class="services2"><%= image_tag "/assets/facebook_64.png", :size => "64x64",  :alt => "Facebook" %>Facebook</a>
+      <a href="/auth/google" class="services2"><%= image_tag "/assets/google_64.png", :size => "64x64",  :alt => "Google" %>Google</a>
+    </div>  
+  </div>
+
   <div id="local2" class="box">
     <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
     <%= devise_error_messages! %>
@@ -16,16 +31,6 @@
     <% end %>
   </div>
 
-  <div id="remote2">
-    <div id="terms" class="box">
-      <%= link_to "이용 약관", "#" %>
-    </div>
-    <div id="services" class="box">
-
-      <a href="/auth/facebook" class="services2"><%= image_tag "/assets/facebook_64.png", :size => "64x64",  :alt => "Facebook" %>Facebook</a>
-      <a href="/auth/google" class="services2"><%= image_tag "/assets/google_64.png", :size => "64x64",  :alt => "Google" %>Google</a>
-    </div>  
-  </div>
 
   <div id="devise_links">
     <%= render :partial => "devise/shared/links" %>
@@ -36,7 +41,7 @@
     $("#new_user").submit(function(){
       $('.laydesk_body').html('<%= escape_javascript(render('loading')) %>');
     });
-    $("#deviseauth a").click(function(){
+    $("#devise_links a, #services").click(function(){
       $('.laydesk_body').html('<%= escape_javascript(render('loading')) %>');
   });
   });
