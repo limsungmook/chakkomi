@@ -1,4 +1,5 @@
 class WallpapersController < ApplicationController
+  load_and_authorize_resource
   def index
     if !params[:year].nil?
       @year = params[:year]

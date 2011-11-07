@@ -8,10 +8,15 @@ class Ability
     if user.role == "admin"
       can :manage, :all
     elsif user.role == "anyone"
-      can :read, [Product, Category, Post]
+      can :read, [Product, Post, Wallpaper, Talk, Relay]
       can :manage, Talk do |talk|
         talk.try(:owner) == user
       end
+      can :manage, Relay do |relay|
+        relay.try(:owner) == user
+      end
+    else
+      can :read, [Product, Post, Wallpaper, Talk, Relay]
     end
     #
     # The first argument to `can` is the action you are giving the user permission to do.

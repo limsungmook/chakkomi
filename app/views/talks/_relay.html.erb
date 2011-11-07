@@ -4,6 +4,7 @@
 <div class="relay_secret">쉿! 이 토크는 비밀입니다.</div>
 <% end %>
 
+<% if @talk.secret != 1 || user_signed_in? && (current_user.role == "admin"  || current_user.id == @talk.user_id ) %>
 <div id="relay_form">
 <% if user_signed_in? %>
   <% if current_user.name == nil or current_user.name == '' %>
@@ -24,3 +25,5 @@
 <div id="relay_wrapper">
 <%= render 'relay_relay' %>
 </div>
+
+<% end %>

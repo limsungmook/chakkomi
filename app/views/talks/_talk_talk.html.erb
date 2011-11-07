@@ -33,7 +33,7 @@
 	  <div class="relay_admin_timeago"><%= time_ago_in_words(talk.created_at) %> 전</div>
 	</td>
 	<td>
-	  <% if can? :manage, :all || user_signed_in? && current_user.id == talk.user_id %>
+	  <% if can? :manage, :all  %>
 	  <span class="relay_admin_delete"><%= button_to '삭제하기', talk, :confirm => '삭제하시겠습니까?', :method => :delete, :remote => true %></span>
 	</td> 
 	<% end %>
@@ -43,6 +43,9 @@
   </div>
   <!-- 일반 user 가 말하는 부분 -->
   <% else %>
+
+
+
   <div class="relay_relay_user">
     <table align="left">
       <% if talk == @lastest_talk  %>
@@ -68,22 +71,33 @@
 	</td>
       </tr>
       <tr>
-
 	<td>
-	  <div class="relay_user_timeago"><%= time_ago_in_words(talk.created_at) %> 전</div>
+	  <div class="relay_user_timeago"><%= time_ago_in_words(talk.created_at) %> 전
+	  <% if talk.secret == 1 %>
+	  &nbsp;	  &nbsp;	  &nbsp;
+	  쉿!
+	  <% end %>
+	  </div>
 	</td>
+
 	<% if can? :manage, :all  %>
 	<td>
 	  <span class="relay_user_delete"><%= button_to '삭제하기',   talk, :confirm => '삭제하시겠습니까?', :method => :delete, :remote => true %></span>
 	</td>
+	<% end %>
+	<% if user_signed_in? && current_user.id == talk.user_id %>
+	<td>
+	  <span class="relay_user_delete"><%= button_to '삭제하기',   talk, :confirm => '삭제하시겠습니까?', :method => :delete, :remote => true %></span>
+	</td>
+	
 	<% end %>
 
       </tr>
     </table>
 <br />
   </div>
-  <% end %>
 
+  <% end %>
 
 <% end %>
 <tr>

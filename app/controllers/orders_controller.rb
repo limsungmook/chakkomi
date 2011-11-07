@@ -66,6 +66,7 @@ class OrdersController < ApplicationController
 
   # GET /orders/1/edit
   def edit
+    authorize! :manage, :all
     @order = Order.find(params[:id])
   end
 
@@ -108,6 +109,7 @@ class OrdersController < ApplicationController
   # PUT /orders/1
   # PUT /orders/1.xml
   def update
+    authorize! :manage, :all
     @order = Order.find(params[:id])
 
     respond_to do |format|
@@ -124,6 +126,7 @@ class OrdersController < ApplicationController
   # DELETE /orders/1
   # DELETE /orders/1.xml
   def destroy
+    authorize! :manage, :all
     @order = Order.find(params[:id])
     @order.destroy
 
