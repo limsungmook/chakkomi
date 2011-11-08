@@ -1,4 +1,5 @@
 <% session[:back_url] = '/articles/#/talks/' + @talk.id.to_s + '?mid=' + @mid  %>
+<div id="relay_wrapper">
 <p id="notice"><%= notice %></p>
 <% if @talk.secret == 1 %>
 <div class="relay_secret">쉿! 이 토크는 비밀입니다.</div>
@@ -22,7 +23,6 @@
 
 <% end %>
 </div>
-<div id="relay_wrapper">
 <%= render 'relay_relay' %>
 </div>
 

@@ -285,7 +285,7 @@ body
 #laydesk_default_body
 {
     width: 650px;
-    margin: 40px 0 0 0;
+ /*   margin: 40px 0 0 0; */
     float: left;
     display: inline;
     overflow: hidden;
@@ -294,21 +294,20 @@ body
     line-height:20.5px;   
     color: #6d6e71; 
 }
-#laydesk_default_body .content_title
+#laydesk_default_body #article_wrapper .content_title
 {
 /*    font-family: 'Malgun Gothic', 'Tahoma', arial;  */
+    margin-top: 40px;
     font-size: 16px; 
     color:     #00a1ce;    
     font-weight: bold;
-}
-#laydesk_default_body #article_wrapper .article_title
-{
-
 }
 
 #laydesk_default_body #article_wrapper .article_content
 {
     margin: 20px 0 0 0;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #00a1cf;
 }
 
 .laydesk_body hr
@@ -317,7 +316,7 @@ body
 }
 #laydesk_default_body #chakkomi_wrapper
 {
-    margin: 140px 0 0 0;
+    margin: 180px 0 0 0;
 }
 #laydesk_default_body #article_wrapper
 {
@@ -325,7 +324,7 @@ body
 }
 #laydesk_default_body #wallpaper_wrapper
 {
-    margin: 140px 0 0 0;
+    margin: 180px 0 0 0;
 }
 #laydesk_default_body #wallpaper_wrapper #wallpaper_title
 {
@@ -874,6 +873,10 @@ body
 }
 /* Shop 구조 끝 */
 
+.laydesk_body #admin_menu
+{
+    margin-top: 40px;
+}
 .laydesk_body #admin_menu ul
 {
     padding: 0; 
@@ -926,6 +929,7 @@ body
 
 #deviseauth 
 { 
+    margin-top: 40px;
     background: #ffffff; 
     text-align: left; 
 }
@@ -972,6 +976,7 @@ body
     font-size: 11px;    
     font-weight: normal;
     color:     #6d6e71;
+    margin-top: 40px;
 
 /*    background: url('/assets/talk_background_480x698.png') no-repeat ; */
 }

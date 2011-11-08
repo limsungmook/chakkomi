@@ -21,7 +21,7 @@ class RelaysController < ApplicationController
   end
 
   def destroy
-    @relay = current_user.relays.find(params[:id])
+    @relay = Relay.find(params[:id])
     @talk = Talk.find(params[:talk_id])
     @relay.destroy
     respond_to do |format|

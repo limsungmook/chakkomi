@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 class PostsController < ApplicationController
-  load_and_authorize_resource
+#  load_and_authorize_resource
   caches_page :index, :show
   
   # GET /posts
