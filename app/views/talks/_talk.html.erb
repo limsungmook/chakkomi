@@ -29,3 +29,8 @@
 <%= render 'talk_talk' %>
 </div>
 </div>
+<div class="pagination_wrapper">
+    <div class="flickr_pagination">
+      <%= will_paginate @talks, :container => false %>
+    </div>
+</div>

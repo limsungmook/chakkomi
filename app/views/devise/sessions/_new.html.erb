@@ -18,12 +18,12 @@
           <% end %>
 	</div>  
 	
-	<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+	<%= form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => {:class => 'devise_form'} ) do |f| %>
 	<%= devise_error_messages! %>
-	<p><%= f.label :email %><br />
+	<p> 이메일 주소(예: chakkomi@naver.com) <br />
 	  <%= f.email_field :email %></p>
 	
-	<p><%= f.label :password %><br />
+	<p> 비밀번호 <br />
 	  <%= f.password_field :password %></p>
 	
 	<% if devise_mapping.rememberable? -%>
@@ -43,8 +43,9 @@
     $("#new_user").submit(function(){
       $('.laydesk_body').html('<%= escape_javascript(render('loading')) %>');
     });
-    $("#devise_links a").click(function(){
+    $(".ajax_link").click(function(){
       $('.laydesk_body').html('<%= escape_javascript(render('loading')) %>');
+      return false;
   });
   });
 </script>

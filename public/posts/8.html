@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!--  <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Cookie"> -->
+
+    <script type="text/javascript">
+
+     WebFontConfig = {
+ google: { families: [ 'Francois One', 'Oswald' ] }
+ };
+(function() {
+    var wf = document.createElement('script');
+    wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+	'://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+    wf.type = 'text/javascript';
+    wf.async = 'true';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(wf, s);
+})();
+    </script>
+    <style type="text/css">
+    .wf-loading  #laydesk_default_sidebar_menu {
+    font-family: serif
+}
+.wf-inactive #laydesk_default_sidebar_menu {
+    font-family: serif
+	 }
+.wf-active #laydesk_default_sidebar_menu {
+    font-family: 'Francois One','Oswald', serif
+	 }
+    </style>
+
+<!--
+  <script type="text/javascript">
+    WebFontConfig = {
+      custom: { families: ['NanumGothic'],
+      urls: ['http://nanumgothic.appspot.com/css' ] }
+    };
+      (function() {
+        var wf = document.createElement('script');
+        wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+            '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+        wf.type = 'text/javascript';
+        wf.async = 'true';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(wf, s);
+      })();
+  </script>
+-->
+<!--  <link rel="stylesheet" type="text/css" href="http://nanumgothic.appspot.com/css" />  -->
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <title>착한곰팡이</title>
+  <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
+  <script src="/assets/application.js" type="text/javascript"></script>
+  <meta content="authenticity_token" name="csrf-param" />
+<meta content="T+GVTa7mvuDGDEG9ldgE+9aQY05q+/F/YSMMXSLSZPo=" name="csrf-token" />
+
+  <!--[if IE 6]>
+  <script type="text/javascript" src="/assets/DD_belatedPNG_0.0.8a-min.js"></script>
+<![endif]-->
+
+	  <!-- login 성공시 돌아오기 위한 세션  저장-->
+
+	  <script type="text/javascript">
+	  $(function(){
+		  
+/*		$("body").css("display", "none"); */
+		  if($.browser.mozilla)
+		  {
+		      $("body").css("display", "block").hide().delay(300).fadeIn(1000);
+		  }else
+		  {
+		      
+		      $("body").delay(300).fadeIn(1000, function(){
+			      if( $.browser.msie )
+			      {
+				  if($.browser.version == '6.0')
+				  {
+				      
+				      DD_belatedPNG.fix('img');  
+				  }
+				  
+			      }
+			      
+			  });
+		      
+		  }
+		  
+		  var default_width = 0;
+		  var default_height = 0;
+		  $(".home_link_icon").hover(function(){
+			  default_width = parseInt($(this).css('width'));
+			  default_height = parseInt($(this).css('height'));
+			  $(this).css('width', default_width * 1.1);
+			  $(this).css('height', default_height * 1.1);
+		      },
+		      function() {
+			  $(this).css('width', default_width);
+			  $(this).css('height', default_height);
+		      });
+		  // bind clicks
+		  $(".store_link").click(function(){
+			  $('#laydesk_default').html('<div id=loading>샾으로 이동합니다<br /><img src="/assets/loader.gif"></div>');
+		      });
+		  
+	      });
+
+
+</script>
+<script type="text/javascript">
+	
+	  var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-26511070-1']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+
+</script>
+<noscript>
+  <style type="text/css">
+    body { display:block}
+  </style>
+</noscript>
+  
+
+</head>
+<body>
+  <div id="laydesk_outer">
+    <div id="laydesk" class="laydesk">
+      
+      <div id="laydesk_default">
+	<div id="laydesk_default_sidebar">
+	  
+	  <div id="laydesk_default_sidebar_logo">
+	    <a href="/articles/chakkomi" class="ajax_link" data-remote="true"><img alt="Logo_195x79" src="/assets/logo_195x79.png" /></a> 
+	  </div>
+	  <div id="laydesk_default_sidebar_menu" >
+	    <ul>
+	      
+	      <li><a href="/articles/notice" class="ajax_link" data-remote="true">NOTICE</a></li>
+	      <li>&nbsp;</li>
+	      <li><a href="/articles/chakkomi" class="ajax_link" data-remote="true">CHAKKOMI</a></li>
+	      <li><a href="/articles/project" class="ajax_link" data-remote="true">PROJECT</a></li>
+	      <li><a href="/articles/comics" class="ajax_link" data-remote="true">COMICS</a></li><li>&nbsp;</li>
+<!-- 	      <li><a href="/articles/product" class="ajax_link" data-remote="true">PRODUCT</a></li> -->
+<!--	      <li><a href="/store/#/store/" class="store_link">SHOP</a></li> 
+-->
+	      <li><a href="#" onclick="alert(&quot;준비중입니다.&quot;)">SHOP</a></li> 
+	      <li>&nbsp;</li>
+	      <li><a href="/talks?mid=talk" class="ajax_link" data-remote="true">TALK</a></li>
+	    </ul>
+	    
+	  </div>
+	  <div id="laydesk_default_sidebar_link">
+	    <li><a href="http://www.facebook.com/chakkomi"><img alt="Icon_fb_55x83" class="home_link_icon" src="/assets/icon_fb_55x83.png" /></a></li>
+	    <li><a href="http://twitter.com/#!/chakkomi"><img alt="Icon_twt_50x83" class="home_link_icon" src="/assets/icon_twt_50x83.png" /></a></li>
+	    <li><a href="/wallpapers" class="ajax_link" data-remote="true"><img alt="Icon_wall_59x83" class="home_link_icon" src="/assets/icon_wall_59x83.png" /></a></li>
+<!--	    <li><a href="/store/#/store/"><img alt="Icon_shop_50x83" class="home_link_icon" src="/assets/icon_shop_50x83.png" /></a></li> -->
+	      <li><a href="#" onclick="alert(&quot;준비중입니다.&quot;)"><img alt="Icon_shop_50x83" class="home_link_icon" src="/assets/icon_shop_50x83.png" /></a></li> 
+
+	  </div>
+	  
+	  <div id="laydesk_default_sidebar_ftr1">
+	    <img alt="Default_copyright_190x35" src="/assets/default_copyright_190x35.png" />
+	  </div>
+	  
+	</div><!-- #laydesk_default_sidebar -->
+	
+	<div id="laydesk_default_maj">
+	  <!-- 테스트용으로 로그인되었을 때만 메뉴가 보이게함 -->
+	  
+	  <div id="laydesk_default_body" class="laydesk_body">
+	    ///////// 여기서부터
+<br />
+  chakkomi 카테고리의
+<br />
+  about Chakkomi 글입니다.
+<br />
+<a href="/posts/8/edit">편집하기</a> <br />
+<a href="/categories/8">뒤로가기</a><br />
+
+////////////// 여기까지는 사용자에게 보이지 않습니다.
+<hr >
+<br />
+  <p>
+	&nbsp;</p>
+<div>
+	세상은 비주류라 여기지만, 사람들이 인식하지 못하는 사이&nbsp;</div>
+<div>
+	언제 어디서나 자리를 잡고 소리 없이 존재를 드러내는 곰팡이 같은 백수예술가들.&nbsp;</div>
+<div>
+	그러나 사실은 된장이나 김치를 만드는 착한곰팡이처럼&nbsp;</div>
+<div>
+	일상을 아름답고 즐겁게 하는 존재들이랍니다.&nbsp;</div>
+<div>
+	눈에 띄지 않더라도, 아름다움을 기다리는 일상 구석구석으로 들어가&nbsp;</div>
+<div>
+	세상을 더 재미있게, 더 새롭게 하는 창작공동체가 될 것입니다.</div>
+
+
+
+<br />
+
+	  </div>
+	  
+	</div><!-- #laydesk_default_maj -->
+      </div><!-- #laydesk_default -->
+    </div><!-- #laydesk & .laydesk -->
+  </div><!-- laydesk_default_outer -->
+
+</body>
+</html>

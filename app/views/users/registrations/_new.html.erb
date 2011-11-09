@@ -44,11 +44,13 @@
 </div>
 <script type="text/javascript">
   $(function(){
+
   $("#new_user").submit(function(){
   $('.laydesk_body').html('<%= escape_javascript(render('loading')) %>');
   });
-  $("#devise_links a").click(function(){
+  $(".ajax_link").click(function(){
   $('.laydesk_body').html('<%= escape_javascript(render('loading')) %>');
+  return false;
   });
   });
 </script>

@@ -23,3 +23,21 @@
     <%= link_to "#{provider.to_s.titleize}로 로그인하기", omniauth_authorize_path(resource_name, provider) %><br />
   <% end -%>
 <% end -%>
+
+<script type="text/javascript">
+  $(function(){
+	$(".ajax_link").click(function(e) {
+		var href = $(this).attr('href');
+
+
+		if (href == $.address.value())
+		{
+		    $.address.value(href);
+		    return true;
+		}
+		$.address.value(href);
+		return false;
+	    });
+
+});
+</script>

@@ -226,3 +226,16 @@ ko:
 
       full_messages:
         format: "%{attribute} %{message}"
+
+  will_paginate:
+    previous_label: "이전"
+    next_label: "다음"
+    page_gap: "&hellip;"
+
+  ckeditor:
+    page_title: "CKEditor 업로드 파일 매니저"
+    confirm_delete: "이 파일을 삭제하시겠습니까?"
+    buttons:
+      cancel: "취소"
+      upload: "파일 업로드"
+      delete: "삭제"

@@ -1,10 +1,18 @@
 $(function(){
+	window.scrollTo(0);				    
     $('.laydesk_body').hide().html('<%= escape_javascript(render('talk')) %>').show('slide', function(){
 
 	var intval = '';
 	$.address.change(function(event){
 		clearInterval(intval);
 	    });
+		$(".pagination_wrapper a").click(function(){
+			var href = $(this).attr('href');
+			$.address.value(href);
+			return false;
+			
+		    });			   
+
 	// 페이지를 떠나면 무조건 check_update 인터벌을 종료한다. 
 	$('a').click(function(){
 		clearInterval(intval);

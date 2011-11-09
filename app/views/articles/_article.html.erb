@@ -20,7 +20,12 @@
     </div>
 
     <% end %>
-    <%= will_paginate @posts %>
+    <div class="pagination_wrapper">
+    <div class="flickr_pagination">
+      <%= will_paginate @posts, :container => false, :remote => true, :class => 'ajax_link' %>
+    </div>
+    </div>
+
   <% end %>
 <% end %>
 </div>

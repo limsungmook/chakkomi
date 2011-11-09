@@ -1,4 +1,9 @@
 <script type="text/javascript">
+$(function(){
+	$('.laydesk_body').fadeOut('10000', function(){
+	    $('.laydesk_body').html('<%= escape_javascript(render('new')) %>').fadeIn('slow');
+	});
+    });
 </script>
 <noscript>
   <%= render('new') %>

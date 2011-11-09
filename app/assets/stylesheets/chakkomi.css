@@ -285,6 +285,7 @@ body
 #laydesk_default_body
 {
     width: 650px;
+    margin: 130px 0 0 0;
  /*   margin: 40px 0 0 0; */
     float: left;
     display: inline;
@@ -309,6 +310,12 @@ body
     padding-bottom: 20px;
     border-bottom: 1px solid #00a1cf;
 }
+.pagination_wrapper
+{
+    margin-top: 10px;
+    margin-bottom: 40px;
+    text-align: center;
+}
 
 .laydesk_body hr
 {
@@ -316,7 +323,7 @@ body
 }
 #laydesk_default_body #chakkomi_wrapper
 {
-    margin: 180px 0 0 0;
+    margin: 40px 0 0 0; 
 }
 #laydesk_default_body #article_wrapper
 {
@@ -324,7 +331,7 @@ body
 }
 #laydesk_default_body #wallpaper_wrapper
 {
-    margin: 180px 0 0 0;
+    margin: 30px 0 0 0;
 }
 #laydesk_default_body #wallpaper_wrapper #wallpaper_title
 {
@@ -969,8 +976,10 @@ body
 
 #talk_wrapper, #relay_wrapper
 {
+    display: table;
     width: 80%;
-    height:698px;
+    
+/*    height:698px; */
     margin: 0 auto;
 /*     font-family: 'Malgun Gothic', 'Tahoma', arial;  */
     font-size: 11px;    
@@ -983,6 +992,7 @@ body
 .relay_relay_user
 {
     width:360px;  
+    height: 72px;
 }
 .relay_relay_admin
 {
