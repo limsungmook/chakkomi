@@ -1,5 +1,6 @@
 $(function(){
-	window.scrollTo(0);				    
+	window.scrollTo(0);
+	$("body").scrollTop(0);	
     $('.laydesk_body').hide().html('<%= escape_javascript(render('talk')) %>').show('slide', function(){
 
 	var intval = '';

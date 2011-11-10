@@ -295,6 +295,22 @@ body
     line-height:20.5px;   
     color: #6d6e71; 
 }
+#laydesk_default_body #article_wrapper #article_list
+{
+    width: 100%;
+    border-top: 1px solid #00a1cf;
+    border-bottom: 1px solid #00a1cf;
+}
+#laydesk_default_body #article_wrapper #article_list .list_title
+{
+    float: left;
+}
+
+#laydesk_default_body #article_wrapper #article_list .list_timeago
+{
+    float: right;
+}
+
 #laydesk_default_body #article_wrapper .content_title
 {
 /*    font-family: 'Malgun Gothic', 'Tahoma', arial;  */

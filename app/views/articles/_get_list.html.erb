@@ -1,0 +1,41 @@
+    <% @posts_list.each do |post| %>
+    <div class="list_title">
+      <%= link_to post.title, {:controller => "articles", :action => "show", :id => post.id}, {:class => "show_one_link", :remote => true, :rel => '/articles/' + post.id.to_s }  %>
+    </div>
+    <div class="list_timeago">
+      <%= time_ago_in_words(post.created_at) %>전
+    </div>
+    <br />
+    <% end %>
+    <div class="list_pagination_wrapper">
+      <div class="flickr_pagination">
+	<%= will_paginate @posts_list, :container => false %>
+      </div>
+    </div>
+
+    <script type="text/javascript">
+      $(function(){
+      $(".list_pagination_wrapper a").click(function(){
+      var pageNum = $(this).attr("href").match(/page=([0-9]+)/)[1];
+      $.get('<%= url_for :action => 'get_list' %>', { page: pageNum, background_action: '<%= @category.name %>' }, function(retval){
+      $("#article_list").html(retval);
+      });
+      return false;
+      });
+      
+      $(".show_one_link").click(function(){
+      var rel = $(this).attr('rel');
+      
+      
+      if (rel == $.address.value())
+      {
+      $.address.value(rel);
+      return true;
+      }
+      $.address.value(rel);
+      return false;
+      
+      });
+      });
+    </script>
+    

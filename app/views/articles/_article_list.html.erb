@@ -1,0 +1,17 @@
+<!--
+테스트용-->
+<script type="text/javascript">
+  $(function(){
+  $("#article_list").hide();
+  $("#list_flip").click(function(){
+  $("#article_list").slideToggle('fast');
+});
+});
+</script>
+<span id="list_flip">
+  <b>▼ </b> 리스트 보기
+</span>
+  <div id="article_list">
+<%= render 'get_list' %>
+  </div>
+<!-- -->

@@ -1,28 +1,33 @@
 <% session[:back_url] = request.url %>
 <!-- controller 에서 one_article = 1 파라미터가 있으면 @post를, 없으면 @posts를 반환한다 -->
 <div id="article_wrapper">
-
 <% if !@post.nil? %>
+<div id="article_body">
 <div class="content_title">
   <%= @post.title %>
 </div>
 <div class="article_content">
 <%= @post.body_txt.html_safe %>
 </div>
+</div>
 <% elsif !@posts.nil? %>
+
+<%= render  'article_list' %>
+
   <% if @posts.count > 0 %>
     <% @posts.each do |post| %>
+    <div id="article_body">
     <div class="content_title">
       <%= post.title %>
     </div>
     <div class="article_content">
       <%= post.body_txt.html_safe %>
     </div>
-
     <% end %>
+    </div>
     <div class="pagination_wrapper">
     <div class="flickr_pagination">
-      <%= will_paginate @posts, :container => false, :remote => true, :class => 'ajax_link' %>
+      <%= will_paginate @posts, :container => false %>
     </div>
     </div>
 

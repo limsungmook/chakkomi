@@ -36,6 +36,7 @@ Chakkomi::Application.routes.draw do
       get :project
       get :comics
       get :product
+      get :get_list
     end
   end
   resources :wallpapers
