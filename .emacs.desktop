@@ -2,7 +2,7 @@
 ;; --------------------------------------------------------------------------
 ;; Desktop File for Emacs
 ;; --------------------------------------------------------------------------
-;; Created Mon Nov  7 21:30:20 2011
+;; Created Thu Nov 10 19:11:20 2011
 ;; Desktop file format version 206
 ;; Emacs version 23.1.1
 
@@ -10,8 +10,30 @@
 (setq desktop-missing-file-warning nil)
 (setq tags-file-name nil)
 (setq tags-table-list nil)
-(setq search-ring '("can?" "talk.id" "talk" "relay" "“»è“Á¦" "end" "acces" "can?" "c" "secrtet" "ago" "“Àü" "ago" "password" "i18n" "section"))
+(setq search-ring '("gaq" "can?" "talk.id" "talk" "relay" "“»è“Á¦" "end" "acces" "can?" "c" "secrtet" "ago" "“Àü" "ago" "password" "i18n"))
 (setq regexp-search-ring nil)
 (setq register-alist nil)
 
 ;; Buffer section -- buffers listed in same order as in buffer list:
+(desktop-create-buffer 206
+  "/var/www/chakkomi/app/views/layouts/application.html.erb"
+  "application.html.erb"
+  'html-mode
+  nil
+  3249
+  '(835 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix)))
+
+(desktop-create-buffer 206
+  "/var/www/chakkomi/app/controllers/services_controller.rb"
+  "services_controller.rb"
+  'ruby-mode
+  nil
+  6903
+  '(nil nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-file-coding-system . utf-8-unix)))
+

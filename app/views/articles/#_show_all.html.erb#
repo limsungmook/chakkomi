@@ -1,7 +1,0 @@
-<div id="article_wrapper">
-<%= render 'article_list' %>
-</div>
-<div id="article_body">
-  <%= render "show_one" %>
-</div>
-</div>

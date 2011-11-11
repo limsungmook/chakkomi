@@ -2,10 +2,15 @@ $(function(){
 	if ($("#product_list").length)
 	{
 	    $('#product_detail_wrapper').html('<%= escape_javascript(render('detail')) %>');
+
+
+
 	    $("#product_list_ul li").each(function(){
 		    $(this).css("background", "#FFFFFF");
 		});
 	    $("#product_list_ul .product_<%= @product.id %>").css("background", "#4f2f3f");
+
+	    
 
 	    var switchTo5x=true;
 	    $.getScript("http://w.sharethis.com/button/buttons.js", function(){
@@ -23,6 +28,10 @@ $(function(){
 	{
 	    $('#laydesk_shop_body').fadeOut('10000', function(){
 		    $('#laydesk_shop_body').html('<%= escape_javascript(render('show')) %>').fadeIn('slow', function(){
+			    $("#submit_cart").click(function(){
+				    $("#new_line_item").submit();
+				});
+
 			    $("#list_first").css("background", "#FFFFFF");
 			    $("#product_list_ul .product_<%= @product.id %>").css("background", "#4f2f3f");
 			    

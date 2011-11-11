@@ -1,3 +1,4 @@
+<span id="product_list_category_name"><%= @item_category.name %></span>
 <div id="product_list">
   <ul id="product_list_ul">
     <% @products.each_with_index do |product, index| %>
@@ -10,9 +11,6 @@
       <div class="product_list_entry">
 	<div class="product_list_entry_thumb">
 	  <%= image_tag(product.thumnail_pic.url(:thumb)) %>
-	</div>
-	<div class="product_list_entry_spec">
-	  <%= product.title %>
 	</div>
       </div>
 

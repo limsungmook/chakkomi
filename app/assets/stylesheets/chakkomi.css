@@ -437,7 +437,7 @@ body
 #laydesk_shop_hdr
 {
     width: 100%;
-    height: 130px;
+    height: 110px;
     overflow: hidden;
     padding: 0 0 0 ;
     margin: 0 0 0 0 ;
@@ -483,7 +483,7 @@ body
     float: right;
     margin: 45px 40px 0 0;
     text-align: right;
-    font-size: 12px;
+    font-size: 11px;
 }
 #laydesk_shop_hdr_menu IMG
 {
@@ -521,7 +521,6 @@ body
 }
 #laydesk_shop_body
 {
-    margin-top: 30px;
     float: left;
     width: 100%;
 }
@@ -585,43 +584,51 @@ body
 #laydesk_shop_body #show_product
 {
     width: 100%;
-    height: 800px;
-    margin-top: 10px ;
+    height: 100%;
 }
 #laydesk_shop_body #product_list_wrapper
 {
-    width: 201px;
+    width: 180px;
+    height: 100%;
     float: left;
+    margin-top: 5px;
+    margin-left: 20px;
 }
+#laydesk_shop_body #product_list_wrapper #product_list_category_name
+{
+    font-size: 17px;
+    font-weight: bold;
+    color: #00A1CF;
+}
+
 #laydesk_shop_body #product_list_wrapper #product_list ul
 {
-    border-top: 1px solid #d1d6dc;    
-    border-right: 1px solid #d1d6dc;
 }
 
 #laydesk_shop_body #product_list_wrapper #product_list ul li
 {
-    width: 200px;
-    height: 110px;
+    width: 150px;
+    height: 100px;
     background: #FFFFFF;
 
 }
 #laydesk_shop_body #product_list_wrapper #product_list ul li .product_list_entry
 {
-    height:110px;
+    height:100px;
+    background: #DDEEF3;
 
 }
 #laydesk_shop_body #product_list_wrapper #product_list ul li .product_list_entry .product_list_entry_thumb
 {
-    display: inline;
-    float: left;
+    width: 150px;
+    height: 100px;
 }
 #laydesk_shop_body #product_list_wrapper #product_list ul li .product_list_entry .product_list_entry_thumb IMG
 {
     
-    margin: 10px 10px 0 10px;
-    width: 90px;
-    height: 90px;
+    padding:1px;
+    width: 148px;
+    height: 98px;
 }
 #laydesk_shop_body #product_list_wrapper #product_list ul li .product_list_entry .product_list_entry_spec
 {
@@ -635,40 +642,45 @@ body
 {
     background: #4f2f3f;
 }
+
 #laydesk_shop_body #product_list_wrapper #product_list ul li div:hover, #laydesk_shop_body #product_list_wrapper #product_list ul li div:focus:hover
 {
-    background: #010101;
+    background: #00A1CF;
 }
 #laydesk_shop_body #product_list_wrapper #product_list ul li a:hover,  #laydesk_shop_body #product_list_wrapper #product_list ul li a:focus:hover
 {
-    background: #010101;
+    background: #00A1CF;
 }
 
 #laydesk_shop_body #product_detail_wrapper
 {
-    width: 600px;
-    margin: 0 0 10px 10px; 
+    width: 768px;
     overflow: hidden;
     float: left;
+    border-left: 1px solid #00A1CF;
 }
 #laydesk_shop_body #product_detail_wrapper #product_detail
 {
-
+    padding: 20px;
 }
 #laydesk_shop_body #product_detail_wrapper #product_detail #spec
 {
-    height: 320px;
+    height: 270px;
     overflow: hidden;
 }
 #laydesk_shop_body #product_detail_wrapper #product_detail #spec #product_detail_thumnail
 {
-    float: left;
+    width: 249px;
+    height: 250px;
+    float: left; 
+/*    display: inline-block; */
     overflow: hidden;
 }
 #laydesk_shop_body #product_detail_wrapper #product_detail #spec #product_detail_thumnail .product_detail_thumnail_pic
 {
     width: 200px;
     height: 200px;
+    margin-left: 25px;
     border-top: 1px solid #d1d6dc;    
     border-right: 1px solid #d1d6dc;
     border-left: 1px solid #d1d6dc;
@@ -677,12 +689,10 @@ body
 }
 #laydesk_shop_body #product_detail_wrapper #product_detail #spec #product_detail_spec
 {
-    margin: 0 10px 20px 20px; 
-    width: 310px;
-    height: 300px;
-    float: left;
-    
-
+    width: 477px;
+    height: 201px;
+    margin-bottom: 7px;
+    float: left; 
     border-top: 1px solid #d1d6dc;    
     border-right: 1px solid #d1d6dc;
     border-left: 1px solid #d1d6dc;
@@ -691,24 +701,71 @@ body
 }
 #laydesk_shop_body #product_detail_wrapper #product_detail #spec #product_detail_spec table
 {
-    width: 70%;
     text-align: center;
+    margin-top: 12px;
 }
+#laydesk_shop_body #product_detail_wrapper #product_detail #spec #product_detail_spec table tr
+{
+    height: 25px;
+}
+#laydesk_shop_body #product_detail_wrapper #product_detail #spec #product_detail_spec table .spec_left
+{
+    width: 141px;
+    font-size: 12px;
+}
+
+#laydesk_shop_body #product_detail_wrapper #product_detail #spec #product_detail_spec table .spec_center
+{
+    width: 120px;
+    color: #006666;
+}
+
 #laydesk_shop_body #product_detail_wrapper #product_detail #spec #product_detail_spec table .spec_right
 {
-    text-align:center;
+    
+    text-align:left;
+
+}
+#laydesk_shop_body #product_detail_wrapper #product_detail #spec #product_detail_spec table .spec_right #product_title
+{
+    font-size: 20px;
+    font-weight: bold;
+    color: #00A1CF;
+}
+#laydesk_shop_body #product_detail_wrapper #product_detail #spec #product_detail_spec table .spec_right #product_price
+{
+    color: #cc6600;
 }
 
 #laydesk_shop_body #product_detail_wrapper #product_detail #spec #product_detail_spec table .spec_right number
 {
     width: 20px;
 }
+#laydesk_shop_body #product_detail_wrapper #product_detail #spec #product_detail_spec .div_button
+{
+    height: 40px;
+    width: 120px;
+    border:2px solid #ADCCCF;
+    background-color: #FDFDFF;
+    text-align: center;
+    line-height: 40px;
+    color: #5BA5AE;
+    margin-top: 10px;
+    margin-left: 260px;
+}
+#laydesk_shop_body #product_detail_wrapper #product_detail #spec #product_detail_spec .div_button:hover,#laydesk_shop_body #product_detail_wrapper #product_detail #spec #product_detail_spec .div_button:focus:hover
+{
+    background: #27A9E3;
+    color: #FFFFFF;
+}
 
 #laydesk_shop_body #product_detail_wrapper #product_detail #product_detail_content
 {
-    width: 100%;
+    width: 699px;
     height: 100%;
     float: left;
+    margin-left: 30px;
+    margin-bottom: 10px;
 }
 
 /* app/view/store/show.html.erb 즉, 제품 리스트 & 제품 디테일 구조 끝 */
