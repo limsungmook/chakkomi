@@ -43,11 +43,11 @@ class TalksController < ApplicationController
       @mid = params[:mid]
     end
     @talk_last = Talk.find(:first, :conditions => ["mid = ?", @mid])
-
+    @talks = Talk.where(:mid => @mid).paginate(:per_page => 8, :page => params[:page])    
     if !@talk_last.nil?
       session[:saved_talk_last] = @talk_last.updated_at
       @recent_talk = @talk_last.updated_at
-      @talks = Talk.where(:mid => @mid).paginate(:per_page => 8, :page => params[:page])    
+
     end
     respond_to do |format|
       if session[:mid] == 'qna'

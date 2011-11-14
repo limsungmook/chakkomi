@@ -1,6 +1,5 @@
-<script type="text/javascript">
-  location.replace('/store/#/store/<%= @item_category.id %>?product_id=<%= @product.id %>');
-</script>
+<meta name="title" content="<%= @item_category.name %>(<%= @product.title %>) | 착한곰팡이" />
+<link rel="image_src" href="http://www.chakkomi.com/<%= @product.thumnail_pic.url(:thumb) %>" />
 <noscript>
 <%= render('show') %>;
 </noscript>

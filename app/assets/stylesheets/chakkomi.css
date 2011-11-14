@@ -319,7 +319,16 @@ body
     color:     #00a1ce;    
     font-weight: bold;
 }
+.social_buttons
+{
+    margin-top: 20px;
+    margin-bottom: 20px;
 
+}
+.social_buttons .fb_edge_widget_with_comment
+{
+    top: 5px;
+}
 #laydesk_default_body #article_wrapper .article_content
 {
     margin: 20px 0 0 0;
@@ -523,6 +532,7 @@ body
 {
     float: left;
     width: 100%;
+    height: 700px;
 }
 
 /* Shop 구조 끝 */
@@ -741,22 +751,36 @@ body
 {
     width: 20px;
 }
-#laydesk_shop_body #product_detail_wrapper #product_detail #spec #product_detail_spec .div_button
+
+.div_button
 {
     height: 40px;
     width: 120px;
+    line-height: 40px;
+    text-align: center;
     border:2px solid #ADCCCF;
     background-color: #FDFDFF;
-    text-align: center;
-    line-height: 40px;
     color: #5BA5AE;
-    margin-top: 10px;
-    margin-left: 260px;
+
 }
-#laydesk_shop_body #product_detail_wrapper #product_detail #spec #product_detail_spec .div_button:hover,#laydesk_shop_body #product_detail_wrapper #product_detail #spec #product_detail_spec .div_button:focus:hover
+.div_button:hover, .div_button:focus:hover
 {
     background: #27A9E3;
     color: #FFFFFF;
+}
+#laydesk_shop_body #laydesk_shop_cart #back_page
+{
+    float: right;
+}
+#laydesk_shop_body #laydesk_shop_cart #create_order
+{
+    float: right;
+}
+
+#laydesk_shop_body #product_detail_wrapper #product_detail #spec #product_detail_spec #submit_cart
+{
+    margin-top: 10px;
+    margin-left: 260px;
 }
 
 #laydesk_shop_body #product_detail_wrapper #product_detail #product_detail_content
@@ -816,7 +840,7 @@ body
 #laydesk_shop_body #laydesk_shop_cart #box_in .current_cart .name
 {
     margin: 10px 0 0 0 ;
-    width: 130px;
+    width: 150px;
     font-size: 29px;    
     font-weight: bold;
 }
@@ -860,19 +884,34 @@ body
     font-weight: bold;
     color:     #00a1ce;
 }
-
-#laydesk_shop_body #laydesk_shop_cart #order_list
+#laydesk_shop_body .order_titles
+{
+   font-size: 16px;    
+    font-weight: bold;
+    color:     #00a1ce;
+}
+#laydesk_shop_body .div_titles
 {
     margin: 40px 0 0 0;
+    padding: 10px;
+
+}
+
+#laydesk_shop_body #laydesk_shop_cart .order_table
+{
+    border-top: 3px solid #529ec2;
+}
+#laydesk_shop_body #laydesk_shop_cart .order_table .section_name
+{
+    background: #f2f2f2;
+    text-align: center;
+
 }
 #laydesk_shop_body #laydesk_shop_cart #order_list #order_list_title
 {
-    padding: 10px;
+
 /*    font-family: 'Malgun Gothic', 'Tahoma', arial;  */
-    font-size: 16px;    
-    font-weight: bold;
-    color:     #00a1ce;
-    border-bottom: 3px solid #529ec2;
+
 }
 #laydesk_shop_body #laydesk_shop_cart #order_list .line_item table
 {
@@ -1138,6 +1177,13 @@ body
     width: 100%;
     height: 8px;
 }
-
-
-
+#screenshot{
+    position:absolute;
+    border:1px solid #ccc;
+    padding:5px;
+    display:none;
+    color:#fff;
+    }
+#screenshot IMG {
+    width: 500px;
+}

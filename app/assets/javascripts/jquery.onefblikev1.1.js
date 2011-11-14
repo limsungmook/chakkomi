@@ -28,8 +28,13 @@ var options =  $.extend(defaults, options);
   var o = options;  
   var obj = $(this);
 
-
-  var chakkomi_url = 'http://' + location.host + $.address.value();
+  if ( o.siteUrl )
+  {
+      var chakkomi_url = 'http://' + location.host + o.siteUrl;
+  }else
+  {
+      var chakkomi_url = 'http://' + location.host + $.address.value();
+  }
 //  var chakkomi_url = location.href;
   var dynUrl = chakkomi_url;
   // Add Meta Tags for additional data - options
@@ -41,7 +46,7 @@ var options =  $.extend(defaults, options);
   
   // Add #fb-root div - mandatory - do not remove
   jQuery('body').append('<div id="fb-root"></div>');
-  jQuery('#fb-like iframe').css('height','35px !important');
+  jQuery('#fb-like iframe').css('height','14px !important');
   
   // setup FB Developers App Link - do not touch
   window.fbAsyncInit = function() {

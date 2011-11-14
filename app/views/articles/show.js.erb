@@ -1,13 +1,17 @@
+$('head').append('<meta name="title" content="fklsjdklf" />');
 $(function(){
 
 	if( $('#article_list').length )
 	{
 	    $('#article_body').html('<%= escape_javascript(render('show_one')) %>').show();
+
 	    
 	}else
 	{
 	    $('#laydesk_default_body').fadeOut('10000', function(){
 		    $("#laydesk_default_body").html('<%= escape_javascript(render('show_all')) %>').fadeIn('slow', function(){
+
+
 			});
 		});
 	}

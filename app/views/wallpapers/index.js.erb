@@ -1,6 +1,7 @@
 $(function(){
 	$('#laydesk_default_body').fadeOut('10000', function(){
 		$('#laydesk_default_body').html('<%= escape_javascript(render('wallpaper')) %>').fadeIn('slow');
+	screenshotPreview();
 
 		$("#wallpaper_year_category a").click(function(){
 			var rel = $(this).attr('rel');

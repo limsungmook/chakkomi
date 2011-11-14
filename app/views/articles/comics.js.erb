@@ -3,6 +3,7 @@ $('#laydesk_default_body').fadeOut('10000', function(){
 	$("body").scrollTop(0);	
 	$('#laydesk_default_body').html('<%= escape_javascript(render('article')) %>').fadeIn('slow', function(){
 
+
 		$(".pagination_wrapper a").click(function(){
 			var href = $(this).attr('href');
 			$.address.value(href);

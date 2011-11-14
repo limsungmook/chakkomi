@@ -18,8 +18,13 @@
   </div>
 <br /><br />
   <div class="field">
-    <%= f.label "미리보기 이미지. 상품 리스트와 디테일 부분에서 이 사진이 나옵니다.(현재 310x310 이상으로 등록하셔야합니다.)" %><br />
+    <%= f.label "상품 리스트 썸네일 이미지. 150x100으로 리사이즈됩니다." %><br />
     <%= f.file_field :thumnail_pic %>
+  </div>
+<br /><br />
+  <div class="field">
+    <%= f.label "상품 디테일 이미지. 310x310으로 리사이즈됩니다." %><br />
+    <%= f.file_field :detail_pic %>
   </div>
 <br /><br />
   <div class="field">

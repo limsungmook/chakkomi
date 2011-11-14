@@ -1,7 +1,9 @@
 <tr>
-  <td>
+    <% if controller.controller_name  == 'carts' %>
+    <td>
     <%= check_box_tag '1' %>
-</td>
+    </td>
+    <% end %>
 <td>
   <%= image_tag line_item.product.thumnail_pic.url(:thumb), :class => "thumnail_pic" %>
 </td>

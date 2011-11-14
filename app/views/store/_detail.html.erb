@@ -1,10 +1,8 @@
-<% session[:back_url] = request.url %>
-<meta name="title" content="<%= @product.title %> | 착한곰팡이" />
-<link rel="image_src" href="http://dev.chakkomi.com/<%= @product.thumnail_pic(:thumb) %>">
+<% session[:back_url] = '/store/#/store/' + @item_category.id.to_s + '?product_id=' + @product.id.to_s %>
 <div id="product_detail">
   <div id="spec">
     <div id="product_detail_thumnail">
-      <%= image_tag @product.thumnail_pic(:detail), :class => "product_detail_thumnail_pic" %><br />
+      <%= image_tag @product.detail_pic(:detail), :class => "product_detail_thumnail_pic" %><br />
       &nbsp;      &nbsp;      &nbsp;      &nbsp;      &nbsp;
       <span class='st_facebook_large'></span>
       <span class='st_twitter_large'></span>
@@ -48,7 +46,7 @@
 
 	  <%= hidden_field_tag :product_id ,@product.id %>
 <!--	  <%= f.submit "장바구니 담기" ,:class=> 'noscript' %> -->
-	  <div id="submit_cart", class="div_button" >장바구니 담기</div>
+	  <div id="submit_cart" class="div_button" >장바구니 담기</div>
 	<% end %>
     </div>
     <div id="fb-like-example"></div>
@@ -58,3 +56,9 @@
   </div>
   
 </div>
+
+<script type="text/javascript">
+  $(function(){
+  $('#fb-like-example').onefblike({appID:'213249652066160', siteUrl:'/store/<%= @item_category.id %>?product_id=<%= @product.id %>/#/store/<%= @item_category.id %>?product_id=<%= @product.id %>'});
+});
+</script>

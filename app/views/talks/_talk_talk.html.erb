@@ -32,8 +32,8 @@
 	<td>
 	  <div class="relay_admin_timeago"><%= time_ago_in_words(talk.created_at) %> 전</div>
 	</td>
-	<td>
 	  <% if can? :manage, :all  %>
+	<td>
 	  <span class="relay_admin_delete"><%= button_to '삭제하기', talk, :confirm => '삭제하시겠습니까?', :method => :delete, :remote => true %></span>
 	</td> 
 	<% end %>

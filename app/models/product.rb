@@ -10,11 +10,10 @@ class Product < ActiveRecord::Base
   DEFAULT_OPTION = [ "기본옵션", "0.5mm", "1.0mm" ]
   STATE = [ "판매중", "판매중지" , "품절", "문의요망" ]
 
-#  validates :thumnail_pic, :content_pic, :format => {
-#    :with => %r{\.(gif|jpg|png)$}i,
-#    :message => 'JPG, GIF, PNG 중 하나만 올릴 수 있습니다.'
-#  }
-  has_attached_file :thumnail_pic, :styles => { :detail => "310x310>",  :thumb => "120x120>" }
+  validates_attachment_content_type :thumnail_pic, :content_type => [ 'image/jpeg', 'image/png', 'image/gif', 'image/x-png', 'image/pjpeg' ]
+  validates_attachment_content_type :detail_pic, :content_type => [ 'image/jpeg', 'image/png', 'image/gif', 'image/x-png', 'image/pjpeg' ]
+  has_attached_file :thumnail_pic, :styles => { :thumb => "150x100>" }
+  has_attached_file :detail_pic, :styles => { :detail => "310x310>" }
 #   has_attached_file :content_pic
   
   default_scope :order => 'created_at DESC'

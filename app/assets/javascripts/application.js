@@ -11,6 +11,7 @@
 //= require jquery.address-1.4.min
 //= require jquery.onefblikev1.1
 //= require chakkomi
+//= require pimg
 // require_tree .
 
 

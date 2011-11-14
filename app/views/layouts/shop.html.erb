@@ -1,7 +1,13 @@
+<% session[:back_url] = '/store/#/store' %>
 <!DOCTYPE html>
 <html>
 <head>
+<!--
+<meta name="title" content="착한곰팡이 샾" />
+<link rel="image_src" href="http://www.chakkomi.com/assets/shop_thumbnail.png">
+-->
   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
   <title>착곰이샾</title>
   <%= stylesheet_link_tag :application, :cache => true %>
   <%= javascript_include_tag :application, :cache => true %>
@@ -9,7 +15,6 @@
   
   
   <!-- login 성공시 돌아오기 위한 세션  저장-->
-  <% session[:back_url] = '/store' %>
   
   <script type="text/javascript">
      $(function(){
@@ -143,7 +148,7 @@ _gaq.push(['_setAccount', 'UA-26129640-1']);
 	      </li>
 	      <li>
 		<div class="shop_icon">
-		  <%= link_to(destroy_user_session_path, :class => "ajax_link") do %>
+		  <%= link_to(destroy_user_session_path) do %>
 		  <div class="shop_menu_image"><%=  image_tag("/assets/icon_join.png") %></div>
 		  <div>
 		       로그아웃 
@@ -154,7 +159,7 @@ _gaq.push(['_setAccount', 'UA-26129640-1']);
 	      <% else %>
 	      <li>
 		<div class="shop_icon">
-		  <%= link_to(new_user_registration_path, :remote => true, :class => "ajax_link") do %>
+		  <%= link_to(new_user_session_path, :remote => true, :class => "ajax_link") do %>
 		  <div class="shop_menu_image"><%= image_tag("/assets/icon_login.png") %></div>
 		  <div>
 		       로그인&nbsp&nbsp:
@@ -164,7 +169,7 @@ _gaq.push(['_setAccount', 'UA-26129640-1']);
 	      </li>
 	      <li>
 		<div class="shop_icon">
-		  <%= link_to(new_user_session_path, :remote => true, :class => "ajax_link") do %>
+		  <%= link_to(new_user_registration_path, :remote => true, :class => "ajax_link") do %>
 		  <div class="shop_menu_image"><%= image_tag("/assets/icon_join.png") %></div>
 		  <div>
 		    회원가입

@@ -1,11 +1,9 @@
-<% session[:back_url] = '/articles/#/articles' %>
 <!DOCTYPE html>
 <html>
 <head>
-<!-- 
 <meta name="title" content="착한곰팡이" />
 <link rel="image_src" href="http://www.chakkomi.com/assets/chakkomi_thumbnail.png">
--->
+
 <!--  <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Cookie"> -->
 
     <script type="text/javascript">
@@ -55,9 +53,10 @@
 <!--  <link rel="stylesheet" type="text/css" href="http://nanumgothic.appspot.com/css" />  -->
   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
   <title>착한곰팡이</title>
-  <%= stylesheet_link_tag :application %>
-  <%= javascript_include_tag :application %>
-  <%= csrf_meta_tag %>
+  <link href="/assets/application.css" media="screen" rel="stylesheet" type="text/css" />
+  <script src="/assets/application.js" type="text/javascript"></script>
+  <meta content="authenticity_token" name="csrf-param" />
+<meta content="HU5Djkhhwb5YMxqwLYwivkKPIgJR9jYvQXo0YcBJvSo=" name="csrf-token" />
 
   <!--[if IE 6]>
   <script type="text/javascript" src="/assets/DD_belatedPNG_0.0.8a-min.js"></script>
@@ -140,64 +139,88 @@ _gaq.push(['_trackPageview']);
 	<div id="laydesk_default_sidebar">
 	  
 	  <div id="laydesk_default_sidebar_logo">
-	    <%= link_to image_tag("/assets/logo_195x79.png"), {:controller=>'/articles', :action => 'chakkomi'}, :remote => true, :class => "ajax_link"  %> 
+	    <a href="/articles/chakkomi" class="ajax_link" data-remote="true"><img alt="Logo_195x79" src="/assets/logo_195x79.png" /></a> 
 	  </div>
 	  <div id="laydesk_default_sidebar_menu" >
 	    <ul>
 	      
-	      <li><%= link_to "NOTICE", {:controller=>'/articles', :action => 'notice'}, :remote => true, :class => "ajax_link" %></li>
+	      <li><a href="/articles/notice" class="ajax_link" data-remote="true">NOTICE</a></li>
 	      <li>&nbsp;</li>
-	      <li><%= link_to "CHAKKOMI", {:controller=>'/articles', :action => 'chakkomi'}, :remote => true, :class => "ajax_link" %></li>
-	      <li><%= link_to "PROJECT", {:controller=>'/articles', :action => 'project'}, :remote => true, :class => "ajax_link"  %></li>
-	      <li><%= link_to "COMICS", {:controller=>'/articles', :action => 'comics'}, :remote => true, :class => "ajax_link" %></li><li>&nbsp;</li>
-<!-- 	      <li><%= link_to "PRODUCT", {:controller=>'/articles', :action => 'product'}, :remote => true, :class => "ajax_link"  %></li> -->
-<!--	      <li><%= link_to "SHOP", "/store/#/store/",  :class => "store_link"  %></li> 
+	      <li><a href="/articles/chakkomi" class="ajax_link" data-remote="true">CHAKKOMI</a></li>
+	      <li><a href="/articles/project" class="ajax_link" data-remote="true">PROJECT</a></li>
+	      <li><a href="/articles/comics" class="ajax_link" data-remote="true">COMICS</a></li><li>&nbsp;</li>
+<!-- 	      <li><a href="/articles/product" class="ajax_link" data-remote="true">PRODUCT</a></li> -->
+<!--	      <li><a href="/store/#/store/" class="store_link">SHOP</a></li> 
 -->
-	      <li><%= link_to "SHOP", "#",  :onclick => 'alert("준비중입니다.")' %></li> 
+	      <li><a href="#" onclick="alert(&quot;준비중입니다.&quot;)">SHOP</a></li> 
 	      <li>&nbsp;</li>
-	      <li><%= link_to "TALK", {:controller=>'/talks', :action => 'index', :mid => 'talk'}, :remote => true, :class => "ajax_link"  %></li>
+	      <li><a href="/talks?mid=talk" class="ajax_link" data-remote="true">TALK</a></li>
 	    </ul>
 	    
 	  </div>
 	  <div id="laydesk_default_sidebar_link">
-	    <li><%= link_to image_tag("/assets/icon_fb_55x83.png", :class => "home_link_icon"), "http://www.facebook.com/chakkomi" %></li>
-	    <li><%= link_to image_tag("/assets/icon_twt_50x83.png", :class => "home_link_icon"), "http://twitter.com/#!/chakkomi"  %></li>
-	    <li><%= link_to image_tag("/assets/icon_wall_59x83.png", :class => "home_link_icon"), {:controller=>'/wallpapers', :action => 'index'}, :remote => true, :class => "ajax_link"  %></li>
-<!--	    <li><%= link_to image_tag("/assets/icon_shop_50x83.png", :class => "home_link_icon"), "/store/#/store/" %></li> -->
-	      <li><%= link_to image_tag("/assets/icon_shop_50x83.png", :class => "home_link_icon"), "#",  :onclick => 'alert("준비중입니다.")' %></li> 
+	    <li><a href="http://www.facebook.com/chakkomi"><img alt="Icon_fb_55x83" class="home_link_icon" src="/assets/icon_fb_55x83.png" /></a></li>
+	    <li><a href="http://twitter.com/#!/chakkomi"><img alt="Icon_twt_50x83" class="home_link_icon" src="/assets/icon_twt_50x83.png" /></a></li>
+	    <li><a href="/wallpapers" class="ajax_link" data-remote="true"><img alt="Icon_wall_59x83" class="home_link_icon" src="/assets/icon_wall_59x83.png" /></a></li>
+<!--	    <li><a href="/store/#/store/"><img alt="Icon_shop_50x83" class="home_link_icon" src="/assets/icon_shop_50x83.png" /></a></li> -->
+	      <li><a href="#" onclick="alert(&quot;준비중입니다.&quot;)"><img alt="Icon_shop_50x83" class="home_link_icon" src="/assets/icon_shop_50x83.png" /></a></li> 
 
 	  </div>
 	  
 	  <div id="laydesk_default_sidebar_ftr1">
-	    <%= image_tag("/assets/default_copyright_190x35.png") %>
+	    <img alt="Default_copyright_190x35" src="/assets/default_copyright_190x35.png" />
 	  </div>
 	  
 	</div><!-- #laydesk_default_sidebar -->
 	
 	<div id="laydesk_default_maj">
 	  <!-- 테스트용으로 로그인되었을 때만 메뉴가 보이게함 -->
-	  <% if user_signed_in? %>
 
 	  <div id="laydesk_default_maj_hdr">
 	    <div id="laydesk_default_maj_hdr_user">
 	      <ul>
-		<% if can? :manage, :all%>
-  		<li><%= link_to "관리자 페이지", :admins %></li>
-		<% end %>
-		<li><span id="currentuser"><%= current_user.email %></span></li>
-		<li><%= link_to "Profile", edit_user_registration_path , :remote => true, :class => "ajax_link"%></li>
-		<li><%= link_to "Setting", "/services" , :remote => true, :class => "ajax_link"%></li>
-		<li><%= link_to "Log out", destroy_user_session_path%></li>
-<!--		<li><%= link_to "Create Account", new_user_registration_path , :remote => true, :class => "ajax_link" %></li>
-		<li><%= link_to "Login", new_user_session_path, :remote => true, :class => "ajax_link" %></li>
+  		<li><a href="/admins">관리자 페이지</a></li>
+		<li><span id="currentuser">chakkomi@naver.com</span></li>
+		<li><a href="/users/edit" class="ajax_link" data-remote="true">Profile</a></li>
+		<li><a href="/services" class="ajax_link" data-remote="true">Setting</a></li>
+		<li><a href="/users/sign_out">Log out</a></li>
+<!--		<li><a href="/users/sign_up" class="ajax_link" data-remote="true">Create Account</a></li>
+		<li><a href="/users/sign_in" class="ajax_link" data-remote="true">Login</a></li>
 -->
 	      </ul>
 	    </div><!-- #laydesk_default_user -->
 	  </div><!-- #laydesk_default_hdr -->
-	  <% end %>
 	  
 	  <div id="laydesk_default_body" class="laydesk_body">
-	    <%= yield %>
+	    ///////// 여기서부터
+<br />
+  notice 카테고리의
+<br />
+  환영합니다! 글입니다.
+<br />
+<a href="/posts/9/edit">편집하기</a> <br />
+<a href="/categories/9">뒤로가기</a><br />
+
+////////////// 여기까지는 사용자에게 보이지 않습니다.
+<hr >
+<br />
+  <p>
+	저희에게 쏟아지는 관심, 부끄럽구요...</p>
+<p>
+	착한곰팡이의 새집에 찾아와 주셔서 너무너무 감사드려요 :-)</p>
+<p>
+	좌충우돌, 우왕좌왕, 말도 많고 탈도 많은 착한곰팡이네 자주오셔서</p>
+<p>
+	같이 하하하 웃고 즐겨주세요.</p>
+<p>
+	&nbsp;</p>
+<p>
+	Welcome!</p>
+
+
+
+<br />
+
 	  </div>
 	  
 	</div><!-- #laydesk_default_maj -->

@@ -13,6 +13,11 @@ class CreateProducts < ActiveRecord::Migration
       t.string :thumnail_pic_content_type
       t.integer :thumnail_pic_file_size
       t.datetime :thumnail_pic_updated_at
+
+      t.string :detail_pic_file_name
+      t.string :detail_pic_content_type
+      t.integer :detail_pic_file_size
+      t.datetime :detail_pic_updated_at
       
       t.timestamps
     end

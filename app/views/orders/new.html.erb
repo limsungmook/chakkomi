@@ -1,38 +1,7 @@
-<% session[:back_url] = request.url %>
-<% if notice %>
-<p id="notice" ><%= notice %></p>
-<% flash[:notice] = nil %>
-<% end %>
+<script type="text/javascript">
+</script>
+<noscript>
+<%= render('form') %>
+</noscript>
 
-<div id="laydesk_shop_cart">
-  <div id="box_out">
-    <div id="box_in">
-      <ul id="cart_status_ul">
-	<li class="other_cart">
-	  <div class="number">1</div>
-	  <div class="name"><span>장바구니</span></div>
-	</li>
-	<li>
-	  <div class="arrow">>></div>
-	</li>
-	<li  class="current_cart">
-	  <div class="number">2</div>
-	  <div class="name">주문결제</div>
-	</li>
-	<li>
-	  <div class="arrow">>></div>
-	</li>
-	<li class="other_cart">
-	  <div class="number">3</div>
-	  <div class="name">주문완료</div>
-	</li>
-      </ul>
-    </div><!-- box_in -->
-  </div><!-- box_out -->
 
-<div class="order_checkout">
-  <fieldset>
-    <legend>주문 상세 정보 기입</legend>
-    <%= render 'form' %>
-  </fieldset>
-</div>

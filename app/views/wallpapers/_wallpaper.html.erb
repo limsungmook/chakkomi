@@ -37,7 +37,7 @@
 	<% end %>
 	<td>
 	  <div class="wallpaper_each_month">
-	    <%= link_to image_tag(wallpaper.wallpaper_thumb.url(:thumb)), wallpaper.wallpaper_zip.url %>
+	    <%= link_to image_tag(wallpaper.wallpaper_thumb.url(:thumb)), wallpaper.wallpaper_zip.url , :class => "screenshot", :rel => wallpaper.wallpaper_thumb.url %>
 	    <div>
 	      <% if wallpaper.month < 10 %>0<% end %><%= wallpaper.month %>
 	    </div>
