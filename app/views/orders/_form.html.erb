@@ -1,9 +1,4 @@
 <% session[:back_url] = '/store/#/orders/new' %>
-<% if notice %>
-<p id="notice" ><%= notice %></p>
-<% flash[:notice] = nil %>
-<% end %>
-
 <div id="laydesk_shop_cart">
   <div id="box_out">
     <div id="box_in">
@@ -31,7 +26,11 @@
   </div><!-- box_out -->
 
 <div id="order_wrapper">
-
+<% if notice %>
+<p id="notice" ><%= notice %></p>
+<% flash[:notice] = nil %>
+<% end %>
+  
 <%= form_for(@order) do |f| %>
   <% if @order.errors.any? %>
   <div id="error_explanation">
@@ -59,23 +58,19 @@
 	<%= render(@cart.line_items) %>
       </table>
     </div>
-    <div id="ps">
-      <div id="ps_left">선택상품을 <%= link_to "삭제하기", "#" %></div>
-      <div id="ps_right">- 상품배송비는 상품 총금액 20,000원 이상 구매시 무료배송입니다.</div>
-    </div>
   </div>
   <div id="cart_total_line">
     <table>
       <tr>
 	<th ROWSPAN=3 class="cart_total_line_title">총 주문금액</th>
 	<% @total_price = @cart.total_price %>
-	<td class="cart_total_cell" ><span id="cart_total_info"><span class="info_name">주문상품수 </span><span class="info_value"><%= @cart.line_items.count %>종(<%=@cart.total_items%>개)</span><span class="info_name">총배송비 </span><span class="info_value"><% if @total_price > 20000 %>0원<% else %> 2,500원<% end %></span><span class="info_name">상품총금액  </span><span class="info_value"><%= number_with_delimiter(@total_price) %></span></span></td>
+	<td class="cart_total_cell" ><span id="cart_total_info"><span class="info_name">주문상품수 </span><span class="info_value"><%= @cart.line_items.count %>종(<%=@cart.total_items%>개)</span><span class="info_name">총배송비 </span><span class="info_value"><% if @total_price > 20000 %>0원<% else %> <%= Order::DELIVERY_COST %>원<% end %></span><span class="info_name">상품총금액  </span><span class="info_value"><%= number_with_delimiter(@total_price) %></span></span></td>
       </tr>
       <tr>
 	<td><hr /></td>
       </tr>
       <tr>
-	<td>총 합계금액 <% if @total_price > 20000 %><%= number_with_delimiter(@total_price) %>원<% else %><%= number_with_delimiter(@total_price + 2500) %>원<% end %></td>
+	<td>총 합계금액 <% if @total_price > 20000 %><%= number_with_delimiter(@total_price) %>원<% else %><%= number_with_delimiter(@total_price + Order::DELIVERY_COST) %>원<% end %></td>
       </tr>
     </table>
   </div>
@@ -83,51 +78,98 @@
 
 <div id="client_info">
   <div class="div_titles"><span class="order_titles">2. 주문고객정보</span><br /></div>
-
-<table class="order_table">
-<tr>
-<td class="section_name">
+  <% if !@user_info.nil? %>
+  <%= hidden_field_tag :info_id, @user_info.id %>
+  <% end %>
+<table class="order_table" id="info_table">
+<tr id="tr_info_name">
+<td class="section_name" id="td1_info_name">
   주문자명
 </td>
-<td>
-    <%= text_field_tag :name, current_user.name  %>
+<td id="td2_info_name">
+  <% if @user_info.nil? %>
+    <%= text_field_tag :info_name, '', :size => 15 %>
+  <% else %>
+    <%= text_field_tag :info_name, @user_info.name  %>
+  <% end %>
 </td>
-<td class="section_name">
+<td class="section_name" id="td1_info_email">
   이메일
 </td>
-<td>
-    <%= f.email_field :email, :size => 40 %>
+<td id="td2_info_email">
+  <% if @user_info.nil? %>
+    <%= text_field_tag :info_email1, '', :size => 10  %>
+    @
+    <%= select_tag :info_email2, "<option selected>hanmail.net</option><option>naver.com</option><option>gmail.com</option><option>nate.com</option><option>직접입력</option>".html_safe %>
+    <% else %>
+    <%= text_field_tag :info_email1,  @user_info.email.split('@')[0] %> 
+    <%= text_field_tag :info_email2,  @user_info.email.split('@')[1] %>
+  <% end %>
 </td>
 </tr>
-<tr>
-<td class="section_name">
+<tr id="tr_info_phone">
+<td class="section_name" id="td1_info_phone">
   휴대폰번호
 </td>
-<td>
-    <%= f.text_field :phone %>  
+<td id="td2_info_phone">
+  <% if @user_info.nil? %>
+  <%= select_tag :info_phone1, "<option selected>031</option><option>042</option><option>010</option><option>011</option><option>016</option>".html_safe  %>
+  -
+  <%= text_field_tag :info_phone2, '', :size => 5  %>
+  -
+  <%= text_field_tag :info_phone3, '', :size => 5  %>
+  <% else %>
+    <%= text_field_tag :info_phone1,  @user_info.phone.split('-')[0] %> 
+    <%= text_field_tag :info_phone2,  @user_info.phone.split('-')[1] %>
+    <%= text_field_tag :info_phone3,  @user_info.phone.split('-')[2] %>
+  <% end %>
 </td>
-<td class="section_name">
+<td class="section_name" id="td1_info_tel">
   전화번호
 </td>
-<td>
-      <%= f.text_field :phone %>  
+<td id="td2_info_tel">
+  <% if @user_info.nil? %>
+  <%= select_tag :info_tel1, "<option selected>031</option><option>042</option><option>010</option><option>011</option><option>016</option>".html_safe  %>
+  -
+  <%= text_field_tag :info_tel2, '', :size => 5  %>
+  -
+  <%= text_field_tag :info_tel3, '', :size => 5  %>
+  <% else %>
+    <%= text_field_tag :info_tel1,  @user_info.tel.split('-')[0] %> 
+    <%= text_field_tag :info_tel2,  @user_info.tel.split('-')[1] %>
+    <%= text_field_tag :info_tel3,  @user_info.tel.split('-')[2] %>
+
+  <% end %>
 </td>
 </tr>
-<tr>
-<td class="section_name">
+<tr id="tr_info_address">
+<td class="section_name" id="td1_info_address">
 주소
 </td>
-<td>
+<td colspan=3  id="td2_info_address">
   우편번호 검색<br />
-  <input id="dong_name" type="search"/>
-  <input type="button" class="zipcode-search button write small" value="우편번호 검색"/>  
-  <div class="zipcode_search_result">
-
+  <input id="info_dong_name" type="search" size="7"/>
+  <input type="button" class="info_zipcode-search button write small" value="우편번호 검색"/>  <br />
+  <div class="info_zipcode_search_result">
+    
   </div>
-    <%= f.label :address %><br />
-    <%= text_field_tag :address1 ,current_user.delivery_address1, :size => 50 %><br />
-  상세 주소 입력<br />
-     <%= text_field_tag :address2, current_user.delivery_address2 %>
+  
+  <% if @user_info.nil? %>
+  <%= text_field_tag :info_zip1, '', :size => 5 %>
+  -
+  <%= text_field_tag :info_zip2, '', :size => 5 %>
+  <br />
+  <%= text_field_tag :info_address1, '', :size => 40 %>
+  <%= text_field_tag :info_address2, '', :size => 40 %>
+  <% else %>
+  <%= text_field_tag :info_zip1, @user_info.zip1 %>
+  -
+  <%= text_field_tag :info_zip2, @user_info.zip2 %>
+  <br />
+  <%= text_field_tag :info_address1, @user_info.address1, :size => 50 %>
+  <%= text_field_tag :info_address2, @user_info.address2 %>
+
+  <% end %>
 </td>
 </tr>
 </table>
@@ -135,52 +177,63 @@
 
 <div id="location_info">
   <div class="div_titles"><span class="order_titles">3. 배송지 정보</span><br /></div>
-  <table class="order_table">
-    <tr>
-      <td class="section_name">
+  <table class="order_table" id="receiver_table">
+    <tr id="tr_name">
+      <td class="section_name"  id="td1_name" >
 	수령인명
       </td>
-      <td>
-	<%= f.text_field :phone %>  
+      <td colspan=3 id="td2_name">
+	<%= f.text_field :receiver, :size => 15 %>
       </td>
     </tr>
-    <tr>
-      <td class="section_name">
+    <tr id="tr_phone">
+      <td class="section_name" id="td1_phone">
 	휴대폰번호
       </td>
-      <td>
-	<%= f.text_field :phone %>  
+      <td id="td2_phone">
+	<%= select_tag :phone1, "<option selected>031</option><option>042</option><option>010</option><option>011</option><option>016</option>".html_safe  %>
+	-
+	<%= text_field_tag :phone2, '', :size => 5  %>
+	-
+	<%= text_field_tag :phone3, '', :size => 5  %>
       </td>
-      <td class="section_name">
+      <td class="section_name" id="td1_tel">
 	전화번호
       </td>
-      <td>
-	<%= f.text_field :phone %>  
+      <td id="td2_tel">
+	<%= select_tag :tel1, "<option selected>031</option><option>042</option><option>010</option><option>011</option><option>016</option>".html_safe  %>
+	-
+	<%= text_field_tag :tel2, '', :size => 5  %>
+	-
+	<%= text_field_tag :tel3, '', :size => 5  %>
       </td>
     </tr>
-    <tr>
-      <td class="section_name">
+    <tr id="tr_address">
+      <td class="section_name" id="td1_address">
 	주소
       </td>
-      <td>
+      <td colspan=3 id="td2_address">
 	우편번호 검색<br />
 	<input id="dong_name" type="search"/>
-	<input type="button" class="zipcode-search button write small" value="우편번호 검색"/>  
+	<input type="button" class="zipcode-search button write small" value="우편번호 검색"/>    <br />
 	<div class="zipcode_search_result">
 	  
 	</div>
-	<%= f.label :address %><br />
-	<%= text_field_tag :address1 ,current_user.delivery_address1, :size => 50 %><br />
-	상세 주소 입력<br />
-	<%= text_field_tag :address2, current_user.delivery_address2 %>
+	<%= text_field_tag :zip1, '', :size => 5 %>
+	-
+	<%= text_field_tag :zip2, '', :size => 5 %>
+	<br />
+	<%= text_field_tag :address1, '', :size => 40 %>
+	<%= text_field_tag :address2, '', :size => 40 %>
+
       </td>
     </tr>
-    <tr>
-      <td class="section_name">
+    <tr  id="tr_message">
+      <td class="section_name" id="td1_message">
 	배송 유의사항
       </td>
-      <td>
-	<%= f.text_field :phone %> &nbsp;ex) 부재시 경비실에 맡겨주세요.
+      <td colspan="3" id="td2_message">
+	<%= f.text_field :arrival_message %> &nbsp;ex) 부재시 경비실에 맡겨주세요.
       </td>
     </tr>
   </table>
@@ -188,13 +241,20 @@
 
 <div id="price_info">
   <div class="div_titles"><span class="order_titles">4. 결제금액</span><br /></div>
-  <table class="order_table">
+  <% @total_price = @cart.total_price %>
+  <% if @total_price < 20000 %>
+     <% @delivery_cost = Order::DELIVERY_COST %>
+     <% else %>
+     <% @delivery_cost = 0 %>
+     <% end %>
+  <table class="order_table" id="cost_table">
     <tr>
       <td>
 	총 주문금액
       </td>
       <td>
-	<span id="total_price"><%= number_with_delimiter(@cart.total_price) %></span>원
+	<span id="total_price"><%= number_with_delimiter(@total_price) %></span>원
+	<%= hidden_field_tag :total_price, @total_price  %>
       </td>
     </tr>
     <tr>
@@ -202,7 +262,7 @@
 	배송료
       </td>
       <td>
-	<span id="total_price"><%= number_with_delimiter(@cart.total_price) %></span>원
+	<span id="delivery__price"><%= number_with_delimiter(@delivery_cost) %></span>원
       </td>
     </tr>
     <tr>
@@ -210,14 +270,26 @@
 	총 결제액
       </td>
       <td>
-	<span id="total_price"><%= number_with_delimiter(@cart.total_price) %></span>원
+	<span id="checkout_price"><%= number_with_delimiter(@delivery_cost + @total_price) %></span>원
       </td>
     </tr>
+    <% if @delivery_cost > 0 %>
+    <tr>
+      <td>
+	배송비 결제
+      </td>
+      <td>
+	<%= select_tag :arrival_payment,  "<option selected>선불</option><option>착불</option>".html_safe, :id => 'order_arrival_payment'  %>
+      </td>
+    </tr>
+    <% else %>
+    <%= f.hidden_field :arrival_payment, :value => '무료배송' %>
+    <% end %>
   </table>
 </div>
 <div id="checkout_info">
   <div class="div_titles"><span class="order_titles">5. 결제수단</span><br /></div>
-  <table class="order_table">
+  <table class="order_table" id="checkout_table">
     <tr>
       <td class="section_name">
 	신용카드
@@ -225,26 +297,8 @@
     </tr>
   </table>
 </div>
-
-
-  <div class="field">
-    <%= f.label "예금주" %><br />
-    <%= text_field_tag :account_owner, current_user.name %>
-  </div>
-
-  <div class="field">
-    <%= f.label :pay_type %><br />
-    <%= f.select :pay_type, Order::PAYMENT_TYPES, :prompt => '지불 형태를 고르세요' %>
-  </div>
-  <div class="field">
-    <%= f.label :arrival_payment %><br />
-    <%= f.select :arrival_payment, Order::ARRIVAL_PAYMENT, :prompt => '선불? 착불?'  %>
-  </div>
-  <div id="total_price">
-    <%= hidden_field_tag :total_price ,@cart.total_price %>
-  </div>
-  <div class="actions">
-    
+<div id="end">
+</div>
     <%= f.submit '주문하기'%>
   </div>
 <% end %>

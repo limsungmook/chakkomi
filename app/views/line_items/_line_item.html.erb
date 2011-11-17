@@ -16,10 +16,12 @@
   <td><%= number_with_delimiter(line_item.product.price) %>원</td>
   <td><%= line_item.quantity %></td>
   <td><%= number_with_delimiter(line_item.total_price) %>원</td>
+  <% if controller.controller_name == 'carts' %>
 <td>
+
   <%= button_to '삭제하기', line_item_path(line_item), :id => line_item.id ,:method=>:delete, :remote => true  %> 
 </td>
-
+<% end %>
 
 
   <!--  <td><%= link_to '빼기', line_item_path(line_item),:method=>:delete, :remote => true  %></td> -->

@@ -19,12 +19,129 @@ $(function(){
 	$('#order_arrival_payment').change(function() {
 		if($("#order_arrival_payment").val() == '선불')
 		{
-		    $('#total_price').html('<span id=span_total_price>총액:  <%= number_with_delimiter(@cart.total_price + Order::DELIVERY_COST) %> 원</span><%= hidden_field_tag :total_price, @cart.total_price + Order::DELIVERY_COST %>' );
+		    $('#checkout_price').html('<%= number_with_delimiter(@cart.total_price + Order::DELIVERY_COST) %>' );
 		}else
 		{
-		    $('#total_price').html('<span id=span_total_price>총액:  <%= number_with_delimiter(@cart.total_price) %> 원</span><%= hidden_field_tag :total_price, @cart.total_price %>' );
+		    $('#checkout_price').html('<%= number_with_delimiter(@cart.total_price) %>' );
 		}
 	    });
+	var info_address = {
+	back_page: function(){
+		info_address.present_posts(xml_addressdata, current_end - 20, current_end - 10);
+		current_end -= 10;
+	    },
+	next_page: function(){
+		info_address.present_posts(xml_addressdata, current_end, current_end + 10);
+		current_end += 10;
+	    },
+	present_posts: function(addressdata, start, end) {
+		var present_addressdata = ''
+		var current_item = ''
+		if(start < 0)
+		{
+		    start = 0;
+		    end = 10;
+		}
+		for( i = start; i < end; i++)
+		{
+		    current_item =  $(addressdata).find("item").eq(i);
+		    if( current_item.length == 0)
+		    {
+			end = -1;
+			break;
+		    }
+		    present_addressdata = present_addressdata +
+ 							 '<a href=# class=postaddress_link><span class=parsed_address><span class=postcd1>' + 
+							 $(current_item).find("postcd").text().substr(0,3)  + 
+							 '</span>-<span class=postcd2>' + 
+							 $(current_item).find("postcd").text().substr(3,5) + 
+							 '</span><span class=raw_address>' + 
+							 $(current_item).find("address").text() + 
+							 '</span></span></a><br />'
+		}
+		if(start != 0)
+		{
+		    present_addressdata = present_addressdata + '<a href=# class=back_page>이전'
+		}
+		if(end != -1)
+		{
+		    if($(addressdata).find("item").eq(end + 1).length > 0)
+		    {
+			present_addressdata = present_addressdata + '<a href=# class=next_page>다음'
+		    }
+		}
+		$('.info_zipcode_search_result').html(present_addressdata);
+		info_address.bindPutAddress();
+	    },
+	do_submit: function(){
+		xml_addressdata = ''
+		html_render = ''
+		current_end = 0
+
+		$('.info_zipcode_search_result').text("로딩중");
+		$.get('<%= url_for :action => 'zipsearch' %>', {
+		    query: $('#info_dong_name').val() 
+			    }, function(xml){
+			
+			                        xml_addressdata = xml;
+                         			info_address.next_page();
+			    }, 'xml');
+	    },
+	bindZipcodeFind: function(){
+		$('#info_dong_name').keydown(info_address.keypressed);
+		$('.info_zipcode-search').click(info_address.do_submit);
+	    },
+	submit_search: function( event ){
+		var values = new Array;
+		event.preventDefault;
+		values[0] = $('#info_dong_name').attr('value');
+		if (values[0]) {
+		    info_address.do_submit('#info_address1',values);
+		} else {
+		    alert ('No Item given');
+		}
+		return false;
+	    },
+	keypressed: function(){
+		var charcode = (event.which) ? event.which : window.event.keyCode ;
+		if ( charcode == 13 ) {
+		    return info_address.submit_search( event );
+		}
+		return true;
+	    },
+	bindPutAddress: function(){
+		$('.next_page').click(function(){
+			info_address.next_page();
+		    });
+		$('.back_page').click(function(){
+			info_address.back_page();
+		    });
+		$('.info_zipcode_search_result .postaddress_link').click(function(){
+			$('#info_zip1').val($(this).children('.parsed_address').children('.postcd1').text());
+			$('#info_zip2').val($(this).children('.parsed_address').children('.postcd2').text());
+			$('#info_address1').val($(this).children('.parsed_address').children('.raw_address').text());
+			info_address.hideZipcodeFinder();
+			$('[name=addr]').focus();
+			return false;
+		    });
+	    },
+	remove_useless_addr: function(info_address){
+		if(info_address.indexOf('~') != -1){
+		    info_address = info_address.split(' ').slice(0, -1).join(' ');
+		}
+		return info_address;
+	    },
+	hideZipcodeFinder: function(){
+		$('.info_zipcode_search_result').slideUp();
+	    }
+	}
+	info_address.bindZipcodeFind();
+
+	    
+
+
+
+
 	var address = {
 	back_page: function(){
 		address.present_posts(xml_addressdata, current_end - 20, current_end - 10);
@@ -51,13 +168,13 @@ $(function(){
 			break;
 		    }
 		    present_addressdata = present_addressdata +
- 							 '<a href=# class=postaddress_link><span class=parsed_address>(' + 
+ 							 '<a href=# class=postaddress_link><span class=parsed_address><span class=postcd1>' + 
 							 $(current_item).find("postcd").text().substr(0,3)  + 
-							 '-' + 
+							 '</span>-<span class=postcd2>' + 
 							 $(current_item).find("postcd").text().substr(3,5) + 
-							 ')' + 
+							 '</span><span class=raw_address>' + 
 							 $(current_item).find("address").text() + 
-							 '</span></a><br />'
+							 '</span></span></a><br />'
 		}
 		if(start != 0)
 		{
@@ -117,7 +234,10 @@ $(function(){
 			address.back_page();
 		    });
 		$('.zipcode_search_result .postaddress_link').click(function(){
-			$('#address1').val($(this).children('.parsed_address').text());
+			$('#zip1').val($(this).children('.parsed_address').children('.postcd1').text());
+			$('#zip2').val($(this).children('.parsed_address').children('.postcd2').text());
+
+			$('#address1').val($(this).children('.parsed_address').children('.raw_address').text());
 			address.hideZipcodeFinder();
 			$('[name=addr]').focus();
 			return false;
@@ -138,5 +258,7 @@ $(function(){
 
 
 	    });
+
+
     });
 

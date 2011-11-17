@@ -56,13 +56,13 @@
       <tr>
 	<th ROWSPAN=3 class="cart_total_line_title">총 주문금액</th>
 	<% @total_price = @cart.total_price %>
-	<td class="cart_total_cell" ><span id="cart_total_info"><span class="info_name">주문상품수 </span><span class="info_value"><%= @cart.line_items.count %>종(<%=@cart.total_items%>개)</span><span class="info_name">총배송비 </span><span class="info_value"><% if @total_price > 20000 %>0원<% else %> 2,500원<% end %></span><span class="info_name">상품총금액  </span><span class="info_value"><%= number_with_delimiter(@total_price) %></span></span></td>
+	<td class="cart_total_cell" ><span id="cart_total_info"><span class="info_name">주문상품수 </span><span class="info_value"><%= @cart.line_items.count %>종(<%=@cart.total_items%>개)</span><span class="info_name">총배송비 </span><span class="info_value"><% if @total_price > 20000 %>0원<% else %> <%= number_with_delimiter(Order::DELIVERY_COST) %>원<% end %></span><span class="info_name">상품총금액  </span><span class="info_value"><%= number_with_delimiter(@total_price) %></span></span></td>
       </tr>
       <tr>
 	<td><hr /></td>
       </tr>
       <tr>
-	<td>총 합계금액 <% if @total_price > 20000 %><%= number_with_delimiter(@total_price) %>원<% else %><%= number_with_delimiter(@total_price + 2500) %>원<% end %></td>
+	<td>총 합계금액 <% if @total_price > 20000 %><%= number_with_delimiter(@total_price) %>원<% else %><%= number_with_delimiter(@total_price + Order::DELIVERY_COST) %>원<% end %></td>
       </tr>
     </table>
   </div>

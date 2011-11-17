@@ -1,0 +1,51 @@
+<div id="deviseauth">
+  <h2>로그인하기</h2>
+  
+  <h3>착곰이 계정을 통해 로그인하거나 기타 인증 서비스를 사용해 로그인 할 수 있습니다.</h3>
+  <div id="remote">
+    <div id="services" class="box">
+      <a href="/auth/facebook" class="services"><%= image_tag "facebook_64.png", :size => "64x64",  :alt => "Facebook" %>Facebook</a>
+          <a href="/auth/google" class="services"><%= image_tag "google_64.png", :size => "64x64",  :alt => "Google" %>Google</a>
+          <a href="/auth/twitter" class="services"><%= image_tag "twitter_64.png", :size => "64x64",  :alt => "Twitter" %>Twitter</a>
+	</div>
+      </div>
+
+
+      <div id="local" class="box">
+	<div id="flash">
+          <% flash.each do |key, value| %>
+          <div class="flash <%= key %>"><%= value %></div>
+          <% end %>
+	</div>  
+	
+	<%= form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => {:class => 'devise_form'} ) do |f| %>
+	<%= devise_error_messages! %>
+	<p> 이메일 주소(예: chakkomi@naver.com) <br />
+	  <%= f.email_field :email %></p>
+	
+	<p> 비밀번호 <br />
+	  <%= f.password_field :password %></p>
+	
+	<% if devise_mapping.rememberable? -%>
+	<p><%= f.check_box :remember_me %> <%= f.label :remember_me %></p>
+	<% end %>
+	
+	<p><%= f.submit "Sign in" %></p>
+	<% end %>
+      </div>
+
+      <div id="devise_links">
+  	<%= render :partial => "devise/shared/links" %>
+      </div>
+</div>
+<script type="text/javascript">
+  $(function(){
+    $("#new_user").submit(function(){
+      $('.laydesk_body').html('<%= escape_javascript(render('loading')) %>');
+    });
+    $(".ajax_link").click(function(){
+      $('.laydesk_body').html('<%= escape_javascript(render('loading')) %>');
+      return false;
+  });
+  });
+</script>

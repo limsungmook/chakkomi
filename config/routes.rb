@@ -8,6 +8,7 @@ Chakkomi::Application.routes.draw do
   resources :orders do
     collection do
       get :zipsearch
+      get :success
     end
   end
   resources :admins do

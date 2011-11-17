@@ -36,17 +36,16 @@
 
 
 <div class="social_buttons">
-  <span  class='st_twitter_hcount' displayText='Tweet' st_url="http://www.chakkomi.com/articles/<%= post.id %>/#/articles/<%= post.id %>"></span><span  class='st_facebook_hcount' displayText='Facebook' st_url="http://www.chakkomi.com/articles/<%= post.id %>/#/articles/<%= post.id %>"></span></span><!--<span  class='st_fblike_hcount_<%= index %>'>-->
-
-
-</span><span  class='st_plusone_hcount' st_url="http://www.chakkomi.com/articles/<%= post.id %>/#/articles/<%= post.id %>"></span><span class="fb-like-example_<%= index %>">
+  <span  class='st_twitter_hcount' displayText='Tweet' st_url="http://www.chakkomi.com/articles/<%= post.id %>/#/articles/<%= post.id %>"></span><span  class='st_facebook_hcount' displayText='Facebook' st_url="http://www.chakkomi.com/articles/<%= post.id %>/#/articles/<%= post.id %>"></span><!--<span  class='st_fblike_hcount_<%= index %>'>
+</span>--><span  class='st_plusone_hcount' st_url="http://www.chakkomi.com/articles/<%= post.id %>/#/articles/<%= post.id %>"></span><span class="fb-like-example_<%= index %>"></span>
 </div>
-<script type="text/javascript">var switchTo5x=false;</script><script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
 
 <script type="text/javascript">
 
   $(function(){
-//  stLight.options({publisher:'946d14c5-62b3-4999-bb63-eb17baf5da56'});
+var switchTo5x=false;
+
+  $.getScript("http://w.sharethis.com/button/buttons.js");
    $('.fb-like-example_<%= index %>').onefblike({appID:'213249652066160', siteUrl:'/articles/<%= post.id %>/#/articles/<%= post.id %>', layout:'button_count'});  
 });
 </script>

@@ -9,6 +9,9 @@ class User < ActiveRecord::Base
   has_many :services, :dependent => :destroy
   has_many :talks
   has_many :relays 
+  has_many :infos
+  has_many :orders
+
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me, :name, :shortbio, :weburl, :haslocalpw, :role, :delivery_address1, :delivery_address2, :phone

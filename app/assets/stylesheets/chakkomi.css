@@ -899,13 +899,41 @@ body
 
 #laydesk_shop_body #laydesk_shop_cart .order_table
 {
+    width: 100%;
     border-top: 3px solid #529ec2;
+}
+
+#laydesk_shop_body #laydesk_shop_cart .order_table tr
+{
+    border-bottom: 1px solid #D1D6DC;
+}
+#laydesk_shop_body #laydesk_shop_cart .order_table td
+{
+    padding-left: 30px;
+    line-height: 30px;
 }
 #laydesk_shop_body #laydesk_shop_cart .order_table .section_name
 {
     background: #f2f2f2;
-    text-align: center;
+    height: 38px;
+    padding-left: 30px;
 
+}
+
+#laydesk_shop_body #laydesk_shop_cart #price_info
+{
+    float: left;
+    width: 330px;
+}
+
+#laydesk_shop_body #laydesk_shop_cart #checkout_info
+{
+    float: right;
+    width: 600px;
+}
+#end
+{
+    clear: both;
 }
 #laydesk_shop_body #laydesk_shop_cart #order_list #order_list_title
 {
@@ -926,7 +954,10 @@ body
     background: #f2f2f2;
     text-align: center;
 }
-
+#laydesk_shop_body #laydesk_shop_cart .order_table #td2_info_name
+{
+    width: 400px;
+}
 #laydesk_shop_body #laydesk_shop_cart #order_list table .cart_check
 {
     width: 10px;

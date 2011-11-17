@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110930233836) do
+ActiveRecord::Schema.define(:version => 20111116014942) do
 
   create_table "carts", :force => true do |t|
     t.datetime "created_at"
@@ -39,6 +39,20 @@ ActiveRecord::Schema.define(:version => 20110930233836) do
   add_index "ckeditor_assets", ["assetable_type", "assetable_id"], :name => "idx_ckeditor_assetable"
   add_index "ckeditor_assets", ["assetable_type", "type", "assetable_id"], :name => "idx_ckeditor_assetable_type"
 
+  create_table "infos", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "name"
+    t.string   "email"
+    t.string   "phone"
+    t.string   "tel"
+    t.string   "zip1"
+    t.string   "zip2"
+    t.string   "address1"
+    t.string   "address2"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "item_categories", :force => true do |t|
     t.string   "name"
     t.text     "detail"
@@ -63,11 +77,9 @@ ActiveRecord::Schema.define(:version => 20110930233836) do
 
   create_table "orders", :force => true do |t|
     t.integer  "user_id"
-    t.string   "name"
+    t.integer  "info_id",         :null => false
+    t.string   "arrival_message"
     t.string   "account_owner"
-    t.text     "address"
-    t.string   "phone"
-    t.string   "email"
     t.string   "pay_type"
     t.string   "arrival_payment"
     t.integer  "total_price"
@@ -111,6 +123,10 @@ ActiveRecord::Schema.define(:version => 20110930233836) do
     t.string   "thumnail_pic_content_type"
     t.integer  "thumnail_pic_file_size"
     t.datetime "thumnail_pic_updated_at"
+    t.string   "detail_pic_file_name"
+    t.string   "detail_pic_content_type"
+    t.integer  "detail_pic_file_size"
+    t.datetime "detail_pic_updated_at"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -178,9 +194,6 @@ ActiveRecord::Schema.define(:version => 20110930233836) do
     t.string   "weburl"
     t.boolean  "haslocalpw",                          :default => true, :null => false
     t.string   "role"
-    t.string   "delivery_address1"
-    t.string   "delivery_address2"
-    t.string   "phone"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

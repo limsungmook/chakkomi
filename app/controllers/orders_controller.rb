@@ -19,7 +19,9 @@ class OrdersController < ApplicationController
     end
   end
       
-
+  def success
+    
+  end
 
   def index
 
@@ -57,7 +59,8 @@ class OrdersController < ApplicationController
       return
     end
     
-
+    @user_info = Info.find(:first, :conditions => ["user_id = ?", current_user.id])
+    
     respond_to do |format|
       format.html # new.html.erb
       format.js
@@ -75,33 +78,52 @@ class OrdersController < ApplicationController
   # POST /orders.xml
   def create
     @cart = current_cart
+    if params[:info_id].nil?
+      info = Info.new
+      info.user_id = current_user.id
+    else
+      info = Info.find(:first, params[:info_id])
+    end
+    
+    info.name = params[:info_name]
+    info.email = params[:info_email1] + '@' + params[:info_email2]
+    info.phone = params[:info_phone1] + '-' + params[:info_phone2] + '-' + params[:info_phone3]
+    info.tel = params[:info_tel1] + '-' + params[:info_tel2] + '-' + params[:info_tel3]
+    info.zip1 = params[:info_zip1]
+    info.zip2 = params[:info_zip2]
+    info.address1 = params[:info_address1]
+    info.address2 = params[:info_address2]
+    info.save
+
+
+
     @order = Order.new(params[:order])
     @order.add_line_items_from_cart(current_cart)
     @order.user_id = current_user.id
-    @order.name = params[:name]
-    @order.account_owner = params[:account_owner]
-    address = params[:address1] + params[:address2]
-    @order.address = address
-    @order.total_price = params[:total_price]
-    
-    if current_user.delivery_address1 != params[:address1] || current_user.delivery_address2 != params[:address2]
-      if  current_user.delivery_address1 != params[:address1]
-        current_user.delivery_address1 = params[:address1]
-      end
-      if  current_user.delivery_address2 != params[:address2]
-        current_user.delivery_address2 = params[:address2]
-      end
-      current_user.save
+    if params[:phone1].nil? || params[:phone2].nil? || params[:phone3].nil? 
+      flash[:phone_error] = '핸드폰 번호를 입력해주세요'
     end
+      
+    @order.phone = params[:phone1] + '-' + params[:phone2] + '-' + params[:phone3]
+    @order.tel = params[:tel1] + '-' + params[:tel2] + '-' + params[:tel3]
+    @order.zipcode = params[:zip1] + '-' + params[:zip2]
+    @order.address = params[:address1] + ' ' + params[:address2]
+    @order.arrival_payment = params[:arrival_payment]
+    if @order.arrival_payment == '선불'
+      @order.total_price = params[:total_price].to_i + Order::DELIVERY_COST
+    else
+      @order.total_price = params[:total_price]
 
+    end
     respond_to do |format|
       if @order.save
         Cart.destroy(session[:cart_id])
         session[:cart_id] = nil
         format.html { redirect_to(@order, :notice => '주문이 성공적으로 작성되었습니다. 임금이 확인되면 즉시 배송해드리겠습니다 ^-^') }
         format.xml  { render :xml => @order, :status => :created, :location => @order }
+        format.js
       else
-        format.html { render :action => "new" }
+        format.html { redirect_to('/store/#/orders/new', :notice => "오류가 발생했습니다") }
         format.xml  { render :xml => @order.errors, :status => :unprocessable_entity }
       end
     end
