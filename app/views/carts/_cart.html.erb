@@ -29,13 +29,13 @@
       </ul>
     </div><!-- box_in -->
   </div><!-- box_out -->
-  
+      <%= form_for @cart, :url => {:controller => 'line_items', :action => 'destroy', :id => '1'}, :method => 'delete',  :remote => true do |f| %>
   <div id="order_list">
     <div class="div_titles"><span class="order_titles">주/문/리/스/트</span><br /></div>
     <div class="line_item">
       <table class="order_table">
 	<tr id="table_menu">
-	  <td class="cart_check"><%= check_box_tag 'all' %></td>
+	  <td class="cart_check"><%= check_box_tag 'check_all' %></td>
 	  <td class="cart_thumb">상품</td>
 	  <td class="cart_name">상품명(옵션)</td>
 	  <td class="cart_price">판매가</td>
@@ -43,14 +43,16 @@
 	  <td class="cart_total_price">주문금액</td>
 	  <td>&nbsp;</td>
 	</tr>
+
 	<%= render(@cart.line_items) %>
       </table>
     </div>
     <div id="ps">
-      <div id="ps_left">선택상품을 <%= link_to "삭제하기", "#" %></div>
+											      <div id="ps_left">선택상품을 <%= f.submit  "삭제하기", :confirm => '선택한 상품을 삭제하시겠습니까?' %></div>
       <div id="ps_right">- 상품배송비는 상품 총금액 20,000원 이상 구매시 무료배송입니다.</div>
     </div>
   </div>
+<% end %> <!-- form_for delete_selected end -->											    
   <div id="cart_total_line">
     <table>
       <tr>
@@ -67,20 +69,29 @@
     </table>
   </div>
   <% if user_signed_in? %>
-
   <%= link_to({:controller => '/orders', :action => 'new'}, {:remote => true, :rel => '/orders/new', :class => 'ajax_link'}) do %>
   <div id="create_order" class="div_button">전체상품 주문하기</div>
 <% end %>
 
   <%= link_to({:controller => '/orders', :action => 'new'}, {:remote => true, :rel => '/orders/new'}) do %>
-  <div id="create_order" class="div_button">선택상품 주문하기</div>
+<!--  <div id="create_order" class="div_button">선택상품 주문하기</div> -->
 <% end %>
 
   <div id="back_page" class="div_button">계속 쇼핑하기</div>
 
-  <div id="empty_cart"><%= button_to '비우기', @cart, :method => :delete, :confirm => '장바구니를 삭제하시겠습니까?', :class => "cart_btn_empty", :remote => true %></div>
+
   <% else %>
   <div id="login_for_order">주문을 하시려면 <%= link_to '로그인', new_user_session_path, :remote => true, :class => "ajax_link"  %>을 하셔야합니다.</div>
   <% end %>
 </div>
 
+
+
+<script type="text/javascript">
+
+  $(function () { // this line makes sure this code runs on page load
+  $('#check_all').click(function () {
+	  $('.check_one').attr('checked', this.checked);
+  });
+});
+</script>

@@ -16,8 +16,13 @@ Chakkomi::Application.routes.draw do
       get :order_list
     end
   end
+
   resources :accounts
-  resources :line_items
+  resources :line_items do
+    collection do
+      get :reduce_one
+    end
+  end
   resources :store do
     collection do
       get :detail
