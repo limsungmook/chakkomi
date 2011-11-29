@@ -1,6 +1,6 @@
 $('#laydesk_default_body').fadeOut('10000', function(){
-	window.scrollTo(0);
-	$("body").scrollTop(0);	
+//	window.scrollTo(0);
+//	$("body").scrollTop(0);	
 	$('#laydesk_default_body').html('<%= escape_javascript(render('article')) %>').fadeIn('slow', function(){
 
 		$(".pagination_wrapper a").click(function(){

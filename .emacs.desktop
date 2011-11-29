@@ -2,7 +2,7 @@
 ;; --------------------------------------------------------------------------
 ;; Desktop File for Emacs
 ;; --------------------------------------------------------------------------
-;; Created Thu Nov 10 19:11:20 2011
+;; Created Tue Nov 29 19:39:48 2011
 ;; Desktop file format version 206
 ;; Emacs version 23.1.1
 
@@ -10,30 +10,206 @@
 (setq desktop-missing-file-warning nil)
 (setq tags-file-name nil)
 (setq tags-table-list nil)
-(setq search-ring '("gaq" "can?" "talk.id" "talk" "relay" "“»è“Á¦" "end" "acces" "can?" "c" "secrtet" "ago" "“Àü" "ago" "password" "i18n"))
+(setq search-ring '("“ºñ“¿ì“±â" "destroy" "“·¡“±×" "“»©“±â" "button_to" "“»è“Á¦" "sub_line" "cart" "destroy" "talk" "menu" "post" "destroy" "params" "check" "delete"))
 (setq regexp-search-ring nil)
 (setq register-alist nil)
 
 ;; Buffer section -- buffers listed in same order as in buffer list:
 (desktop-create-buffer 206
-  "/var/www/chakkomi/app/views/layouts/application.html.erb"
-  "application.html.erb"
-  'html-mode
+  "/var/www/chakkomi/app/views/line_items/destroy.js.erb"
+  "destroy.js.erb"
+  'fundamental-mode
   nil
-  3249
-  '(835 nil)
+  60
+  '(1 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/var/www/chakkomi/app/controllers/line_items_controller.rb"
+  "line_items_controller.rb"
+  'ruby-mode
+  nil
+  3837
+  '(4058 nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-file-coding-system . utf-8-unix)))
+
+(desktop-create-buffer 206
+  "/var/www/chakkomi/app/views/carts/_cart.html.erb"
+  "_cart.html.erb"
+  'java-mode
+  '(abbrev-mode)
+  2936
+  '(346 nil)
   nil
   nil
   '((buffer-file-coding-system . utf-8-unix)))
 
 (desktop-create-buffer 206
-  "/var/www/chakkomi/app/controllers/services_controller.rb"
-  "services_controller.rb"
+  "/var/www/chakkomi/app/views/line_items/_line_item.html.erb"
+  "_line_item.html.erb"
+  'html-mode
+  nil
+  829
+  '(695 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix)))
+
+(desktop-create-buffer 206
+  "/var/www/chakkomi/app/views/layouts/application.html.erb"
+  "application.html.erb"
+  'html-mode
+  nil
+  5260
+  '(4367 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix)))
+
+(desktop-create-buffer 206
+  "/var/www/chakkomi/config/routes.rb"
+  "routes.rb"
   'ruby-mode
   nil
-  6903
+  356
+  '(356 nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/var/www/chakkomi/app/views/line_items/index.html.erb"
+  "index.html.erb"
+  'html-mode
+  nil
+  173
   '(nil nil)
   nil
   nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/var/www/chakkomi/app/views/line_items/reduce_one.js.erb"
+  "reduce_one.js.erb"
+  'fundamental-mode
+  nil
+  73
+  '(1 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix)))
+
+(desktop-create-buffer 206
+  "/var/www/chakkomi/app/models/line_item.rb"
+  "line_item.rb"
+  'ruby-mode
+  nil
+  99
+  '(nil nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/var/www/chakkomi/app/controllers/talks_controller.rb"
+  "talks_controller.rb"
+  'ruby-mode
+  nil
+  571
+  '(1 nil)
+  nil
+  nil
   '((indent-tabs-mode) (buffer-file-coding-system . utf-8-unix)))
+
+(desktop-create-buffer 206
+  "/var/www/chakkomi/app/views/carts/destroy.js.erb"
+  "destroy.js.erb<2>"
+  'fundamental-mode
+  nil
+  76
+  '(1 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/var/www/chakkomi/app/views/line_items/delete_selected.js.erb"
+  "delete_selected.js.erb"
+  'fundamental-mode
+  nil
+  74
+  '(1 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix)))
+
+(desktop-create-buffer 206
+  "/var/www/chakkomi/app/views/talks/_relay.html.erb"
+  "_relay.html.erb"
+  'html-mode
+  nil
+  581
+  '(1 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix)))
+
+(desktop-create-buffer 206
+  "/var/www/chakkomi/app/views/line_items/delete_selected.js.erg"
+  "delete_selected.js.erg"
+  'fundamental-mode
+  nil
+  1
+  '(nil nil)
+  nil
+  nil
+  nil)
+
+(desktop-create-buffer 206
+  "/var/www/chakkomi/app/views/orders/_form.html.erb"
+  "_form.html.erb"
+  'html-mode
+  nil
+  761
+  '(1 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix)))
+
+(desktop-create-buffer 206
+  "/var/www/chakkomi/app/views/talks/_talk_talk.html.erb"
+  "_talk_talk.html.erb"
+  'html-mode
+  nil
+  112
+  '(1 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix)))
+
+(desktop-create-buffer 206
+  "/var/www/chakkomi/app/views/talks/_talk.html.erb"
+  "_talk.html.erb"
+  'html-mode
+  nil
+  753
+  '(60 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix)))
+
+(desktop-create-buffer 206
+  "/var/www/chakkomi/app/views/store/_store.html.erb"
+  "_store.html.erb"
+  'html-mode
+  nil
+  168
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
 
