@@ -10,7 +10,7 @@
       <span class='st_email_large'></span>
       <span class='st_sharethis_large'></span>
     </div>
-
+    <%= form_for(@line_item, :remote => true) do |f| %>
     <div id="product_detail_spec">
       <table>
 	<tr>
@@ -28,7 +28,7 @@
 	  <td class="spec_center">:</td>
 	  <td class="spec_right"><%= @product.state %></td>
 	</tr>
-	<%= form_for(@line_item, :remote => true) do |f| %>
+
 	<% if @product.product_options.count > 0 %>
 	<tr>
 	  <td class="spec_left">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 옵&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;션</td>
@@ -45,9 +45,11 @@
       </table>
 
 	  <%= hidden_field_tag :product_id ,@product.id %>
-<!--	  <%= f.submit "장바구니 담기" ,:class=> 'noscript' %> -->
-	  <div id="submit_cart" class="div_button" >장바구니 담기</div>
-	<% end %>
+
+	  <div id="submit_cart" class="div_button" >장바구니 담기</div> 
+
+    <% end %>
+
     </div>
     <div id="fb-like-example"></div>
   </div>

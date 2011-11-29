@@ -3,6 +3,7 @@ $(function(){
 	{
 	    $('#product_detail_wrapper').html('<%= escape_javascript(render('detail')) %>');
 	    $("#submit_cart").click(function(){
+
 		    $("#new_line_item").submit();
 		});
 
@@ -32,7 +33,8 @@ $(function(){
 	    $('#laydesk_shop_body').fadeOut('10000', function(){
 		    $('#laydesk_shop_body').html('<%= escape_javascript(render('show')) %>').fadeIn('slow', function(){
 			    $("#submit_cart").click(function(){
-				    $("#new_line_item").submit();
+
+				    $("#new_line_item").submit();	
 				});
 
 			    $("#list_first").css("background", "#FFFFFF");
