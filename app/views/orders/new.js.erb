@@ -61,13 +61,13 @@ $(function(){
 		}
 		if(start != 0)
 		{
-		    present_addressdata = present_addressdata + '<a href=# class=back_page>이전'
+		    present_addressdata = present_addressdata + '<a href=# class=back_page>이전</a>'
 		}
 		if(end != -1)
 		{
 		    if($(addressdata).find("item").eq(end + 1).length > 0)
 		    {
-			present_addressdata = present_addressdata + '<a href=# class=next_page>다음'
+			present_addressdata = present_addressdata + '<a href=# class=next_page>다음</a>'
 		    }
 		}
 		$('.info_zipcode_search_result').html(present_addressdata);
@@ -112,9 +112,11 @@ $(function(){
 	bindPutAddress: function(){
 		$('.next_page').click(function(){
 			info_address.next_page();
+			return false;
 		    });
 		$('.back_page').click(function(){
 			info_address.back_page();
+			return false;
 		    });
 		$('.info_zipcode_search_result .postaddress_link').click(function(){
 			$('#info_zip1').val($(this).children('.parsed_address').children('.postcd1').text());
@@ -178,13 +180,13 @@ $(function(){
 		}
 		if(start != 0)
 		{
-		    present_addressdata = present_addressdata + '<a href=# class=back_page>이전'
+		    present_addressdata = present_addressdata + '<a href=# class=back_page>이전</a>'
 		}
 		if(end != -1)
 		{
 		    if($(addressdata).find("item").eq(end + 1).length > 0)
 		    {
-			present_addressdata = present_addressdata + '<a href=# class=next_page>다음'
+			present_addressdata = present_addressdata + '<a href=# class=next_page>다음</a>'
 		    }
 		}
 		$('.zipcode_search_result').html(present_addressdata);
@@ -229,9 +231,11 @@ $(function(){
 	bindPutAddress: function(){
 		$('.next_page').click(function(){
 			address.next_page();
+			return false;
 		    });
 		$('.back_page').click(function(){
 			address.back_page();
+			return false;
 		    });
 		$('.zipcode_search_result .postaddress_link').click(function(){
 			$('#zip1').val($(this).children('.parsed_address').children('.postcd1').text());
