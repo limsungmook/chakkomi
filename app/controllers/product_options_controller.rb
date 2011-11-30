@@ -24,11 +24,11 @@ class ProductOptionsController < ApplicationController
   def create
     @product = Product.new(:id => params[:product_id])
     @product_option = @product.product_options.build(params[:product_option])
-    @check_tests = params[:product_option]
-    @str = ''
-    @check_tests.each do |check|
-      @str = @str + check
-    end
+#    @check_tests = params[:product_option]
+#    @str = ''
+#    @check_tests.each do |check|
+#      @str = @str + check
+#    end
     
     respond_to do |format|
       if @product_option.save
