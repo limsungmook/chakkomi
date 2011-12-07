@@ -99,6 +99,7 @@ class TalksController < ApplicationController
         @relay.content = @talk.content
         @relay.talk_id = @talk.id
         @relay.save
+        AdminMailer.new_talk(@talk).deliver
         session[:saved_talk_last] = @talk.updated_at
         @mid = @talk.mid
         @talks = Talk.paginate(:per_page => 10, :page => params[:page])

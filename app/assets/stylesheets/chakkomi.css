@@ -1181,6 +1181,7 @@ body
 }
 .relay_user_username { margin: 0 0 0 12px;color: black; float: left; font-weight: bold; line-height: 13px;}
 .relay_user_timeago { margin: 0 0 0 12px; color: #afafaf; float: left; font-weight: lighter; font-size: 8px;line-height: 13px;}
+.relay_user_relay_count { text-align: right;}
 .relay_user_round { background: #d3d746; }
 .relay_user_round { float:left;width: 100% ;}
 .relay_user_tl { background: url('/assets/roundbox/talk_user_tl_20x10.jpg') no-repeat top left; }

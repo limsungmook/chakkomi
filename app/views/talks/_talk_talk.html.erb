@@ -31,6 +31,7 @@
       <tr>
 	<td>
 	  <div class="relay_admin_timeago"><%= time_ago_in_words(talk.created_at) %> 전</div>
+	  <div class="relay_user_admin_count"><b>[<%= talk.relays.count %>]</b>릴레이</div>
 	</td>
 	  <% if can? :manage, :all  %>
 	<td>
@@ -78,6 +79,7 @@
 	  쉿!
 	  <% end %>
 	  </div>
+	  <div class="relay_user_relay_count"><b>[<%= talk.relays.count %>]</b> 릴레이</div>
 	</td>
 
 	<% if can? :manage, :all  %>

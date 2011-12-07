@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  </head>
+  <body>
+    <h1>새로운 릴레이가 생성되었습니다.</h1>
+    <p>
+      <%= @talk.user.name %> 님이 남긴 <%= @talk.content %>글에 <br/>
+      <%= @relay.user.name %> 님이 <%= @relay.content %> 라는 릴레이를 남겼습니다 <br/>
+    </p>
+  </body>
+</html>

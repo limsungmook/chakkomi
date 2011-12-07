@@ -9,6 +9,7 @@ class RelaysController < ApplicationController
     @relay.user = current_user
     respond_to do |format|
       if @relay.save
+        AdminMailer.new_relay(@talk, @relay).deliver
         @talk.updated_at = @relay.created_at
         @talk.save
         session[:saved_relay_last] = @relay.created_at
